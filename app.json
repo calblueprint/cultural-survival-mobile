@@ -1,10 +1,13 @@
 {
   "expo": {
-    "name": "MyAwesomeRealmApp",
-    "slug": "MyAwesomeRealmApp",
+    "name": "cultural-survival",
+    "slug": "cultural-survival",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.calblueprint.cultural-survival"
+    }
   }
 }
