@@ -1,5 +1,9 @@
 #import "AppDelegate.h"
 
+#if RCT_DEV
+#import <React/RCTDevLoadingView.h>
+#endif
+
 #if defined(EX_DEV_MENU_ENABLED)
 @import EXDevMenu;
 #endif
@@ -36,6 +40,10 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+  #if RCT_DEV
+    [bridge moduleForClass:[RCTDevLoadingView class]];
+  #endif
+  
 - (RCTBridge *)initializeReactNativeApp:(NSDictionary *)launchOptions
 {
   RCTBridge *bridge = [self.reactDelegate createBridgeWithDelegate:self launchOptions:launchOptions];

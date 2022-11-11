@@ -7,7 +7,7 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.calblueprint.cultural-survival"
+      "bundleIdentifier": "com.davidqing6432.MyAwesomeRealmApp"
     }
   }
 }
