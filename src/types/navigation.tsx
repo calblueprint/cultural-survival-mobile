@@ -7,5 +7,5 @@
     Home: undefined;
     Audio: undefined;
     Grants: undefined;
-    Signin: undefined;
+    SignIn: undefined;
   };

@@ -2,9 +2,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import {View, Text} from "react-native"
+
 import HomeScreen from "../screens/HomeScreen/Home";
 import AudioScreen from "../screens/AudioScreen/Audio";
-import SignInScreen from "../screens/SigninScreen/Signin";
+import SignInScreen from "../screens/SignInScreen/SignIn";
 import GrantsScreen from "../screens/GrantsScreen/Grants";
 import { RootStackParamList } from "../types/navigation";
 
@@ -16,9 +18,9 @@ const UserStack = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Audio" component={AudioScreen} />
         <Stack.Screen name="Grants" component={GrantsScreen} />
-        <Stack.Screen name="Signin" component={SignInScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>    
   );
 };
 
