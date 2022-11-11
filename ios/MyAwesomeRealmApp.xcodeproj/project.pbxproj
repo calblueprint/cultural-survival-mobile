@@ -326,8 +326,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidqing6432.MyAwesomeRealmApp;
-				PRODUCT_NAME = MyAwesomeRealmApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calblueprint.cultural-survival";
+				PRODUCT_NAME = cultural-survival;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyAwesomeRealmApp/MyAwesomeRealmApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -352,8 +352,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidqing6432.MyAwesomeRealmApp;
-				PRODUCT_NAME = MyAwesomeRealmApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calblueprint.cultural-survival";
+				PRODUCT_NAME = cultural-survival;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyAwesomeRealmApp/MyAwesomeRealmApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
