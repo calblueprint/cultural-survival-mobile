@@ -2,12 +2,17 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import {View, Text} from "react-native"
-
 import HomeScreen from "../screens/HomeScreen/Home";
 import AudioScreen from "../screens/AudioScreen/Audio";
-import SignInScreen from "../screens/SignInScreen/SignIn";
 import GrantsScreen from "../screens/GrantsScreen/Grants";
+import SplashScreen from "../screens/SplashScreen/Splash";
+import Login1Screen from "../screens/Login1Screen/Login1";
+import Login2Screen from "../screens/Login2Screen/Login2";
+import Signup1Screen from "../screens/Signup1Screen/Signup1";
+import Signup2Screen from "../screens/Signup2Screen/Signup2";
+import Signup3Screen from "../screens/Signup3Screen/Signup3";
+import Signup4Screen from "../screens/Signup4Screen/Signup4";
+
 import { RootStackParamList } from "../types/navigation";
 
 const UserStack = () => {
@@ -16,11 +21,17 @@ const UserStack = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Audio" component={AudioScreen} />
         <Stack.Screen name="Grants" component={GrantsScreen} />
-        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="Login1" component={Login1Screen} />
+        <Stack.Screen name="Login2" component={Login2Screen} />
+        <Stack.Screen name="Signup1" component={Signup1Screen} />
+        <Stack.Screen name="Signup2" component={Signup2Screen} />
+        <Stack.Screen name="Signup3" component={Signup3Screen} />
+        <Stack.Screen name="Signup4" component={Signup4Screen} />
       </Stack.Navigator>
-    </NavigationContainer>    
+    </NavigationContainer>
   );
 };
 
