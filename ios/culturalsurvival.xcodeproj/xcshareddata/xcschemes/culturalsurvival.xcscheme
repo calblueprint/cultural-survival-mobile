@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "MyAwesomeRealmApp.app"
-               BlueprintName = "MyAwesomeRealmApp"
-               ReferencedContainer = "container:MyAwesomeRealmApp.xcodeproj">
+               BuildableName = "culturalsurvival.app"
+               BlueprintName = "culturalsurvival"
+               ReferencedContainer = "container:culturalsurvival.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "MyAwesomeRealmAppTests.xctest"
-               BlueprintName = "MyAwesomeRealmAppTests"
-               ReferencedContainer = "container:MyAwesomeRealmApp.xcodeproj">
+               BuildableName = "culturalsurvivalTests.xctest"
+               BlueprintName = "culturalsurvivalTests"
+               ReferencedContainer = "container:culturalsurvival.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MyAwesomeRealmApp.app"
-            BlueprintName = "MyAwesomeRealmApp"
-            ReferencedContainer = "container:MyAwesomeRealmApp.xcodeproj">
+            BuildableName = "culturalsurvival.app"
+            BlueprintName = "culturalsurvival"
+            ReferencedContainer = "container:culturalsurvival.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MyAwesomeRealmApp.app"
-            BlueprintName = "MyAwesomeRealmApp"
-            ReferencedContainer = "container:MyAwesomeRealmApp.xcodeproj">
+            BuildableName = "culturalsurvival.app"
+            BlueprintName = "culturalsurvival"
+            ReferencedContainer = "container:culturalsurvival.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

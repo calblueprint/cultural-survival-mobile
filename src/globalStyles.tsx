@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
 
   h1: {
-    fontFamily: "DMSans_700Bold",
+    //fontFamily: "DMSans_700Bold",
     fontSize: 36,
     fontWeight: "700",
     textAlign: "left",
@@ -18,7 +18,7 @@ export default StyleSheet.create({
   },
 
   h2: {
-    fontFamily: "DMSans_700Bold",
+    //fontFamily: "DMSans_700Bold",
     fontSize: 30,
     fontWeight: "700",
     textAlign: "left",
@@ -26,7 +26,7 @@ export default StyleSheet.create({
   },
 
   h3: {
-    fontFamily: "DMSans_500Medium",
+    //fontFamily: "DMSans_500Medium",
     fontSize: 24,
     fontWeight: "500",
     textAlign: "left",
@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
 
   h4: {
-    fontFamily: "DMSans_500Medium",
+    //fontFamily: "DMSans_500Medium",
     fontSize: 18,
     fontWeight: "500",
     textAlign: "left",
@@ -42,7 +42,7 @@ export default StyleSheet.create({
   },
 
   body1: {
-    fontFamily: "DMSans_400Regular",
+    //fontFamily: "DMSans_400Regular",
     fontSize: 14,
     fontWeight: "400",
     textAlign: "left",
@@ -50,7 +50,7 @@ export default StyleSheet.create({
   },
 
   body2: {
-    fontFamily: "DMSans_400Regular",
+    //fontFamily: "DMSans_400Regular",
     fontSize: 12,
     fontWeight: "400",
     textAlign: "left",
@@ -58,7 +58,7 @@ export default StyleSheet.create({
   },
 
   body3: {
-    fontFamily: "Avenir",
+    //fontFamily: "Avenir",
     fontSize: 14,
     fontWeight: "400",
     textAlign: "left",
@@ -66,7 +66,7 @@ export default StyleSheet.create({
   },
 
   overline1: {
-    fontFamily: "Avenir",
+    //fontFamily: "Avenir",
     fontWeight: "900",
     fontSize: 14,
     textTransform: "uppercase",
@@ -75,7 +75,7 @@ export default StyleSheet.create({
   },
 
   overline2: {
-    fontFamily: "Avenir",
+    //fontFamily: "Avenir",
     fontWeight: "800",
     fontSize: 12,
     textTransform: "uppercase",
@@ -84,7 +84,7 @@ export default StyleSheet.create({
   },
 
   h3Bold: {
-    fontFamily: "DMSans_700Bold",
+    //fontFamily: "DMSans_700Bold",
     fontSize: 24,
     fontWeight: "700",
     textAlign: "left",
@@ -92,7 +92,7 @@ export default StyleSheet.create({
   },
 
   h4Bold: {
-    fontFamily: "DMSans_700Bold",
+    //fontFamily: "DMSans_700Bold",
     fontSize: 18,
     fontWeight: "700",
     textAlign: "left",
@@ -100,7 +100,7 @@ export default StyleSheet.create({
   },
 
   body1Bold: {
-    fontFamily: "Avenir",
+    //fontFamily: "Avenir",
     fontSize: 14,
     fontWeight: "800",
     textAlign: "left",
@@ -108,7 +108,7 @@ export default StyleSheet.create({
   },
 
   body2Bold: {
-    fontFamily: "Avenir",
+    //fontFamily: "Avenir",
     fontSize: 12,
     fontWeight: "800",
     textAlign: "left",
@@ -116,7 +116,7 @@ export default StyleSheet.create({
   },
 
   numbers: {
-    fontFamily: 'DMMono_500Medium',
+    //fontFamily: 'DMMono_500Medium',
     fontSize: 12,
     fontWeight: "500",
     textAlign: "left",

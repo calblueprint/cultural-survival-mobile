@@ -5,7 +5,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>$(DEVELOPMENT_LANGUAGE)</string>
     <key>CFBundleDisplayName</key>
-    <string>MyAwesomeRealmApp</string>
+    <string>cultural-survival</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -25,13 +25,13 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>com.davidqing6432.MyAwesomeRealmApp</string>
+          <string>com.calblueprint.cultural-survival</string>
         </array>
       </dict>
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>exp+myawesomerealmapp</string>
+          <string>exp+cultural-survival</string>
         </array>
       </dict>
     </array>

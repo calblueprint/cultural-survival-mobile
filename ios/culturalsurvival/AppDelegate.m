@@ -1,9 +1,5 @@
 #import "AppDelegate.h"
 
-#if RCT_DEV
-#import <React/RCTDevLoadingView.h>
-#endif
-
 #if defined(EX_DEV_MENU_ENABLED)
 @import EXDevMenu;
 #endif
@@ -56,7 +52,6 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
 #if defined(FB_SONARKIT_ENABLED) && __has_include(<FlipperKit/FlipperClient.h>)
   InitializeFlipper(application);
 #endif
