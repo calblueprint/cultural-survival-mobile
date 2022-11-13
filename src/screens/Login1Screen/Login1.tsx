@@ -3,6 +3,7 @@ import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
+import Realm from "realm";
 
 const Login1Screen = ({ navigation }: any) => {
   const handleLogin = () => {
