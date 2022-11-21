@@ -1,10 +1,14 @@
-import { app } from "./mongoDBApp"
+import { realm, db } from "./mongoDBApp"
+
+const coll = db.collection("users");
 
 export const createEmailPass = async (email:string, password:string) => {
-    await app.emailPasswordAuth.registerUser({ email: email, password: password });
-    console.log("registered user");
+
 }
 
-export const getAllUsers = async () => {
-    return app.allUsers;
+export const getAllUsers = () => {
+    const allUsers = coll.find();
+    allUsers.forEach(user => {
+        console.log(user)
+    });
 }
