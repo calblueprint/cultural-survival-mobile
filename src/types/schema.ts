@@ -17,12 +17,12 @@ export type Audio = {
     title: string;
 }
 
-// export type Grant = {
-//     grant_id: string;
-//     category: string;
-//     countries: string[];
-//     deadline: Timestamp;
-//     description: string;
-//     subject: string;
-//     title: string;
-// }
+export type Grant = {
+    grant_id: string;
+    amount: number;
+    countries: string[];
+    deadline: Timestamp;
+    description: string;
+    duration: string;
+    title: string;
+}
