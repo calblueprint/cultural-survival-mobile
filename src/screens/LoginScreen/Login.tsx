@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, Alert } from "react-native";
 import { useAuth } from "../../../providers/AuthProvider";
 import styles from "./styles";
 
-export function LoginView({ navigation }: any) {
+const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, signUp, signIn } = useAuth();
@@ -67,4 +67,6 @@ export function LoginView({ navigation }: any) {
       <Button onPress={onPressSignUp} title="Sign Up" />
     </View>
   );
-}
+};
+
+export default LoginScreen;
