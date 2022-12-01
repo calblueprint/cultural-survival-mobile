@@ -1,1 +1,0 @@
-import { realm } from "./mongoDBApp"

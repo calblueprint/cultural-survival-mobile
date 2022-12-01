@@ -4,7 +4,7 @@ import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import Realm from "realm";
-import { getAllUsers } from "../../mongodb/users";
+import SplashScreen from "../SplashScreen/Splash";
 
 const Login1Screen = ({ navigation }: any) => {
   const handleLogin = () => {
@@ -12,9 +12,6 @@ const Login1Screen = ({ navigation }: any) => {
   };
   const handleSignup = () => {
     navigation.navigate("Signup1");
-  };
-  const handleGetAllUsers = () => {
-    getAllUsers();
   };
 
   return (
@@ -41,7 +38,7 @@ const Login1Screen = ({ navigation }: any) => {
         text="Get All Users"
         buttonStyle={{ marginTop: "5%", backgroundColor: "#A8A8A8" }}
         textStyle={{ color: "#FFF" }}
-        onPress={() => handleGetAllUsers()}
+        onPress={() => navigation.navigate("Login1")}
       />
     </ViewContainer>
   );

@@ -3,7 +3,6 @@ import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
-import { createEmailPass, getAllUsers } from "../../mongodb/users";
 import { useState } from "react";
 
 const Login2Screen = ({ navigation }: any) => {
@@ -12,27 +11,25 @@ const Login2Screen = ({ navigation }: any) => {
   const [users, setUsers] = useState("");
 
   const handleLogin = () => {
-    createEmailPass(email, pass)
     navigation.navigate("Home");
   };
 
-  const handleGetUsers = async () => {
-    const allUsers = await getAllUsers();
-    console.log(allUsers);
-  }
+  const handleGetUsers = async () => {};
 
   return (
     <ViewContainer>
       <Text style={globalStyles.h2}>Welcome Back!</Text>
       <Text style={globalStyles.h3}>Let's log in.</Text>
       <Text style={globalStyles.body1}>EMAIL:</Text>
-      <TextInput 
-        placeholder="email@example.com" 
-        onChangeText={(email) => setEmail(email)}/>
+      <TextInput
+        placeholder="email@example.com"
+        onChangeText={(email) => setEmail(email)}
+      />
       <Text style={globalStyles.body1}>PASSWORD:</Text>
-      <TextInput 
+      <TextInput
         placeholder="password"
-        onChangeText={(pass) => setPass(pass)} />
+        onChangeText={(pass) => setPass(pass)}
+      />
       <Text style={globalStyles.body1}>Forgot password?</Text>
       <RectButton
         text="Log in"

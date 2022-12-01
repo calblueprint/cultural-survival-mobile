@@ -14,12 +14,14 @@ import Signup3Screen from "../screens/Signup3Screen/Signup3";
 import Signup4Screen from "../screens/Signup4Screen/Signup4";
 
 import { RootStackParamList } from "../types/navigation";
+import { LoginScreen } from "../components/LoginScreen";
 
 const UserStack = () => {
   const Stack = createStackNavigator<RootStackParamList>();
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Audio" component={AudioScreen} />

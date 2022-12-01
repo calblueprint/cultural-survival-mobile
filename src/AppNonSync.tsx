@@ -9,11 +9,9 @@ import HomeScreen from "./screens/HomeScreen/Home";
 import UserStack from "./navigation/userStack";
 
 import Realm from "realm";
-import { startupApp } from "./mongodb/mongoDBApp";
 
 const { useQuery } = TaskRealmContext;
 
 export const AppNonSync = () => {
-  const db = startupApp();
   return <UserStack />;
 };
