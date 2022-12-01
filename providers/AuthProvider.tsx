@@ -26,7 +26,7 @@ const AuthProvider = ({ children }: any) => {
   const realmRef = useRef<Realm | any>(null);
 
   useEffect(() => {
-    if (!user) {
+    if (user == null) {
       console.warn("NO USER Logged In");
       return;
     }
