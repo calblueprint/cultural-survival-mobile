@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "cultural-survival",
-    "slug": "cultural-survival",
+    "name": "culturalsurvival",
+    "slug": "culturalsurvival",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.calblueprint.cultural-survival"
+      "bundleIdentifier": "com.calblueprint.culturalsurvival"
     },
     "android": {
-      "package": "com.davidqing6432.culturalsurvival"
+      "package": "com.calblueprint.culturalsurvival"
     }
   }
 }

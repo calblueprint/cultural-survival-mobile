@@ -83,7 +83,7 @@ const HomeScreen = ({ navigation }: any) => {
         text="Sign In"
         buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
         textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("SignIn")}
+        onPress={() => navigation.navigate("Login1")}
       />
     </ViewContainer>
   );
