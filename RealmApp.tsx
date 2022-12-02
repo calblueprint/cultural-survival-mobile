@@ -1,6 +1,6 @@
 import Realm from "realm";
-import { APP_ID } from "@env";
+import { REACT_APP_ID } from "@env";
 
-const app = new Realm.App({ id: "cultural-survival-app-ugsqf" });
+const app = new Realm.App({ id: REACT_APP_ID });
 
 export default app;
