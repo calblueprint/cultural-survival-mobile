@@ -11,15 +11,8 @@ import "../../i18n/i18n";
 import React, { useState, useEffect } from "react";
 
 
-import {
-  CREDENTIALS
-} from "@env";
 
 
-
-
-
-const CRED = JSON.parse(CREDENTIALS);
 
 
 {
