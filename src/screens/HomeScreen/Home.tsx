@@ -16,9 +16,9 @@ import {
 } from "@env";
 
 
-// Your credentials
-//const CREDENTIALS = JSON.parse(TEST);
-//const CREDENTIALS = process.env.CREDENTIALS;
+
+
+
 const CRED = JSON.parse(CREDENTIALS);
 
 
@@ -31,9 +31,8 @@ var lang = 'en'
 //
 
 const HomeScreen = ({ navigation }: any) => {
-
   const { i18n, t } = useTranslation(namespaces.pages.hello);
-  const [text, setText] = useState("");
+  
 
 
 
@@ -43,14 +42,11 @@ const HomeScreen = ({ navigation }: any) => {
   }
   
   function toggle(lg: string) {
-    console.log(lang)
     lang = (lg == 'en' ? 'es' : 'en')
-    console.log(lang)
     return lang
 
   }
   
-
 
   return (
     <ViewContainer>

@@ -1,4 +1,4 @@
-export const namespaces = { //how we break translations up: we could do it all oone page or seperate common ones
+export const namespaces = { //how we break translations up: we could do it all on one page or seperate common ones
     pages: {
       hello: "hello",
       grants: "grants",

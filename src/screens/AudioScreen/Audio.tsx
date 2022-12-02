@@ -16,9 +16,9 @@ import {
 } from "@env";
 
 
-// Your credentials
-//const CREDENTIALS = JSON.parse(TEST);
-//const CREDENTIALS = process.env.CREDENTIALS;
+
+
+
 const CRED = JSON.parse(CREDENTIALS);
 
 
@@ -32,7 +32,7 @@ var lang = 'en'
 
 const AudioScreen = ({ navigation }: any) => {
   const { i18n, t } = useTranslation(namespaces.pages.audio);
-  const [text, setText] = useState("");
+
 
 
 
@@ -42,9 +42,7 @@ const AudioScreen = ({ navigation }: any) => {
   }
   
   function toggle(lg: string) {
-    console.log(lang)
     lang = (lg == 'en' ? 'es' : 'en')
-    console.log(lang)
     return lang
 
   }

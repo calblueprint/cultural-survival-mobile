@@ -19,7 +19,7 @@ export const en = {
       
     },
     [namespaces.pages.audio]: {
-      audio_feed: "AudioFEED_Feed",
+      audio_feed: "Audio Feed",
       
     },
   };
@@ -32,17 +32,17 @@ export const es = {
     },
   },
   [namespaces.pages.hello]: {
-    welcome: "Bienvenida a Cultural Survival.",
+    welcome: "Bienvenidos a Cultural Survival.",
     categories: "Categorías",
     radio: "Radio",
-    grants: "Grants Feed",
+    grants: "Subvenciones",
   
   },
   [namespaces.pages.grants]: {
     grants_feed: "Subvenciones Disponibles",
   },
   [namespaces.pages.audio]: {
-    audio_feed: "AudioFIREBASE_Alimento",
+    audio_feed: "Alimentación de Audio",
     
   },
 };

@@ -16,9 +16,9 @@ import {
 } from "@env";
 
 
-// Your credentials
-//const CREDENTIALS = JSON.parse(TEST);
-//const CREDENTIALS = process.env.CREDENTIALS;
+
+
+
 const CRED = JSON.parse(CREDENTIALS);
 
 
@@ -37,7 +37,7 @@ var lang = 'en'
 
 const GrantsScreen = ({ navigation }: any) => {
   const { i18n, t } = useTranslation(namespaces.pages.grants);
-  const [text, setText] = useState("");
+  
 
 
 
@@ -47,9 +47,7 @@ const GrantsScreen = ({ navigation }: any) => {
   }
   
   function toggle(lg: string) {
-    console.log(lang)
     lang = (lg == 'en' ? 'es' : 'en')
-    console.log(lang)
     return lang
 
   }
