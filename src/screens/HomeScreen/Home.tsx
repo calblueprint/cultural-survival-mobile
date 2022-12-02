@@ -46,7 +46,7 @@ const HomeScreen = ({ navigation }: any) => {
     return lang
 
   }
-  
+
 
   return (
     <ViewContainer>
