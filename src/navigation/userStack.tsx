@@ -16,6 +16,7 @@ import Signup4Screen from "../screens/Signup4Screen/Signup4";
 
 import { RootStackParamList } from "../types/navigation";
 import { AuthProvider } from "../../providers/AuthProvider";
+import { GrantsProvider } from "../../providers/GrantsProvider";
 
 const UserStack = () => {
   const Stack = createStackNavigator<RootStackParamList>();
@@ -27,7 +28,15 @@ const UserStack = () => {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Splash" component={SplashScreen} />
           <Stack.Screen name="Audio" component={AudioScreen} />
-          <Stack.Screen name="Grants" component={GrantsScreen} />
+          <Stack.Screen name="Grants">
+            {() => {
+              return (
+                <GrantsProvider>
+                  <GrantsScreen/>
+                </GrantsProvider>
+              )
+            }}
+          </Stack.Screen>
           <Stack.Screen name="Login1" component={Login1Screen} />
           <Stack.Screen name="Login2" component={Login2Screen} />
           <Stack.Screen name="Signup1" component={Signup1Screen} />

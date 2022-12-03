@@ -5,6 +5,7 @@ import { View, ActivityIndicator } from "react-native";
 import { AuthProvider } from "./providers/AuthProvider";
 import "expo-dev-client";
 
+
 export default function App() {
   return (
     <AuthProvider>

@@ -5,9 +5,27 @@ import Realm, { Configuration } from "realm";
 import { Grant } from "../src/types/realmSchema";
 import { useAuth } from "./AuthProvider";
 
-const GrantsContext = React.createContext(null);
+interface GrantsContextInterface {
+  grants: Object[];
+  createGrant: (amount: number, 
+    countries: string[],
+    deadline: Timestamp | Date,
+    description: string,
+    duration: string,
+    imageUrl: string,
+    title: string,) => void;
+  deleteGrant: (grant: Grant) => void;
+  closeRealm: () => void;
+  // user: Realm.User<
+  //   Realm.DefaultFunctionsFactory,
+  //   SimpleObject,
+  //   Realm.DefaultUserProfileData
+  // > | null;
+}
 
-const GrantsProvider = ( {props} : any ) => {
+const GrantsContext = React.createContext<GrantsContextInterface | null>(null);
+
+const GrantsProvider = ( props : any ) => {
   const [grants, setGrants] = useState([] as Realm.Object[]);
   const { user } = useAuth();
 
@@ -33,7 +51,7 @@ const GrantsProvider = ( {props} : any ) => {
       schema: [Grant.schema],
       sync: {
         user: user,
-        partition: `user=${user.id}`,
+        // partition: `user=${user.id}`,
         newRealmFileBehavior: OpenRealmBehaviorConfiguration,
         existingRealmFileBehavior: OpenRealmBehaviorConfiguration,
       },
@@ -45,9 +63,7 @@ const GrantsProvider = ( {props} : any ) => {
     Realm.open(config).then((realm) => {
       realmRef.current = realm;
 
-      // const syncLinks = realm.objects("Link");
-      // let sortedLinks = syncLinks.sorted("name");
-      // setLinks([...sortedLinks]);
+  
       const syncGrants = realm.objects("Grant");
       setGrants([...syncGrants]);
 
@@ -55,42 +71,55 @@ const GrantsProvider = ( {props} : any ) => {
       // started in other devices (or the cloud)
       syncGrants.addListener(() => {
         console.log("Got new data!");
-        // setGrants([...sortedLinks]);
+        setGrants([...syncGrants]);
       });
     });
 
     return () => {
-      // cleanup function
+      // cleanup function to be called when the component is unmounted.
       closeRealm();
     };
   }, [user]);
 
-  // crud operations will be diff for grants vvv
-  //
-  // const createLink = (newLinkName, newLinkURL) => {
-  //   const realm = realmRef.current;
-  //   realm.write(() => {
-  //     // Create a new link in the same partition -- that is, using the same user id.
-  //     realm.create(
-  //       "Link",
-  //       new Link({
-  //         name: newLinkName || "New Link",
-  //         url: newLinkURL || "http://",
-  //         partition: user.id,
-  //       })
-  //     );
-  //   });
-  // };
-
-  // // Define the function for deleting a link.
-  // const deleteLink = (link) => {
-  //   const realm = realmRef.current;
-  //   realm.write(() => {
-  //     realm.delete(link);
-  //     // after deleting, we get the Links again and update them
-  //     setLinks([...realm.objects("Link").sorted("name")]);
-  //   });
-  // };
+ 
+  // CREATE ---------------
+  const createGrant = (
+    amount: number, 
+    countries: string[],
+    deadline: Timestamp | Date,
+    description: string,
+    duration: string,
+    imageUrl: string,
+    title: string, 
+    ) => {
+    const realm = realmRef.current;
+    realm.write(() => {
+      // Create a new link in the same partition -- that is, using the same user id.
+      realm.create(
+        "Grant",
+        new Grant({
+          // partition: user?.id,
+          amount: amount,
+          countries: countries,
+          deadline: deadline,
+          description: description,
+          duration: duration,
+          imageUrl: imageUrl,
+          title: title,
+        })
+      );
+    });
+  };
+  
+  // Define the function for deleting a link. DELETE ------------
+  const deleteGrant = (grant : Grant) => {
+    const realm = realmRef.current;
+    realm.write(() => {
+      realm.delete(grant);
+      // after deleting, we get the Links again and update them
+      setGrants([...realm.objects("Grant")]);
+    });
+  };
 
   const closeRealm = () => {
     const realm = realmRef.current;
@@ -106,9 +135,9 @@ const GrantsProvider = ( {props} : any ) => {
   // useTasks hook.
   return (
     <GrantsContext.Provider
-      value={{
-        // createLink,
-        // deleteLink,
+      value={{ 
+        createGrant,
+        deleteGrant,
         closeRealm,
         grants,
       }}
@@ -121,10 +150,10 @@ const GrantsProvider = ( {props} : any ) => {
 // The useTasks hook can be used by any descendant of the TasksProvider. It
 // provides the tasks of the TasksProvider's project and various functions to
 // create, update, and delete the tasks in that project.
-const useLinks = () => {
+const useGrants = () => {
   const grants = useContext(GrantsContext);
   if (grants == null) {
-    throw new Error("useGrants() called outside of a TasksProvider?"); // an alert is not placed because this is an error for the developer not the user
+    throw new Error("useGrants() called outside of a GrantsProvider?"); // an alert is not placed because this is an error for the developer not the user
   }
   return grants;
 };

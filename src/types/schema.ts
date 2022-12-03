@@ -1,5 +1,3 @@
-// import { Timestamp } from "firebase/firestore";
-
 export type User = {
     user_id: string;
     admin: boolean;
@@ -21,7 +19,7 @@ export type Grant = {
     grant_id: string;
     amount: number;
     countries: string[];
-    deadline: Timestamp;
+    deadline: Timestamp | Date;
     description: string;
     duration: string;
     title: string;

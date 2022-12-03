@@ -3,6 +3,7 @@ import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
+import { GrantsProvider } from "../../../providers/GrantsProvider";
 
 const HomeScreen = ({ navigation }: any) => {
   return (
