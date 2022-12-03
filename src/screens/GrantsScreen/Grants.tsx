@@ -7,51 +7,22 @@ import styles from "./styles";
 import { useTranslation } from "react-i18next";
 import { namespaces } from "../../i18n/i18n.constants";
 import "../../i18n/i18n";
-
 import React, { useState, useEffect } from "react";
-
-
-import {
-  CREDENTIALS
-} from "@env";
-
-
-
-
-
-const CRED = JSON.parse(CREDENTIALS);
-
-
 {
   "compilerOptions"; {
     "allowJs"; true
   }
 }
 var lang = 'en'
-//
-
-
-
-
-
-
 const GrantsScreen = ({ navigation }: any) => {
   const { i18n, t } = useTranslation(namespaces.pages.grants);
-  
-
-
-
   function handleClick(lang: string) {
     i18n.changeLanguage(lang);
-
   }
-  
   function toggle(lg: string) {
     lang = (lg == 'en' ? 'es' : 'en')
     return lang
-
   }
-
 
   return (
     <ViewContainer>
@@ -61,7 +32,6 @@ const GrantsScreen = ({ navigation }: any) => {
       {...t("buttons.ok", { ns: namespaces.pages.grants })}
       onPress={() => handleClick(toggle(lang))}
       />
-
       <RectButton
         text="Back"
         buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
