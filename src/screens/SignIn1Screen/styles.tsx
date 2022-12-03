@@ -1,7 +1,11 @@
 import { StyleSheet } from "react-native";
+import { FlipInEasyX } from "react-native-reanimated";
 
 export default StyleSheet.create({
-  welcome: {
+  red: {
+    color: "#CC502F",
+  },
+  center: {
     textAlign: "center",
   },
 });

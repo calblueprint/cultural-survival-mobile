@@ -7,12 +7,12 @@ import AudioScreen from "../screens/AudioScreen/Audio";
 import GrantsScreen from "../screens/GrantsScreen/Grants";
 import SplashScreen from "../screens/SplashScreen/Splash";
 import LoginScreen from "../screens/LoginScreen/Login";
-import Login1Screen from "../screens/Login1Screen/Login1";
-import Login2Screen from "../screens/Login2Screen/Login2";
-import Signup1Screen from "../screens/Signup1Screen/Signup1";
-import Signup2Screen from "../screens/Signup2Screen/Signup2";
-import Signup3Screen from "../screens/Signup3Screen/Signup3";
-import Signup4Screen from "../screens/Signup4Screen/Signup4";
+import SignIn1Screen from "../screens/SignIn1Screen/SignIn1";
+import SignIn2Screen from "../screens/SignIn2Screen/SignIn2";
+import Signup1Screen from "../screens/SignUp1Screen/SignUp1";
+import Signup2Screen from "../screens/SignUp2Screen/SignUp2";
+import Signup3Screen from "../screens/SignUp3Screen/SignUp3";
+import Signup4Screen from "../screens/SignUp4Screen/SignUp4";
 
 import { RootStackParamList } from "../types/navigation";
 import { AuthProvider } from "../../providers/AuthProvider";
@@ -23,13 +23,13 @@ const UserStack = () => {
     <AuthProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Splash" component={SplashScreen} />
           <Stack.Screen name="Audio" component={AudioScreen} />
           <Stack.Screen name="Grants" component={GrantsScreen} />
-          <Stack.Screen name="Login1" component={Login1Screen} />
-          <Stack.Screen name="Login2" component={Login2Screen} />
+          <Stack.Screen name="SignIn1" component={SignIn1Screen} />
+          <Stack.Screen name="SignIn2" component={SignIn2Screen} />
           <Stack.Screen name="Signup1" component={Signup1Screen} />
           <Stack.Screen name="Signup2" component={Signup2Screen} />
           <Stack.Screen name="Signup3" component={Signup3Screen} />

@@ -5,12 +5,12 @@ import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import Icon from "../../../assets/icons";
 
-const Signup3Screen = ({ navigation }: any) => {
-  const handleSignup = () => {
-    navigation.navigate("Login2");
+const SignUp3Screen = ({ navigation }: any) => {
+  const handleSignUp = () => {
+    navigation.navigate("SignIn2");
   };
   const handleBack = () => {
-    navigation.navigate("Signup2");
+    navigation.navigate("SignUp2");
   };
   return (
     <ViewContainer>
@@ -24,10 +24,10 @@ const Signup3Screen = ({ navigation }: any) => {
         text="Continue"
         buttonStyle={{ marginTop: "5%", backgroundColor: "#A8A8A8" }}
         textStyle={{ color: "#FFF" }}
-        onPress={() => handleSignup()}
+        onPress={() => handleSignUp()}
       />
     </ViewContainer>
   );
 };
 
-export default Signup3Screen;
+export default SignUp3Screen;

@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: "#FAFAFA",
@@ -10,51 +9,51 @@ export default StyleSheet.create({
   },
 
   h1: {
-    //fontFamily: "DMSans_700Bold",
-    fontSize: 36,
+    fontFamily: "DMSans-Bold",
+    fontSize: 50,
     fontWeight: "700",
     textAlign: "left",
-    color: "#272929",
+    color: "#000000",
   },
 
   h2: {
-    //fontFamily: "DMSans_700Bold",
-    fontSize: 30,
+    fontFamily: "DMSans-Bold",
+    fontSize: 40,
     fontWeight: "700",
     textAlign: "left",
-    color: "#272929",
+    color: "#000000",
   },
 
   h3: {
-    //fontFamily: "DMSans_500Medium",
-    fontSize: 24,
+    fontFamily: "DMSans-Medium",
+    fontSize: 33,
     fontWeight: "500",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   h4: {
-    //fontFamily: "DMSans_500Medium",
-    fontSize: 18,
+    fontFamily: "DMSans-Medium",
+    fontSize: 20,
     fontWeight: "500",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   body1: {
-    //fontFamily: "DMSans_400Regular",
-    fontSize: 14,
+    fontFamily: "DMSans-Regular",
+    fontSize: 15,
     fontWeight: "400",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   body2: {
-    //fontFamily: "DMSans_400Regular",
+    fontFamily: "DMSans-Regular",
     fontSize: 12,
     fontWeight: "400",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   body3: {
@@ -62,7 +61,7 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: "400",
     textAlign: "left",
-    color: '#525454',
+    color: "#000000",
   },
 
   overline1: {
@@ -71,7 +70,7 @@ export default StyleSheet.create({
     fontSize: 14,
     textTransform: "uppercase",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   overline2: {
@@ -80,23 +79,23 @@ export default StyleSheet.create({
     fontSize: 12,
     textTransform: "uppercase",
     textAlign: "left",
-    color: '#525454',
+    color: "#000000",
   },
 
   h3Bold: {
-    //fontFamily: "DMSans_700Bold",
+    fontFamily: "DMSans-Bold",
     fontSize: 24,
     fontWeight: "700",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   h4Bold: {
-    //fontFamily: "DMSans_700Bold",
+    fontFamily: "DMSans-Bold",
     fontSize: 18,
     fontWeight: "700",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   body1Bold: {
@@ -104,7 +103,7 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: "800",
     textAlign: "left",
-    color: "#525454",
+    color: "#000000",
   },
 
   body2Bold: {
@@ -112,7 +111,7 @@ export default StyleSheet.create({
     fontSize: 12,
     fontWeight: "800",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 
   numbers: {
@@ -120,6 +119,6 @@ export default StyleSheet.create({
     fontSize: 12,
     fontWeight: "500",
     textAlign: "left",
-    color: "#525454"
+    color: "#000000",
   },
 });

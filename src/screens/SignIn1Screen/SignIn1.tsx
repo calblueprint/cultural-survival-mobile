@@ -6,9 +6,9 @@ import styles from "./styles";
 import Realm from "realm";
 import SplashScreen from "../SplashScreen/Splash";
 
-const Login1Screen = ({ navigation }: any) => {
+const SignIn1Screen = ({ navigation }: any) => {
   const handleLogin = () => {
-    navigation.navigate("Login2");
+    navigation.navigate("SignIn2");
   };
   const handleSignup = () => {
     navigation.navigate("Signup1");
@@ -17,31 +17,33 @@ const Login1Screen = ({ navigation }: any) => {
   return (
     <ViewContainer>
       <View>
-        <Text style={globalStyles.h2}>Welcome to Cultural Survival.</Text>
-        <Text style={globalStyles.body1}>
+        <Text style={[globalStyles.h3, styles.center]}>
+          Welcome to Cultural Survival.
+        </Text>
+        <Text style={[globalStyles.body1, styles.red, styles.center]}>
           Advancing Indigenous Peoples' Rights & Cultures Worldwide.
         </Text>
       </View>
+      {/* TODO: Potentially extract styles into the button component */}
       <RectButton
         text="Login"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#A8A8A8" }}
+        buttonStyle={{ marginTop: "5%", backgroundColor: "#CC502F" }}
         textStyle={{ color: "#FFF" }}
         onPress={() => handleLogin()}
       />
       <RectButton
         text="Sign Up"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#A8A8A8" }}
-        textStyle={{ color: "#FFF" }}
+        buttonStyle={{
+          marginTop: "5%",
+          borderColor: "#CC502F",
+          borderWidth: 1,
+          backgroundColor: "#FFF",
+        }}
+        textStyle={{ color: "#000", fontWeight: "400" }}
         onPress={() => handleSignup()}
-      />
-      <RectButton
-        text="Get All Users"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#A8A8A8" }}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("Login1")}
       />
     </ViewContainer>
   );
 };
 
-export default Login1Screen;
+export default SignIn1Screen;

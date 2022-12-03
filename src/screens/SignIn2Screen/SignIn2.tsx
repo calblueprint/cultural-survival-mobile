@@ -5,7 +5,7 @@ import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import { useState } from "react";
 
-const Login2Screen = ({ navigation }: any) => {
+const SignIn2Screen = ({ navigation }: any) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [users, setUsers] = useState("");
@@ -52,4 +52,4 @@ const Login2Screen = ({ navigation }: any) => {
   );
 };
 
-export default Login2Screen;
+export default SignIn2Screen;
