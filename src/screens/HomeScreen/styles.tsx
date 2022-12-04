@@ -11,11 +11,16 @@ export default StyleSheet.create({
     justifyContent: "space-evenly",
     paddingTop: "5%",
   },
-  paddingT: {
-    paddingTop: "2%",
+
+  padding: {
+    padding: "2%",
+    alignSelf: "center",
   },
-  paddingL: {
-    paddingLeft: "2%",
+
+  padding2: {
+    marginTop: "2%",
+    paddingLeft: "10%",
+    textAlign: "left",
   },
 
   outerContainer: {

@@ -15,13 +15,11 @@ const HomeScreen = ({ navigation }: any) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <ScrollView>
-        <Text style={styles.paddingT}></Text>
-
-        <Text style={styles.paddingL}>
+        <Text style={styles.padding}>
           <Text style={globalStyles.h2}>Welcome to Cultural Survival.</Text>
         </Text>
-        <Text style={styles.paddingL}>
-          <Text style={globalStyles.h3}>Categories</Text>
+        <Text style={styles.padding2}>
+          <Text style={globalStyles.h4}>Categories</Text>
         </Text>
 
         <View style={styles.container}>
