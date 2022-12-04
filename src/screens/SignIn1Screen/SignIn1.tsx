@@ -11,7 +11,7 @@ const SignIn1Screen = ({ navigation }: any) => {
     navigation.navigate("SignIn2");
   };
   const handleSignup = () => {
-    navigation.navigate("Signup1");
+    navigation.navigate("SignUp1");
   };
 
   return (

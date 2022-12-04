@@ -1,31 +1,47 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
+import LabeledTextInput from "../../components/LabeledTextInput";
 
 const SignUp1Screen = ({ navigation }: any) => {
   const handleSignup = () => {
-    navigation.navigate("Signup2");
+    navigation.navigate("SignUp2");
   };
   return (
     <ViewContainer>
       <Text style={globalStyles.h2}>Sign up here.</Text>
       <Text style={globalStyles.h4}>Let's create an account.</Text>
-
-      <Text style={globalStyles.body1}>EMAIL:</Text>
-      <TextInput placeholder="email@example.com" />
-      <Text style={globalStyles.body1}>USERNAME:</Text>
-      <TextInput placeholder="username" />
-      <Text style={globalStyles.body1}>PASSWORD:</Text>
-      <TextInput placeholder="password" />
-      <Text style={globalStyles.body1}>Choose a strong password.</Text>
-      <RectButton
-        text="Sign Up"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#A8A8A8" }}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => handleSignup()}
-      />
+      <View style={styles.inputs}>
+        <LabeledTextInput
+          label="EMAIL:"
+          placeholder="email@example.com"
+          containerStyle={{ height: "15%" }}
+        />
+        <LabeledTextInput
+          label="USERNAME:"
+          placeholder="Username"
+          containerStyle={{ height: "15%" }}
+        />
+        <LabeledTextInput
+          label="PASSWORD:"
+          placeholder="Password"
+          containerStyle={{ height: "15%" }}
+        />
+        <Text style={globalStyles.body1}>Choose a strong password.</Text>
+        <RectButton
+          text="Sign Up"
+          buttonStyle={{
+            marginTop: "5%",
+            backgroundColor: "#CC502F",
+            width: "100%",
+            height: "15%",
+          }}
+          textStyle={{ color: "#FFF" }}
+          onPress={() => handleSignup()}
+        />
+      </View>
     </ViewContainer>
   );
 };

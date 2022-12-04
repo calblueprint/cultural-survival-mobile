@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import { Text, View, TextInput, Pressable } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import { useState } from "react";
-import Icon from "../../../assets/icons";
+import BackButton from "../../components/BackButton";
+import LabeledTextInput from "../../components/LabeledTextInput";
 
 const SignIn2Screen = ({ navigation }: any) => {
   const [email, setEmail] = useState("");
@@ -23,25 +24,20 @@ const SignIn2Screen = ({ navigation }: any) => {
 
   return (
     <ViewContainer>
-      <Pressable onPress={() => handleBack()} style={styles.back}>
-        <Icon type="chevron_left" />
-        <Text style={globalStyles.body1}>Back</Text>
-      </Pressable>
+      <BackButton handleFunction={() => handleBack()} />
       <View style={styles.container}>
         <Text style={globalStyles.h3}>Welcome Back!</Text>
         <Text style={globalStyles.h4}>Let's log in.</Text>
         <View style={styles.inputs}>
-          <Text style={globalStyles.body1}>EMAIL:</Text>
-          <TextInput
-            style={styles.input}
+          <LabeledTextInput
+            label="EMAIL:"
             placeholder="email@example.com"
-            onChangeText={(email) => setEmail(email)}
+            containerStyle={{ height: "25%" }}
           />
-          <Text style={globalStyles.body1}>PASSWORD:</Text>
-          <TextInput
-            style={styles.input}
+          <LabeledTextInput
+            label="PASSWORD:"
             placeholder="password"
-            onChangeText={(pass) => setPass(pass)}
+            containerStyle={{ height: "25%" }}
           />
           <Text style={globalStyles.body1}>Forgot password?</Text>
         </View>
@@ -64,6 +60,7 @@ const SignIn2Screen = ({ navigation }: any) => {
           </Text>
         </Pressable>
       </View>
+      <View style={styles.spacer} />
     </ViewContainer>
   );
 };

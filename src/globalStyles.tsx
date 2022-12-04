@@ -19,7 +19,7 @@ export default StyleSheet.create({
   h2: {
     fontFamily: "DMSans-Bold",
     fontSize: 40,
-    fontWeight: "700",
+    fontWeight: "400",
     textAlign: "left",
     color: "#000000",
   },

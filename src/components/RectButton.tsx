@@ -22,16 +22,15 @@ const RectButton = ({
       onPress={onPress}
       style={[styles.buttonContainer, buttonStyle]}
     >
-      <Text style={[styles.buttonText, textStyle]}>{text}</Text>
+      <Text style={[globalStyles.body1, styles.buttonText, textStyle]}>
+        {text}
+      </Text>
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   buttonText: {
-    fontFamily: "DMSans-Regular",
-    fontWeight: "400",
-    fontSize: 14,
     textTransform: "uppercase",
     alignSelf: "center",
     color: "#525454",

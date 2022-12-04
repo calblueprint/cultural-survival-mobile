@@ -1,18 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  inputs: {},
-  back: {
-    position: "absolute",
-    top: "3%",
-    left: "3%",
+  inputs: {
+    width: "100%",
+    height: "40%",
     display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  input: {
-    borderWidth: 1,
-    width: "70%",
+    justifyContent: "space-between",
+    marginTop: "10%",
+    marginBottom: "10%",
   },
   underlined: {
     textDecorationLine: "underline",
@@ -23,6 +18,8 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     height: "50%",
     width: "70%",
-    backgroundColor: "blue",
+  },
+  spacer: {
+    height: "25%",
   },
 });

@@ -11,8 +11,8 @@ export type RootStackParamList = {
   SignIn2: undefined;
   Splash: undefined;
   Login: undefined;
-  Signup1: undefined;
-  Signup2: undefined;
-  Signup3: undefined;
-  Signup4: undefined;
+  SignUp1: undefined;
+  SignUp2: undefined;
+  SignUp3: undefined;
+  SignUp4: undefined;
 };
