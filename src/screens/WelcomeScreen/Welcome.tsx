@@ -1,32 +1,40 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { StackScreenProps } from "@react-navigation/stack";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 
-const WelcomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
+const WelcomeScreen = ({ navigation }: any) => {
   return (
     <ViewContainer>
-      <Text style={globalStyles.h2}>Welcome screen!</Text>
-
-      <ViewContainer>
-        <RectButton
-          text="Sign in"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("Sign In")}
-        />
-        <RectButton
-          text="Sign up"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("Sign Up")}
-        />
-      </ViewContainer>
+      <RectButton
+        text="Sign Out"
+        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
+        textStyle={{ color: "#FFF" }}
+        onPress={() => navigation.navigate("Home")}
+      />
+      <RectButton
+        text="Audio"
+        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
+        textStyle={{ color: "#FFF" }}
+        onPress={() => navigation.navigate("Audio")}
+      />
+      <RectButton
+        text="Grants"
+        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
+        textStyle={{ color: "#FFF" }}
+        onPress={() => navigation.navigate("Grants")}
+      />
+      <RectButton
+        text="Sign In"
+        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
+        textStyle={{ color: "#FFF" }}
+        onPress={() => navigation.navigate("SignIn1")}
+      />
     </ViewContainer>
   );
-}
+};
 
 export default WelcomeScreen;

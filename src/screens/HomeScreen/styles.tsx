@@ -17,4 +17,9 @@ export default StyleSheet.create({
   paddingL: {
     paddingLeft: "2%",
   },
+
+  outerContainer: {
+    flex: 1,
+    backgroundColor: "#FAFAFA",
+  },
 });

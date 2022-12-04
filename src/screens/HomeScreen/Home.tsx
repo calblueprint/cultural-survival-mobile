@@ -1,10 +1,9 @@
-import { Text, View, Image, ScrollView } from "react-native";
+import { Text, View, Image, ScrollView, SafeAreaView } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import CategoryCard from "../../components/CategoryCard";
-import * as climateChangeImage from "../../../assets/climateChangeImage.png";
 
 const HomeScreen = ({ navigation }: any) => {
   const climateImage = require("../../../assets/climateChangeImage.png");
@@ -14,7 +13,7 @@ const HomeScreen = ({ navigation }: any) => {
   const communicationImage = require("../../../assets/communication.png");
 
   return (
-    <ViewContainer>
+    <SafeAreaView style={styles.outerContainer}>
       <ScrollView>
         <Text style={styles.paddingT}></Text>
 
@@ -57,39 +56,19 @@ const HomeScreen = ({ navigation }: any) => {
             img1={womenImage}
           />
         </View>
-
-        <Text style={globalStyles.h2}>{t("welcome")}</Text>
-        <RectButton
-          text="toggle"
-          {...t("buttons.ok", { ns: namespaces.pages.hello })}
-          onPress={() => handleClick(toggle(lang))}
-        />
-        <RectButton
-          text="Sign Out"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("Home")}
-        />
-        <RectButton
-          text="Audio"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("Audio")}
-        />
-        <RectButton
-          text="Grants"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("Grants")}
-        />
-        <RectButton
-          text="Sign In"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("SignIn1")}
-        />
       </ScrollView>
-    </ViewContainer>
+
+      <RectButton
+        text="Navigate"
+        buttonStyle={{
+          margin: "5%",
+          backgroundColor: "#253C85",
+          alignSelf: "center",
+        }}
+        textStyle={{ color: "#FFF" }}
+        onPress={() => navigation.navigate("Welcome")}
+      />
+    </SafeAreaView>
   );
 };
 
