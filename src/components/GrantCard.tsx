@@ -1,9 +1,10 @@
 import React, { useState} from 'react';
 import { StyleSheet, ViewComponent } from 'react-native';
-import { View, Pressable, Text, Alert, Modal, TouchableHighlight } from 'react-native';
+import { View, Pressable, Text, Alert, Modal, TouchableHighlight, Image } from 'react-native';
 import { FlipInEasyX } from 'react-native-reanimated';
 import globalStyles from '../globalStyles';
 import ViewContainer from './ViewContainer';
+
 
 
 export const GrantCard = () => {
@@ -38,6 +39,11 @@ export const GrantCard = () => {
                   strengthen their broadcast infrastructure and systems. The Indigenous Community 
                   Media Fund also provides training opportunities in journalism, broadcasting.
                 </Text>
+              </View>
+              <View style={styles.images}>
+                <Image
+                  source={require('../../assets/grantDummyImg.png')}
+                />
               </View>
             </View>
             
@@ -155,7 +161,7 @@ const styles = StyleSheet.create({
   },
   buttonClose: {
     backgroundColor: "#CC502F",
-    width: '94%',
+    width: '96%',
     justifyContent: 'center',
   },
   textStyle: {
@@ -179,6 +185,16 @@ const styles = StyleSheet.create({
   innerModal: {
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: 19
+    marginBottom: 19,
+    width: '96%'
+  },
+  modalBackdrop: {
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    height: '100%',
+  },
+  images: {
+    margin: 6,
+    display: 'flex',
+    justifyContent: 'center'
   }
 });
