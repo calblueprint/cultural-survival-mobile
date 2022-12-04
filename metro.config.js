@@ -4,10 +4,11 @@ module.exports = {
         transform: {
           experimentalImportSupport: false,
           inlineRequires: false,
+          babelTransformerPath: require.resolve("react-native-svg-transformer")
         },
       }),
     },
     resolver: {
-      sourceExts: ['jsx', 'js', 'ts', 'tsx', 'json'], //add here
+      sourceExts: ['jsx', 'js', 'ts', 'tsx', 'json', 'svg'], //add here
     },
   };

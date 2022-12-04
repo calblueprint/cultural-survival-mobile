@@ -33,7 +33,8 @@ const styles =  StyleSheet.create({
       fontWeight: "900",
       fontSize: 14,
       textTransform: "uppercase",
-      alignSelf: "center",
+      // alignSelf: "center",
+      textAlign: "center",
       color: "#525454",
     },
 
@@ -42,7 +43,7 @@ const styles =  StyleSheet.create({
       width: "40%",
       height: "5%",
       justifyContent: "center",
-      marginTop: "3%",
+      // marginTop: "3%",
       borderRadius: 5,
     },
   });

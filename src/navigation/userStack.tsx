@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen/Home";
 import AudioScreen from "../screens/AudioScreen/Audio";
 import GrantsScreen from "../screens/GrantsScreen/Grants";
+<<<<<<< HEAD
 import SplashScreen from "../screens/SplashScreen/Splash";
 import LoginScreen from "../screens/LoginScreen/Login";
 import Login1Screen from "../screens/Login1Screen/Login1";
@@ -14,12 +15,16 @@ import Signup2Screen from "../screens/Signup2Screen/Signup2";
 import Signup3Screen from "../screens/Signup3Screen/Signup3";
 import Signup4Screen from "../screens/Signup4Screen/Signup4";
 
+=======
+import PlayScreen from "../screens/PlayScreen/Play";
+>>>>>>> 699c1e5 (building out audio frontend)
 import { RootStackParamList } from "../types/navigation";
 import { AuthProvider } from "../../providers/AuthProvider";
 
 const UserStack = () => {
   const Stack = createStackNavigator<RootStackParamList>();
   return (
+<<<<<<< HEAD
     <AuthProvider>
       <NavigationContainer>
         <Stack.Navigator>
@@ -37,6 +42,17 @@ const UserStack = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </AuthProvider>
+=======
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Audio" component={AudioScreen} />
+        <Stack.Screen name="Grants" component={GrantsScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="Play" component={PlayScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>    
+>>>>>>> 699c1e5 (building out audio frontend)
   );
 };
 
