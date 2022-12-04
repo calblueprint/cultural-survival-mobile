@@ -30,7 +30,7 @@ const RectButton = ({
 const styles = StyleSheet.create({
   buttonText: {
     fontFamily: "DMSans-Regular",
-    fontWeight: "900",
+    fontWeight: "400",
     fontSize: 14,
     textTransform: "uppercase",
     alignSelf: "center",

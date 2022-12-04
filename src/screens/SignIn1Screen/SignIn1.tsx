@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
@@ -16,32 +16,54 @@ const SignIn1Screen = ({ navigation }: any) => {
 
   return (
     <ViewContainer>
-      <View>
-        <Text style={[globalStyles.h3, styles.center]}>
-          Welcome to Cultural Survival.
-        </Text>
-        <Text style={[globalStyles.body1, styles.red, styles.center]}>
-          Advancing Indigenous Peoples' Rights & Cultures Worldwide.
-        </Text>
+      <View style={styles.container}>
+        <View style={styles.welcome}>
+          <Image
+            source={require("../../../assets/logo.png")}
+            style={styles.image}
+          />
+          <Text style={[globalStyles.h3, styles.center, styles.welcomeText]}>
+            Welcome to Cultural Survival.
+          </Text>
+          <Text
+            style={[
+              globalStyles.body1,
+              styles.red,
+              styles.center,
+              styles.description,
+            ]}
+          >
+            Advancing Indigenous Peoples' Rights & Cultures Worldwide.
+          </Text>
+        </View>
+        {/* TODO: Potentially extract styles into the button component */}
+        <View style={styles.buttons}>
+          <RectButton
+            text="Log In"
+            buttonStyle={{
+              marginTop: "5%",
+              backgroundColor: "#CC502F",
+              width: "80%",
+              height: "30%",
+            }}
+            textStyle={{ color: "#FFF" }}
+            onPress={() => handleLogin()}
+          />
+          <RectButton
+            text="Sign Up"
+            buttonStyle={{
+              marginTop: "5%",
+              borderColor: "#CC502F",
+              borderWidth: 1,
+              backgroundColor: "#FFF",
+              width: "80%",
+              height: "30%",
+            }}
+            textStyle={{ color: "#000" }}
+            onPress={() => handleSignup()}
+          />
+        </View>
       </View>
-      {/* TODO: Potentially extract styles into the button component */}
-      <RectButton
-        text="Login"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#CC502F" }}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => handleLogin()}
-      />
-      <RectButton
-        text="Sign Up"
-        buttonStyle={{
-          marginTop: "5%",
-          borderColor: "#CC502F",
-          borderWidth: 1,
-          backgroundColor: "#FFF",
-        }}
-        textStyle={{ color: "#000", fontWeight: "400" }}
-        onPress={() => handleSignup()}
-      />
     </ViewContainer>
   );
 };
