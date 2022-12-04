@@ -7,11 +7,7 @@
       "**/*"
     ],
     "ios": {
-<<<<<<< HEAD
       "bundleIdentifier": "com.calblueprint.culturalsurvival"
-=======
-      "bundleIdentifier": "org.name.culturalsurvival"
->>>>>>> 699c1e5 (building out audio frontend)
     },
     "android": {
       "package": "com.calblueprint.culturalsurvival"
