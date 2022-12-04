@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		05E66262C8DD4B8585F88540 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E80D7A637647BC8DF8DD93 /* noop-file.swift */; };
+		062DCF14324A41AA86886F9C /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB4550DF3460FB5C51E23 /* DMSans-Medium.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		6A967A64788D4730B5D71EE8 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEBDB690B4694BCCB8ACAA5B /* DMSans-Bold.ttf */; };
+		875A38DB5C9540B28E250636 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E0618E8C3484094A0A9B6AC /* DMSans-Regular.ttf */; };
+		95D16E7BD3954A6785C69EA3 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F800FD1F0D794B109105154B /* DMSans-MediumItalic.ttf */; };
 		96905EF65AED1B983A6B3ABC /* libPods-culturalsurvival.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-culturalsurvival.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
-		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		6A967A64788D4730B5D71EE8 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEBDB690B4694BCCB8ACAA5B /* DMSans-Bold.ttf */; };
-		D41F6B2BFC94404691C4158F /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A665C2F98B945A3ABFAAACE /* DMSans-BoldItalic.ttf */; };
 		B2344E114F234AA48F69AE98 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 639B2B84D3D74F0D8F8D2F5A /* DMSans-Italic.ttf */; };
-		062DCF14324A41AA86886F9C /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB4550DF3460FB5C51E23 /* DMSans-Medium.ttf */; };
-		95D16E7BD3954A6785C69EA3 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F800FD1F0D794B109105154B /* DMSans-MediumItalic.ttf */; };
-		875A38DB5C9540B28E250636 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E0618E8C3484094A0A9B6AC /* DMSans-Regular.ttf */; };
+		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		D41F6B2BFC94404691C4158F /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A665C2F98B945A3ABFAAACE /* DMSans-BoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,20 +32,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = culturalsurvival/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = culturalsurvival/main.m; sourceTree = "<group>"; };
 		28E80D7A637647BC8DF8DD93 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "culturalsurvival/noop-file.swift"; sourceTree = "<group>"; };
+		3A665C2F98B945A3ABFAAACE /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-BoldItalic.ttf"; path = "../assets/fonts/DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3E0618E8C3484094A0A9B6AC /* DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Regular.ttf"; path = "../assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-culturalsurvival.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-culturalsurvival.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		639B2B84D3D74F0D8F8D2F5A /* DMSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Italic.ttf"; path = "../assets/fonts/DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-culturalsurvival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-culturalsurvival.debug.xcconfig"; path = "Target Support Files/Pods-culturalsurvival/Pods-culturalsurvival.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-culturalsurvival.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-culturalsurvival.release.xcconfig"; path = "Target Support Files/Pods-culturalsurvival/Pods-culturalsurvival.release.xcconfig"; sourceTree = "<group>"; };
+		9B2BB4550DF3460FB5C51E23 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Medium.ttf"; path = "../assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = culturalsurvival/SplashScreen.storyboard; sourceTree = "<group>"; };
 		B446F1FBFA714A629F07E908 /* culturalsurvival-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "culturalsurvival-Bridging-Header.h"; path = "culturalsurvival/culturalsurvival-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EEBDB690B4694BCCB8ACAA5B /* DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Bold.ttf"; path = "../assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		F800FD1F0D794B109105154B /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-MediumItalic.ttf"; path = "../assets/fonts/DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-culturalsurvival/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		EEBDB690B4694BCCB8ACAA5B /* DMSans-Bold.ttf */ = {isa = PBXFileReference; name = "DMSans-Bold.ttf"; path = "../assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3A665C2F98B945A3ABFAAACE /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "DMSans-BoldItalic.ttf"; path = "../assets/fonts/DMSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		639B2B84D3D74F0D8F8D2F5A /* DMSans-Italic.ttf */ = {isa = PBXFileReference; name = "DMSans-Italic.ttf"; path = "../assets/fonts/DMSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9B2BB4550DF3460FB5C51E23 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; name = "DMSans-Medium.ttf"; path = "../assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F800FD1F0D794B109105154B /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; name = "DMSans-MediumItalic.ttf"; path = "../assets/fonts/DMSans-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3E0618E8C3484094A0A9B6AC /* DMSans-Regular.ttf */ = {isa = PBXFileReference; name = "DMSans-Regular.ttf"; path = "../assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +134,20 @@
 			path = culturalsurvival/Supporting;
 			sourceTree = "<group>";
 		};
+		BE630FE2E30D4868809A6433 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEBDB690B4694BCCB8ACAA5B /* DMSans-Bold.ttf */,
+				3A665C2F98B945A3ABFAAACE /* DMSans-BoldItalic.ttf */,
+				639B2B84D3D74F0D8F8D2F5A /* DMSans-Italic.ttf */,
+				9B2BB4550DF3460FB5C51E23 /* DMSans-Medium.ttf */,
+				F800FD1F0D794B109105154B /* DMSans-MediumItalic.ttf */,
+				3E0618E8C3484094A0A9B6AC /* DMSans-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		D65327D7A22EEC0BE12398D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,20 +164,6 @@
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
-		};
-		BE630FE2E30D4868809A6433 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				EEBDB690B4694BCCB8ACAA5B /* DMSans-Bold.ttf */,
-				3A665C2F98B945A3ABFAAACE /* DMSans-BoldItalic.ttf */,
-				639B2B84D3D74F0D8F8D2F5A /* DMSans-Italic.ttf */,
-				9B2BB4550DF3460FB5C51E23 /* DMSans-Medium.ttf */,
-				F800FD1F0D794B109105154B /* DMSans-MediumItalic.ttf */,
-				3E0618E8C3484094A0A9B6AC /* DMSans-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -426,7 +426,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -483,7 +483,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
