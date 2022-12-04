@@ -25,7 +25,7 @@ export default StyleSheet.create({
   },
 
   h3: {
-    fontFamily: "DMSans-Medium",
+    fontFamily: "DMSans-Regular",
     fontSize: 33,
     fontWeight: "400",
     textAlign: "left",
@@ -33,7 +33,7 @@ export default StyleSheet.create({
   },
 
   h4: {
-    fontFamily: "DMSans-Medium",
+    fontFamily: "DMSans-Regular",
     fontSize: 20,
     fontWeight: "500",
     textAlign: "left",
