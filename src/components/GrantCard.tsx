@@ -7,7 +7,7 @@ import ViewContainer from './ViewContainer';
 
 
 
-export const GrantCard = () => {
+export const GrantCard = (props : any) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -25,19 +25,20 @@ export const GrantCard = () => {
           <View style={styles.modalView}>
             <View style={styles.innerModal}>
               <View>
-                <Text style={styles.modalTitle}>Indigenous Community Media Youth Fellowship</Text>
+                <Text style={styles.modalTitle}>{props.title}</Text>
               </View>
               <View>
-                <Text style={styles.modalBodyText}>$4059</Text>
+                <Text style={styles.modalBodyText}>{props.amount}</Text>
               </View>
               <View>
-                <Text style={styles.modalBodyText}>Due Date: 10/22/2023</Text>
+                <Text style={styles.modalBodyText}>Due Date: {props.deadline}</Text>
+              </View>
+              <View>
+                <Text style={styles.modalBodyText}>Elligible Countries: {props.countries}</Text>
               </View>
               <View>
                 <Text style={styles.modalBodyText}>
-                  Brief: Providing opportunities for international Indigenous radio stations to 
-                  strengthen their broadcast infrastructure and systems. The Indigenous Community 
-                  Media Fund also provides training opportunities in journalism, broadcasting.
+                  {props.description}
                 </Text>
               </View>
               <View style={styles.images}>
@@ -45,8 +46,8 @@ export const GrantCard = () => {
                   source={require('../../assets/grantDummyImg.png')}
                 />
               </View>
+              
             </View>
-            
             
             <Pressable
               style={[styles.button, styles.buttonClose]}
@@ -57,15 +58,16 @@ export const GrantCard = () => {
           </View>
         </View>
       </Modal>
-      <TouchableHighlight underlayColor={'#942000'} onPress={() => setModalVisible(true)} style={styles.cardContainer}>
-        <View >
-          <Text style={styles.titleText}>Indigenous Community Media Youth Fellowship </Text>
-          <Text style={styles.whiteText}> $4059 </Text>
-          <Text style={styles.whiteText}> Due Date: 10/22/2023 </Text>    
-  
-        </View>
 
+      <TouchableHighlight underlayColor={'#942000'} onPress={() => setModalVisible(true)} style={styles.cardContainer}>
+        <View>
+          <Text style={styles.titleText}>{props.title}</Text>
+          <Text style={styles.whiteText}> {props.amount}</Text>
+          <Text style={styles.whiteText}> Due Date: {props.deadline} </Text>    
+        </View>
     </TouchableHighlight>
+    <Image
+      source={require('../../assets/expand.svg')}/>
 
     </ViewContainer>
 
