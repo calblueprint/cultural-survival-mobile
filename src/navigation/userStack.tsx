@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../screens/HomeScreen/Home";
+import WelcomeScreen from "../screens/WelcomeScreen/Welcome";
 import AudioScreen from "../screens/AudioScreen/Audio";
 import GrantsScreen from "../screens/GrantsScreen/Grants";
 import SplashScreen from "../screens/SplashScreen/Splash";
@@ -24,6 +25,7 @@ const UserStack = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Splash" component={SplashScreen} />
           <Stack.Screen name="Audio" component={AudioScreen} />

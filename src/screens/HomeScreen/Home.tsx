@@ -1,61 +1,72 @@
-import { Text, View } from "react-native";
+import { Text, View, Image, ScrollView, SafeAreaView } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
-import { useTranslation } from "react-i18next";
-import { namespaces } from "../../i18n/i18n.constants";
-import "../../i18n/i18n";
-import React, { useState, useEffect } from "react";
-{
-  "compilerOptions"; {
-    "allowJs"; true
-  }
-}
-var lang = 'en'
-const HomeScreen = ({ navigation }: any) => {
-  const { i18n, t } = useTranslation(namespaces.pages.hello);
-  function handleClick(lang: string) {
-    i18n.changeLanguage(lang);
-  }
-  function toggle(lg: string) {
-    lang = (lg == 'en' ? 'es' : 'en')
-    return lang
-  }
-  return (
-    <ViewContainer>
+import CategoryCard from "../../components/CategoryCard";
 
-      <Text style={globalStyles.h2}>{t("welcome")}</Text>
-      <RectButton 
-      text="toggle"
-      {...t("buttons.ok", { ns: namespaces.pages.hello })}
-      onPress={() => handleClick(toggle(lang))}
-      />
+const HomeScreen = ({ navigation }: any) => {
+  const climateImage = require("../../../assets/climateChangeImage.png");
+  const languageImage = require("../../../assets/language.png");
+  const womenImage = require("../../../assets/women.png");
+  const educationImage = require("../../../assets/education.png");
+  const communicationImage = require("../../../assets/communication.png");
+
+  return (
+    <SafeAreaView style={styles.outerContainer}>
+      <ScrollView>
+        <Text style={styles.padding}>
+          <Text style={globalStyles.h2}>Welcome to Cultural Survival.</Text>
+        </Text>
+        <Text style={styles.padding2}>
+          <Text style={globalStyles.h4}>Categories</Text>
+        </Text>
+
+        <View style={styles.container}>
+          <CategoryCard
+            name1="Climate Change & the Environment"
+            onPress1={() => navigation.navigate("Home")}
+            img1={climateImage}
+          />
+          <CategoryCard
+            name1="Communication"
+            onPress1={() => navigation.navigate("Home")}
+            img1={communicationImage}
+          />
+          <CategoryCard
+            name1="Language & Culture"
+            onPress1={() => navigation.navigate("Home")}
+            img1={languageImage}
+          />
+          <CategoryCard
+            name1="Education"
+            onPress1={() => navigation.navigate("Home")}
+            img1={educationImage}
+          />
+          <CategoryCard
+            name1="Land Rights"
+            onPress1={() => navigation.navigate("Home")}
+            img1={educationImage}
+          />
+          <CategoryCard
+            name1="Indeginous Women"
+            onPress1={() => navigation.navigate("Home")}
+            img1={womenImage}
+          />
+        </View>
+      </ScrollView>
+
       <RectButton
-        text="Sign Out"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
+        text="Navigate"
+        buttonStyle={{
+          margin: "5%",
+          backgroundColor: "#253C85",
+          alignSelf: "center",
+        }}
         textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Welcome")}
       />
-      <RectButton
-        text="Audio"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("Audio")}
-      />
-      <RectButton
-        text="Grants"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("Grants")}
-      />
-      <RectButton
-        text="Sign In"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("SignIn1")}
-      />
-    </ViewContainer>
+    </SafeAreaView>
   );
 };
 
