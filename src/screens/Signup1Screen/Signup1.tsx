@@ -4,7 +4,7 @@ import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 
-const Signup1Screen = ({ navigation }: any) => {
+const SignUp1Screen = ({ navigation }: any) => {
   const handleSignup = () => {
     navigation.navigate("Signup2");
   };
@@ -30,4 +30,4 @@ const Signup1Screen = ({ navigation }: any) => {
   );
 };
 
-export default Signup1Screen;
+export default SignUp1Screen;

@@ -5,7 +5,7 @@ import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import Icon from "../../../assets/icons";
 
-const Signup3Screen = ({ navigation }: any) => {
+const SignUp3Screen = ({ navigation }: any) => {
   const handleSignup = () => {
     navigation.navigate("Login2");
   };
@@ -30,4 +30,4 @@ const Signup3Screen = ({ navigation }: any) => {
   );
 };
 
-export default Signup3Screen;
+export default SignUp3Screen;
