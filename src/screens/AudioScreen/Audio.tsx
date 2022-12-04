@@ -1,11 +1,13 @@
-import { Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import ViewContainer from '../../components/ViewContainer';
+import { ScrollView, Text, View } from 'react-native';
+import Card from '../../components/Card';
 import RectButton from '../../components/RectButton';
+import ViewContainer from '../../components/ViewContainer';
 import globalStyles from '../../globalStyles';
+import '../../i18n/i18n';
 import { namespaces } from '../../i18n/i18n.constants';
 import { RootStackScreenProps } from '../../types/navigation';
-import '../../i18n/i18n';
+import styles from './styles';
 
 let lang = 'en';
 
@@ -28,12 +30,70 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
         textStyle={{}}
         buttonStyle={{}}
       />
-      <RectButton
-        text="Back"
-        buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
-        textStyle={{ color: '#FFF' }}
-        onPress={() => navigation.navigate('Home')}
-      />
+
+      <View style={styles.view}>
+        <Text
+          style={{
+            fontSize: 24,
+            marginBottom: 22,
+            fontWeight: '500',
+            textAlign: 'left',
+            color: '#525454',
+          }}
+        >
+          Recent Search History
+        </Text>
+        <ScrollView
+          horizontal={false}
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+        >
+          <Card
+            name="The Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+            onPress={() => navigation.navigate('Play')}
+          />
+          <Card
+            name="The Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+          <Card
+            name="Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+          <Card
+            name="Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+          <Card
+            name="Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+          <Card
+            name="Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+          <Card
+            name="Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+          <Card
+            name="Threatened Cultures of the Danube Delta"
+            author="Tristan Taylor and Natalie Berthram"
+          />
+        </ScrollView>
+        <RectButton
+          text="Back"
+          buttonStyle={{
+            marginTop: '5%',
+            backgroundColor: '#253C85',
+            marginBottom: '8%',
+            justifyContent: 'flex-end',
+          }}
+          textStyle={{ color: '#FFF' }}
+          onPress={() => navigation.navigate('Home')}
+        />
+      </View>
     </ViewContainer>
   );
 }

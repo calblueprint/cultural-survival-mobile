@@ -1,6 +1,4 @@
-import * as React from "react";
-import { Text, Pressable, GestureResponderEvent } from "react-native";
-import { StyleSheet } from "react-native";
+import { GestureResponderEvent, Pressable, StyleSheet, Text } from "react-native";
 import globalStyles from "../globalStyles";
 
 const RectButton = ({
@@ -29,21 +27,25 @@ const RectButton = ({
   );
 };
 
-const styles = StyleSheet.create({
-  buttonText: {
-    textTransform: "uppercase",
-    alignSelf: "center",
-    color: "#525454",
-  },
+const styles =  StyleSheet.create({
+    buttonText: {
+      fontFamily: "Avenir",
+      fontWeight: "900",
+      fontSize: 14,
+      textTransform: "uppercase",
+      // alignSelf: "center",
+      textAlign: "center",
+      color: "#525454",
+    },
 
-  buttonContainer: {
-    backgroundColor: "#C4C4C4",
-    width: "40%",
-    height: "5%",
-    justifyContent: "center",
-    marginTop: "3%",
-    borderRadius: 5,
-  },
-});
+    buttonContainer: {
+      backgroundColor: "#C4C4C4",
+      width: "40%",
+      height: "5%",
+      justifyContent: "center",
+      // marginTop: "3%",
+      borderRadius: 5,
+    },
+  });
 
 export default RectButton;
