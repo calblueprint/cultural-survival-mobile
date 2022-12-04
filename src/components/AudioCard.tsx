@@ -31,22 +31,22 @@ const styles = StyleSheet.create({
   },
 });
 
-function Card({ onPress, children, style }) {
+function AudioCard({ onPress, children, style }) {
   return (
     <Pressable style={[styles.card, style]} onPress={onPress}>
       {children}
     </Pressable>
   );
 }
-Card.propTypes = {
+AudioCard.propTypes = {
   onPress: func,
   children: node,
   style: ViewPropTypes.style,
 };
 
-export default function SearchCard({ name, onPress, author, previewImage }) {
+export default function SearchAudioCard({ name, onPress, author, previewImage }) {
   return (
-    <Card
+    <AudioCard
       style={{
         display: 'flex',
         flexDirection: 'row',
@@ -70,10 +70,10 @@ export default function SearchCard({ name, onPress, author, previewImage }) {
           {author}
         </Text>
       </View>
-    </Card>
+    </AudioCard>
   );
 }
-SearchCard.propTypes = {
+SearchAudioCard.propTypes = {
   name: string,
   // eslint-disable-next-line react/forbid-prop-types
   author: string,
