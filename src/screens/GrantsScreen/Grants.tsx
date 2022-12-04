@@ -1,10 +1,9 @@
-import { Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView, Modal } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import { GrantCard } from "../../components/GrantCard";
-
 
 const GrantsScreen = ({ navigation }: any) => {
   return (
