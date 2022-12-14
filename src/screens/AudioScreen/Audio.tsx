@@ -1,12 +1,9 @@
-import { Text, View } from "react-native";
+import { Text, View, ScrollView, StyleSheet} from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
-
-import { useTranslation } from "react-i18next";
-import { namespaces } from "../../i18n/i18n.constants";
-import "../../i18n/i18n";
+import AudioCard from "../../components/AudioCard"
 import React, { useState, useEffect } from "react";
 {
   "compilerOptions"; {
@@ -15,30 +12,40 @@ import React, { useState, useEffect } from "react";
 }
 var lang = 'en'
 const AudioScreen = ({ navigation }: any) => {
-  const { i18n, t } = useTranslation(namespaces.pages.audio);
 
-  function handleClick(lang: string) {
-    i18n.changeLanguage(lang);
-  }
-  function toggle(lg: string) {
-    lang = (lg == 'en' ? 'es' : 'en')
-    return lang
-  }
   return (
-    <ViewContainer>
-      <Text style={globalStyles.h2}>{t("audio_feed")}</Text>
-      <RectButton 
-      text="toggle"
-      {...t("buttons.ok", { ns: namespaces.pages.audio })}
-      onPress={() => handleClick(toggle(lang))}
-      />
+    <View style={styles.view}>
+      <Text style={{
+        fontSize: 24,
+        marginBottom: 22,
+        textAlign: 'left',
+        fontWeight: "500",
+        textAlign: "left",
+        color: "#525454"}}>Recent Search History</Text>
+      <ScrollView
+      horizontal = {false}
+      showsHorizontalScrollIndicator = {false}
+      bounces = {false}
+      >
+        <AudioCard name = "The Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram" onPress={() => navigation.navigate("Play")}> </AudioCard>
+        <AudioCard name = "The Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+        <AudioCard name = "Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+        <AudioCard name = "Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+        <AudioCard name = "Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+        <AudioCard name = "Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+        <AudioCard name = "Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+        <AudioCard name = "Threatened Cultures of the Danube Delta" author="Tristan Taylor and Natalie Berthram"> </AudioCard>
+      </ScrollView>
+      
+  
       <RectButton
         text="Back"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
+        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85", marginBottom: "8%", justifyContent: "flex-end"}}
         textStyle={{ color: "#FFF" }}
         onPress={() => navigation.navigate("Home")}
       />
-    </ViewContainer>
+    
+    </View>
   );
 };
 

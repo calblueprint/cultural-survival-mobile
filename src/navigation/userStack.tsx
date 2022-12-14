@@ -14,7 +14,7 @@ import SignUp1Screen from "../screens/SignUp1Screen/SignUp1";
 import SignUp2Screen from "../screens/SignUp2Screen/SignUp2";
 import SignUp3Screen from "../screens/SignUp3Screen/SignUp3";
 import SignUp4Screen from "../screens/SignUp4Screen/SignUp4";
-
+import PlayScreen from "../screens/PlayScreen/Play";
 import { RootStackParamList } from "../types/navigation";
 import { AuthProvider } from "../../providers/AuthProvider";
 
@@ -36,6 +36,7 @@ const UserStack = () => {
           <Stack.Screen name="SignUp2" component={SignUp2Screen} />
           <Stack.Screen name="SignUp3" component={SignUp3Screen} />
           <Stack.Screen name="SignUp4" component={SignUp4Screen} />
+          <Stack.Screen name="Play" component={PlayScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthProvider>
