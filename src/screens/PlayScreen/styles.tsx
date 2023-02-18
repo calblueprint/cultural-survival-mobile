@@ -7,7 +7,7 @@ export default StyleSheet.create({
         backgroundColor: "#FFF",
         alignItems: "flex-start",
         justifyContent: "center",
-        paddingLeft: "5%",
+        // paddingLeft: "5%",
     },
 
     container2: {
@@ -15,16 +15,18 @@ export default StyleSheet.create({
         backgroundColor: "#FFF",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%"
     },
 
 
     header_text: {
-        fontSize: 15,
-        width: "85%",
+        fontSize: 13,
+        // marginTop: "5%",
+        width: "90%",
         paddingLeft: "15%",
-        marginBottom: "5%",
-        textAlign: 'left',
-        fontWeight: "500",
+        // // marginBottom: "5%",
+        // textAlign: 'left',
+        // fontWeight: "500",
         textAlign: "left",
         color: "#525454",
     },
@@ -36,6 +38,7 @@ export default StyleSheet.create({
         fontWeight: "500",
         textAlign: "left",
         color: "#525454",
+        paddingLeft: "5%", 
     },
     
     author_text: {
@@ -43,7 +46,22 @@ export default StyleSheet.create({
         // marginBottom: 22,
         textAlign: 'left',
         fontWeight: "500",
-        textAlign: "left",
         color: "#525454",
+        paddingBottom: "5%",
+        paddingLeft: "5%",
     },
+    audio_container: {
+        justifyContent: "space-around",
+        flexDirection: "row",
+        paddingTop: "5%",
+        width: "90%",
+        paddingLeft: "10%",
+        paddingBottom: "3%",
+        alignItems: "center",
+    },
+
+    audio_bar: {
+        paddingLeft: '5%',
+    },
+
 });

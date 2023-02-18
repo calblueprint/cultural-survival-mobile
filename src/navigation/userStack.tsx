@@ -2,12 +2,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import HomeScreen from "../screens/HomeScreen/Home";
-import WelcomeScreen from "../screens/WelcomeScreen/Welcome";
 import AudioScreen from "../screens/AudioScreen/Audio";
 import GrantsScreen from "../screens/GrantsScreen/Grants";
-<<<<<<< HEAD
-import SplashScreen from "../screens/SplashScreen/Splash";
+import HomeScreen from "../screens/HomeScreen/Home";
 import LoginScreen from "../screens/LoginScreen/Login";
 import SignIn1Screen from "../screens/SignIn1Screen/SignIn1";
 import SignIn2Screen from "../screens/SignIn2Screen/SignIn2";
@@ -15,17 +12,15 @@ import SignUp1Screen from "../screens/SignUp1Screen/SignUp1";
 import SignUp2Screen from "../screens/SignUp2Screen/SignUp2";
 import SignUp3Screen from "../screens/SignUp3Screen/SignUp3";
 import SignUp4Screen from "../screens/SignUp4Screen/SignUp4";
+import SplashScreen from "../screens/SplashScreen/Splash";
+import WelcomeScreen from "../screens/WelcomeScreen/Welcome";
 
-=======
-import PlayScreen from "../screens/PlayScreen/Play";
->>>>>>> 699c1e5 (building out audio frontend)
-import { RootStackParamList } from "../types/navigation";
 import { AuthProvider } from "../../providers/AuthProvider";
+import { RootStackParamList } from "../types/navigation";
 
 const UserStack = () => {
   const Stack = createStackNavigator<RootStackParamList>();
   return (
-<<<<<<< HEAD
     <AuthProvider>
       <NavigationContainer>
         <Stack.Navigator>
@@ -44,17 +39,6 @@ const UserStack = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </AuthProvider>
-=======
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Audio" component={AudioScreen} />
-        <Stack.Screen name="Grants" component={GrantsScreen} />
-        <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="Play" component={PlayScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>    
->>>>>>> 699c1e5 (building out audio frontend)
   );
 };
 

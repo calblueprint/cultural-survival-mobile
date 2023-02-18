@@ -50,7 +50,7 @@ export default function SearchAudioCard({ name, onPress, author, previewImage })
       style={{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'left',
+        // justifyContent: 'left',
       }}
       onPress={onPress}
     >
