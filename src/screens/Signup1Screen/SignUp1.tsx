@@ -59,7 +59,7 @@ const SignUp1Screen = ({ navigation }: any) => {
             try {
               await signUp("asdfg@asdf.asdf", "asdfgh");
             } catch (e) {
-              console.log(e);
+              console.error(e);
             }
           }}
         />
