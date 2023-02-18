@@ -5,7 +5,11 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint:check": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "prettier:check": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write ."
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
@@ -31,10 +35,22 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@calblueprint/eslint-config-react": "^0.0.3",
+    "@calblueprint/prettier-config": "^0.0.1",
     "@types/babel__core": "^7.20.0",
     "@types/react": "18.0.28",
     "@types/react-native": "0.70.5",
     "@types/react-native-dotenv": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4",
     "typescript": "^4.9.5"
   },
   "private": true
