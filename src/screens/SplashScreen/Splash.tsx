@@ -5,12 +5,12 @@ import styles from "./styles";
 import Icon from "../../../assets/icons";
 
 const SplashScreen = ({ navigation }: any) => {
-  return (
-    <ViewContainer>
-      <Icon type="grants_icon" />
-      <Text>This is a test screen!</Text>
-    </ViewContainer>
-  );
+	return (
+		<ViewContainer>
+			<Icon type="grants_icon" />
+			<Text>This is a test screen!</Text>
+		</ViewContainer>
+	);
 };
 
 export default SplashScreen;

@@ -4,11 +4,15 @@ import RectButton from "../../components/RectButton";
 import globalStyles from "../../globalStyles";
 import styles from "./styles";
 import LabeledTextInput from "../../components/LabeledTextInput";
+import { useAuth } from "../../../providers/AuthProvider";
 
 const SignUp1Screen = ({ navigation }: any) => {
   const handleSignup = () => {
     navigation.navigate("SignUp2");
   };
+
+  const { signUp } = useAuth();
+
   return (
     <ViewContainer>
       <Text style={globalStyles.h2}>Sign up here.</Text>
@@ -40,6 +44,24 @@ const SignUp1Screen = ({ navigation }: any) => {
           }}
           textStyle={{ color: "#FFF" }}
           onPress={() => handleSignup()}
+        />
+        {/* Testing queries, signup for email password */}
+        <RectButton
+          text="Sign Up"
+          buttonStyle={{
+            marginTop: "5%",
+            backgroundColor: "#CC502F",
+            width: "100%",
+            height: "15%",
+          }}
+          textStyle={{ color: "#FFF" }}
+          onPress={async () => {
+            try {
+              await signUp("asdfg@asdf.asdf", "asdfgh");
+            } catch (e) {
+              console.error(e);
+            }
+          }}
         />
       </View>
     </ViewContainer>
