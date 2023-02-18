@@ -30,7 +30,11 @@
     "realm": "^11.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@types/babel__core": "^7.20.0",
+    "@types/react": "18.0.28",
+    "@types/react-native": "0.70.5",
+    "@types/react-native-dotenv": "^0.2.0"
   },
   "private": true
 }
