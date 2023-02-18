@@ -1,5 +1,4 @@
 import Realm from "realm";
-//import { REACT_APP_ID } from "@env";
 
 let mongoId = process.env.REACT_APP_ID;
 if (!mongoId) {

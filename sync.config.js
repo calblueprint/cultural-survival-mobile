@@ -1,5 +1,3 @@
-//import REACT_APP_ID from "@env"
-
 let mongoId = process.env.REACT_APP_ID;
 if (!mongoId) {
   console.error("No MongoDB App ID");
