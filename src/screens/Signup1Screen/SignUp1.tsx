@@ -11,7 +11,7 @@ const SignUp1Screen = ({ navigation }: any) => {
     navigation.navigate("SignUp2");
   };
 
-  const { user, signUp } = useAuth();
+  const { signUp } = useAuth();
 
   return (
     <ViewContainer>
@@ -45,6 +45,7 @@ const SignUp1Screen = ({ navigation }: any) => {
           textStyle={{ color: "#FFF" }}
           onPress={() => handleSignup()}
         />
+        {/* Testing queries, signup for email password */}
         <RectButton
           text="Sign Up"
           buttonStyle={{
