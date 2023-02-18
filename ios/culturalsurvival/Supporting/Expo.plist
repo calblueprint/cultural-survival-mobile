@@ -9,8 +9,8 @@
     <key>EXUpdatesLaunchWaitMs</key>
     <integer>0</integer>
     <key>EXUpdatesSDKVersion</key>
-    <string>44.0.0</string>
+    <string>47.0.0</string>
     <key>EXUpdatesURL</key>
-    <string>https://exp.host/@anonymous/culturalsurvival</string>
+    <string>https://exp.host/@davidqing6432/culturalsurvival</string>
   </dict>
 </plist>

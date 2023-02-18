@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
 
   h1: {
-    fontFamily: "DMSans-Bold",
+    //fontFamily: "DMSans-Bold",
     fontSize: 50,
     fontWeight: "700",
     textAlign: "left",
@@ -17,7 +17,7 @@ export default StyleSheet.create({
   },
 
   h2: {
-    fontFamily: "DMSans-Bold",
+    //fontFamily: "DMSans-Bold",
     fontSize: 40,
     fontWeight: "400",
     textAlign: "left",
@@ -25,7 +25,7 @@ export default StyleSheet.create({
   },
 
   h3: {
-    fontFamily: "DMSans-Regular",
+    //fontFamily: "DMSans-Regular",
     fontSize: 33,
     fontWeight: "400",
     textAlign: "left",
@@ -33,7 +33,7 @@ export default StyleSheet.create({
   },
 
   h4: {
-    fontFamily: "DMSans-Regular",
+    //fontFamily: "DMSans-Regular",
     fontSize: 20,
     fontWeight: "500",
     textAlign: "left",
@@ -41,7 +41,7 @@ export default StyleSheet.create({
   },
 
   body1: {
-    fontFamily: "DMSans-Regular",
+    //fontFamily: "DMSans-Regular",
     fontSize: 14,
     fontWeight: "400",
     textAlign: "left",
@@ -49,7 +49,7 @@ export default StyleSheet.create({
   },
 
   body2: {
-    fontFamily: "DMSans-Regular",
+    //fontFamily: "DMSans-Regular",
     fontSize: 12,
     fontWeight: "400",
     textAlign: "left",
@@ -83,7 +83,7 @@ export default StyleSheet.create({
   },
 
   h3Bold: {
-    fontFamily: "DMSans-Bold",
+    //fontFamily: "DMSans-Bold",
     fontSize: 24,
     fontWeight: "700",
     textAlign: "left",
@@ -91,7 +91,7 @@ export default StyleSheet.create({
   },
 
   h4Bold: {
-    fontFamily: "DMSans-Bold",
+    //fontFamily: "DMSans-Bold",
     fontSize: 18,
     fontWeight: "700",
     textAlign: "left",

@@ -71,6 +71,7 @@ const AuthProvider = ({ children }: any) => {
   // see: https://docs.mongodb.com/realm/authentication/providers/
   const signUp = async (email: string, password: string) => {
     await app.emailPasswordAuth.registerUser({ email, password });
+    console.log("worked");
   };
 
   // The signOut function calls the logOut function on the currently
