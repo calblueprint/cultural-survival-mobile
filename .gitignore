@@ -11,5 +11,9 @@ npm-debug.*
 web-build/
 .env
 
+# These are purely generated at the moment
+/ios
+/android
+
 # macOS
 .DS_Store
