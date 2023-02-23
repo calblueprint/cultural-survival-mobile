@@ -36,3 +36,5 @@ class Task extends Realm.Object {
 }
 
 export default Task;
+
+export default Task;
