@@ -16,11 +16,11 @@ export type Audio = {
 };
 
 export type Grant = {
-  grant_id: string;
-  amount: number;
-  countries: string[];
-  deadline: Date;
-  description: string;
-  duration: string;
-  title: string;
+    grant_id: string;
+    amount: number;
+    countries: string[];
+    deadline: Date;
+    description: string;
+    duration: string;
+    title: string;
 };
