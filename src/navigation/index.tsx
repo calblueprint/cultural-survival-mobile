@@ -1,5 +1,4 @@
 // import { useAuthentication } from '../utils/hooks/useAuthentication';
-import React from 'react';
 import UserStack from './userStack';
 // TODO: Uncomment this when UserStack vs. AuthStack is implemented.
 // import AuthStack from './authStack';
