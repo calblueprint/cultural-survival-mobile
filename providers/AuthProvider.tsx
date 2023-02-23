@@ -22,7 +22,6 @@ const AuthContext = React.createContext<AuthContextInterface | null>(null);
 // use the useAuth() hook to access the auth value.
 function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState(app.currentUser);
-  // TODO: Check typing for useRef
   const realmRef = useRef<Realm | null>(null);
 
   type voidFunction = () => void;
