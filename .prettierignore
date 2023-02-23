@@ -1,2 +1,7 @@
 .github/
+
+# Ignore generated files
 package-lock.json
+.expo/
+ios/
+android/
