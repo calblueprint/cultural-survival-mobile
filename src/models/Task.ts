@@ -1,4 +1,4 @@
-import {Realm} from '@realm/react';
+import { Realm } from '@realm/react';
 
 class Task extends Realm.Object {
   _id!: Realm.BSON.ObjectId;
@@ -28,7 +28,7 @@ class Task extends Realm.Object {
     properties: {
       _id: 'objectId',
       description: 'string',
-      isComplete: {type: 'bool', default: false},
+      isComplete: { type: 'bool', default: false },
       createdAt: 'date',
       userId: 'string',
     },

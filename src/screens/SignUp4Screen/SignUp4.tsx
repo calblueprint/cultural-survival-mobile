@@ -23,7 +23,7 @@ function SignUp4Screen({ navigation }: RootStackScreenProps<'SignUp4'>) {
             Check your email for a confirmation code from Cultural Survival.
           </Text>
         </View>
-        {/* TODO: Replace this by somehow importing text style of h4. */}
+        {/* TODO @auth-flow: Replace this by somehow importing text style of h4. */}
         <RectButton
           text="Log in"
           buttonStyle={{
