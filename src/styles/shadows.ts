@@ -1,7 +1,7 @@
 import {Platform} from 'react-native';
 import colors from './colors';
 
-export const shadows = Platform.select({
+const shadows = Platform.select({
   ios: {
     shadowColor: colors.black,
     shadowOffset: {
@@ -15,3 +15,5 @@ export const shadows = Platform.select({
     elevation: 3,
   },
 });
+
+export default shadows;

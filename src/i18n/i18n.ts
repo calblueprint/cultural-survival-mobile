@@ -18,4 +18,5 @@ const createI18n = (language: string): i18nInstance => {
   return i18n;
 };
 
-export const i18n = createI18n(languages.es);
+const i18n = createI18n(languages.es);
+export default i18n;

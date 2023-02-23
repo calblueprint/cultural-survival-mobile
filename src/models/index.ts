@@ -1,6 +1,8 @@
 import {createRealmContext} from '@realm/react';
-import {Task} from './Task';
+import Task from './Task';
 
-export const TaskRealmContext = createRealmContext({
+const TaskRealmContext = createRealmContext({
   schema: [Task],
 });
+
+export default TaskRealmContext

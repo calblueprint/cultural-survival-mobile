@@ -1,11 +1,13 @@
 // import { useAuthentication } from '../utils/hooks/useAuthentication';
-import UserStack from "./userStack";
-import AuthStack from "./authStack";
+import React from 'react';
+import UserStack from './userStack';
+// TODO: Uncomment this when UserStack vs. AuthStack is implemented.
+// import AuthStack from './authStack';
 
 export default function RootNavigation() {
-  //const { user } = useAuthentication();
-  // TODO: switch this order after authentication has been properly implemented
-  //return user ? <AuthStack /> : <UserStack />;
-  // CHANGE THIS WHEN USER AUTH IS IMPLEMENTED
+  // TODO: The current implementation simply defaults to UserStack; when this is fully implemented,
+  // it should return the AuthStack when the user still needs to authenticate, and UserStack
+  // when the user is already authenticated. The code below does this.
+  // return user ? <AuthStack /> : <UserStack />;
   return <UserStack />;
 }

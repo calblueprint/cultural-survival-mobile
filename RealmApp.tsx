@@ -1,9 +1,10 @@
-import Realm from "realm";
+import Realm from 'realm';
 
 let mongoId = process.env.REACT_APP_ID;
 if (!mongoId) {
-  console.error("No MongoDB App ID");
-  mongoId = mongoId = "";
+  // eslint-disable-next-line no-console
+  console.error('No MongoDB App ID');
+  mongoId = '';
 }
 const app = new Realm.App({ id: mongoId });
 
