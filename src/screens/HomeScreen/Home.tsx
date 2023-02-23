@@ -1,17 +1,17 @@
-import { Text, View, Image, ScrollView, SafeAreaView } from 'react-native';
-import ViewContainer from '../../components/ViewContainer';
+import { Text, View, ScrollView, SafeAreaView } from 'react-native';
+import React from 'react';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 
-function HomeScreen({ navigation }: any) {
-  const climateImage = require('../../../assets/climateChangeImage.png');
-  const languageImage = require('../../../assets/language.png');
-  const womenImage = require('../../../assets/women.png');
-  const educationImage = require('../../../assets/education.png');
-  const communicationImage = require('../../../assets/communication.png');
+import climateImage from '../../../assets/climateChangeImage.png';
+import languageImage from '../../../assets/language.png';
+import womenImage from '../../../assets/women.png';
+import educationImage from '../../../assets/education.png';
+import communicationImage from '../../../assets/communication.png';
 
+function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <ScrollView>

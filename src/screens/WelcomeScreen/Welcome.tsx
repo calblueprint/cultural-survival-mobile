@@ -1,12 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
-import globalStyles from '../../globalStyles';
-import styles from './styles';
 
-function WelcomeScreen({ navigation }: any) {
+function WelcomeScreen({ navigation }) {
   return (
     <ViewContainer>
       <RectButton
