@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TextInput, Button, Alert } from "react-native";
+import { View, Text, TextInput, Button} from "react-native";
 import { useAuth } from "../../../providers/AuthProvider";
 import styles from "./styles";
 
-const LoginScreen = ({ navigation }: any) => {
+function LoginScreen({ navigation }: any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, signUp, signIn } = useAuth();
@@ -13,12 +13,11 @@ const LoginScreen = ({ navigation }: any) => {
     if (user != null) {
       navigation.navigate("Home");
     }
-  }, [user]);
+  }, [user, navigation]);
 
   // The onPressSignIn method calls AuthProvider.signIn with the
   // email/password in state.
   const onPressSignIn = async () => {
-    console.log("Trying sign in with user: " + email);
     try {
       await signIn(email, password);
     } catch (error) {
@@ -31,7 +30,6 @@ const LoginScreen = ({ navigation }: any) => {
   // The onPressSignUp method calls AuthProvider.signUp with the
   // email/password in state and then signs in.
   const onPressSignUp = async () => {
-    console.log("Trying Sign Up with user: " + email);
     try {
       await signUp(email, password);
       signIn(email, password);
@@ -67,6 +65,6 @@ const LoginScreen = ({ navigation }: any) => {
       <Button onPress={onPressSignUp} title="Sign Up" />
     </View>
   );
-};
+}
 
 export default LoginScreen;
