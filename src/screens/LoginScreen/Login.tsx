@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { View, Text, TextInput, Button} from "react-native";
 import { useAuth } from "../../../providers/AuthProvider";
 import styles from "./styles";
+import { RootStackScreenProps } from "../../types/navigation";
 
 
 

@@ -1,6 +1,7 @@
 import { Text} from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import Icon from "../../../assets/icons";
+import { RootStackScreenProps } from "../../types/navigation";
 
 
 function SplashScreen({ navigation }: RootStackScreenProps<'Splash'>) {
