@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
-import { View, Text, TextInput, Button} from "react-native";
-import { useAuth } from "../../../providers/AuthProvider";
-import styles from "./styles";
-import { RootStackScreenProps } from "../../types/navigation";
-
-
+import { useEffect, useState } from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
+import { useAuth } from '../../../providers/AuthProvider';
+import styles from './styles';
+import { RootStackScreenProps } from '../../types/navigation';
 
 function LoginScreen({ navigation }: RootStackScreenProps<'Login'>) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { user, signUp, signIn } = useAuth();
 
   useEffect(() => {
     // If there is a user logged in, go to the Projects page.
     if (user != null) {
-      navigation.navigate("Home");
+      navigation.navigate('Home');
     }
   }, [user, navigation]);
 
@@ -57,7 +55,7 @@ function LoginScreen({ navigation }: RootStackScreenProps<'Login'>) {
       </View>
       <View style={styles.inputContainer}>
         <TextInput
-          onChangeText={(text) => setPassword(text)}
+          onChangeText={text => setPassword(text)}
           value={password}
           placeholder="password"
           style={styles.inputStyle}
