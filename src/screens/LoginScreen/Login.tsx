@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, TextInput, Button, Alert } from "react-native";
-import { useAuth } from "../../../providers/AuthProvider";
-import styles from "./styles";
+import { useEffect, useState } from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
+import { useAuth } from '../../../providers/AuthProvider';
+import styles from './styles';
+import { RootStackScreenProps } from '../../types/navigation';
 
-const LoginScreen = ({ navigation }: any) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function LoginScreen({ navigation }: RootStackScreenProps<'Login'>) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { user, signUp, signIn } = useAuth();
 
   useEffect(() => {
     // If there is a user logged in, go to the Projects page.
     if (user != null) {
-      navigation.navigate("Home");
+      navigation.navigate('Home');
     }
-  }, [user]);
+  }, [user, navigation]);
 
   // The onPressSignIn method calls AuthProvider.signIn with the
   // email/password in state.
   const onPressSignIn = async () => {
-    console.log("Trying sign in with user: " + email);
     try {
       await signIn(email, password);
     } catch (error) {
@@ -31,7 +31,6 @@ const LoginScreen = ({ navigation }: any) => {
   // The onPressSignUp method calls AuthProvider.signUp with the
   // email/password in state and then signs in.
   const onPressSignUp = async () => {
-    console.log("Trying Sign Up with user: " + email);
     try {
       await signUp(email, password);
       signIn(email, password);
@@ -56,7 +55,7 @@ const LoginScreen = ({ navigation }: any) => {
       </View>
       <View style={styles.inputContainer}>
         <TextInput
-          onChangeText={(text) => setPassword(text)}
+          onChangeText={text => setPassword(text)}
           value={password}
           placeholder="password"
           style={styles.inputStyle}
@@ -67,6 +66,6 @@ const LoginScreen = ({ navigation }: any) => {
       <Button onPress={onPressSignUp} title="Sign Up" />
     </View>
   );
-};
+}
 
 export default LoginScreen;
