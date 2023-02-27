@@ -3,23 +3,17 @@ import { useTranslation } from 'react-i18next';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
-import styles from './styles';
+// import styles from './styles';
 
 import { namespaces } from '../../i18n/i18n.constants';
 import '../../i18n/i18n';
+import { RootStackScreenProps } from '../../types/navigation';
 
-{
-  ('compilerOptions');
-  {
-    ('allowJs');
-    true;
-  }
-}
 let lang = 'en';
-const GrantsScreen = ({ navigation }: any) => {
+function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
   const { i18n, t } = useTranslation(namespaces.pages.grants);
-  function handleClick(lang: string) {
-    i18n.changeLanguage(lang);
+  function handleClick(newLang: string) {
+    i18n.changeLanguage(newLang);
   }
   function toggle(lg: string) {
     lang = lg === 'en' ? 'es' : 'en';
@@ -32,6 +26,8 @@ const GrantsScreen = ({ navigation }: any) => {
       <RectButton 
         text="toggle"
         {...t('buttons.ok', { ns: namespaces.pages.grants })}
+        buttonStyle={{backgroundColor: 'black'}}
+        textStyle={{color : 'black'}}
         onPress={() => handleClick(toggle(lang))}
       />
       <RectButton
@@ -42,6 +38,6 @@ const GrantsScreen = ({ navigation }: any) => {
       />
     </ViewContainer>
   );
-};
+}
 
 export default GrantsScreen;
