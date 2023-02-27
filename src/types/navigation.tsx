@@ -2,7 +2,6 @@
  * Learn more about using TypeScript with React Navigation:
  * https://reactnavigation.org/docs/typescript/
  */
-
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
