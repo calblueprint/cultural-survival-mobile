@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { View, Text, TextInput, Button} from "react-native";
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useAuth } from "../../../providers/AuthProvider";
 import styles from "./styles";
 
-function LoginScreen({ navigation }: any) {
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+function LoginScreen({ navigation }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, signUp, signIn } = useAuth();
