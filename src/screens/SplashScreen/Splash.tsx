@@ -1,10 +1,12 @@
-import React  from 'react';
 import { Text} from "react-native";
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import ViewContainer from "../../components/ViewContainer";
 import Icon from "../../../assets/icons";
 
 
-function SplashScreen({ navigation }: any) {
+type Props = NativeStackScreenProps<RootStackParamList, 'Profile'>;
+
+function SplashScreen({ navigation }: Props) {
 	return (
 		<ViewContainer>
 			<Icon type="grants_icon" />
@@ -12,5 +14,6 @@ function SplashScreen({ navigation }: any) {
 		</ViewContainer>
 	);
 }
+
 
 export default SplashScreen;
