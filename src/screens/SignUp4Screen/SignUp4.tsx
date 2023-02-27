@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
+import { RootStackScreenProps } from '../../types/navigation';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import BackButton from '../../components/BackButton';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function SignUp4Screen({ navigation }: any) {
+function SignUp4Screen({ navigation }: RootStackScreenProps<'SignUp4'>) {
   function handleLogin() {
     navigation.navigate('SignIn2');
   }

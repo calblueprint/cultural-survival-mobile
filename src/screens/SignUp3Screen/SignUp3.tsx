@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Pressable, Text, TextInput, View } from 'react-native';
+import { Text, View } from 'react-native';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
-import Icon from '../../../assets/icons';
 import BackButton from '../../components/BackButton';
+import { RootStackScreenProps } from '../../types/navigation';
 import LabeledTextInput from '../../components/LabeledTextInput';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function SignUp3Screen({ navigation }: any) {
+function SignUp3Screen({ navigation }: RootStackScreenProps<'SignUp3'>) {
   function handleSignUp() {
     navigation.navigate('SignUp4');
   }

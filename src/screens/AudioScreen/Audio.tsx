@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import { namespaces } from '../../i18n/i18n.constants';
+import { RootStackScreenProps } from '../../types/navigation';
 import '../../i18n/i18n';
 
 let lang = 'en';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function AudioScreen({ navigation }: any) {
+function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
   const { i18n, t } = useTranslation(namespaces.pages.audio);
 
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  function handleClick(lang: string) {
-    i18n.changeLanguage(lang);
+  function handleClick(newLang: string) {
+    i18n.changeLanguage(newLang);
   }
   function toggle(lg: string) {
     lang = lg === 'en' ? 'es' : 'en';
