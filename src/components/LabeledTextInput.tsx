@@ -1,25 +1,6 @@
-import { Text, TextInput, StyleSheet } from "react-native";
+import { Text, TextInput, StyleSheet, TextStyle } from "react-native";
+import React from 'react';
 import globalStyles from "../globalStyles";
-
-const LabeledTextInput = ({
-  label,
-  containerStyle,
-  placeholder,
-}: {
-  label: string;
-  containerStyle: any;
-  placeholder: string;
-}) => {
-  return (
-    <>
-      <Text style={globalStyles.body1}>{label}</Text>
-      <TextInput
-        style={[styles.input, containerStyle]}
-        placeholder={placeholder}
-      />
-    </>
-  );
-};
 
 const styles = StyleSheet.create({
   input: {
@@ -32,5 +13,25 @@ const styles = StyleSheet.create({
     padding: "2%",
   },
 });
+
+function LabeledTextInput({
+  label,
+  containerStyle,
+  placeholder,
+}: {
+  label: string;
+  containerStyle: TextStyle;
+  placeholder: string;
+}) {
+  return (
+    <>
+      <Text style={globalStyles.body1}>{label}</Text>
+      <TextInput
+        style={[styles.input, containerStyle]}
+        placeholder={placeholder}
+      />
+    </>
+  );
+}
 
 export default LabeledTextInput;

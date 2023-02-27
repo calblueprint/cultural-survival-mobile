@@ -1,33 +1,14 @@
 import * as React from "react";
-import globalStyles from "../globalStyles";
 
 import {
   Text,
   Image,
   View,
-  Pressable,
   GestureResponderEvent,
-} from "react-native";
-import { StyleSheet } from "react-native";
-import ViewContainer from "./ViewContainer";
+  StyleSheet, 
+  ImageSourcePropType} from "react-native";
 
-type CategoryProps = {
-  name1: string;
-  onPress1: (event: GestureResponderEvent) => void;
-  img1: string;
-};
-
-const CategoryCard = ({ name1, onPress1, img1 }: CategoryProps) => {
-  return (
-    <View style={styles.categoryContainer}>
-      <View style={styles.orangeBox}>
-        <Image style={styles.imgStyle} source={img1} />
-      </View>
-      <Text style={styles.txtBox}>{name1}</Text>
-    </View>
-  );
-};
-
+ 
 const styles = StyleSheet.create({
   categoryContainer: {
     display: "flex",
@@ -78,5 +59,23 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
+
+type CategoryProps = {
+  name1: string;
+  onPress1: (event: GestureResponderEvent) => void;
+  img1: ImageSourcePropType;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function CategoryCard({ name1, onPress1, img1 }: CategoryProps) {
+  return (
+    <View style={styles.categoryContainer}>
+      <View style={styles.orangeBox}>
+        <Image style={styles.imgStyle} source={img1} />
+      </View>
+      <Text style={styles.txtBox}>{name1}</Text>
+    </View>
+  );
+}
 
 export default CategoryCard;
