@@ -1,9 +1,9 @@
-import Realm from "realm";
+import Realm from 'realm';
 
-let mongoId = process.env.REACT_APP_ID;
+let mongoId = 'cultural-survival-app-ugsqf';
 if (!mongoId) {
-  console.error("No MongoDB App ID");
-  mongoId = mongoId = "";
+  console.error('No MongoDB App ID');
+  mongoId = mongoId = '';
 }
 const app = new Realm.App({ id: mongoId });
 
