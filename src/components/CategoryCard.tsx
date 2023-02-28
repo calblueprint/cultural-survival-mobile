@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
 
 type CategoryProps = {
   name: string;
-  onPress: (event: GestureResponderEvent) => void;
+  pressFunction: (event: GestureResponderEvent) => void;
   img: ImageSourcePropType;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function CategoryCard({ name, onPress, img }: CategoryProps) {
+function CategoryCard({ name, pressFunction, img }: CategoryProps) {
   return (
-    <Pressable onPress={event => onPress(event)}>
+    <Pressable onPress={event => pressFunction(event)}>
       <View style={styles.categoryContainer}>
         <View style={styles.orangeBox}>
           <Image style={styles.imgStyle} source={img} />
