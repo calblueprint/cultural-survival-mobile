@@ -13,15 +13,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function LabeledTextInput({
-  label,
-  containerStyle,
-  placeholder,
-}: {
-  label: string;
-  containerStyle: TextStyle;
-  placeholder: string;
-}) {
+function LabeledTextInput(
+  label: string,
+  containerStyle: TextStyle,
+  placeholder: string,
+) {
   return (
     <>
       <Text style={globalStyles.body1}>{label}</Text>

@@ -5,6 +5,7 @@ import {
   GestureResponderEvent,
   StyleSheet,
   ImageSourcePropType,
+  Pressable,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -59,20 +60,22 @@ const styles = StyleSheet.create({
 });
 
 type CategoryProps = {
-  name1: string;
-  onPress1: (event: GestureResponderEvent) => void;
-  img1: ImageSourcePropType;
+  name: string;
+  onPress: (event: GestureResponderEvent) => void;
+  img: ImageSourcePropType;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function CategoryCard({ name1, onPress1, img1 }: CategoryProps) {
+function CategoryCard({ name, onPress, img }: CategoryProps) {
   return (
-    <View style={styles.categoryContainer}>
-      <View style={styles.orangeBox}>
-        <Image style={styles.imgStyle} source={img1} />
+    <Pressable onPress={event => onPress(event)}>
+      <View style={styles.categoryContainer}>
+        <View style={styles.orangeBox}>
+          <Image style={styles.imgStyle} source={img} />
+        </View>
+        <Text style={styles.txtBox}>{name}</Text>
       </View>
-      <Text style={styles.txtBox}>{name1}</Text>
-    </View>
+    </Pressable>
   );
 }
 

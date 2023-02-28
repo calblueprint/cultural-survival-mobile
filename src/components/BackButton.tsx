@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function BackButton({ handleFunction }: { handleFunction: () => void }) {
+function BackButton(handleFunction: () => void) {
   return (
     <Pressable onPress={() => handleFunction()} style={styles.back}>
       <Icon type="chevron_left" />
