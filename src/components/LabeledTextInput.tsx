@@ -1,16 +1,15 @@
-import { Text, TextInput, StyleSheet, TextStyle } from "react-native";
-import React from 'react';
-import globalStyles from "../globalStyles";
+import { Text, TextInput, StyleSheet, TextStyle } from 'react-native';
+import globalStyles from '../globalStyles';
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: "#F3F2F2",
+    backgroundColor: '#F3F2F2',
     borderWidth: 1,
-    borderColor: "#A8A8A8",
-    width: "100%",
-    height: "10%",
+    borderColor: '#A8A8A8',
+    width: '100%',
+    height: '10%',
     borderRadius: 5,
-    padding: "2%",
+    padding: '2%',
   },
 });
 

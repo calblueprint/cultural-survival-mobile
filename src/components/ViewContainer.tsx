@@ -1,6 +1,5 @@
-import * as React from "react";
-import { View } from "react-native";
-import globalStyles from "../globalStyles";
+import { View } from 'react-native';
+import globalStyles from '../globalStyles';
 
 type ViewProps = {
   children?: React.ReactNode;

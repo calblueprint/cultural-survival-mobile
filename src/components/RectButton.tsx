@@ -1,20 +1,26 @@
-import * as React from "react";
-import { Text, Pressable, GestureResponderEvent, ViewStyle, TextStyle , StyleSheet } from "react-native";
-import globalStyles from "../globalStyles";
+import {
+  Text,
+  Pressable,
+  GestureResponderEvent,
+  ViewStyle,
+  TextStyle,
+  StyleSheet,
+} from 'react-native';
+import globalStyles from '../globalStyles';
 
 const styles = StyleSheet.create({
   buttonText: {
-    textTransform: "uppercase",
-    alignSelf: "center",
-    color: "#525454",
+    textTransform: 'uppercase',
+    alignSelf: 'center',
+    color: '#525454',
   },
 
   buttonContainer: {
-    backgroundColor: "#C4C4C4",
-    width: "40%",
-    height: "5%",
-    justifyContent: "center",
-    marginTop: "3%",
+    backgroundColor: '#C4C4C4',
+    width: '40%',
+    height: '5%',
+    justifyContent: 'center',
+    marginTop: '3%',
     borderRadius: 5,
   },
 });
