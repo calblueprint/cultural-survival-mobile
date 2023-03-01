@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
-import styles from './styles';
 import { namespaces } from '../../i18n/i18n.constants';
 import { RootStackScreenProps } from '../../types/navigation';
 import '../../i18n/i18n';
@@ -24,9 +23,10 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
     <ViewContainer>
       <Text style={globalStyles.h2}>{t('audio_feed')}</Text>
       <RectButton
-        text="toggle"
-        {...t('buttons.ok', { ns: namespaces.pages.audio })}
+        text={t('buttons.ok', { ns: namespaces.pages.audio })}
         onPress={() => handleClick(toggle(lang))}
+        textStyle={{}}
+        buttonStyle={{}}
       />
       <RectButton
         text="Back"
