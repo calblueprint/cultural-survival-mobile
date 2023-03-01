@@ -22,7 +22,6 @@ function PlayScreen() {
       </View>
       <View style={styles.container2}>
         <Image
-          // source={{ uri: previewImage }}
           style={{
             height: 275,
             width: 275,
