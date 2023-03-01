@@ -17,6 +17,7 @@ export type RootStackParamList = {
   SignUp2: undefined;
   SignUp3: undefined;
   SignUp4: undefined;
+  Play: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<RootStackParamList, T>;

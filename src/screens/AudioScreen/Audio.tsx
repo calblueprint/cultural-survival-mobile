@@ -1,40 +1,74 @@
-import { Text } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import ViewContainer from '../../components/ViewContainer';
-import RectButton from '../../components/RectButton';
-import globalStyles from '../../globalStyles';
-import { namespaces } from '../../i18n/i18n.constants';
-import { RootStackScreenProps } from '../../types/navigation';
+import { ScrollView, Text, TextInput, View } from 'react-native';
+import AudioCard from '../../components/AudioCard';
 import '../../i18n/i18n';
-
-let lang = 'en';
+import { RootStackScreenProps } from '../../types/navigation';
+import styles from './styles';
 
 function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
-  const { i18n, t } = useTranslation(namespaces.pages.audio);
-
-  function handleClick(newLang: string) {
-    i18n.changeLanguage(newLang);
-  }
-  function toggle(lg: string) {
-    lang = lg === 'en' ? 'es' : 'en';
-    return lang;
-  }
   return (
-    <ViewContainer>
-      <Text style={globalStyles.h2}>{t('audio_feed')}</Text>
-      <RectButton
-        text={t('buttons.ok', { ns: namespaces.pages.audio })}
-        onPress={() => handleClick(toggle(lang))}
-        textStyle={{}}
-        buttonStyle={{}}
+    <View style={styles.view}>
+      <TextInput
+        placeholder="Search"
+        style={{
+          width: '95%',
+          height: '7%',
+          backgroundColor: '#D9D9D9',
+          borderRadius: 10,
+          padding: '3%',
+          marginBottom: '5%',
+        }}
       />
-      <RectButton
-        text="Back"
-        buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
-        textStyle={{ color: '#FFF' }}
-        onPress={() => navigation.navigate('Home')}
-      />
-    </ViewContainer>
+      <Text
+        style={{
+          fontSize: 24,
+          marginBottom: 22,
+          fontWeight: '500',
+          textAlign: 'left',
+          color: '#525454',
+        }}
+      >
+        Recent Search History
+      </Text>
+      <ScrollView
+        horizontal={false}
+        showsHorizontalScrollIndicator={false}
+        bounces={false}
+      >
+        <AudioCard
+          name="Green Colonization: An Interview With Maja Kristine Jama"
+          author="Shaldon Ferris"
+          onPress={() => navigation.navigate('Play')}
+        />
+        <AudioCard
+          name="The Threatened Cultures of the Danube Delta"
+          author="Tristan Taylor and Natalie Berthram"
+        />
+        <AudioCard
+          name="An Interview with Preston Hardison on the Convention on Biodiversity"
+          author="Preson Hardison"
+        />
+        <AudioCard
+          name="Mrinalini Rai on the Convention on Biodiversity and Gender Rights "
+          author="Mrinali Rai"
+        />
+        <AudioCard
+          name="Threatened Cultures of the Danube Delta"
+          author="Tristan Taylor and Natalie Berthram"
+        />
+        <AudioCard
+          name="Threatened Cultures of the Danube Delta"
+          author="Tristan Taylor and Natalie Berthram"
+        />
+        <AudioCard
+          name="Threatened Cultures of the Danube Delta"
+          author="Tristan Taylor and Natalie Berthram"
+        />
+        <AudioCard
+          name="Threatened Cultures of the Danube Delta"
+          author="Tristan Taylor and Natalie Berthram"
+        />
+      </ScrollView>
+    </View>
   );
 }
 
