@@ -29,7 +29,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function AudioCard({ onPress, children, style }) {
+type AudioCardProps = {
+  onPress?: () => void;
+  children: React.ReactNode;
+  style?: object;
+};
+
+function AudioCard({ onPress, children, style }: AudioCardProps) {
   return (
     <Pressable style={[styles.card, style]} onPress={onPress}>
       {children}
@@ -37,7 +43,14 @@ function AudioCard({ onPress, children, style }) {
   );
 }
 
-export default function SearchAudioCard({ name, onPress, author, previewImage }) {
+type SearchAudioCardProps = {
+  name: string;
+  onPress?: () => void;
+  author: string;
+  previewImage?: string;
+};
+
+export default function SearchAudioCard({ name, onPress, author, previewImage }: SearchAudioCardProps) {
   return (
     <AudioCard
       style={{
