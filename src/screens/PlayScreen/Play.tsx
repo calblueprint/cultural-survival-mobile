@@ -39,7 +39,7 @@ function PlayScreen() {
       <Text style={styles.author_text}>Shaldon Ferris</Text>
 
       <View style={{ paddingLeft: '5%' }}>
-        <Icon type="play_bar" style={styles.audio_bar} />
+        <Icon type="play_bar" />
       </View>
       <View style={styles.audio_container}>
         <Icon type="audio_back" />

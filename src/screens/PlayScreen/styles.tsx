@@ -59,9 +59,4 @@ export default StyleSheet.create({
         paddingBottom: "3%",
         alignItems: "center",
     },
-
-    audio_bar: {
-        paddingLeft: '5%',
-    },
-
 });
