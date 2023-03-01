@@ -7,13 +7,14 @@ export type IconType =
   | "search_icon"
   | "library_icon"
   | "chevron_left"
-    "play_bar"
-    "play_button"
-    "options"
-    "bookmark"
-    "audio_forward"
-    "audio_back"
-    "dropdown";
+  | "play_bar"
+  | "play_button"
+  | "options"
+  | "bookmark"
+  | "audio_forward"
+  | "audio_back"
+  | "dropdown";
+  
 const IconSvgs: Record<IconType, React.ReactElement> = {
   grants_icon: (
     <SvgXml
