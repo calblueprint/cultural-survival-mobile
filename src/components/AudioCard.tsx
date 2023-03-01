@@ -1,11 +1,9 @@
 import React from 'react';
-import { arrayOf, func, node, object, string } from 'prop-types';
 import {
   Pressable,
   StyleSheet,
   Text,
   View,
-  ViewPropTypes,
   Image,
 } from 'react-native';
 
@@ -38,11 +36,6 @@ function AudioCard({ onPress, children, style }) {
     </Pressable>
   );
 }
-AudioCard.propTypes = {
-  onPress: func,
-  children: node,
-  style: ViewPropTypes.style,
-};
 
 export default function SearchAudioCard({ name, onPress, author, previewImage }) {
   return (
@@ -73,10 +66,3 @@ export default function SearchAudioCard({ name, onPress, author, previewImage })
     </AudioCard>
   );
 }
-SearchAudioCard.propTypes = {
-  name: string,
-  // eslint-disable-next-line react/forbid-prop-types
-  author: string,
-  onPress: func,
-  previewImage: string,
-};
