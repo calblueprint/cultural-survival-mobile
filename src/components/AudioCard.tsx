@@ -1,31 +1,21 @@
-import React from 'react';
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
-    // paddingLeft: 5,
     paddingBottom: 30,
-    width: 350
+    width: 350,
   },
   title: {
     fontSize: 15,
     marginLeft: 15,
-
-    // fontWeight: 'bold',
   },
   meta: {
     marginTop: 10,
     marginLeft: 15,
     fontSize: 11.33,
     color: '#333',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
 });
 
@@ -50,17 +40,21 @@ type SearchAudioCardProps = {
   previewImage?: string;
 };
 
-export default function SearchAudioCard({ name, onPress, author, previewImage }: SearchAudioCardProps) {
+export default function SearchAudioCard({
+  name,
+  onPress,
+  author,
+  previewImage,
+}: SearchAudioCardProps) {
   return (
     <AudioCard
       style={{
         display: 'flex',
         flexDirection: 'row',
-        // justifyContent: 'left',
       }}
       onPress={onPress}
     >
-          <Image
+      <Image
         source={{ uri: previewImage }}
         style={{
           height: 79,
@@ -69,12 +63,9 @@ export default function SearchAudioCard({ name, onPress, author, previewImage }:
           borderRadius: 9.5,
         }}
       />
-
-      <View style={{width:250}}>
-        <Text style={styles.title} >{name}</Text>
-        <Text style={styles.meta}>
-          {author}
-        </Text>
+      <View style={{ width: 250 }}>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.meta}>{author}</Text>
       </View>
     </AudioCard>
   );
