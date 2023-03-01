@@ -68,13 +68,6 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
           author="Tristan Taylor and Natalie Berthram"
         />
       </ScrollView>
-
-      {/* <RectButton
-        text="Back"
-        buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85", marginBottom: "8%", justifyContent: "flex-end"}}
-        textStyle={{ color: "#FFF" }}
-        onPress={() => navigation.navigate("Home")}
-      /> */}
     </View>
   );
 }
