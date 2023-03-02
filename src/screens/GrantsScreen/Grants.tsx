@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
-// import styles from './styles';
 
 import { namespaces } from '../../i18n/i18n.constants';
 import '../../i18n/i18n';
@@ -23,11 +22,10 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
   return (
     <ViewContainer>
       <Text style={globalStyles.h2}>{t('grants_feed')}</Text>
-      <RectButton 
-        text="toggle"
-        {...t('buttons.ok', { ns: namespaces.pages.grants })}
-        buttonStyle={{backgroundColor: 'black'}}
-        textStyle={{color : 'black'}}
+      <RectButton
+        text={t('buttons.ok', { ns: namespaces.pages.grants })}
+        buttonStyle={{ backgroundColor: 'black' }}
+        textStyle={{ color: 'black' }}
         onPress={() => handleClick(toggle(lang))}
       />
       <RectButton
