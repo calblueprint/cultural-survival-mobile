@@ -149,6 +149,9 @@ function GrantCard({
 }: GrantCardProps) {
   const [modalVisible, setModalVisible] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
+  const placeholderImage = require('../../assets/grantPlaceholderImg.png');
+
   return (
     <ViewContainer>
       <Modal
@@ -181,7 +184,7 @@ function GrantCard({
                 <Text style={styles.modalBodyText}>{description}</Text>
               </View>
               <View style={styles.images}>
-                <Image source={require('../../assets/grantDummyImg.png')} />
+                <Image source={placeholderImage} />
               </View>
             </View>
             <Pressable
