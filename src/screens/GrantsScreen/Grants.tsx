@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ScrollView, Text, View } from 'react-native';
-import { GrantCard } from '../../components/GrantCard';
+import GrantCard from '../../components/GrantCard';
 import RectButton from '../../components/RectButton';
 import ViewContainer from '../../components/ViewContainer';
 import globalStyles from '../../globalStyles';
