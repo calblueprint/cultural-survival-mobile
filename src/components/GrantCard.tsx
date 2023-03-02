@@ -9,6 +9,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
+import Icon from '../../assets/icons';
 import ViewContainer from './ViewContainer';
 
 const styles = StyleSheet.create({
@@ -203,7 +204,7 @@ function GrantCard({
           <Text style={styles.whiteText}> Due Date: {deadline} </Text>
         </View>
       </TouchableHighlight>
-      <Image source={require('../../assets/expand.svg')} />
+      <Icon type="expand" />
     </ViewContainer>
   );
 }
