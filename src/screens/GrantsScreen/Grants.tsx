@@ -79,13 +79,6 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
           deadline="05/09/2023"
           description="Brief: Providing opportunities for international Indigenous radio stations to strengthen their broadcast infrastructure and systems. The Indigenous Community /Media Fund also provides training opportunities in journalism, broadcasting."
         />
-
-        {/* <RectButton
-          text="Back"
-          buttonStyle={{ marginTop: "5%", backgroundColor: "#253C85" }}
-          textStyle={{ color: "#FFF" }}
-          onPress={() => navigation.navigate("Home")}
-        /> */}
       </ViewContainer>
     </ScrollView>
   );
