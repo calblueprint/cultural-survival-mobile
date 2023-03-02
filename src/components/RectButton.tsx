@@ -25,13 +25,21 @@ const styles = StyleSheet.create({
   },
 });
 
-function RectButton(
-  text: string,
-  onPress: (event: GestureResponderEvent) => void,
-  buttonStyle: ViewStyle,
-  textStyle: TextStyle,
-  disable?: boolean,
-) {
+type RectButtonProps = {
+  text: string;
+  onPress: (event: GestureResponderEvent) => void;
+  buttonStyle: ViewStyle;
+  textStyle: TextStyle;
+  disable?: boolean;
+};
+
+function RectButton({
+  text,
+  onPress,
+  buttonStyle,
+  textStyle,
+  disable,
+}: RectButtonProps) {
   return (
     <Pressable
       disabled={disable}

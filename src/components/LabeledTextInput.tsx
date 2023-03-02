@@ -1,4 +1,4 @@
-import { Text, TextInput, StyleSheet, TextStyle } from 'react-native';
+import { StyleSheet, Text, TextInput, TextStyle } from 'react-native';
 import globalStyles from '../globalStyles';
 
 const styles = StyleSheet.create({
@@ -13,11 +13,17 @@ const styles = StyleSheet.create({
   },
 });
 
-function LabeledTextInput(
-  label: string,
-  containerStyle: TextStyle,
-  placeholder: string,
-) {
+type LabeledTextInputProps = {
+  label: string;
+  containerStyle: TextStyle;
+  placeholder: string;
+};
+
+function LabeledTextInput({
+  label,
+  containerStyle,
+  placeholder,
+}: LabeledTextInputProps) {
   return (
     <>
       <Text style={globalStyles.body1}>{label}</Text>
