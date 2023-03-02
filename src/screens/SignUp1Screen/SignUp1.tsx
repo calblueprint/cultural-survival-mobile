@@ -60,6 +60,7 @@ function SignUp1Screen({ navigation }: RootStackScreenProps<'SignUp1'>) {
             try {
               await signUp('asdfg@asdf.asdf', 'asdfgh');
             } catch (e) {
+              // eslint-disable-next-line no-console
               console.error(e);
             }
           }}
@@ -67,6 +68,6 @@ function SignUp1Screen({ navigation }: RootStackScreenProps<'SignUp1'>) {
       </View>
     </ViewContainer>
   );
-};
+}
 
 export default SignUp1Screen;
