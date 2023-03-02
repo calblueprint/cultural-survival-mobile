@@ -7,7 +7,7 @@ import styles from './styles';
 import BackButton from '../../components/BackButton';
 import LabeledTextInput from '../../components/LabeledTextInput';
 
-function SignUp2Screen({ navigation }: RootStackScreenProps<'SignUpScreen2'>) {
+function SignUp2Screen({ navigation }: RootStackScreenProps<'SignUp2'>) {
   const handleSignUp = () => {
     navigation.navigate('SignUp3');
   };
@@ -38,6 +38,6 @@ function SignUp2Screen({ navigation }: RootStackScreenProps<'SignUpScreen2'>) {
       </View>
     </ViewContainer>
   );
-};
+}
 
 export default SignUp2Screen;
