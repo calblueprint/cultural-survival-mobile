@@ -89,23 +89,10 @@ const styles = StyleSheet.create({
     padding: 10,
     elevation: 2,
   },
-  buttonOpen: {
-    backgroundColor: '#CC502F',
-    justifyContent: 'center',
-  },
   buttonClose: {
     backgroundColor: '#CC502F',
     width: '96%',
     justifyContent: 'center',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
   },
   modalTitle: {
     fontSize: 22,
@@ -120,10 +107,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 19,
     width: '96%',
-  },
-  modalBackdrop: {
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    height: '100%',
   },
   images: {
     margin: 6,

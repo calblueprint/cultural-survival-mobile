@@ -11,10 +11,4 @@ export default StyleSheet.create({
     marginLeft: 24,
     marginTop: 20,
   },
-  innerContainer: {
-    flex: 1,
-    backgroundColor: '#FAFAFA',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
 });
