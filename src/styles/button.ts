@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from './colors';
 
-export const buttonStyles: StyleSheet.NamedStyles<any> = {
+const buttonStyles = StyleSheet.create({
   button: {
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -17,4 +17,6 @@ export const buttonStyles: StyleSheet.NamedStyles<any> = {
     fontSize: 17,
     fontWeight: 'bold',
   },
-};
+});
+
+export default buttonStyles;

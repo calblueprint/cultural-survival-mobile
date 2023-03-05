@@ -2,11 +2,11 @@
  * Learn more about using TypeScript with React Navigation:
  * https://reactnavigation.org/docs/typescript/
  */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
   Home: undefined;
+  Welcome: undefined;
   Audio: undefined;
   Grants: undefined;
   SignIn1: undefined;
@@ -20,4 +20,5 @@ export type RootStackParamList = {
   Play: undefined;
 };
 
-export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<RootStackParamList, T>;
+export type RootStackScreenProps<T extends keyof RootStackParamList> =
+  NativeStackScreenProps<RootStackParamList, T>;

@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
-import Realm from "realm";
-import app from "../RealmApp";
+import React, { useContext, useState, useEffect, useRef, useMemo } from 'react';
+import Realm from 'realm';
+import app from '../RealmApp';
 
 interface AuthContextInterface {
   signUp: (email: string, password: string) => Promise<void>;
@@ -20,15 +20,16 @@ const AuthContext = React.createContext<AuthContextInterface | null>(null);
 // The AuthProvider is responsible for user management and provides the
 // AuthContext value to its descendants. Components under an AuthProvider can
 // use the useAuth() hook to access the auth value.
-const AuthProvider = ({ children }: any) => {
+function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState(app.currentUser);
-  // TODO: Check typing for useRef
-  const realmRef = useRef<Realm | any>(null);
+  const realmRef = useRef<Realm | null>(null);
 
-  useEffect(() => {
+  type voidFunction = () => void;
+  useEffect((): voidFunction => {
     if (user == null) {
-      console.warn("NO USER Logged In");
-      return;
+      // eslint-disable-next-line no-console
+      console.warn('NO USER Logged In');
+      return () => null;
     }
 
     const config = {
@@ -41,7 +42,7 @@ const AuthProvider = ({ children }: any) => {
     // Open a realm with the logged in user's partition value in order
     // to get the links that the logged in user added
     // (instead of all the links stored for all the users)
-    Realm.open(config).then((userRealm) => {
+    Realm.open(config).then(userRealm => {
       realmRef.current = userRealm;
     });
 
@@ -73,37 +74,33 @@ const AuthProvider = ({ children }: any) => {
     await app.emailPasswordAuth.registerUser({ email, password });
   };
 
-  // The signOut function calls the logOut function on the currently
-  // logged in user
-  const signOut = () => {
-    if (user == null) {
-      console.warn("Not logged in, can't log out!");
-      return;
-    }
-    user.logOut();
-    setUser(null);
-  };
+  const authFns = useMemo(() => {
+    // The signOut function calls the logOut function on the currently
+    // logged in user
+    const signOut = () => {
+      if (user == null) {
+        // eslint-disable-next-line no-console
+        console.warn("Not logged in, can't log out!");
+        return;
+      }
+      user.logOut();
+      setUser(null);
+    };
+
+    return { signUp, signIn, signOut, user };
+  }, [user]);
 
   return (
-    <AuthContext.Provider
-      value={{
-        signUp,
-        signIn,
-        signOut,
-        user,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={authFns}>{children}</AuthContext.Provider>
   );
-};
+}
 
 // The useAuth hook can be used by components under an AuthProvider to
 // access the auth context value.
 const useAuth = () => {
   const auth = useContext(AuthContext);
   if (auth == null) {
-    throw new Error("useAuth() called outside of a AuthProvider?");
+    throw new Error('useAuth() called outside of a AuthProvider?');
   }
   return auth;
 };

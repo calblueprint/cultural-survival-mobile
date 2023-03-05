@@ -1,9 +1,14 @@
-import {Realm} from '@realm/react';
-export class Task extends Realm.Object {
+import { Realm } from '@realm/react';
+
+class Task extends Realm.Object {
   _id!: Realm.BSON.ObjectId;
+
   description!: string;
+
   isComplete!: boolean;
+
   createdAt!: Date;
+
   userId!: string;
 
   static generate(description: string, userId?: string) {
@@ -23,9 +28,11 @@ export class Task extends Realm.Object {
     properties: {
       _id: 'objectId',
       description: 'string',
-      isComplete: {type: 'bool', default: false},
+      isComplete: { type: 'bool', default: false },
       createdAt: 'date',
       userId: 'string',
     },
   };
 }
+
+export default Task;
