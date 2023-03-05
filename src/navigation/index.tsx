@@ -1,4 +1,3 @@
-// import { useAuthentication } from '../utils/hooks/useAuthentication';
 import UserStack from './userStack';
 // TODO @auth-flow: Uncomment this when UserStack vs. AuthStack is implemented.
 // import AuthStack from './authStack';
