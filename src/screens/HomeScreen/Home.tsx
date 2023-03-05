@@ -24,34 +24,34 @@ function HomeScreen({ navigation }) {
 
         <View style={styles.container}>
           <CategoryCard
-            name1="Climate Change & the Environment"
-            onPress1={() => navigation.navigate('Home')}
-            img1={climateImage}
+            name="Climate Change & the Environment"
+            pressFunction={() => navigation.navigate('Home')}
+            img={climateImage}
           />
           <CategoryCard
-            name1="Communication"
-            onPress1={() => navigation.navigate('Home')}
-            img1={communicationImage}
+            name="Communication"
+            pressFunction={() => navigation.navigate('Home')}
+            img={communicationImage}
           />
           <CategoryCard
-            name1="Language & Culture"
-            onPress1={() => navigation.navigate('Home')}
-            img1={languageImage}
+            name="Language & Culture"
+            pressFunction={() => navigation.navigate('Home')}
+            img={languageImage}
           />
           <CategoryCard
-            name1="Education"
-            onPress1={() => navigation.navigate('Home')}
-            img1={educationImage}
+            name="Education"
+            pressFunction={() => navigation.navigate('Home')}
+            img={educationImage}
           />
           <CategoryCard
-            name1="Land Rights"
-            onPress1={() => navigation.navigate('Home')}
-            img1={educationImage}
+            name="Land Rights"
+            pressFunction={() => navigation.navigate('Home')}
+            img={educationImage}
           />
           <CategoryCard
-            name1="Indeginous Women"
-            onPress1={() => navigation.navigate('Home')}
-            img1={womenImage}
+            name="Indeginous Women"
+            pressFunction={() => navigation.navigate('Home')}
+            img={womenImage}
           />
         </View>
       </ScrollView>
