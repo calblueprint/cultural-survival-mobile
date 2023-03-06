@@ -19,7 +19,11 @@ export const getAllGrants = async (): Promise<Grant[]> => {
   try {
     const dbQuery = query(grantsCollection);
     const querySnapshot = await getDocs(dbQuery);
-    return querySnapshot.docs.map(document => document.data() as Grant);
+    return querySnapshot.docs.map(document => {
+      const grant = document.data() as Grant;
+      grant.grant_id = document.id;
+      return grant;
+    });
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('(getAllGrants)', e);
