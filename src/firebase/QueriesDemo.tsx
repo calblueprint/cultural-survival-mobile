@@ -10,7 +10,7 @@ import { getAllGrants, getGrantById } from './queries/grantsQueries';
 export default function QueriesDemo() {
   const [grants, setGrants] = useState<Grant[]>([]);
   const [grantId, setGrantId] = useState<string>('');
-  /* fetch all vendors on page load */
+  /* fetch all grants on page load */
   const handlePress = async () => {
     const grant = await getGrantById(grantId);
     // TODO grants-flow: remove this when handling getting grants by ID is done properly.
@@ -33,7 +33,7 @@ export default function QueriesDemo() {
 
   return (
     <View>
-      <Text>{`All Vendors (${grants.length})`}</Text>
+      <Text>{`All Grants (${grants.length})`}</Text>
       {grants.map(grant => (
         <View key={grant.grant_id}>
           <Text>{`title: ${grant.title} | id: ${grant.grant_id}`}</Text>
