@@ -65,7 +65,6 @@ type CategoryProps = {
   img: ImageSourcePropType;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function CategoryCard({ name, pressFunction, img }: CategoryProps) {
   return (
     <Pressable onPress={event => pressFunction(event)}>
