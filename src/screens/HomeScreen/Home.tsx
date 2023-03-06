@@ -4,6 +4,7 @@ import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
+import BottomNavigationBar from '../../components/BottomNavigationBar';
 
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
@@ -64,7 +65,10 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
         </View>
       </ScrollView>
-      <RectButton
+
+      <BottomNavigationBar />
+
+      {/* <RectButton
         text="Navigate"
         buttonStyle={{
           margin: '5%',
@@ -73,7 +77,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         }}
         textStyle={{ color: Colors.textWhite }}
         onPress={() => navigation.navigate('Welcome')}
-      />
+      /> */}
     </SafeAreaView>
   );
 }
