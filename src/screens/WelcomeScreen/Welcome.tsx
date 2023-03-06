@@ -1,12 +1,11 @@
-import React from 'react';
-import ViewContainer from '../../components/ViewContainer';
 import RectButton from '../../components/RectButton';
+import ViewContainer from '../../components/ViewContainer';
 
 function WelcomeScreen({ navigation }) {
   return (
     <ViewContainer>
       <RectButton
-        text="Sign Out"
+        text="Home"
         buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
         textStyle={{ color: '#FFF' }}
         onPress={() => navigation.navigate('Home')}
@@ -22,12 +21,6 @@ function WelcomeScreen({ navigation }) {
         buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
         textStyle={{ color: '#FFF' }}
         onPress={() => navigation.navigate('Grants')}
-      />
-      <RectButton
-        text="Sign In"
-        buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
-        textStyle={{ color: '#FFF' }}
-        onPress={() => navigation.navigate('SignIn1')}
       />
     </ViewContainer>
   );
