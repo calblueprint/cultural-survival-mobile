@@ -55,7 +55,6 @@ function HomeScreen({ navigation }) {
           />
         </View>
       </ScrollView>
-
       <RectButton
         text="Navigate"
         buttonStyle={{
