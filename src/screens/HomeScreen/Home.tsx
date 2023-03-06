@@ -10,6 +10,7 @@ import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
+import QueriesDemo from '../../firebase/QueriesDemo';
 
 function HomeScreen({ navigation }) {
   return (
@@ -55,7 +56,6 @@ function HomeScreen({ navigation }) {
           />
         </View>
       </ScrollView>
-
       <RectButton
         text="Navigate"
         buttonStyle={{

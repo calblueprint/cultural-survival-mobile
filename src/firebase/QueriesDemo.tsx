@@ -3,14 +3,21 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, TextInput, View } from 'react-native';
 import { Grant } from '../types/schema';
-import { getAllGrants } from './queries/grantsQueries';
+import { getAllGrants, getGrantById } from './queries/grantsQueries';
 
 export default function QueriesDemo() {
   const [grants, setGrants] = useState<Grant[]>([]);
-
+  const [grantId, setGrantId] = useState<string>('');
   /* fetch all vendors on page load */
+  const handlePress = async () => {
+    const grant = await getGrantById(grantId);
+    // TODO grants-flow: remove this when handling getting grants by ID is done properly.
+    // eslint-disable-next-line no-console
+    console.log('Received grant: ', grant.title);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,6 +40,8 @@ export default function QueriesDemo() {
           <Text>{`description: ${grant.description}`}</Text>
         </View>
       ))}
+      <TextInput placeholder="ID to be queried" onChangeText={setGrantId} />
+      <Button title="Submit" onPress={() => handlePress()} />
     </View>
   );
 }
