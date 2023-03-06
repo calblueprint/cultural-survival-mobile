@@ -1,9 +1,9 @@
 import { Text, View, ScrollView, SafeAreaView } from 'react-native';
-import React from 'react';
 import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
+import { RootStackScreenProps } from '../../types/navigation';
 
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
@@ -11,7 +11,7 @@ import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
 
-function HomeScreen({ navigation }) {
+function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <ScrollView>

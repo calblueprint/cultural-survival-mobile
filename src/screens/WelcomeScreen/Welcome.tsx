@@ -1,7 +1,8 @@
 import RectButton from '../../components/RectButton';
 import ViewContainer from '../../components/ViewContainer';
+import { RootStackScreenProps } from '../../types/navigation';
 
-function WelcomeScreen({ navigation }) {
+function WelcomeScreen({ navigation }: RootStackScreenProps<'Welcome'>) {
   return (
     <ViewContainer>
       <RectButton
