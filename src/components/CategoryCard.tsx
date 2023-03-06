@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     width: '35%',
     marginBottom: '10%',
   },
-
   categoryLeftContainer: {
     display: 'flex',
   },
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
     width: '80%',
     height: '80%',
   },
-
   orangeBox: {
     borderRadius: 10,
     display: 'flex',
@@ -37,7 +35,6 @@ const styles = StyleSheet.create({
   txtBox: {
     display: 'flex',
     textAlign: 'center',
-
     width: '100%',
   },
   buttonText: {
@@ -48,7 +45,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: '#525454',
   },
-
   buttonContainer: {
     backgroundColor: '#C4C4C4',
     width: '40%',
