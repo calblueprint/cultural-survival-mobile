@@ -9,18 +9,15 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
     paddingTop: '5%',
   },
-
   padding: {
     padding: '2%',
     alignSelf: 'center',
   },
-
   padding2: {
     marginTop: '2%',
     paddingLeft: '10%',
     textAlign: 'left',
   },
-
   outerContainer: {
     flex: 1,
     backgroundColor: '#FAFAFA',

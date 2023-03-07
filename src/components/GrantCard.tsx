@@ -13,10 +13,6 @@ import Icon from '../../assets/icons';
 import ViewContainer from './ViewContainer';
 
 const styles = StyleSheet.create({
-  container: {
-    height: 128,
-    justifyContent: 'space-between',
-  },
   centeredView: {
     flex: 1,
     justifyContent: 'center',
