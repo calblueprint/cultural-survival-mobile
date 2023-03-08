@@ -66,9 +66,9 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         </View>
       </ScrollView>
 
-      <BottomNavigationBar />
+      {/* <BottomNavigationBar/> */}
 
-      {/* <RectButton
+      <RectButton
         text="Navigate"
         buttonStyle={{
           margin: '5%',
@@ -77,7 +77,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         }}
         textStyle={{ color: Colors.textWhite }}
         onPress={() => navigation.navigate('Welcome')}
-      /> */}
+      />
     </SafeAreaView>
   );
 }

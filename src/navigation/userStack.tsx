@@ -9,6 +9,7 @@ import PlayScreen from '../screens/PlayScreen/Play';
 import WelcomeScreen from '../screens/WelcomeScreen/Welcome';
 
 import { RootStackParamList } from '../types/navigation';
+import NavigationBar from '../components/BottomNavigationBar';
 
 function UserStack() {
   const Stack = createStackNavigator<RootStackParamList>();
@@ -22,6 +23,7 @@ function UserStack() {
         <Stack.Screen name="Play" component={PlayScreen} />
         <Stack.Screen name="QueriesDemo" component={QueriesDemo} />
       </Stack.Navigator>
+      <NavigationBar />
     </NavigationContainer>
   );
 }

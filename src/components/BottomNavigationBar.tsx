@@ -1,53 +1,61 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import * as React from "react";
+import {Text} from "react-native"
 import Icon from "../../assets/icons";
+import HomeStackNavigator from '../navigation/homeStack';
+import UserStack from '../navigation/userStack';
 import GrantsScreen from '../screens/GrantsScreen/Grants';
 
 import HomeScreen from "../screens/HomeScreen/Home";
 
-const initialRouteName = 'Home';
+const initialRouteName = 'Grants';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const NavigationBar = () => {
+function NavigationBar() {
     return (
+        <>
+        <Text> Hello </Text>
         <Tab.Navigator
         initialRouteName={initialRouteName}
+        barStyle={{backgroundColor: "yellow", width: 200, height: 100}}
         >
-            <Tab.Screen
+            {/* <Tab.Screen
                 name="Grants"
                 component={GrantsScreen}
                 options={{
                     tabBarLabel: 'Grants',
                     tabBarIcon:  '<Icon type="grants_icon" />'
                 }}
-            />
+            /> */}
             <Tab.Screen
                 name="Home"
-                component={HomeScreen}
+                component={HomeStackNavigator}
                 options={{
                     tabBarLabel: 'Home',
-                    tabBarIcon:  '<Icon type="home_icon" />'
+                    tabBarIcon:  "account-box"
                 }}
              />
              <Tab.Screen
                 name="Search"
-                component={HomeScreen}
+                component={HomeStackNavigator}
                 options={{
                     tabBarLabel: 'Search',
-                    tabBarIcon:  '<Icon type="search_icon" />'
+                    tabBarIcon:  "account-box"
                 }}
              />
              <Tab.Screen
                 name="Library"
-                component={HomeScreen}
+                component={HomeStackNavigator}
                 options={{
                     tabBarLabel: 'Library',
-                    tabBarIcon:  '<Icon type="library_icon" />'
+                    tabBarIcon:  "account-box"
                 }}
              />
         </Tab.Navigator>
+        </>
+        
     );
-};
+}
 
 export default NavigationBar;
