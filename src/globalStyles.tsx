@@ -7,7 +7,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   h1: {
     fontFamily: 'DMSans-Bold',
     fontSize: 50,
@@ -15,7 +14,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   h2: {
     fontFamily: 'DMSans-Bold',
     fontSize: 40,
@@ -23,7 +21,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   h3: {
     fontFamily: 'DMSans-Regular',
     fontSize: 33,
@@ -31,7 +28,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   h4: {
     fontFamily: 'DMSans-Regular',
     fontSize: 20,
@@ -39,7 +35,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   body1: {
     fontFamily: 'DMSans-Regular',
     fontSize: 14,
@@ -47,7 +42,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   body2: {
     fontFamily: 'DMSans-Regular',
     fontSize: 12,
@@ -55,7 +49,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   body3: {
     fontFamily: 'Avenir',
     fontSize: 14,
@@ -63,7 +56,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   overline1: {
     fontFamily: 'Avenir',
     fontWeight: '900',
@@ -72,7 +64,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   overline2: {
     fontFamily: 'Avenir',
     fontWeight: '800',
@@ -81,7 +72,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   h3Bold: {
     fontFamily: 'DMSans-Bold',
     fontSize: 24,
@@ -89,7 +79,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   h4Bold: {
     fontFamily: 'DMSans-Bold',
     fontSize: 18,
@@ -97,7 +86,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   body1Bold: {
     fontFamily: 'Avenir',
     fontSize: 14,
@@ -105,7 +93,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   body2Bold: {
     fontFamily: 'Avenir',
     fontSize: 12,
@@ -113,7 +100,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     color: '#000000',
   },
-
   numbers: {
     fontFamily: 'DMMono_500Medium',
     fontSize: 12,

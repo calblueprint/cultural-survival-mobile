@@ -1,11 +1,11 @@
 import {
   collection,
+  doc,
+  DocumentSnapshot,
+  getDoc,
   getDocs,
   getFirestore,
   query,
-  doc,
-  getDoc,
-  DocumentSnapshot
 } from 'firebase/firestore';
 import { Grant } from '../../types/schema';
 import firebaseApp from '../firebaseApp';
@@ -14,12 +14,12 @@ const db = getFirestore(firebaseApp);
 
 const grantsCollection = collection(db, 'grants');
 
-const parseGrant = async (docSnap : DocumentSnapshot) => {
+const parseGrant = async (docSnap: DocumentSnapshot) => {
   const grantId = docSnap.id.toString();
   const data = docSnap.data();
 
   const grant = {
-    grant_id: grantId, 
+    grant_id: grantId,
     amount: data?.amount,
     category: data?.category,
     countries: data?.countries,
@@ -28,7 +28,7 @@ const parseGrant = async (docSnap : DocumentSnapshot) => {
     duration: data?.duration,
     subject: data?.subject,
     title: data?.title,
-  }
+  };
 
   return grant as Grant;
 };
@@ -43,7 +43,7 @@ export const getAllGrants = async (): Promise<Grant[]> => {
     return querySnapshot.docs.map(document => {
       const grant = document.data() as Grant;
       grant.grant_id = document.id;
-      // TODO grants-flow: remove this suppression and console log when ids are processed properly. 
+      // TODO grants-flow: remove this suppression and console log when ids are processed properly.
       // eslint-disable-next-line no-console
       console.log(grant.grant_id);
       return grant;
@@ -60,7 +60,7 @@ export const getAllGrants = async (): Promise<Grant[]> => {
  */
 export const getGrantById = async (id: string): Promise<Grant> => {
   try {
-    const docRef = doc(db, "grants", id);
+    const docRef = doc(db, 'grants', id);
     const docSnap = await getDoc(docRef);
     return await parseGrant(docSnap);
   } catch (e) {
@@ -69,4 +69,3 @@ export const getGrantById = async (id: string): Promise<Grant> => {
     throw e;
   }
 };
-

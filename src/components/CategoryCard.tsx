@@ -16,15 +16,10 @@ const styles = StyleSheet.create({
     width: '35%',
     marginBottom: '10%',
   },
-
-  categoryLeftContainer: {
-    display: 'flex',
-  },
   imgStyle: {
     width: '80%',
     height: '80%',
   },
-
   orangeBox: {
     borderRadius: 10,
     display: 'flex',
@@ -37,25 +32,7 @@ const styles = StyleSheet.create({
   txtBox: {
     display: 'flex',
     textAlign: 'center',
-
     width: '100%',
-  },
-  buttonText: {
-    fontFamily: 'Avenir',
-    fontWeight: '900',
-    fontSize: 14,
-    textTransform: 'uppercase',
-    alignSelf: 'center',
-    color: '#525454',
-  },
-
-  buttonContainer: {
-    backgroundColor: '#C4C4C4',
-    width: '40%',
-    height: '5%',
-    justifyContent: 'center',
-    marginTop: '3%',
-    borderRadius: 5,
   },
 });
 
@@ -65,7 +42,6 @@ type CategoryProps = {
   img: ImageSourcePropType;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function CategoryCard({ name, pressFunction, img }: CategoryProps) {
   return (
     <Pressable onPress={event => pressFunction(event)}>

@@ -1,14 +1,22 @@
 import { initializeApp } from 'firebase/app';
-
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_APP_ID,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_MEASUREMENT_ID,
+  FIREBASE_MESSAGING_SENDER_ID,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+} from 'react-native-dotenv';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDB0ZyQaONWL5UMELG5mV2noeASRw2fClE",
-  authDomain: "cultural-survival-mobile.firebaseapp.com",
-  projectId: "cultural-survival-mobile",
-  storageBucket: "cultural-survival-mobile.appspot.com",
-  messagingSenderId: "478555958325",
-  appId: "1:478555958325:web:5fad175c46abbffe89557c",
-  measurementId: "G-1471C5TBDE"
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID,
+  measurementId: FIREBASE_MEASUREMENT_ID,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
