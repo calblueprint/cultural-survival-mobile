@@ -7,15 +7,12 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    paddingTop: '5%',
+    paddingTop: 16,
   },
-  padding: {
-    padding: '2%',
-    alignSelf: 'center',
-  },
-  padding2: {
+  heading: { paddingLeft: 16, paddingTop: 16 },
+  subheading: {
+    paddingLeft: 16,
     marginTop: '2%',
-    paddingLeft: '10%',
     textAlign: 'left',
   },
   outerContainer: {

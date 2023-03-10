@@ -1,7 +1,6 @@
 import {
   Text,
   Image,
-  View,
   GestureResponderEvent,
   StyleSheet,
   ImageSourcePropType,
@@ -9,30 +8,28 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-  categoryContainer: {
-    display: 'flex',
+  container: {
+    position: 'relative',
     flexDirection: 'column',
-    height: '30%',
-    width: '35%',
-    marginBottom: '10%',
+    justifyContent: 'flex-start',
+    backgroundColor: '#8CB8CB',
+    overflow: 'hidden',
+    borderRadius: 8,
+    height: 120,
+    width: 166,
+    padding: 14,
+    margin: 8,
   },
-  imgStyle: {
-    width: '80%',
-    height: '80%',
+  text: {
+    color: 'white',
+    fontWeight: 'bold',
   },
-  orangeBox: {
-    borderRadius: 10,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '90%',
-    width: '100%',
-    backgroundColor: '#CC502F',
-  },
-  txtBox: {
-    display: 'flex',
-    textAlign: 'center',
-    width: '100%',
+  image: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    marginRight: -24,
+    marginBottom: -24,
   },
 });
 
@@ -40,17 +37,17 @@ type CategoryProps = {
   name: string;
   pressFunction: (event: GestureResponderEvent) => void;
   img: ImageSourcePropType;
+  color: string;
 };
 
-function CategoryCard({ name, pressFunction, img }: CategoryProps) {
+function CategoryCard({ name, pressFunction, img, color }: CategoryProps) {
   return (
-    <Pressable onPress={event => pressFunction(event)}>
-      <View style={styles.categoryContainer}>
-        <View style={styles.orangeBox}>
-          <Image style={styles.imgStyle} source={img} />
-        </View>
-        <Text style={styles.txtBox}>{name}</Text>
-      </View>
+    <Pressable
+      style={[styles.container, { backgroundColor: color }]}
+      onPress={pressFunction}
+    >
+      <Text style={styles.text}>{name}</Text>
+      <Image style={styles.image} source={img} />
     </Pressable>
   );
 }
