@@ -10,7 +10,7 @@ By using our app, you are consenting to our use of your personal information in 
 
 ### **Information You Provide**
 
-We collect personal information from you when you voluntarily provide it, such as when you register for access to the app, use certain aspects of the service, or respond to one of our surveys. For example, we collect your name and email address upon registering for an account to use the service.
+We collect personal information from you when you voluntarily provide it, such as when you register for access to the app, use certain aspects of the service, or respond to one of our surveys.
 
 ### Information Automatically Collected
 
