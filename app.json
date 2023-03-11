@@ -17,14 +17,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.calblueprint.culturalsurvival"
+      "bundleIdentifier": "org.calblueprint.culturalsurvival"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.calblueprint.culturalsurvival"
+      "package": "org.calblueprint.culturalsurvival"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -40,6 +40,11 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "59ad1efb-7214-42dc-a34a-2ebca7df9222"
+      }
+    }
   }
 }

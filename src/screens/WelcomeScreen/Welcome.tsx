@@ -23,6 +23,12 @@ function WelcomeScreen({ navigation }: RootStackScreenProps<'Welcome'>) {
         textStyle={{ color: '#FFF' }}
         onPress={() => navigation.navigate('Grants')}
       />
+      <RectButton
+        text="Queries Demo"
+        buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
+        textStyle={{ color: '#FFF' }}
+        onPress={() => navigation.navigate('QueriesDemo')}
+      />
     </ViewContainer>
   );
 }

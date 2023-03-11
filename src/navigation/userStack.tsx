@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import QueriesDemo from '../firebase/QueriesDemo';
 
 import AudioScreen from '../screens/AudioScreen/Audio';
 import GrantsScreen from '../screens/GrantsScreen/Grants';
@@ -19,6 +20,7 @@ function UserStack() {
         <Stack.Screen name="Audio" component={AudioScreen} />
         <Stack.Screen name="Grants" component={GrantsScreen} />
         <Stack.Screen name="Play" component={PlayScreen} />
+        <Stack.Screen name="QueriesDemo" component={QueriesDemo} />
       </Stack.Navigator>
     </NavigationContainer>
   );
