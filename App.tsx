@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import RootNavigation from './src/navigation';
+import QueriesDemo from './src/firebase/QueriesDemo';
 
 async function loadResourcesAsync() {
   await Promise.all([
@@ -50,13 +51,15 @@ export default function App() {
       // loading its initial state and rendering its first pixels. So instead,
       // we hide the splash screen once we know the root view has already
       // performed layout.
+
       await SplashScreen.hideAsync();
     }
   }, [resourcesLoaded]);
 
   return !resourcesLoaded ? null : (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <RootNavigation />
+      {/* <RootNavigation /> */}
+      <QueriesDemo/>
     </View>
   );
 }
