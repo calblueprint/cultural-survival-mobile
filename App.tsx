@@ -50,13 +50,15 @@ export default function App() {
       // loading its initial state and rendering its first pixels. So instead,
       // we hide the splash screen once we know the root view has already
       // performed layout.
+
       await SplashScreen.hideAsync();
     }
   }, [resourcesLoaded]);
 
   return !resourcesLoaded ? null : (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <RootNavigation />
+      {/* <RootNavigation /> */}
+      <QueriesDemo/>
     </View>
   );
 }

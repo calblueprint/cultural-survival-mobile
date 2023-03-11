@@ -35,26 +35,94 @@ import {
   /**
    * Get all grants from the `grants` collection.
    */
-
-  export const getAudioTitle = (id: string): Promise<Audio> => {
+  export const getAllAudio = async (): Promise<Audio[]> => {
     try {
-        const dbQuery = query(audioCollection);
-        const querySnapshot = await getDocs(dbQuery);
-        return querySnapshot.docs.map(document => {
-          const audio = document.data() as Audio;
-          audio.title = document.title;
-          // TODO grants-flow: remove this suppression and console log when ids are processed properly.
-          // eslint-disable-next-line no-console
-          console.log(audio.title);
-          return audio.title;
-        });
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.warn('(getAllGrants)', e);
-        throw e;
-      }
+      const itemsRef = collection(db, "audio");
+      const promises: Promise<Audio>[] = [];
+      const docSnap = await getDocs(itemsRef);
+      docSnap.forEach((audio: any) => {
+        promises.push(parseAudio(audio))
+  
+      })
+      const audio = await Promise.all(promises);
+      return audio;
+    } catch (e) {
+      console.warn(e);
+      throw e;
+    }
   };
   
+
+  export const getAudioID = async (audio_id: string): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", audio_id);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+  export const getAudioTitle = async (title: string): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", title);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+  export const getAudioDescription = async (description: string): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", description);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+  export const getAudioAuthor = async (authors: string[]): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", authors);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+  export const getAudioFile = async (audio_file: string[]): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", audio_file);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+  export const getSoundCloud = async (soundCloud: string): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", soundCloud);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+  export const getAudioTheme = async (theme: string): Promise<Audio> => {
+    try {
+      const docRef = doc(db, "audio", theme);
+      const docSnap = await getDoc(docRef);
+      return await parseAudio(docSnap);
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
 
   
  
