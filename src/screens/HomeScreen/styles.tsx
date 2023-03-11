@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
+  cardsContainer: {
     width: '100%',
     display: 'flex',
     flexWrap: 'wrap',
@@ -9,13 +9,16 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
     paddingTop: 16,
   },
-  heading: { paddingLeft: 16, paddingTop: 16 },
+  heading: {
+    paddingLeft: 16,
+    paddingTop: 16,
+  },
   subheading: {
     paddingLeft: 16,
     marginTop: '2%',
     textAlign: 'left',
   },
-  outerContainer: {
+  container: {
     flex: 1,
     backgroundColor: '#FAFAFA',
   },

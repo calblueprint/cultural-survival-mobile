@@ -9,7 +9,7 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative',
+    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     backgroundColor: '#8CB8CB',
@@ -20,9 +20,10 @@ const styles = StyleSheet.create({
     padding: 14,
     margin: 8,
   },
-  text: {
+  title: {
     color: 'white',
     fontWeight: 'bold',
+    zIndex: 1,
   },
   image: {
     position: 'absolute',
@@ -33,20 +34,25 @@ const styles = StyleSheet.create({
   },
 });
 
-type CategoryProps = {
-  name: string;
+type CategoryCardProps = {
+  title: string;
   pressFunction: (event: GestureResponderEvent) => void;
   img: ImageSourcePropType;
-  color: string;
+  backgroundColor: string;
 };
 
-function CategoryCard({ name, pressFunction, img, color }: CategoryProps) {
+function CategoryCard({
+  title,
+  pressFunction,
+  img,
+  backgroundColor,
+}: CategoryCardProps) {
   return (
     <Pressable
-      style={[styles.container, { backgroundColor: color }]}
+      style={[styles.container, { backgroundColor }]}
       onPress={pressFunction}
     >
-      <Text style={styles.text}>{name}</Text>
+      <Text style={styles.title}>{title}</Text>
       <Image style={styles.image} source={img} />
     </Pressable>
   );

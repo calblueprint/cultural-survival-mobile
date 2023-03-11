@@ -13,7 +13,7 @@ import communicationImage from '../../../assets/communication.png';
 
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
-    <SafeAreaView style={styles.outerContainer}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         <Text style={[globalStyles.h2, styles.heading]}>
           Welcome to Cultural Survival.
@@ -22,43 +22,44 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           Browse all categories
         </Text>
         {/* TODO: Change color from a string to importing color from global styles */}
-        <View style={styles.container}>
+        <View style={styles.cardsContainer}>
+          {/* TODO: When changing text size, switch to 1 column when text is wrapping individual words */}
           <CategoryCard
-            name="Climate Change & the Environment"
+            title="Climate Change & the Environment"
             pressFunction={() => navigation.navigate('Audio')}
             img={climateImage}
-            color="#8CB8CB"
+            backgroundColor="#8CB8CB"
           />
           <CategoryCard
-            name="Communication"
+            title="Communication"
             pressFunction={() => navigation.navigate('Grants')}
             img={communicationImage}
-            color="#5CAAB5"
+            backgroundColor="#5CAAB5"
           />
           <CategoryCard
-            name="Language & Culture"
+            title="Language & Culture"
             pressFunction={() => navigation.navigate('Home')}
             img={languageImage}
-            color="#FBBE47"
+            backgroundColor="#FBBE47"
           />
           <CategoryCard
-            name="Education"
+            title="Education"
             pressFunction={() => navigation.navigate('Play')}
             img={educationImage}
-            color="#74944A"
+            backgroundColor="#74944A"
           />
           <CategoryCard
-            name="Land Rights"
+            title="Land Rights"
             pressFunction={() => navigation.navigate('Welcome')}
             img={educationImage}
-            color="#CC502F"
+            backgroundColor="#CC502F"
           />
           {/* TODO home screen: Fix the image here, make sure not to have it cut off.  */}
           <CategoryCard
-            name="Indigenous Women"
+            title="Indigenous Women"
             pressFunction={() => navigation.navigate('Home')}
             img={womenImage}
-            color="#A352BF"
+            backgroundColor="#A352BF"
           />
         </View>
       </ScrollView>
