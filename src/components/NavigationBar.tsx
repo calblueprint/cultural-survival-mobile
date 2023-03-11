@@ -1,10 +1,6 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import SvgIcon from '@mui/material';
 import * as React from 'react';
-import { Text, Image } from 'react-native';
 import Icon from '../../assets/icons';
-import HomeStackNavigator from '../navigation/homeStack';
-import UserStack from '../navigation/userStack';
 import AudioScreen from '../screens/AudioScreen/Audio';
 import GrantsScreen from '../screens/GrantsScreen/Grants';
 
@@ -21,7 +17,6 @@ function NavigationBar() {
       <Tab.Navigator
         initialRouteName={initialRouteName}
         barStyle={{ backgroundColor: 'white' }}
-        textColor="red"
       >
         <Tab.Screen
           name="Grants"

@@ -1,10 +1,8 @@
 import { Text, View, ScrollView, SafeAreaView } from 'react-native';
-import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
-import BottomNavigationBar from '../../components/NavigationBar';
 
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
