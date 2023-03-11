@@ -34,7 +34,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
           <CategoryCard
             title="Communication"
-            pressFunction={() => navigation.navigate('Grants')}
+            pressFunction={() => navigation.navigate('Home')}
             img={communicationImage}
             backgroundColor="#5CAAB5"
           />
@@ -46,7 +46,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
           <CategoryCard
             title="Education"
-            pressFunction={() => navigation.navigate('Play')}
+            pressFunction={() => navigation.navigate('Home')}
             img={educationImage}
             backgroundColor="#74944A"
           />

@@ -20,12 +20,7 @@ function UserStack() {
         <Stack.Screen name="Home" component={NavigationBar} />
         {/* <Stack.Screen name="Audio" component={AudioScreen} />
         <Stack.Screen name="Grants" component={GrantsScreen} />
-<<<<<<< HEAD
-        <Stack.Screen name="Play" component={PlayScreen} />
-        <Stack.Screen name="QueriesDemo" component={QueriesDemo} />
-=======
         <Stack.Screen name="Play" component={PlayScreen} /> */}
->>>>>>> c2f1fc2 (gets bottom nav bar to show up, fixes width, refactors files)
       </Stack.Navigator>
       {/* <NavigationBar /> */}
     </NavigationContainer>
