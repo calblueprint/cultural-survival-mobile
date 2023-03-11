@@ -5,7 +5,7 @@ import {
   getDoc,
   getDocs,
   getFirestore,
-  query,
+  query
 } from 'firebase/firestore';
 import { Grant } from '../../types/schema';
 import firebaseApp from '../firebaseApp';
@@ -21,17 +21,22 @@ const parseGrant = async (docSnap: DocumentSnapshot) => {
   const grant = {
     grant_id: grantId,
     amount: data?.amount,
-    category: data?.category,
     countries: data?.countries,
     deadline: data?.deadline,
     description: data?.description,
     duration: data?.duration,
-    subject: data?.subject,
+    image_link: data?.image_link,
+    share_link: data?.share_link,
     title: data?.title,
   };
 
   return grant as Grant;
 };
+
+
+
+
+
 
 /**
  * Get all grants from the `grants` collection.
