@@ -4,7 +4,7 @@ import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
-import BottomNavigationBar from '../../components/BottomNavigationBar';
+import BottomNavigationBar from '../../components/NavigationBar';
 
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
@@ -28,7 +28,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           {/* TODO: When changing text size, switch to 1 column when text is wrapping individual words */}
           <CategoryCard
             title="Climate Change & the Environment"
-            pressFunction={() => navigation.navigate('Audio')}
+            pressFunction={() => navigation.navigate('Home')}
             img={climateImage}
             backgroundColor="#8CB8CB"
           />
@@ -52,7 +52,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
           <CategoryCard
             title="Land Rights"
-            pressFunction={() => navigation.navigate('Welcome')}
+            pressFunction={() => navigation.navigate('Home')}
             img={educationImage}
             backgroundColor="#CC502F"
           />
@@ -66,9 +66,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         </View>
       </ScrollView>
 
-      {/* <BottomNavigationBar/> */}
-
-      <RectButton
+      {/* <RectButton
         text="Navigate"
         buttonStyle={{
           margin: '5%',
@@ -77,7 +75,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         }}
         textStyle={{ color: Colors.textWhite }}
         onPress={() => navigation.navigate('Welcome')}
-      />
+      /> */}
     </SafeAreaView>
   );
 }
