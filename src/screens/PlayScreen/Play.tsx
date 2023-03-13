@@ -1,5 +1,6 @@
 import { Image, Text, View } from 'react-native';
 import Icon from '../../../assets/icons';
+import Colors from '../../styles/Colors';
 import styles from './styles';
 
 function PlayScreen() {
@@ -25,7 +26,7 @@ function PlayScreen() {
           style={{
             height: 275,
             width: 275,
-            backgroundColor: '#D9D9D9',
+            backgroundColor: Colors.surfaceGrey,
             borderRadius: 9.5,
             marginTop: '3%',
             marginBottom: '3%',

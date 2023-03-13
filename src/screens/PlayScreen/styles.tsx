@@ -1,15 +1,16 @@
 import { StyleSheet } from 'react-native';
+import Colors from '../../styles/Colors';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.surfaceWhite,
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
   container2: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.surfaceWhite,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
@@ -19,21 +20,21 @@ export default StyleSheet.create({
     width: '90%',
     paddingLeft: '15%',
     textAlign: 'left',
-    color: '#525454',
+    color: Colors.textPrimary,
   },
   title_text: {
     fontSize: 20,
     marginBottom: 10,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#525454',
+    color: Colors.textPrimary,
     paddingLeft: '5%',
   },
   author_text: {
     fontSize: 15,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#525454',
+    color: Colors.textSecondary,
     paddingBottom: '5%',
     paddingLeft: '5%',
   },
