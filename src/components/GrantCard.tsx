@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import Icon from '../../assets/icons';
+import Colors from '../styles/Colors';
 import ViewContainer from './ViewContainer';
 
 const styles = StyleSheet.create({
@@ -22,20 +23,20 @@ const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: 'column',
     alignItems: 'flex-start',
-    backgroundColor: '#C94420',
+    backgroundColor: Colors.redPrimary,
     width: 330,
     height: 140,
     borderRadius: 13,
     justifyContent: 'space-between',
     marginBottom: '8%',
-    shadowColor: 'black',
+    shadowColor: Colors.shadowDark,
     shadowOpacity: 0.2,
     shadowRadius: 2,
     shadowOffset: { width: 2, height: 4 },
     display: 'flex',
   },
   whiteText: {
-    color: 'white',
+    color: Colors.textWhite,
     margin: '2%',
     marginLeft: '4%',
     textAlign: 'left',
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   modalBodyText: {
-    color: '#171717',
+    color: Colors.textPrimary,
     margin: '2%',
     marginLeft: '4%',
     textAlign: 'left',
@@ -51,14 +52,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   titleText: {
-    color: 'white',
+    color: Colors.textWhite,
     margin: '3%',
     marginTop: '6%',
     textAlign: 'left',
     fontSize: 15,
   },
   closeButtonText: {
-    color: 'white',
+    color: Colors.textWhite,
     margin: '2%',
     marginLeft: '4%',
     textAlign: 'center',
@@ -67,11 +68,11 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: 'white',
+    backgroundColor: Colors.surfaceWhite,
     borderRadius: 13,
     width: 340,
     padding: 30,
-    shadowColor: '#000',
+    shadowColor: Colors.shadowDark,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   buttonClose: {
-    backgroundColor: '#CC502F',
+    backgroundColor: Colors.redPrimary,
     width: '96%',
     justifyContent: 'center',
   },
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '400',
     textAlign: 'left',
-    color: 'black',
+    color: Colors.textPrimary,
     marginLeft: '3%',
     marginBottom: '8%',
   },
@@ -176,7 +177,7 @@ function GrantCard({
         </View>
       </Modal>
       <TouchableHighlight
-        underlayColor="#942000"
+        underlayColor={Colors.redPrimary}
         onPress={() => setModalVisible(true)}
         style={styles.cardContainer}
       >

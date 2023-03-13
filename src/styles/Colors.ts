@@ -11,7 +11,7 @@ const Colors = {
   // Surface colors -- used for backgrounds
   surfaceWhite: '#FFFFFF',
   surfaceOffwhite: '#F9F9F9',
-  surfaceGrey: '#F3F2F2',
+  surfaceGrey: '#F3F2F2', // light grey for text inputs
 
   // Shadow colors
   shadowDark: '#000000', // black

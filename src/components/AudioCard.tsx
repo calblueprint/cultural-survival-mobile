@@ -1,8 +1,9 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import Colors from '../styles/Colors';
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.surfaceWhite,
     paddingBottom: 30,
     width: 350,
   },
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 15,
     fontSize: 11.33,
-    color: '#333',
+    color: Colors.textSecondary,
     flexWrap: 'wrap',
   },
 });
@@ -59,7 +60,7 @@ export default function SearchAudioCard({
         style={{
           height: 79,
           width: 79,
-          backgroundColor: '#CC502F',
+          backgroundColor: Colors.redPrimary,
           borderRadius: 9.5,
         }}
       />
