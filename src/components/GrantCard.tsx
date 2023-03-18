@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: 'column',
     alignItems: 'flex-start',
-    backgroundColor: Colors.redPrimary,
+    backgroundColor: '#CC502F',
     width: 330,
     height: 140,
     borderRadius: 13,
@@ -148,23 +148,15 @@ function GrantCard({
             <View style={styles.innerModal}>
               <View>
                 <Text style={styles.modalTitle}>{title}</Text>
-              </View>
-              <View>
                 <Text style={styles.modalBodyText}>{amount}</Text>
-              </View>
-              <View>
                 <Text style={styles.modalBodyText}>Due Date: {deadline}</Text>
-              </View>
-              <View>
                 <Text style={styles.modalBodyText}>
                   Elligible Countries: {countries}
                 </Text>
-              </View>
-              <View>
                 <Text style={styles.modalBodyText}>{description}</Text>
-              </View>
-              <View style={styles.images}>
-                <Image source={placeholderImage} />
+                <View style={styles.images}>
+                  <Image source={placeholderImage} />
+                </View>
               </View>
             </View>
             <Pressable
