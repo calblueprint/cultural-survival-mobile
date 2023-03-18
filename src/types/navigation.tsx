@@ -11,6 +11,7 @@ export type RootStackParamList = {
   Grants: undefined;
   Play: undefined;
   QueriesDemo: undefined;
+  GrantInfo: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =

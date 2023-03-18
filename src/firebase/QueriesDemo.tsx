@@ -25,7 +25,7 @@ export default function QueriesDemo() {
         setGrants(allGrants);
       } catch (error) {
         // eslint-disable-next-line no-console
-        console.error('(useEffect)[QueriesDemo]', error);
+        console.error('(useEffect)[GrantsScreen]', error);
       }
     };
     fetchData();
