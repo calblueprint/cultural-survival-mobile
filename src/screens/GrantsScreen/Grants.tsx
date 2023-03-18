@@ -14,6 +14,20 @@ import Colors from '../../styles/Colors';
 import { RootStackScreenProps } from '../../types/navigation';
 import { getAllGrants , getGrantById} from '../../firebase/queries/grantsQueries';
 
+
+const defaultGrant: Grant = {
+  grant_id: "",
+  amount: 0,
+  countries: [],
+  deadline: new Date(),
+  description: "",
+  duration: "",
+  image_link: "",
+  share_link: "",
+  title: "",
+
+}
+
 // let lang = 'en';
 function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
   // const { i18n, t } = useTranslation(namespaces.pages.grants);
@@ -26,6 +40,14 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
   // }
   const [grants, setGrants] = useState<Grant[]>([]);
   const [grantId, setGrantId] = useState<string>('');
+  // const [grantObj, setGrantObj] = useState<Grant>(defaultGrant);
+
+  // const getGrantObj = async (grantID : string) => {
+  //   const grant = await getGrantById(grantID);
+  //   setGrantObj(grant);
+
+  // }
+
 
   /* fetch all grants on page load */
   const handlePress = async () => {
@@ -63,6 +85,19 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
             countries={grant.countries.join(", ")}
             deadline={grant.deadline.toString()} // need to look into this more & extracting date ONLY
             description={grant.description}
+            duration={grant.duration}
+            grantObj={grant}
+            onPress={() => navigation.navigate('GrantInfo', {grantObj : grant}
+            // , {
+            //   amount: grant.amount.toString(),
+            //   countries: grant.countries.join(", "),
+            //   deadline: grant.deadline.toString(),
+            //   description: grant.description,
+            //   duration: grant.duration,
+            //   title: grant.title,
+            // }
+            )}
+
             />
           </View>
         ))}

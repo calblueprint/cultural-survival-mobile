@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 import {
   Alert,
   Image,
@@ -12,6 +13,8 @@ import {
 import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
 import ViewContainer from './ViewContainer';
+import { Grant } from '../types/schema';
+import { getGrantById } from '../firebase/queries/grantsQueries';
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -113,27 +116,35 @@ const styles = StyleSheet.create({
 });
 
 type GrantCardProps = {
-  title: string;
-  description: string;
   amount: string;
-  deadline: string;
   countries: string;
+  deadline: string;
+  description: string;
+  duration: string;
+  title: string;
+  grantObj: Grant;
+  onPress?: () => void;
 };
 
 function GrantCard({
-  title,
-  description,
   amount,
-  deadline,
   countries,
+  deadline,
+  description,
+  duration,
+  title,
+  grantObj,
+  onPress
 }: GrantCardProps) {
   const [modalVisible, setModalVisible] = useState(false);
+
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
   const placeholderImage = require('../../assets/grantPlaceholderImg.png');
 
   return (
     <ViewContainer>
+
       <Modal
         animationType="slide"
         transparent
@@ -147,9 +158,10 @@ function GrantCard({
           <View style={styles.modalView}>
             <View style={styles.innerModal}>
               <View>
-                <Text style={styles.modalTitle}>{title}</Text>
-                <Text style={styles.modalBodyText}>{amount}</Text>
+                <Text style={styles.modalTitle}>{grantObj.title}</Text>
+                <Text style={styles.modalBodyText}>{grantObj.amount}</Text>
                 <Text style={styles.modalBodyText}>Due Date: {deadline}</Text>
+                <Text style={styles.modalBodyText}>Duration: {duration}</Text>
                 <Text style={styles.modalBodyText}>
                   Elligible Countries: {countries}
                 </Text>
@@ -168,10 +180,14 @@ function GrantCard({
           </View>
         </View>
       </Modal>
+
       <TouchableHighlight
-        underlayColor={Colors.redPrimary}
-        onPress={() => setModalVisible(true)}
-        style={styles.cardContainer}
+        underlayColor="#942000"
+        // onPress={() => navigation.navigate('GrantInfo')} // should change this for new nav!
+        // onPress={() => setModalVisible(!modalVisible)} // should change this for new nav!
+        onPress={onPress}
+        // onPress={() => setModalVisible(!modalVisible)}
+        style={styles.cardContainer}  // also need to update this to reflect new design (maybe create new branch for this!!)
       >
         <View>
           <Text style={styles.titleText}>{title}</Text>

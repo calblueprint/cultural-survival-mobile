@@ -21,7 +21,7 @@ export type Grant = {
   grant_id: string;
   amount: number;
   countries: string[];
-  deadline: Timestamp;
+  deadline: Timestamp | Date;
   description: string;
   duration: string;
   image_link: string,
