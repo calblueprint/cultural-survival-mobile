@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import {
-  Alert,
+
   Image,
-  Modal,
   Pressable,
   StyleSheet,
   Text,
@@ -14,7 +13,6 @@ import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
 import ViewContainer from './ViewContainer';
 import { Grant } from '../types/schema';
-import { getGrantById } from '../firebase/queries/grantsQueries';
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -115,71 +113,15 @@ const styles = StyleSheet.create({
   },
 });
 
-type GrantCardProps = {
-  amount: string;
-  countries: string;
-  deadline: string;
-  description: string;
-  duration: string;
-  title: string;
-  grantObj: Grant;
+type GrantCardProps = { 
+  grantObj: Grant; 
   onPress?: () => void;
 };
 
-function GrantCard({
-  amount,
-  countries,
-  deadline,
-  description,
-  duration,
-  title,
-  grantObj,
-  onPress
-}: GrantCardProps) {
-  const [modalVisible, setModalVisible] = useState(false);
-
-
-  // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
-  const placeholderImage = require('../../assets/grantPlaceholderImg.png');
+function GrantCard({ grantObj, onPress }: GrantCardProps) {
 
   return (
     <ViewContainer>
-
-      <Modal
-        animationType="slide"
-        transparent
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <View style={styles.innerModal}>
-              <View>
-                <Text style={styles.modalTitle}>{grantObj.title}</Text>
-                <Text style={styles.modalBodyText}>{grantObj.amount}</Text>
-                <Text style={styles.modalBodyText}>Due Date: {deadline}</Text>
-                <Text style={styles.modalBodyText}>Duration: {duration}</Text>
-                <Text style={styles.modalBodyText}>
-                  Elligible Countries: {countries}
-                </Text>
-                <Text style={styles.modalBodyText}>{description}</Text>
-                <View style={styles.images}>
-                  <Image source={placeholderImage} />
-                </View>
-              </View>
-            </View>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.closeButtonText}>View Application</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
 
       <TouchableHighlight
         underlayColor="#942000"
@@ -190,9 +132,9 @@ function GrantCard({
         style={styles.cardContainer}  // also need to update this to reflect new design (maybe create new branch for this!!)
       >
         <View>
-          <Text style={styles.titleText}>{title}</Text>
-          <Text style={styles.whiteText}> {amount}</Text>
-          <Text style={styles.whiteText}> Due Date: {deadline} </Text>
+          <Text style={styles.titleText}>{grantObj.title}</Text>
+          <Text style={styles.whiteText}> {grantObj.amount.toString()}</Text>
+          <Text style={styles.whiteText}> Due Date: {grantObj.deadline.toString()} </Text>
         </View>
       </TouchableHighlight>
       <Icon type="expand" />
