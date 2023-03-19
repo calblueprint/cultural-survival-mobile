@@ -7,7 +7,7 @@ function handleGrants({ focused }: { focused: boolean; color: string }) {
     <Icon type="inactive_grants_icon" />
   );
 }
-  
+
 function handleHome({ focused }: { focused: boolean; color: string }) {
   return focused ? (
     <Icon type="active_home_icon" />
@@ -15,7 +15,7 @@ function handleHome({ focused }: { focused: boolean; color: string }) {
     <Icon type="inactive_home_icon" />
   );
 }
-  
+
 function handleSearch({ focused }: { focused: boolean; color: string }) {
   return focused ? (
     <Icon type="active_search_icon" />
@@ -23,7 +23,7 @@ function handleSearch({ focused }: { focused: boolean; color: string }) {
     <Icon type="inactive_search_icon" />
   );
 }
-  
+
 function handleLibrary({ focused }: { focused: boolean; color: string }) {
   return focused ? (
     <Icon type="active_library_icon" />
@@ -36,7 +36,7 @@ const handleFunctions = {
   handleGrants,
   handleHome,
   handleLibrary,
-  handleSearch
+  handleSearch,
 };
 
 export default handleFunctions;
