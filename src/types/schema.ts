@@ -14,7 +14,7 @@ export type Audio = {
   description: string;
   title: string;
   soundCloud: string;
-  theme:
+  theme: string;
 };
 
 export type Grant = {
