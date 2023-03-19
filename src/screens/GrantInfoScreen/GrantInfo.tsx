@@ -2,8 +2,6 @@
 import { Text, View } from 'react-native';
 import globalStyles from '../../globalStyles';
 
-
-
 export default function GrantInfo({ route, navigation}) {
     const { grantObj } = route.params;
     return (

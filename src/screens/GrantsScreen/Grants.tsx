@@ -79,24 +79,8 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
       {grants.map(grant => (
           <View key={grant.grant_id}>
             <GrantCard 
-            amount={grant.amount.toString()}
-            title={grant.title}
-            countries={grant.countries.join(", ")}
-            deadline={grant.deadline.toString()} // need to look into this more & extracting date ONLY
-            description={grant.description}
-            duration={grant.duration}
             grantObj={grant}
-            onPress={() => navigation.navigate('GrantInfo', {grantObj : grant}
-            // , {
-            //   amount: grant.amount.toString(),
-            //   countries: grant.countries.join(", "),
-            //   deadline: grant.deadline.toString(),
-            //   description: grant.description,
-            //   duration: grant.duration,
-            //   title: grant.title,
-            // }
-            )}
-
+            onPress={() => navigation.navigate('GrantInfo', {grantObj : grant})}
             />
           </View>
         ))}
