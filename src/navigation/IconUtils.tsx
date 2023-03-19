@@ -24,13 +24,7 @@ function handleSearch({ focused, color }: { focused: boolean; color: string }) {
   );
 }
   
-function handleLibrary({
-  focused,
-  color,
-}: {
-  focused: boolean;
-  color: string;
-}) {
+function handleLibrary({ focused, color }: { focused: boolean; color: string }) {
   return focused ? (
     <Icon type="active_library_icon" />
   ) : (
