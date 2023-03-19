@@ -10,6 +10,7 @@ import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
+import Colors from '../../styles/Colors';
 
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
@@ -67,10 +68,10 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         text="Navigate"
         buttonStyle={{
           margin: '5%',
-          backgroundColor: '#253C85',
+          backgroundColor: Colors.bluePrimary,
           alignSelf: 'center',
         }}
-        textStyle={{ color: '#FFF' }}
+        textStyle={{ color: Colors.textWhite }}
         onPress={() => navigation.navigate('Welcome')}
       />
     </SafeAreaView>

@@ -6,13 +6,13 @@ import {
   ImageSourcePropType,
   Pressable,
 } from 'react-native';
+import Colors from '../styles/Colors';
 
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    backgroundColor: '#8CB8CB',
     overflow: 'hidden',
     borderRadius: 8,
     height: 120,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   title: {
-    color: 'white',
+    color: Colors.textWhite,
     fontWeight: 'bold',
     zIndex: 1,
   },

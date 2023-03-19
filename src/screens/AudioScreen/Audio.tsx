@@ -1,6 +1,7 @@
 import { ScrollView, Text, TextInput, View } from 'react-native';
 import AudioCard from '../../components/AudioCard';
 import '../../i18n/i18n';
+import Colors from '../../styles/Colors';
 import { RootStackScreenProps } from '../../types/navigation';
 import styles from './styles';
 
@@ -12,7 +13,7 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
         style={{
           width: '95%',
           height: '7%',
-          backgroundColor: '#D9D9D9',
+          backgroundColor: Colors.surfaceGrey,
           borderRadius: 10,
           padding: '3%',
           marginBottom: '5%',
@@ -24,7 +25,7 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
           marginBottom: 22,
           fontWeight: '500',
           textAlign: 'left',
-          color: '#525454',
+          color: Colors.textPrimary,
         }}
       >
         Recent Search History

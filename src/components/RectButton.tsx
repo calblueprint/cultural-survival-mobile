@@ -7,17 +7,18 @@ import {
   StyleSheet,
 } from 'react-native';
 import globalStyles from '../globalStyles';
+import Colors from '../styles/Colors';
 
 const styles = StyleSheet.create({
   buttonText: {
     textTransform: 'uppercase',
     alignSelf: 'center',
-    color: '#525454',
+    color: Colors.textWhite,
   },
   buttonContainer: {
-    backgroundColor: '#C4C4C4',
+    backgroundColor: Colors.redPrimary,
     width: '40%',
-    height: '5%',
+    height: 32,
     justifyContent: 'center',
     marginTop: '3%',
     borderRadius: 5,

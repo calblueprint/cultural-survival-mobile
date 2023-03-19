@@ -1,11 +1,10 @@
 import { StyleSheet, Text, TextInput, TextStyle } from 'react-native';
 import globalStyles from '../globalStyles';
+import Colors from '../styles/Colors';
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: '#F3F2F2',
-    borderWidth: 1,
-    borderColor: '#A8A8A8',
+    backgroundColor: Colors.surfaceGrey,
     width: '100%',
     height: '10%',
     borderRadius: 5,

@@ -8,6 +8,7 @@ import styles from './styles';
 
 import '../../i18n/i18n';
 import { namespaces } from '../../i18n/i18n.constants';
+import Colors from '../../styles/Colors';
 import { RootStackScreenProps } from '../../types/navigation';
 
 let lang = 'en';
@@ -27,14 +28,17 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
         <Text style={globalStyles.h2}>{t('grants_feed')}</Text>
         <RectButton
           text={t('buttons.ok', { ns: namespaces.pages.grants })}
-          buttonStyle={{ backgroundColor: 'black' }}
-          textStyle={{ color: 'black' }}
+          buttonStyle={{}}
+          textStyle={{}}
           onPress={() => handleClick(toggle(lang))}
         />
         <RectButton
           text="Back"
-          buttonStyle={{ marginTop: '5%', backgroundColor: '#253C85' }}
-          textStyle={{ color: '#FFF' }}
+          buttonStyle={{
+            marginTop: '5%',
+            backgroundColor: Colors.bluePrimary,
+          }}
+          textStyle={{ color: Colors.textWhite }}
           onPress={() => navigation.navigate('Home')}
         />
       </ViewContainer>
