@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: Colors.redPrimary,
     width: '40%',
+    height: 32,
     justifyContent: 'center',
     marginTop: '3%',
     borderRadius: 5,
