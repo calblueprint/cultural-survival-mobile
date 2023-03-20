@@ -63,17 +63,6 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
         </View>
       </ScrollView>
-
-      {/* <RectButton
-        text="Navigate"
-        buttonStyle={{
-          margin: '5%',
-          backgroundColor: Colors.bluePrimary,
-          alignSelf: 'center',
-        }}
-        textStyle={{ color: Colors.textWhite }}
-        onPress={() => navigation.navigate('Welcome')}
-      /> */}
     </SafeAreaView>
   );
 }

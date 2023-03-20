@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import GrantsScreen from '../screens/GrantsScreen/Grants';
 
+import GrantsScreen from '../screens/GrantsScreen/Grants';
 import { GrantsStackParamList } from '../types/navigation';
 
 const GrantsStack = createNativeStackNavigator<GrantsStackParamList>();

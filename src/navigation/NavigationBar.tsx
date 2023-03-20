@@ -1,19 +1,16 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import AudioScreen from '../screens/AudioScreen/Audio';
 
 import GrantsStackNavigator from '../stacks/GrantsStackNavigator';
 import HomeStackNavigator from '../stacks/HomeStackNavigator';
 import SearchStackNavigator from '../stacks/SearchStackNavigator';
-
 import icons from './IconUtils';
-
 import Colors from '../styles/Colors';
 
-const initialRouteName = 'Home';
+const initialRouteName = 'HomeStack';
 
 const Tab = createBottomTabNavigator();
 
-function NavigationBar() {
+export default function NavigationBar() {
   return (
     <Tab.Navigator
       initialRouteName={initialRouteName}
@@ -61,5 +58,3 @@ function NavigationBar() {
     </Tab.Navigator>
   );
 }
-
-export default NavigationBar;
