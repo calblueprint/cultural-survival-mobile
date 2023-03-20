@@ -7,6 +7,8 @@ import SearchStackNavigator from '../stacks/SearchStackNavigator';
 
 import icons from './IconUtils';
 
+import Colors from '../styles/Colors';
+
 const initialRouteName = 'Home';
 
 const Tab = createBottomTabNavigator();
@@ -16,8 +18,8 @@ function NavigationBar() {
     <Tab.Navigator
       initialRouteName={initialRouteName}
       screenOptions={{
-        tabBarActiveTintColor: '#CC502F',
-        tabBarInactiveTintColor: '#CC502F',
+        tabBarActiveTintColor: Colors.redPrimary,
+        tabBarInactiveTintColor: Colors.redPrimary,
       }}
     >
       <Tab.Screen
@@ -26,6 +28,7 @@ function NavigationBar() {
         options={{
           tabBarLabel: 'Grants',
           tabBarIcon: icons.handleGrants,
+          headerTitle: 'Grants',
         }}
       />
       <Tab.Screen
@@ -34,6 +37,7 @@ function NavigationBar() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: icons.handleHome,
+          headerTitle: 'Home',
         }}
       />
       <Tab.Screen
@@ -42,6 +46,7 @@ function NavigationBar() {
         options={{
           tabBarLabel: 'Search',
           tabBarIcon: icons.handleSearch,
+          headerTitle: 'Search',
         }}
       />
       <Tab.Screen
@@ -50,6 +55,7 @@ function NavigationBar() {
         options={{
           tabBarLabel: 'Library',
           tabBarIcon: icons.handleLibrary,
+          headerTitle: 'Search',
         }}
       />
     </Tab.Navigator>
