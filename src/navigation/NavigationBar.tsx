@@ -3,6 +3,7 @@ import AudioScreen from '../screens/AudioScreen/Audio';
 
 import GrantsStackNavigator from '../stacks/GrantsStackNavigator';
 import HomeStackNavigator from '../stacks/HomeStackNavigator';
+import SearchStackNavigator from '../stacks/SearchStackNavigator';
 
 import icons from './IconUtils';
 
@@ -37,7 +38,7 @@ function NavigationBar() {
       />
       <Tab.Screen
         name="SearchStack"
-        component={AudioScreen}
+        component={SearchStackNavigator}
         options={{
           tabBarLabel: 'Search',
           tabBarIcon: icons.handleSearch,
