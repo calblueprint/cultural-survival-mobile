@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AudioScreen from '../screens/AudioScreen/Audio';
 
-import { HomeStackParamList, SearchStackParamList } from '../types/navigation';
+import { SearchStackParamList } from '../types/navigation';
 
 const SearchStack = createNativeStackNavigator<SearchStackParamList>();
 
