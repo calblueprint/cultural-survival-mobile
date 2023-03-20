@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AudioScreen from '../screens/AudioScreen/Audio';
-import GrantsScreen from '../screens/GrantsScreen/Grants';
 
-import HomeScreen from '../screens/HomeScreen/Home';
+import GrantsStackNavigator from '../stacks/GrantsStackNavigator';
+import HomeStackNavigator from '../stacks/HomeStackNavigator';
 
 import icons from './IconUtils';
 
@@ -20,23 +20,23 @@ function NavigationBar() {
       }}
     >
       <Tab.Screen
-        name="Grants"
-        component={GrantsScreen}
+        name="GrantsStack"
+        component={GrantsStackNavigator}
         options={{
           tabBarLabel: 'Grants',
           tabBarIcon: icons.handleGrants,
         }}
       />
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeStack"
+        component={HomeStackNavigator}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: icons.handleHome,
         }}
       />
       <Tab.Screen
-        name="Search"
+        name="SearchStack"
         component={AudioScreen}
         options={{
           tabBarLabel: 'Search',
@@ -44,8 +44,8 @@ function NavigationBar() {
         }}
       />
       <Tab.Screen
-        name="Library"
-        component={HomeScreen}
+        name="LibraryStack"
+        component={HomeStackNavigator}
         options={{
           tabBarLabel: 'Library',
           tabBarIcon: icons.handleLibrary,
