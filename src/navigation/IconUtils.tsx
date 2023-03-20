@@ -1,6 +1,6 @@
 import Icon from '../../assets/icons';
 
-function handleGrants({ focused }: { focused: boolean; color: string }) {
+function handleGrants({ focused }: { focused: boolean }) {
   return focused ? (
     <Icon type="active_grants_icon" />
   ) : (
@@ -8,7 +8,7 @@ function handleGrants({ focused }: { focused: boolean; color: string }) {
   );
 }
 
-function handleHome({ focused }: { focused: boolean; color: string }) {
+function handleHome({ focused }: { focused: boolean }) {
   return focused ? (
     <Icon type="active_home_icon" />
   ) : (
@@ -16,7 +16,7 @@ function handleHome({ focused }: { focused: boolean; color: string }) {
   );
 }
 
-function handleSearch({ focused }: { focused: boolean; color: string }) {
+function handleSearch({ focused }: { focused: boolean }) {
   return focused ? (
     <Icon type="active_search_icon" />
   ) : (
@@ -24,7 +24,7 @@ function handleSearch({ focused }: { focused: boolean; color: string }) {
   );
 }
 
-function handleLibrary({ focused }: { focused: boolean; color: string }) {
+function handleLibrary({ focused }: { focused: boolean }) {
   return focused ? (
     <Icon type="active_library_icon" />
   ) : (
