@@ -9,7 +9,6 @@ import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
-import Colors from '../../styles/Colors';
 
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
