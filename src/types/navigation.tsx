@@ -13,5 +13,24 @@ export type RootStackParamList = {
   QueriesDemo: undefined;
 };
 
+export type HomeStackParamList = {
+  Home: undefined;
+};
+
+export type GrantsStackParamList = {
+  Grants: undefined;
+};
+
+export type SearchStackParamList = {
+  Audio: undefined;
+  Play: undefined;
+};
+
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
+
+export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
+  NativeStackScreenProps<HomeStackParamList, T>;
+
+export type SearchStackScreensProps<T extends keyof SearchStackParamList> =
+  NativeStackScreenProps<SearchStackParamList, T>;

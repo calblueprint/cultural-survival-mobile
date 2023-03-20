@@ -1,5 +1,4 @@
 import { Text, View, ScrollView, SafeAreaView } from 'react-native';
-import RectButton from '../../components/RectButton';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
@@ -10,7 +9,6 @@ import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
-import Colors from '../../styles/Colors';
 
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
@@ -27,13 +25,13 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           {/* TODO: When changing text size, switch to 1 column when text is wrapping individual words */}
           <CategoryCard
             title="Climate Change & the Environment"
-            pressFunction={() => navigation.navigate('Audio')}
+            pressFunction={() => navigation.navigate('Home')}
             img={climateImage}
             backgroundColor="#8CB8CB"
           />
           <CategoryCard
             title="Communication"
-            pressFunction={() => navigation.navigate('Grants')}
+            pressFunction={() => navigation.navigate('Home')}
             img={communicationImage}
             backgroundColor="#5CAAB5"
           />
@@ -45,13 +43,13 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
           <CategoryCard
             title="Education"
-            pressFunction={() => navigation.navigate('Play')}
+            pressFunction={() => navigation.navigate('Home')}
             img={educationImage}
             backgroundColor="#74944A"
           />
           <CategoryCard
             title="Land Rights"
-            pressFunction={() => navigation.navigate('Welcome')}
+            pressFunction={() => navigation.navigate('Home')}
             img={educationImage}
             backgroundColor="#CC502F"
           />
@@ -64,16 +62,6 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
         </View>
       </ScrollView>
-      <RectButton
-        text="Navigate"
-        buttonStyle={{
-          margin: '5%',
-          backgroundColor: Colors.bluePrimary,
-          alignSelf: 'center',
-        }}
-        textStyle={{ color: Colors.textWhite }}
-        onPress={() => navigation.navigate('Welcome')}
-      />
     </SafeAreaView>
   );
 }

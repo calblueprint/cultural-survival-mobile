@@ -3,7 +3,7 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import RootNavigation from './src/navigation';
+import RootNavigation from './src/navigation/RootNavigator';
 
 async function loadResourcesAsync() {
   await Promise.all([
