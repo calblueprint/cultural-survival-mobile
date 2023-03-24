@@ -15,13 +15,23 @@ export default StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
+  modal: {
+    backgroundColor: 'rgba(217, 217, 217, 0.6)',
+    height: '100%',
+    width: '100%',
+  },
+  inset: {
+    backgroundColor: '#FFF',
+    height: 135,
+    width: 260,
+    borderRadius: 12,
+  },
   header_text: {
     fontSize: 13,
     width: 291,
     marginLeft: 20,
     textAlign: 'left',
     color: '#000000',
-    fontFamily: 'DMSans',
   },
   title_text: {
     width: 336,
@@ -35,6 +45,18 @@ export default StyleSheet.create({
     fontSize: 15,
     textAlign: 'left',
     fontWeight: '500',
+    color: '#000000',
+  },
+  inset_text1: {
+    marginTop: 35,
+    fontSize: 20,
+    textAlign: 'center',
+    color: '#000000',
+  },
+  inset_text2: {
+    marginTop: 30,
+    fontSize: 20,
+    textAlign: 'center',
     color: '#000000',
   },
   audio_container: {
