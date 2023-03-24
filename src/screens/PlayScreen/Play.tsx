@@ -1,12 +1,10 @@
 import { Image, Text, TouchableWithoutFeedback, View } from 'react-native';
-// import Slider from '@react-native-community/slider';
 import { Audio } from "expo-av";
 import React, { useState } from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
-import SeekBar from '../../components/SeekBar';
 
 function Play() {
   return (
@@ -34,9 +32,7 @@ function Pause() {
 // }
 
 function PlayScreen() {
-  
-  // const [playingState, setPlayingState] = useState(false);
-  
+    
   const [playState, setPlayState] = useState({
     isPlaying: false,
     playbackObject: null,
@@ -48,24 +44,6 @@ function PlayScreen() {
     positionMillis: 0,
     sliderValue:0,
     isSeeking:false,
-    
-    // "didJustFinish": false,
-    // "durationMillis": 3108,
-    // "hasJustBeenInterrupted": false,
-    // "isBuffering": false,
-    // "isLoaded": true,
-    // "isLooping": false,
-    // "isMuted": false,
-    // "isPlaying": false,
-    // "pitchCorrectionQuality": "Varispeed",
-    // "playableDurationMillis": 3108,
-    // "positionMillis": 0,
-    // "progressUpdateIntervalMillis": 500,
-    // "rate": 1,
-    // "shouldCorrectPitch": false,
-    // "shouldPlay": false,
-    // "uri": "THE URI OF THE FILE IN YOUR DEVICE",
-    // "volume": 1,
   });
 
   async function toggleAudio(sound: React.MutableRefObject<Audio.Sound>, url: string) {
@@ -90,15 +68,11 @@ function PlayScreen() {
       })   
       if (loaded.isLoaded) {
         await sound.current.playAsync();
-        // setPlayState(loaded);
         setPlayState(currState => ({
           ...currState,
           isPlaying: true,
-          durationMillis: loaded.durationMillis!,
-          positionMillis: loaded.positionMillis!,
-          sliderValue: loaded.positionMillis! / loaded.durationMillis!,
         }))
-        } 
+      } 
     }
   }
   
@@ -117,9 +91,15 @@ function PlayScreen() {
     const result = await sound.current.getStatusAsync();
     if (result.isLoaded) {
       await sound.current.setPositionAsync(result.positionMillis + 30000);
+      if (result.positionMillis >= result.durationMillis!) {
+        setPlayState(currState => ({
+          ...currState,
+          isPlaying: false,
+        }))
+        // TODO: go to next audio if fastforwarding past the end
+      }
     }
   }
-
   
   const sound = React.useRef(new Audio.Sound());
   
@@ -158,12 +138,7 @@ function PlayScreen() {
       <Text style={styles.author_text}>Shaldon Ferris</Text>
 
       <View style={{ paddingLeft: '5%' }}>
-        {/* <Icon type="play_bar" /> */}
-        <SeekBar
-          durationMillis={playState.durationMillis}
-          positionMillis={playState.positionMillis}
-          sliderValue={playState.sliderValue}
-        />
+        <Icon type="play_bar" />
       </View>
       
       <View style={styles.audio_container}>
