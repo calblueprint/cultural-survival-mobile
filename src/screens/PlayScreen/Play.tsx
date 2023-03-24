@@ -35,11 +35,12 @@ function Pause() {
   );
 }
 
-// const hardcodedRequest = {
-//   title: ,
-//   thumbnail: ,
-//   artist: ,
-// }
+const hardcodedResponse = {
+  url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
+  thumbnail: 'https://i1.sndcdn.com/artworks-jeSDFXAMxLeFlfXx-a4zovA-t500x500.jpg',
+  artist: 'Jennifer Tauli',
+  title: 'Corpuz Talks about the Important Factors for Indigenous Peoples at COP15'
+}
 
 function PlayScreen() {
   const [playState, setPlayState] = useState({
@@ -62,29 +63,29 @@ function PlayScreen() {
     const result = await sound.current.getStatusAsync();
     if (result.isLoaded) {
       if (result.isPlaying === false) {
-        await sound.current.playAsync();
         setPlayState(currState => ({
           ...currState,
           isPlaying: true,
-        }));
-      } else {
-        await sound.current.pauseAsync();
+        }))
+        await sound.current.playAsync();
+          } else {
         setPlayState(currState => ({
           ...currState,
           isPlaying: false,
-        }));
+        }))
+        await sound.current.pauseAsync();
       }
     } else {
       const loaded = await sound.current.loadAsync({
         uri: url,
       });
       if (loaded.isLoaded) {
-        await sound.current.playAsync();
         setPlayState(currState => ({
           ...currState,
           isPlaying: true,
-        }));
-      }
+        }))
+        await sound.current.playAsync();
+      } 
     }
   }
 
@@ -116,95 +117,82 @@ function PlayScreen() {
   const sound = React.useRef(new Audio.Sound());
 
   return (
-    <SafeAreaView style={globalStyles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          width: '80%',
-          paddingTop: '5%',
-          paddingLeft: '5%',
-          alignItems: 'center',
-        }}
-      >
-        <Icon type="dropdown" />
-        <Text style={styles.header_text}>
-          Green Colonization: An Interview with Maja Kristine Jama
-        </Text>
+    <View style={styles.container}>
+      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 10}}>
+        <View
+          style={{
+            flexDirection: 'row', alignItems: 'center',
+            justifyContent: 'flex-start',
+            width: 336,
+          }}
+        >
+          <Icon type="dropdown" />
+          <Text style={styles.header_text}>
+            {hardcodedResponse.title}
+          </Text>
+        </View>
       </View>
-      <View style={styles.container2}>
+      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 26}}>
         <Image
           style={{
-            height: 275,
-            width: 275,
-            backgroundColor: Colors.surfaceGrey,
-            borderRadius: 9.5,
-            marginTop: '3%',
-            marginBottom: '3%',
+            height: 336,
+            width: 336,
+            backgroundColor: '#D9D9D9',
           }}
+          source={{uri: hardcodedResponse.thumbnail}}
         />
       </View>
-      <Text style={styles.title_text}>
-        Green Colonization: An Interview with Maja Kristine Jama
-      </Text>
-      <Text style={styles.author_text}>Shaldon Ferris</Text>
-
-      <View style={{ paddingLeft: '5%' }}>
-        <Icon type="play_bar" />
+      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 29}}>
+        <Text style={styles.title_text}>
+          {hardcodedResponse.title}
+        </Text>
+      </View>
+      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 8}}>
+        <Text style={styles.author_text}>{hardcodedResponse.artist}</Text>
       </View>
 
-      <View style={styles.audio_container}>
-        {/* <Icon type="audio_back" /> */}
-        <TouchableWithoutFeedback onPress={() => restartAudio(sound)}>
-          <View style={{ width: 34, height: 34 }}>
-            <Svg width="36" height="34" viewBox="0 0 36 34" fill="none">
-              <Path
-                d="M5 18.732C3.66666 17.9622 3.66667 16.0378 5 15.268L24.5 4.00962C25.8333 3.23982 27.5 4.20207 27.5 5.74167L27.5 28.2583C27.5 29.7979 25.8333 30.7602 24.5 29.9904L5 18.732Z"
-                fill="#CC502F"
-              />
-              <Rect y="3" width="5" height="28" rx="1" fill="#CC502F" />
+      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 25}}>
+        <Icon type="play_bar" />
+      </View>
+      
+      <View style={{marginLeft: 30, marginRight: 30, marginTop: 20}}>
+        <View style={styles.audio_container}>
+          <TouchableWithoutFeedback onPress={() => restartAudio(sound)}>
+            <View style={{ width: 34, height: 34 }}>
+              <Svg width="36" height="34" viewBox="0 0 36 34" fill="none">
+                <Path d="M5 18.732C3.66666 17.9622 3.66667 16.0378 5 15.268L24.5 4.00962C25.8333 3.23982 27.5 4.20207 27.5 5.74167L27.5 28.2583C27.5 29.7979 25.8333 30.7602 24.5 29.9904L5 18.732Z" fill="#CC502F"/>
+                <Rect y="3" width="5" height="28" rx="1" fill="#CC502F"/>
+              </Svg>      
+            </View>
+          </TouchableWithoutFeedback >
+          
+          <TouchableWithoutFeedback onPress={() => rewindAudio(sound)}>
+            <View style={{ width: 57, height: 34, alignItems: 'center' }}>
+            <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
+              <Path d="M3 18.732C1.66666 17.9622 1.66667 16.0377 3 15.2679L22.5 4.00962C23.8333 3.23982 25.5 4.20207 25.5 5.74167L25.5 28.2583C25.5 29.7979 23.8333 30.7602 22.5 29.9904L3 18.732Z" fill="#CC502F"/>
+              <Path d="M26 18.732C24.6667 17.9622 24.6667 16.0377 26 15.2679L45.5 4.00962C46.8333 3.23982 48.5 4.20207 48.5 5.74167V28.2583C48.5 29.7979 46.8333 30.7602 45.5 29.9904L26 18.732Z" fill="#CC502F"/>
             </Svg>
-          </View>
-        </TouchableWithoutFeedback>
+            </View>
+          </TouchableWithoutFeedback >
 
-        <TouchableWithoutFeedback onPress={() => rewindAudio(sound)}>
-          <View style={{ width: 34, height: 34 }}>
-            <Svg width="36" height="34" viewBox="0 0 36 34" fill="none">
-              <Path
-                d="M5 18.732C3.66666 17.9622 3.66667 16.0378 5 15.268L24.5 4.00962C25.8333 3.23982 27.5 4.20207 27.5 5.74167L27.5 28.2583C27.5 29.7979 25.8333 30.7602 24.5 29.9904L5 18.732Z"
-                fill="#CC502F"
-              />
-              <Rect y="3" width="5" height="28" rx="1" fill="#CC502F" />
+
+          <TouchableWithoutFeedback onPress={() => toggleAudio(sound, hardcodedResponse.url)}>
+            <View style={{ width: 68, height: 68 }}>
+              {playState.isPlaying ? Pause() : Play()}
+            </View>
+          </TouchableWithoutFeedback >
+          
+          <TouchableWithoutFeedback onPress={() => fastforwardAudio(sound)}>
+            <View style={{ width: 57, height: 34, alignItems: 'center'}}>
+            <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
+              <Path d="M31 15.268C32.3333 16.0378 32.3333 17.9623 31 18.7321L11.5 29.9904C10.1667 30.7602 8.5 29.7979 8.5 28.2583V5.74167C8.5 4.20207 10.1667 3.23982 11.5 4.00962L31 15.268Z" fill="#CC502F"/>
+              <Path d="M54 15.268C55.3333 16.0378 55.3333 17.9623 54 18.7321L34.5 29.9904C33.1667 30.7602 31.5 29.7979 31.5 28.2583V5.74167C31.5 4.20207 33.1667 3.23982 34.5 4.00962L54 15.268Z" fill="#CC502F"/>
             </Svg>
-          </View>
-        </TouchableWithoutFeedback>
+            </View>
+          </TouchableWithoutFeedback >
 
-        <TouchableWithoutFeedback
-          onPress={() =>
-            toggleAudio(
-              sound,
-              'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/FernandDeVarennesUNSpecialRapporteurOnMinorityIssuesonIndigenousLanguages.mp3?generation=1678596979606352&alt=media',
-            )
-          }
-        >
-          <View style={{ width: 68, height: 68 }}>
-            {playState.isPlaying ? Pause() : Play()}
-          </View>
-        </TouchableWithoutFeedback>
-
-        <TouchableWithoutFeedback onPress={() => fastforwardAudio(sound)}>
-          <View style={{ width: 34, height: 34 }}>
-            <Svg width="36" height="34" viewBox="0 0 36 34" fill="none">
-              <Path
-                d="M31 15.268C32.3333 16.0378 32.3333 17.9622 31 18.732L11.5 29.9904C10.1667 30.7602 8.5 29.7979 8.5 28.2583V5.74167C8.5 4.20207 10.1667 3.23982 11.5 4.00962L31 15.268Z"
-                fill="#CC502F"
-              />
-              <Rect x="31" y="3" width="5" height="28" rx="1" fill="#CC502F" />
-            </Svg>
-          </View>
-        </TouchableWithoutFeedback>
-
-        <Icon type="audio_forward" />
+          <Icon type="audio_forward" />
+        </View>
       </View>
 
       <View
@@ -219,7 +207,8 @@ function PlayScreen() {
             flexDirection: 'row',
             justifyContent: 'space-between',
             width: '20%',
-            paddingBottom: '7%',
+            marginTop: 10,
+            marginBottom: 30,
           }}
         >
           <Icon type="bookmark" />
