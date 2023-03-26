@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
 import {
-  Image,
-  Pressable,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -111,28 +107,32 @@ const styles = StyleSheet.create({
   },
 });
 
-type GrantCardProps = { 
-  grantObj: Grant; 
+type GrantCardProps = {
+  grantObj: Grant;
   onPress?: () => void;
 };
 
 function GrantCard({ grantObj, onPress }: GrantCardProps) {
-
   return (
     <ViewContainer>
-
       <TouchableHighlight
         underlayColor="#942000"
         // onPress={() => navigation.navigate('GrantInfo')} // should change this for new nav!
         // onPress={() => setModalVisible(!modalVisible)} // should change this for new nav!
         onPress={onPress}
         // onPress={() => setModalVisible(!modalVisible)}
-        style={styles.cardContainer}  // also need to update this to reflect new design (maybe create new branch for this!!)
+        style={styles.cardContainer} // also need to update this to reflect new design (maybe create new branch for this!!)
       >
         <View>
           <Text style={styles.titleText}>{grantObj.title}</Text>
-          <Text style={styles.whiteText}> {`$${  grantObj.amount.toString()}`}</Text>
-          <Text style={styles.whiteText}> Due Date: {(new Date(grantObj.deadline)).toLocaleDateString()} </Text>
+          <Text style={styles.whiteText}>
+            {' '}
+            {`$${grantObj.amount.toString()}`}
+          </Text>
+          <Text style={styles.whiteText}>
+            {' '}
+            Due Date: {new Date(grantObj.deadline).toLocaleDateString()}{' '}
+          </Text>
         </View>
       </TouchableHighlight>
       <Icon type="expand" />
