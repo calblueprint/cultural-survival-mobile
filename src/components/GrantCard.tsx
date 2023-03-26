@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import {
-
   Image,
   Pressable,
   StyleSheet,
@@ -132,8 +131,8 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
       >
         <View>
           <Text style={styles.titleText}>{grantObj.title}</Text>
-          <Text style={styles.whiteText}> {grantObj.amount.toString()}</Text>
-          <Text style={styles.whiteText}> Due Date: {grantObj.deadline.toString()} </Text>
+          <Text style={styles.whiteText}> {`$${  grantObj.amount.toString()}`}</Text>
+          <Text style={styles.whiteText}> Due Date: {(new Date(grantObj.deadline)).toLocaleDateString()} </Text>
         </View>
       </TouchableHighlight>
       <Icon type="expand" />

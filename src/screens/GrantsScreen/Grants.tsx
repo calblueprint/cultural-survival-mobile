@@ -9,43 +9,15 @@ import styles from './styles';
 import { Grant } from '../../types/schema'
 
 import '../../i18n/i18n';
-import { namespaces } from '../../i18n/i18n.constants';
 import { RootStackScreenProps } from '../../types/navigation';
 import { getAllGrants , getGrantById} from '../../firebase/queries/grantsQueries';
 
 
-const defaultGrant: Grant = {
-  grant_id: "",
-  amount: 0,
-  countries: [],
-  deadline: new Date(),
-  description: "",
-  duration: "",
-  image_link: "",
-  share_link: "",
-  title: "",
-
-}
-
-// let lang = 'en';
 function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
-  // const { i18n, t } = useTranslation(namespaces.pages.grants);
-  // function handleClick(newLang: string) {
-  //   i18n.changeLanguage(newLang);
-  // }
-  // function toggle(lg: string) {
-  //   lang = lg === 'en' ? 'es' : 'en';
-  //   return lang;
-  // }
+
   const [grants, setGrants] = useState<Grant[]>([]);
   const [grantId, setGrantId] = useState<string>('');
-  // const [grantObj, setGrantObj] = useState<Grant>(defaultGrant);
 
-  // const getGrantObj = async (grantID : string) => {
-  //   const grant = await getGrantById(grantID);
-  //   setGrantObj(grant);
-
-  // }
 
 
   /* fetch all grants on page load */
