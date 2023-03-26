@@ -33,11 +33,6 @@ const parseGrant = async (docSnap: DocumentSnapshot) => {
   return grant as Grant;
 };
 
-
-
-
-
-
 /**
  * Get all grants from the `grants` collection.
  */
