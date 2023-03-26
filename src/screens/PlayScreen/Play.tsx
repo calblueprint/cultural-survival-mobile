@@ -2,9 +2,11 @@ import { Image, Modal, Pressable, Text, TouchableWithoutFeedback, View } from 'r
 import { Audio } from "expo-av";
 import React, { useState } from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
+import Clipboard from '@react-native-clipboard/clipboard';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
+
 
 function play() {
   return (
@@ -48,7 +50,8 @@ const hardcodedResponse = {
   url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
   thumbnail: 'https://i1.sndcdn.com/artworks-jeSDFXAMxLeFlfXx-a4zovA-t500x500.jpg',
   artist: 'Jennifer Tauli',
-  title: 'Corpuz Talks about the Important Factors for Indigenous Peoples at COP15'
+  title: 'Corpuz Talks about the Important Factors for Indigenous Peoples at COP15',
+  scLink: 'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
 }
 
 function PlayScreen() {
@@ -111,7 +114,7 @@ function PlayScreen() {
     const result = await sound.current.getStatusAsync();
     if (result.isLoaded) {
       await sound.current.setPositionAsync(result.positionMillis + 30000);
-      if (result.positionMillis >= result.durationMillis!) {
+      if ((result.durationMillis != null) && (result.positionMillis >= result.durationMillis)) {
         setPlayState(currState => ({
           ...currState,
           isPlaying: false,
@@ -122,12 +125,13 @@ function PlayScreen() {
   }
   
   const sound = React.useRef(new Audio.Sound());
-  const [modalVisible, setModalVisible] = useState(false);
+  const [audioModalVisible, setAudioModalVisible] = useState(false);
+  const [shareModalVisible, setShareModalVisible] = useState(false);
   const [audioSaved, setAudioSaved] = useState(false);
   
-  function toggleModal() {
+  function toggleAudioModal() {
     setAudioSaved(!audioSaved);
-    setModalVisible(!modalVisible);
+    setAudioModalVisible(!audioModalVisible);
     if (audioSaved) {
       // TODO: remove from LocalStorage
     } else {
@@ -135,27 +139,53 @@ function PlayScreen() {
     }
   }
   
+  function toggleShareModal() {
+    setShareModalVisible(!shareModalVisible);
+    // Clipboard.setString(hardcodedResponse.scLink);
+  }
+
+  
   return (
     <View style={styles.container}>
       <Modal
         animationType="fade"
         transparent
-        visible={modalVisible}
+        visible={audioModalVisible}
         onRequestClose={() => {
-          setModalVisible(!modalVisible);
+          setAudioModalVisible(!audioModalVisible);
         }}>
         <View style={styles.modal}>
           <View style={{alignItems: 'center', marginTop: 305}}>
             <View style={styles.inset}>
               <Text style={styles.inset_text1}>{audioSaved ? "Saved to Library!" : "Removed from Library!"}</Text>
               <Pressable
-                onPress={() => setModalVisible(!modalVisible)}>
+                onPress={() => setAudioModalVisible(!audioModalVisible)}>
                 <Text style={styles.inset_text2}>OK</Text>
               </Pressable>
             </View>
           </View>
         </View>
       </Modal>
+      <Modal
+        animationType="fade"
+        transparent
+        visible={shareModalVisible}
+        onRequestClose={() => {
+          setShareModalVisible(!shareModalVisible);
+        }}>
+        <View style={styles.modal}>
+          <View style={{alignItems: 'center', marginTop: 305}}>
+            <View style={styles.inset}>
+              <Text style={styles.inset_text1}>Link Copied to Clipboard!</Text>
+              <Pressable
+                onPress={() => setShareModalVisible(!shareModalVisible)}>
+                <Text style={styles.inset_text2}>OK</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
       <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 10}}>
         <View
           style={{
@@ -189,9 +219,10 @@ function PlayScreen() {
         <Text style={styles.author_text}>{hardcodedResponse.artist}</Text>
       </View>
 
-      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 25}}>
+      {/* TODO: Implement dynamic seek bar. */}
+      {/* <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 25}}>
         <Icon type="play_bar" />
-      </View>
+      </View> */}
       
       <View style={{marginLeft: 30, marginRight: 30, marginTop: 20}}>
         <View style={styles.audio_container}>
@@ -235,26 +266,30 @@ function PlayScreen() {
 
       <View
         style={{
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          width: '95%',
+          flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 20
         }}
       >
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'space-between',
-            width: '20%',
-            marginTop: 10,
+            justifyContent: 'flex-end',
+            width: 336,
             marginBottom: 30,
           }}
         >
-          <TouchableWithoutFeedback onPress={() => toggleModal()}>
-            <View style={{ width: 26, height: 26 }}>
+          <TouchableWithoutFeedback onPress={() => toggleAudioModal()}>
+            <View style={{ width: 26, height: 26, marginRight: 20 }}>
               {audioSaved ? saved() : notSaved()}
             </View>
           </TouchableWithoutFeedback >
-          <Icon type="options" />
+          {/* <Icon type="options" /> */}
+          <TouchableWithoutFeedback onPress={() => toggleShareModal()}>
+            <View style={{ width: 26, height: 26 }}>
+              <Svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <Path fill-rule="evenodd" clip-rule="evenodd" d="M17.941 16.8305C18.4962 16.3005 19.2334 16.0034 20.001 16.0005C21.6578 16.0005 23.001 17.3436 23.001 19.0005C23.001 20.6574 21.6578 22.0005 20.001 22.0005C18.3441 22.0005 17.001 20.6574 17.001 19.0005C16.9911 18.8707 16.9911 18.7403 17.001 18.6105L7.60098 13.4705C7.07242 14.4109 6.07969 14.995 5.00098 15.0005C3.34412 15.0005 2.00098 13.6574 2.00098 12.0005C2.00098 10.3436 3.34412 9.0005 5.00098 9.0005C6.07969 9.00596 7.07242 9.59014 7.60098 10.5305L17.001 5.3905C16.9911 5.26068 16.9911 5.13031 17.001 5.0005C16.9958 3.57629 17.9927 2.34473 19.3867 2.05312C20.7807 1.76151 22.1877 2.49023 22.7538 3.79709C23.3199 5.10396 22.8891 6.62874 21.7229 7.44619C20.5566 8.26365 18.9764 8.14845 17.941 7.1705L9.09098 12.0005L17.941 16.8305ZM21.0036 5.00061C21.0036 4.44832 20.5559 4.00061 20.0036 4.00061C19.4513 4.00061 19.0036 4.44832 19.0036 5.00061C19.0036 5.55289 19.4513 6.00061 20.0036 6.00061C20.5559 6.00061 21.0036 5.55289 21.0036 5.00061ZM5.0026 13.0007C4.45031 13.0007 4.0026 12.553 4.0026 12.0007C4.0026 11.4484 4.45031 11.0007 5.0026 11.0007C5.55488 11.0007 6.0026 11.4484 6.0026 12.0007C6.0026 12.553 5.55488 13.0007 5.0026 13.0007ZM19.0036 19.0008C19.0036 19.5531 19.4513 20.0008 20.0036 20.0008C20.5559 20.0008 21.0036 19.5531 21.0036 19.0008C21.0036 18.4485 20.5559 18.0008 20.0036 18.0008C19.4513 18.0008 19.0036 18.4485 19.0036 19.0008Z" fill="#CC502F"/>
+              </Svg>
+            </View>
+          </TouchableWithoutFeedback >
         </View>
       </View>
     </View>
