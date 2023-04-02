@@ -2,7 +2,7 @@ import { Image, Modal, Pressable, Text, TouchableWithoutFeedback, View } from 'r
 import { Audio } from "expo-av";
 import React, { useState } from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
-import Clipboard from '@react-native-clipboard/clipboard';
+// import Clipboard from '@react-native-clipboard/clipboard';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
