@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 // import Clipboard from '@react-native-clipboard/clipboard';
 import Icon from '../../../assets/icons';
-import Colors from '../../styles/Colors';
 import styles from './styles';
 
 
@@ -186,7 +185,7 @@ function PlayScreen() {
         </View>
       </Modal>
 
-      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 10}}>
+      <View style={{flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: 20}}>
         <View
           style={{
             flexDirection: 'row', alignItems: 'center',
@@ -224,7 +223,7 @@ function PlayScreen() {
         <Icon type="play_bar" />
       </View> */}
       
-      <View style={{marginLeft: 30, marginRight: 30, marginTop: 20}}>
+      <View style={{marginLeft: 30, marginRight: 30, marginTop: 10}}>
         <View style={styles.audio_container}>
           <TouchableWithoutFeedback onPress={() => restartAudio(sound)}>
             <View style={{ width: 34, height: 34 }}>
