@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 import globalStyles from '../../globalStyles';
 import { RootStackScreenProps } from '../../types/navigation';
 
-export default function GrantInfo({
+function GrantInfoScreen({
   route,
 }: RootStackScreenProps<'GrantInfo'>) {
   const { grantObj } = route.params;
@@ -17,3 +17,4 @@ export default function GrantInfo({
     </View>
   );
 }
+export default GrantInfoScreen;

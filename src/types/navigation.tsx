@@ -26,6 +26,8 @@ export type GrantsStackParamList = {
 export type SearchStackParamList = {
   Audio: undefined;
   Play: undefined;
+  QueriesDemo: undefined;
+  GrantInfo: { grantObj: Grant };
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
