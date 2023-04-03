@@ -2,9 +2,7 @@ import { Text, View } from 'react-native';
 import globalStyles from '../../globalStyles';
 import { RootStackScreenProps } from '../../types/navigation';
 
-function GrantInfoScreen({
-  route,
-}: RootStackScreenProps<'GrantInfo'>) {
+function GrantInfoScreen({ route }: RootStackScreenProps<'GrantInfo'>) {
   const { grantObj } = route.params;
   return (
     <View>
