@@ -1,7 +1,10 @@
 import { Text, View } from 'react-native';
 import globalStyles from '../../globalStyles';
+import { RootStackScreenProps } from '../../types/navigation';
 
-export default function GrantInfo({ route }) {
+export default function GrantInfo({
+  route,
+}: RootStackScreenProps<'GrantInfo'>) {
   const { grantObj } = route.params;
   return (
     <View>
