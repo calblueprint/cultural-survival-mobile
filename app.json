@@ -14,10 +14,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "org.calblueprint.culturalsurvival"
+      "bundleIdentifier": "org.calblueprint.culturalsurvival",
+      "buildNumber": "2"
     },
     "android": {
       "adaptiveIcon": {
