@@ -5,7 +5,7 @@ import {
   getDoc,
   getDocs,
   getFirestore,
-  query
+  query,
 } from 'firebase/firestore';
 import { Grant } from '../../types/schema';
 import firebaseApp from '../firebaseApp';

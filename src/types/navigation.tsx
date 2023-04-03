@@ -3,6 +3,7 @@
  * https://reactnavigation.org/docs/typescript/
  */
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Grant } from './schema';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -11,7 +12,7 @@ export type RootStackParamList = {
   Grants: undefined;
   Play: undefined;
   QueriesDemo: undefined;
-  GrantInfo: undefined;
+  GrantInfo: { grantObj: Grant };
 };
 
 export type HomeStackParamList = {

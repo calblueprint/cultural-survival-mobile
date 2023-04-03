@@ -1,4 +1,3 @@
-
 export type User = {
   user_id: string;
   admin: boolean;
@@ -23,7 +22,7 @@ export type Grant = {
   deadline: string;
   description: string;
   duration: string;
-  image_link: string,
+  image_link: string;
   share_link: string;
   title: string;
 };

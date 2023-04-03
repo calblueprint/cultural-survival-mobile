@@ -20,7 +20,7 @@ function UserStack() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Audio" component={AudioScreen} />
         <Stack.Screen name="Grants" component={GrantsScreen} />
-        <Stack.Screen name="GrantInfo" component={GrantInfoScreen}/>
+        <Stack.Screen name="GrantInfo" component={GrantInfoScreen} />
         <Stack.Screen name="Play" component={PlayScreen} />
         <Stack.Screen name="QueriesDemo" component={QueriesDemo} />
       </Stack.Navigator>

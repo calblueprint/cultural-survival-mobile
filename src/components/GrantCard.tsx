@@ -1,9 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
 import ViewContainer from './ViewContainer';
@@ -118,11 +113,8 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
     <ViewContainer>
       <TouchableHighlight
         underlayColor="#942000"
-        // onPress={() => navigation.navigate('GrantInfo')} // should change this for new nav!
-        // onPress={() => setModalVisible(!modalVisible)} // should change this for new nav!
         onPress={onPress}
-        // onPress={() => setModalVisible(!modalVisible)}
-        style={styles.cardContainer} // also need to update this to reflect new design (maybe create new branch for this!!)
+        style={styles.cardContainer} // also need to update this to reflect new design changes (create new branch for new frontend!!)
       >
         <View>
           <Text style={styles.titleText}>{grantObj.title}</Text>

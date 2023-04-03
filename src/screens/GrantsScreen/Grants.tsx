@@ -29,7 +29,7 @@ function GrantsScreen({ navigation }: RootStackScreenProps<'Grants'>) {
   return (
     <ScrollView style={styles.container}>
       <ViewContainer>
-        <Text style={globalStyles.h3}>Grants Available</Text>
+        <Text style={globalStyles.h2}>Grants Available</Text>
       </ViewContainer>
 
       {grants.map(grant => (
