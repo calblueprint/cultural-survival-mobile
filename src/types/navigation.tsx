@@ -12,7 +12,6 @@ export type RootStackParamList = {
   Grants: undefined;
   Play: undefined;
   QueriesDemo: undefined;
-  GrantInfo: { grantObj: Grant };
 };
 
 export type HomeStackParamList = {
@@ -21,6 +20,7 @@ export type HomeStackParamList = {
 
 export type GrantsStackParamList = {
   Grants: undefined;
+  GrantInfo: { grantObj: Grant };
 };
 
 export type SearchStackParamList = {
@@ -38,3 +38,6 @@ export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
 
 export type SearchStackScreensProps<T extends keyof SearchStackParamList> =
   NativeStackScreenProps<SearchStackParamList, T>;
+
+export type GrantsStackScreensProps<T extends keyof GrantsStackParamList> =
+  NativeStackScreenProps<GrantsStackParamList, T>;
