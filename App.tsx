@@ -60,8 +60,7 @@ export default function App() {
   return !resourcesLoaded ? null : (
     <View style={styles.container} onLayout={onLayoutRootView}>
       {/* <RootNavigation /> */}
-      {/* <AudioDemos/> */}
-      <RootNavigation />
+      <AudioDemos />
     </View>
   );
 }
