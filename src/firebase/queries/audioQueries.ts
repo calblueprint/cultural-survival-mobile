@@ -25,7 +25,8 @@ import {
       authors: data?.authors,
       audio_file: data?.audio_file,
       soundCloud: data?.soundCloud,
-      theme: data?.theme
+      theme: data?.theme,
+      gcsLink: data?.gcsLink
       
     };
   
