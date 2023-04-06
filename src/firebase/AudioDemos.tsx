@@ -6,7 +6,9 @@ import { useEffect, useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import { Audio } from '../types/schema';
 import { getAllAudio, getAudioID } from './queries/audioQueries';
-import { downLoadAudio } from './queries/audioPlayback';
+import { downLoadAudio, deleteAudio} from './queries/audioPlayback';
+import * as FileSystem from 'expo-file-system';
+
 
 export default function QueriesDemo() {
   const [audio, setAudio] = useState<Audio[]>([]);
@@ -14,25 +16,17 @@ export default function QueriesDemo() {
   const [audio_id, setAudioId] = useState<string>('');
   /* fetch all audio on page load */
   const handlePress = async () => {
-    const audios = await getAudioID(audio_id);
+    const audios = await downLoadAudio(audio_id);
     // TODO grants-flow: remove this when handling getting grants by ID is done properly.
     // eslint-disable-next-line no-console
-    console.log('Received audio: ', audios.title);
+    // console.log('Received audio: ', audios);
+    deleteAudio(audios);
+    const tmp = await FileSystem.getInfoAsync(audios);
+    console.log(tmp);
     
   };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const allAudio = await getAllAudio();
-  //       setAudio(allAudio);
-  //     } catch (error) {
-  //       // eslint-disable-next-line no-console
-  //       console.error('(useEffect)[AudioDemos]', error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+
 
   useEffect(() => {
     const fetchData2 = async () => {
@@ -43,6 +37,7 @@ export default function QueriesDemo() {
       } catch (error) {
         // eslint-disable-next-line no-console
         console.error('(useEffect)[AudioDemos]', error);
+
       } 
     };
     fetchData2();
