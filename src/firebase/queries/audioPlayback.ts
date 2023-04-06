@@ -32,14 +32,15 @@ export const downLoadAudio = async (audioID: string): Promise<string> => {
     
     const name = audioID
     const url = (await getAudioID(audioID)).gcsLink;
-    console.log(`${FileSystem.documentDirectory}${name}.mp3`)
+    const dir = `${FileSystem.documentDirectory}${name}.mp3`
+    console.log(dir)
   
     // console.log((await getAudioID(audio_id)).gcsLink);
     console.log(url);
 
     const downLoadAudio = FileSystem.createDownloadResumable(
       url,
-      `${FileSystem.documentDirectory}${name}.mp3`,
+      dir,
       {}
     );
     try {
@@ -48,13 +49,15 @@ export const downLoadAudio = async (audioID: string): Promise<string> => {
     } catch (e) {
       console.error(e);
     }
-    const tmp = await FileSystem.getInfoAsync(`${FileSystem.documentDirectory}${name}.mp3`);
+    const tmp = await FileSystem.getInfoAsync(dir);
     console.log("Hello")
     console.log(downLoadAudio)
     console.log(tmp)
 
-    return `${FileSystem.documentDirectory}${name}.mp3`;
+    return dir;
   };
+
+  export const deleteAudio = async (audioPath: string): Promise<void> => FileSystem.deleteAsync(audioPath);
 
 
 
