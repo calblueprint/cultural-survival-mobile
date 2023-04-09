@@ -5,17 +5,17 @@ import {
     getDoc,
     getDocs,
     getFirestore,
-    query,
+  
   } from 'firebase/firestore';
   import { Audio } from '../../types/schema';
   import firebaseApp from '../firebaseApp';
   
   const db = getFirestore(firebaseApp);
   
-  const audioCollection = collection(db, 'audio');
+  // const audioCollection = collection(db, 'audio');
 
   const parseAudio = async (docSnap: DocumentSnapshot) => {
-    const audioId = docSnap.id.toString();
+    // const audioId = docSnap.id.toString();
     const data = docSnap.data();
   
     const audio = {
@@ -41,6 +41,7 @@ import {
       const itemsRef = collection(db, "audio");
       const promises: Promise<Audio>[] = [];
       const docSnap = await getDocs(itemsRef);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       docSnap.forEach((audio: any) => {
         promises.push(parseAudio(audio))
   
@@ -48,18 +49,20 @@ import {
       const audio = await Promise.all(promises);
       return audio;
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.warn(e);
       throw e;
     }
   };
   
 
-  export const getAudioID = async (audio_id: string): Promise<Audio> => {
+  export const getAudioID = async (audioId: string): Promise<Audio> => {
     try {
-      const docRef = doc(db, "audio", audio_id);
+      const docRef = doc(db, "audio", audioId);
       const docSnap = await getDoc(docRef);
       return await parseAudio(docSnap);
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error(e);
       throw e;
     }
