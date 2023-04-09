@@ -4,11 +4,10 @@
 
 import { useEffect, useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
+import { getInfoAsync } from 'expo-file-system';
 import { Audio } from '../types/schema';
 import { getAllAudio, getAudioID } from './queries/audioQueries';
-import { downLoadAudio, deleteAudio} from './queries/audioPlayback';
-import * as FileSystem from 'expo-file-system';
-
+import { downLoadAudio, deleteAudio } from './queries/audioPlayback';
 
 export default function QueriesDemo() {
   const [audio, setAudio] = useState<Audio[]>([]);
@@ -17,31 +16,29 @@ export default function QueriesDemo() {
   /* fetch all audio on page load */
   const handlePress = async () => {
     const audios = await downLoadAudio(audio_id);
-    // TODO grants-flow: remove this when handling getting grants by ID is done properly.
-    // eslint-disable-next-line no-console
-    // console.log('Received audio: ', audios);
+    const didItDownload = await getInfoAsync(audios);
+    console.log(didItDownload);
+
     deleteAudio(audios);
-    const tmp = await FileSystem.getInfoAsync(audios);
-    console.log(tmp);
+    const didItDelete = await getInfoAsync(audios);
+    console.log(didItDelete);
+    
     
   };
 
-
-
-  useEffect(() => {
-    const fetchData2 = async () => {
-      try {
-        console.log("hello");
-        const allAudio1 = await downLoadAudio("1420969939");
-        console.log(allAudio1);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('(useEffect)[AudioDemos]', error);
-
-      } 
-    };
-    fetchData2();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData2 = async () => {
+  //     try {
+  //       console.log('hello');
+  //       const allAudio1 = await downLoadAudio('1420969939');
+  //       console.log(allAudio1);
+  //     } catch (error) {
+  //       // eslint-disable-next-line no-console
+  //       console.error('(useEffect)[AudioDemos]', error);
+  //     }
+  //   };
+  //   fetchData2();
+  // }, []);
 
   return (
     <View>
@@ -54,7 +51,7 @@ export default function QueriesDemo() {
         </View>
       ))}
       <TextInput placeholder="ID to be queried" onChangeText={setAudioId} />
-      <Button title="Submit" onPress={() => handlePress()} />
+      <Button title="Download" onPress={() => handlePress()} />
     </View>
   );
 }
