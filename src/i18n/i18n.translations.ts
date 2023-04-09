@@ -41,3 +41,24 @@ export const es = {
     audio_feed: 'Alimentación de Audio',
   },
 };
+
+export const pt = {
+  [namespaces.common]: {
+    buttons: {
+      ok: 'Aceitar',
+      cancel: 'Cancelar',
+    },
+  },
+  [namespaces.pages.hello]: {
+    welcome: 'Bem-vindo à Cultural Survival.',
+    categories: 'Categorias',
+    radio: 'Rádio',
+    grants: 'Subvençãos',
+  },
+  [namespaces.pages.grants]: {
+    grants_feed: 'Subsídios disponíveis',
+  },
+  [namespaces.pages.audio]: {
+    audio_feed: 'Alimentação de Áudio',
+  },
+};
