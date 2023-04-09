@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: 'column',
     alignItems: 'flex-start',
-    backgroundColor: '#CC502F',
+    backgroundColor: '#F3F2F2',
     width: 330,
     height: 140,
     borderRadius: 13,
@@ -118,10 +118,12 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
       >
         <View>
           <Text style={styles.titleText}>{grantObj.title}</Text>
+          <Icon type='coins'/>
           <Text style={styles.whiteText}>
             {' '}
             {`$${grantObj.amount.toString()}`}
           </Text>
+          <Icon type='calendar'/>
           <Text style={styles.whiteText}>
             {' '}
             Due Date: {new Date(grantObj.deadline).toLocaleDateString()}{' '}
