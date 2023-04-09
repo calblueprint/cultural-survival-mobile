@@ -2,25 +2,27 @@
  * Simple demo component that renders a list of all grants.
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import { getInfoAsync } from 'expo-file-system';
 import { Audio } from '../types/schema';
-import { getAllAudio, getAudioID } from './queries/audioQueries';
+// import { getAllAudio, getAudioID } from './queries/audioQueries';
 import { downLoadAudio, deleteAudio } from './queries/audioPlayback';
 
 export default function QueriesDemo() {
-  const [audio, setAudio] = useState<Audio[]>([]);
+  const [audio] = useState<Audio[]>([]);
   // eslint-disable-next-line camelcase
   const [audio_id, setAudioId] = useState<string>('');
   /* fetch all audio on page load */
   const handlePress = async () => {
     const audios = await downLoadAudio(audio_id);
     const didItDownload = await getInfoAsync(audios);
+    // eslint-disable-next-line no-console
     console.log(didItDownload);
 
     deleteAudio(audios);
     const didItDelete = await getInfoAsync(audios);
+    // eslint-disable-next-line no-console
     console.log(didItDelete);
     
     
