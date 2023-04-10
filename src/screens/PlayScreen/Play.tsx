@@ -1,9 +1,33 @@
-import { Image, Text, View } from 'react-native';
+// import { Image, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, Image, Text, TextInput, View } from 'react-native';
+import { getInfoAsync } from 'expo-file-system';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
 
+import { Audio } from '../../types/schema';
+import {
+  downLoadAudio,
+  deleteAudio,
+} from '../../firebase/queries/audioPlayback';
+
 function PlayScreen() {
+  // eslint-disable-next-line camelcase
+  const [audio_id, setAudioId] = useState<string>('');
+  /* fetch all audio on page load */
+  const handlePress = async () => {
+    const audios = await downLoadAudio(audio_id);
+    const didItDownload = await getInfoAsync(audios);
+    // eslint-disable-next-line no-console
+    console.log(didItDownload);
+
+    deleteAudio(audios);
+    const didItDelete = await getInfoAsync(audios);
+    // eslint-disable-next-line no-console
+    console.log(didItDelete);
+  };
+
   return (
     <View style={styles.container}>
       <View
@@ -46,6 +70,14 @@ function PlayScreen() {
         <Icon type="play_button" />
         <Icon type="audio_forward" />
       </View>
+      <View          
+      style={{
+            paddingBottom: '7%',
+            paddingLeft: '7%',
+          }}>
+          <TextInput placeholder="ID to be queried" onChangeText={setAudioId} />
+          <Button title="Download" onPress={() => handlePress()} /> 
+        </View>
 
       <View
         style={{
@@ -65,6 +97,8 @@ function PlayScreen() {
           <Icon type="bookmark" />
           <Icon type="options" />
         </View>
+        
+       
       </View>
     </View>
   );
