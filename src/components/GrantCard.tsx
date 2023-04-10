@@ -122,11 +122,9 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
           <Text style={[globalStyles.h2, styles.titleText]}>
             {grantObj.title}
           </Text>
-          <Icon type='coins'/>
           <Text style={styles.whiteText}>
             {`$${grantObj.amount.toString()}`}
           </Text>
-          <Icon type='calendar'/>
           <Text style={styles.whiteText}>
             Due Date: {new Date(grantObj.deadline).toLocaleDateString()}{' '}
           </Text>
