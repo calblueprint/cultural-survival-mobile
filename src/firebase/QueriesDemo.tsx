@@ -38,7 +38,6 @@ export default function QueriesDemo() {
         <View key={grant.grant_id}>
           <Text>{`title: ${grant.title} | id: ${grant.grant_id}`}</Text>
           <Text>{`description: ${grant.description}`}</Text>
-          
         </View>
       ))}
       <TextInput placeholder="ID to be queried" onChangeText={setGrantId} />
