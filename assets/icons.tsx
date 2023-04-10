@@ -20,7 +20,9 @@ export type IconType =
   | 'audio_forward'
   | 'audio_back'
   | 'dropdown'
-  | 'expand';
+  | 'expand'
+  | 'coins'
+  | 'calendar';
 
 const IconSvgs: Record<IconType, React.ReactElement> = {
   inactive_grants_icon: (
@@ -182,6 +184,30 @@ const IconSvgs: Record<IconType, React.ReactElement> = {
 `}
     />
   ),
+  coins: (
+    <SvgXml
+      xml={`
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.80534 11.9097C9.62429 11.9097 11.9095 9.62448 11.9095 6.80552C11.9095 3.98657 9.62429 1.70135 6.80534 1.70135C3.98639 1.70135 1.70117 3.98657 1.70117 6.80552C1.70117 9.62448 3.98639 11.9097 6.80534 11.9097Z" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.3898 8.82159C16.1939 9.1214 16.9095 9.61915 17.4703 10.2688C18.0312 10.9184 18.4191 11.699 18.5984 12.5383C18.7776 13.3777 18.7423 14.2486 18.4957 15.0707C18.2491 15.8927 17.7992 16.6393 17.1876 17.2414C16.5761 17.8436 15.8225 18.2817 14.9967 18.5155C14.1709 18.7492 13.2995 18.7709 12.4631 18.5786C11.6267 18.3863 10.8523 17.9862 10.2114 17.4153C9.57062 16.8444 9.0841 16.1211 8.79688 15.3124" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.95508 5.10413H6.80577V8.5069" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.2156 11.8076L14.8111 12.4116L12.4121 14.8106" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `}
+    />
+  ),
+  calendar: (
+    <SvgXml
+      xml={`
+    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.1638 3.40283H4.25412C3.31447 3.40283 2.55273 4.16457 2.55273 5.10422V17.0139C2.55273 17.9536 3.31447 18.7153 4.25412 18.7153H16.1638C17.1035 18.7153 17.8652 17.9536 17.8652 17.0139V5.10422C17.8652 4.16457 17.1035 3.40283 16.1638 3.40283Z" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M13.6113 1.70142V5.10419" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.80469 1.70142V5.10419" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M2.55273 8.50696H17.8652" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    `}
+    />
+  )
 };
 type Props = {
   className?: string;
