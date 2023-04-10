@@ -24,8 +24,6 @@ export default function QueriesDemo() {
     const didItDelete = await getInfoAsync(audios);
     // eslint-disable-next-line no-console
     console.log(didItDelete);
-    
-    
   };
 
   // useEffect(() => {
