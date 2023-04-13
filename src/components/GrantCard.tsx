@@ -1,9 +1,11 @@
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View, Image } from 'react-native';
 import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
 import ViewContainer from './ViewContainer';
 import { Grant } from '../types/schema';
 import globalStyles from '../globalStyles';
+import grantPlaceholder from '../../assets/grantPlaceholder.png'
+
 
 const styles = StyleSheet.create({
 
@@ -11,16 +13,23 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     backgroundColor: Colors.surfaceGrey,
-    width: 350,
-    height: 270,
+    width: 348,
+    height: 300,
     borderRadius: 12,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginVertical: 4,
     shadowColor: Colors.shadowDark,
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: { width: 2, height: 4 },
     display: 'flex',
+    padding: 5
+  },
+  innerCardContainer: {
+    width: 340,
+    height: 260,
+    justifyContent: 'space-between',
+
   },
   blackText: {
     color: Colors.textPrimary,
@@ -31,19 +40,36 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   titleText: {
+    alignItems: 'center',
     color: Colors.textPrimary,
-    margin: 16,
-    marginBottom: 8,
+    marginLeft: 16,
+    marginRight: 16,
     textAlign: 'left',
     fontSize: 20,
+  
+    height: 55
   },
   infoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    // alignSelf: 'center',
+    justifyContent: 'center'
+  },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 340,
+    height: 180
+  },
+  image: {
+    width: 300,
+    height: 170,
+    borderRadius: 12
+  },
+  imageInfoGroup: {
 
-  }
+  },
 });
+// const placeholderImage = require('../../assets/grantPlaceholderImg.png');
 
 type GrantCardProps = {
   grantObj: Grant;
@@ -59,14 +85,17 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
         onPress={onPress}
         style={styles.cardContainer} // also need to update this to reflect new design changes (create new branch for new frontend!!)
       >
-        <View>
+        <View style={styles.innerCardContainer}>
           <Text style={[globalStyles.h2, styles.titleText]}>
             {grantObj.title}
           </Text>
+          <View style={styles.imageContainer}>
+            <Image source={grantPlaceholder} style={styles.image}/>
+          </View>
           <View style={styles.infoContainer}>
             <Icon type='coins'/>
             <Text style={styles.blackText}>
-              Amount: {`$${grantObj.amount.toString()}`}
+              {`$${grantObj.amount.toString()}`}
             </Text>
             <Icon type='calendar'/>
             <Text style={styles.blackText}>
