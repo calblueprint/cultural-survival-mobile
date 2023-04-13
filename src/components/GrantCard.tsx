@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     backgroundColor: Colors.surfaceGrey,
-    width: 348,
+    width: 352,
     height: 300,
     borderRadius: 12,
     justifyContent: 'center',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   innerCardContainer: {
-    width: 340,
+    width: 342,
     height: 260,
     justifyContent: 'space-between',
 
@@ -45,9 +45,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginRight: 16,
     textAlign: 'left',
-    fontSize: 20,
-  
-    height: 55
+    fontSize: 17,
   },
   infoContainer: {
     flexDirection: 'row',
@@ -61,8 +59,8 @@ const styles = StyleSheet.create({
     height: 180
   },
   image: {
-    width: 300,
-    height: 170,
+    width: 302,
+    height: 166,
     borderRadius: 12
   },
   imageInfoGroup: {
