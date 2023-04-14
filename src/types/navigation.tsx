@@ -16,6 +16,8 @@ export type RootStackParamList = {
 
 export type HomeStackParamList = {
   Home: undefined;
+  Settings: undefined;
+  // Hello: undefined;
 };
 
 export type GrantsStackParamList = {

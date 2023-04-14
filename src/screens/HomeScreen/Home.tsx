@@ -1,8 +1,8 @@
-import { Text, View, ScrollView, SafeAreaView } from 'react-native';
+import { Text, View, ScrollView, SafeAreaView, Button } from 'react-native';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
-import { RootStackScreenProps } from '../../types/navigation';
+import { HomeStackScreenProps } from '../../types/navigation';
 
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
@@ -10,10 +10,14 @@ import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
 
-function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
+function HomeScreen({ navigation }: HomeStackScreenProps<'Home'>) {
   return (
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
+        <Button
+          title="Settings"
+          onPress={() => navigation.navigate('Settings')}
+        />
         <Text style={[globalStyles.h2, styles.heading]}>
           Welcome to Cultural Survival.
         </Text>
