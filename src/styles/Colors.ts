@@ -2,6 +2,7 @@ const Colors = {
   // Primary colors
   redPrimary: '#CC502F',
   bluePrimary: '#356095',
+  yellowPrimary: '#EFAA5F',
 
   // Text colors
   textPrimary: '#000000', // black
