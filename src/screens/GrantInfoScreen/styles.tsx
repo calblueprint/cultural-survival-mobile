@@ -6,12 +6,14 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.surfaceWhite,
     alignContent: 'space-around',
-    padding: 19
+    paddingTop: 10
   },
   innerContainer: {
     flex: 1,
     backgroundColor: Colors.surfaceWhite,
     alignContent: 'space-around',
+    padding: 19,
+    paddingTop: 7
   },
   imageContainer: {
     alignItems: 'center',
@@ -38,7 +40,27 @@ export default StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  infoContainer2: {
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    justifyContent: 'space-evenly',
+    marginTop: 10,
+    marginBottom: 10,
+    paddingLeft: 6
+
+  },
+  backgroundContainer: {
+    borderRadius: 12,
+    backgroundColor: Colors.surfaceOffwhite,
+    marginTop: 15,
+    marginBottom: 40,
+    paddingBottom: 15,
+    padding: 5
+
   },
   iconInfoGroup: {
     justifyContent: 'space-around',
@@ -54,7 +76,10 @@ export default StyleSheet.create({
     fontWeight: '400',
     textAlign: 'left',
     color: Colors.textPrimary,
-
   },
+  backArrow: {
+    paddingLeft: 5
+
+  }
 
 });

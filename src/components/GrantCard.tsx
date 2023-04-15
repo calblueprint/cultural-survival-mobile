@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     marginVertical: 4,
-    // shadowColor: Colors.shadowDark,
-    // shadowOpacity: 0.1,
-    // shadowRadius: 2,
-    // shadowOffset: { width: 2, height: 4 },
+    shadowColor: Colors.shadowDark,
+    shadowOpacity: 0.06,
+    shadowRadius: 2,
+    shadowOffset: { width: 2, height: 4 },
     display: 'flex',
     padding: 5
   },
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     marginRight: 16,
     textAlign: 'left',
     fontSize: 17,
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   infoText: {
     color: Colors.textPrimary,
