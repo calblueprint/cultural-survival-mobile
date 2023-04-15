@@ -18,7 +18,7 @@ export default StyleSheet.create({
     fontWeight: '400',
     textAlign: 'left',
     color: Colors.textPrimary,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   titleContainer: {
     flex: 1,
@@ -26,9 +26,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginRight: 60,
     marginTop: 20,
-    marginBottom: 20
+    marginBottom: 20,
   },
   grantCardContainer: {
-    marginBottom: 12
-  }
+    marginBottom: 12,
+  },
 });
