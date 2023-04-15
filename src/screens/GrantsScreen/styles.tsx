@@ -27,5 +27,8 @@ export default StyleSheet.create({
     marginRight: 60,
     marginTop: 20,
     marginBottom: 20
+  },
+  grantCardContainer: {
+    marginBottom: 12
   }
 });

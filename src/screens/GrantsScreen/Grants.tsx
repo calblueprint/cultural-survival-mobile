@@ -31,7 +31,7 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
       </View>
 
       {grants.map(grant => (
-        <View key={grant.grant_id}>
+        <View key={grant.grant_id} style={styles.grantCardContainer}>
           <GrantCard
             grantObj={grant}
             onPress={() =>
