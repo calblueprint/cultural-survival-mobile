@@ -1,6 +1,5 @@
 import { Text, View, ScrollView, Image } from 'react-native';
 import Icon from '../../../assets/icons';
-import globalStyles from '../../globalStyles';
 import { GrantsStackScreensProps } from '../../types/navigation';
 import styles from './styles';
 import RectButton from '../../components/RectButton';
@@ -10,6 +9,9 @@ function GrantInfoScreen({ route }: GrantsStackScreensProps<'GrantInfo'>) {
   const { grantObj } = route.params;
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.backArrow}>
+        <Icon type='back_arrow'/>
+      </View>
       <View style={styles.innerContainer}>
         <View>
           {/* might have to handle font size for longer titles */}
@@ -24,26 +26,44 @@ function GrantInfoScreen({ route }: GrantsStackScreensProps<'GrantInfo'>) {
           textStyle={{}}
           onPress={() => 0}
         />
-        <View style={styles.infoContainer}>
-          <View style={styles.infoContainer}>
-            <Icon type='coins'/>
-            <Text style={styles.infoText}>
-              Amount: {`$${grantObj.amount.toString()}`}
-            </Text>
-          </View>
-          <View style={styles.iconInfoGroup}>
-            <Icon type='calendar'/>
-            <Text style={styles.infoText}>
-              Due Date: {new Date(grantObj.deadline).toLocaleDateString()}
-            </Text>
-          </View>
-        </View>
+        <View style={styles.backgroundContainer}>
 
-     
-        <Text>Eligible Countries: {grantObj.countries.join(', ')}</Text>
-        <Text>Brief: {grantObj.description}</Text>
-        <Text>Duration: {grantObj.duration}</Text>
-      
+          <View style={styles.infoContainer}>
+            <View style={styles.infoContainer}>
+              <Icon type='coins'/>
+              <Text style={styles.infoText}>
+                <Text style={{fontWeight: 'bold'}}>Amount: </Text>
+                {`$${grantObj.amount.toString()}`}
+              </Text>
+            </View>
+            <View style={styles.iconInfoGroup}>
+              <Icon type='calendar'/>
+              <Text style={styles.infoText}>
+                <Text style={{fontWeight: 'bold'}}>Due Date: </Text>
+                {new Date(grantObj.deadline).toLocaleDateString()}
+              </Text>
+            </View>
+          </View>
+          <View style={styles.infoContainer2}>
+            <Text>
+              <Text style={{fontWeight: 'bold'}}>Eligible Countries: </Text>
+              {grantObj.countries.join(', ')}
+            </Text>
+          </View>
+          <View style={styles.infoContainer2}>
+            <Text>
+              <Text style={{fontWeight: 'bold'}}>Duration: </Text>
+              {grantObj.duration}
+            </Text>
+          </View>
+          <View style={styles.infoContainer2}>
+            <Text> 
+              <Text style={{fontWeight: 'bold'}}>Brief: </Text>
+              {grantObj.description}
+            </Text>
+          </View>
+
+        </View>
       </View>
     </ScrollView>
   );
