@@ -217,8 +217,7 @@ const IconSvgs: Record<IconType, React.ReactElement> = {
       </svg>
     `}
     />
-
-  )
+  ),
 };
 type Props = {
   className?: string;

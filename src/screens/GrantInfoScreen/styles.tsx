@@ -6,14 +6,14 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.surfaceWhite,
     alignContent: 'space-around',
-    paddingTop: 10
+    paddingTop: 10,
   },
   innerContainer: {
     flex: 1,
     backgroundColor: Colors.surfaceWhite,
     alignContent: 'space-around',
     padding: 19,
-    paddingTop: 7
+    paddingTop: 7,
   },
   imageContainer: {
     alignItems: 'center',
@@ -21,12 +21,12 @@ export default StyleSheet.create({
     width: 350,
     height: 210,
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
   },
   image: {
     width: 350,
     height: 204,
-    borderRadius: 12
+    borderRadius: 12,
   },
   infoText: {
     color: Colors.textPrimary,
@@ -50,8 +50,7 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
     marginTop: 10,
     marginBottom: 10,
-    paddingLeft: 6
-
+    paddingLeft: 6,
   },
   backgroundContainer: {
     borderRadius: 12,
@@ -59,8 +58,7 @@ export default StyleSheet.create({
     marginTop: 15,
     marginBottom: 40,
     paddingBottom: 15,
-    padding: 5
-
+    padding: 5,
   },
   iconInfoGroup: {
     justifyContent: 'space-around',
@@ -68,7 +66,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   appButton: {
-    width: 350
+    width: 350,
   },
   titleText: {
     fontFamily: 'DMSans-Bold',
@@ -78,8 +76,6 @@ export default StyleSheet.create({
     color: Colors.textPrimary,
   },
   backArrow: {
-    paddingLeft: 5
-
-  }
-
+    paddingLeft: 5,
+  },
 });

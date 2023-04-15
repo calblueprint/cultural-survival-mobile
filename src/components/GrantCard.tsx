@@ -1,14 +1,18 @@
-import { StyleSheet, Text, TouchableHighlight, View, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+  Image,
+} from 'react-native';
 import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
 import ViewContainer from './ViewContainer';
 import { Grant } from '../types/schema';
 import globalStyles from '../globalStyles';
-import grantPlaceholder from '../../assets/grantPlaceholder.png'
-
+import grantPlaceholder from '../../assets/grantPlaceholder.png';
 
 const styles = StyleSheet.create({
-
   cardContainer: {
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -23,13 +27,12 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: { width: 2, height: 4 },
     display: 'flex',
-    padding: 5
+    padding: 5,
   },
   innerCardContainer: {
     width: 348,
     height: 260,
     justifyContent: 'space-between',
-
   },
   blackText: {
     color: Colors.textPrimary,
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
   },
   iconInfoGroup: {
     justifyContent: 'space-around',
@@ -70,14 +73,14 @@ const styles = StyleSheet.create({
   image: {
     width: 318,
     height: 170,
-    borderRadius: 10
+    borderRadius: 10,
   },
   imageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     width: 346,
-    height: 180
-  }
+    height: 180,
+  },
 });
 
 type GrantCardProps = {
@@ -91,24 +94,24 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
       <TouchableHighlight
         underlayColor={Colors.surfaceGreyClicked}
         onPress={onPress}
-        style={styles.cardContainer} 
+        style={styles.cardContainer}
       >
         <View style={styles.innerCardContainer}>
           <Text style={[globalStyles.h3, styles.titleText]}>
             {grantObj.title}
           </Text>
           <View style={styles.imageContainer}>
-            <Image source={grantPlaceholder} style={styles.image}/>
+            <Image source={grantPlaceholder} style={styles.image} />
           </View>
           <View style={styles.infoContainer}>
             <View style={styles.infoContainer}>
-              <Icon type='coins'/>
+              <Icon type="coins" />
               <Text style={styles.infoText}>
                 {`$${grantObj.amount.toString()}`}
               </Text>
             </View>
             <View style={styles.iconInfoGroup}>
-              <Icon type='calendar'/>
+              <Icon type="calendar" />
               <Text style={styles.infoText}>
                 Due Date: {new Date(grantObj.deadline).toLocaleDateString()}
               </Text>
