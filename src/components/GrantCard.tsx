@@ -89,10 +89,9 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
   return (
     <ViewContainer>
       <TouchableHighlight
-        // TODO: Fix coloring, add to default colors
         underlayColor={Colors.surfaceGreyClicked}
         onPress={onPress}
-        style={styles.cardContainer} // also need to update this to reflect new design changes (create new branch for new frontend!!)
+        style={styles.cardContainer} 
       >
         <View style={styles.innerCardContainer}>
           <Text style={[globalStyles.h3, styles.titleText]}>

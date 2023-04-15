@@ -4,48 +4,57 @@ import Colors from '../../styles/Colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.surfaceOffwhite,
+    backgroundColor: Colors.surfaceWhite,
+    alignContent: 'space-around',
+    padding: 19
+  },
+  innerContainer: {
+    flex: 1,
+    backgroundColor: Colors.surfaceWhite,
+    alignContent: 'space-around',
+  },
+  imageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 300,
-    width: '100%',
+    width: 350,
+    height: 210,
+    marginBottom: 20,
+    marginTop: 20
   },
-  // container2: {
-  //   flex: 1,
-  //   backgroundColor: '#FFF',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   width: '100%',
-  // },
-  // header_text: {
-  //   fontSize: 13,
-  //   width: '90%',
-  //   paddingLeft: '15%',
-  //   textAlign: 'left',
-  //   color: '#525454',
-  // },
-  // title_text: {
-  //   fontSize: 20,
-  //   marginBottom: 10,
-  //   textAlign: 'left',
-  //   fontWeight: '500',
-  //   color: '#525454',
-  //   paddingLeft: '5%',
-  // },
-  // author_text: {
-  //   fontSize: 15,
-  //   textAlign: 'left',
-  //   fontWeight: '500',
-  //   color: '#525454',
-  //   paddingBottom: '5%',
-  //   paddingLeft: '5%',
-  // },
-  // audio_container: {
-  //   justifyContent: 'space-around',
-  //   flexDirection: 'row',
-  //   paddingTop: '5%',
-  //   width: '90%',
-  //   paddingLeft: '10%',
-  //   paddingBottom: '3%',
-  //   alignItems: 'center',
+  image: {
+    width: 350,
+    height: 204,
+    borderRadius: 12
+  },
+  infoText: {
+    color: Colors.textPrimary,
+    margin: 8,
+    rightMargin: 29,
+    marginVertical: 8,
+    textAlign: 'left',
+    justifyContent: 'space-between',
+    fontSize: 15,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
+  },
+  iconInfoGroup: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  appButton: {
+    width: 350
+  },
+  titleText: {
+    fontFamily: 'DMSans-Bold',
+    fontSize: 36,
+    fontWeight: '400',
+    textAlign: 'left',
+    color: Colors.textPrimary,
+
+  },
+
 });
