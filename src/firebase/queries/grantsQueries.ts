@@ -21,12 +21,12 @@ const parseGrant = async (docSnap: DocumentSnapshot) => {
   const grant = {
     grant_id: grantId,
     amount: data?.amount,
-    category: data?.category,
     countries: data?.countries,
     deadline: data?.deadline,
     description: data?.description,
     duration: data?.duration,
-    subject: data?.subject,
+    image_link: data?.image_link,
+    share_link: data?.share_link,
     title: data?.title,
   };
 
