@@ -6,7 +6,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { Audio } from 'expo-av';
+import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from 'expo-av';
 import React, { useState } from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 // import Clipboard from '@react-native-clipboard/clipboard';
@@ -124,6 +124,15 @@ function PlayScreen() {
         await sound.current.pauseAsync();
       }
     } else {
+      await Audio.setAudioModeAsync({
+        allowsRecordingIOS: false,
+        staysActiveInBackground: true,
+        interruptionModeIOS: InterruptionModeIOS.DuckOthers,
+        playsInSilentModeIOS: true,
+        shouldDuckAndroid: true,
+        interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
+        playThroughEarpieceAndroid: false
+      })
       const loaded = await sound.current.loadAsync({
         uri: url,
       });
