@@ -131,8 +131,8 @@ function PlayScreen() {
         playsInSilentModeIOS: true,
         shouldDuckAndroid: true,
         interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
-        playThroughEarpieceAndroid: false
-      })
+        playThroughEarpieceAndroid: false,
+      });
       const loaded = await sound.current.loadAsync({
         uri: url,
       });
