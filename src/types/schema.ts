@@ -16,6 +16,7 @@ export type Audio = {
   soundCloud: string;
   theme: string;
   gcsLink: string;
+  thumbnail: string;
 };
 
 export type Grant = {

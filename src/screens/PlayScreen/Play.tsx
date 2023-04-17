@@ -5,14 +5,23 @@ import { getInfoAsync } from 'expo-file-system';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
+import { getAudioID } from '../../firebase/queries/audioQueries';
 
 import {
   downLoadAudio,
   deleteAudio,
 } from '../../firebase/queries/audioPlayback';
 
+
+// export const getImage = async (audioID: string): Promise<string> => {
+//   const thumNail = (await getAudioID(audioID)).thumbnail;
+  
+
+// }
+
 function PlayScreen() {
   const [audioId, setAudioId] = useState<string>('');
+  
   /* fetch all audio on page load */
   const handlePress = async () => {
     const audios = await downLoadAudio(audioId);
@@ -44,8 +53,8 @@ function PlayScreen() {
         </Text>
       </View>
       <View style={styles.container2}>
-        <Image
-          style={{
+        {/* <Image
+          {styles={
             height: 275,
             width: 275,
             backgroundColor: Colors.surfaceGrey,
@@ -53,6 +62,16 @@ function PlayScreen() {
             marginTop: '3%',
             marginBottom: '3%',
           }}
+          
+        /> */}
+        <Image
+          source = {{}}
+          style={{ height: 275,
+            width: 275,
+            backgroundColor: Colors.surfaceGrey,
+            borderRadius: 9.5,
+            marginTop: '3%',
+            marginBottom: '3%', }}
         />
       </View>
       <Text style={styles.title_text}>

@@ -23,6 +23,7 @@ const parseAudio = async (docSnap: DocumentSnapshot) => {
     soundCloud: data?.soundCloud,
     theme: data?.theme,
     gcsLink: data?.gcsLink,
+    thumbnail: data?.thumbnail
   };
 
   return audio as Audio;
