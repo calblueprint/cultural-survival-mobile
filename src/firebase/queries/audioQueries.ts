@@ -11,10 +11,9 @@ import firebaseApp from '../firebaseApp';
 
 const db = getFirestore(firebaseApp);
 
-// const audioCollection = collection(db, 'audio');
 
 const parseAudio = async (docSnap: DocumentSnapshot) => {
-  // const audioId = docSnap.id.toString();
+
   const data = docSnap.data();
 
   const audio = {
@@ -39,6 +38,7 @@ export const getAllAudio = async (): Promise<Audio[]> => {
     const itemsRef = collection(db, 'audio');
     const promises: Promise<Audio>[] = [];
     const docSnap = await getDocs(itemsRef);
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     docSnap.forEach((audio: any) => {
       promises.push(parseAudio(audio));
@@ -46,6 +46,7 @@ export const getAllAudio = async (): Promise<Audio[]> => {
     const audio = await Promise.all(promises);
     return audio;
   } catch (e) {
+
     // eslint-disable-next-line no-console
     console.warn(e);
     throw e;
@@ -58,6 +59,7 @@ export const getAudioID = async (audioId: string): Promise<Audio> => {
     const docSnap = await getDoc(docRef);
     return await parseAudio(docSnap);
   } catch (e) {
+    
     // eslint-disable-next-line no-console
     console.error(e);
     throw e;
