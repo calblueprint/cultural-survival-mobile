@@ -13,12 +13,20 @@ import {
 } from '../../firebase/queries/audioPlayback';
 
 // export const getImage = async (audioID: string): Promise<string> => {
-//    const thumNail = (await getAudioID(audioID)).thumbnail;
+//    const thumNail =  (await getAudioID(audioID)).thumbnail;
 //       return thumNail
 //  }
 
 function PlayScreen() {
   const [audioId, setAudioId] = useState<string>('');
+  // eslint-disable-next-line no-var
+  // var a = '';
+  // getImage(audioId).then((holder) => {
+
+  //   a = holder
+  //   console.log('INSIDE');
+  //   console.log(a);
+  // });
 
   /* fetch all audio on page load */
   const handlePress = async () => {
