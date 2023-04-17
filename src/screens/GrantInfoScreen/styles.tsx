@@ -22,12 +22,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
+    maxWidth: '100%',
     height: 210,
     marginBottom: 20,
     marginTop: 20,
   },
   image: {
     width: '100%',
+    maxWidth: '100%',
     height: 204,
     borderRadius: 12,
   },
@@ -71,6 +73,7 @@ export default StyleSheet.create({
   },
   appButton: {
     width: '100%',
+    maxWidth: '100%',
   },
   titleText: {
     fontFamily: 'DMSans-Bold',
