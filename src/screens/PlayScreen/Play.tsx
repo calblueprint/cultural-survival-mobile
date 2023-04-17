@@ -12,16 +12,14 @@ import {
   deleteAudio,
 } from '../../firebase/queries/audioPlayback';
 
-
 // export const getImage = async (audioID: string): Promise<string> => {
-//   const thumNail = (await getAudioID(audioID)).thumbnail;
-  
-
-// }
+//    const thumNail = (await getAudioID(audioID)).thumbnail;
+//       return thumNail
+//  }
 
 function PlayScreen() {
   const [audioId, setAudioId] = useState<string>('');
-  
+
   /* fetch all audio on page load */
   const handlePress = async () => {
     const audios = await downLoadAudio(audioId);
@@ -65,13 +63,15 @@ function PlayScreen() {
           
         /> */}
         <Image
-          source = {{}}
-          style={{ height: 275,
+          source={{}}
+          style={{
+            height: 275,
             width: 275,
             backgroundColor: Colors.surfaceGrey,
             borderRadius: 9.5,
             marginTop: '3%',
-            marginBottom: '3%', }}
+            marginBottom: '3%',
+          }}
         />
       </View>
       <Text style={styles.title_text}>
