@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useState } from 'react';
-import { LanguageContext } from '../LanguageContext';
+import LanguageContext from '../LanguageContext';
 
 import NavigationBar from './NavigationBar';
 

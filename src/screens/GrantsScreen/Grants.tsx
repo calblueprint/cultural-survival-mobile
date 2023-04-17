@@ -1,14 +1,14 @@
 import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useContext } from 'react';
+
 import GrantCard from '../../components/GrantCard';
 import ViewContainer from '../../components/ViewContainer';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import { Grant } from '../../types/schema';
-import { useContext } from 'react';
-import { LanguageContext } from '../../LanguageContext';
-import { useTranslation } from 'react-i18next';
-
+import LanguageContext from '../../LanguageContext';
 import '../../i18n/i18n';
 import { GrantsStackScreensProps } from '../../types/navigation';
 import { getAllGrants } from '../../firebase/queries/grantsQueries';
@@ -20,7 +20,7 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
   const { language, setLanguage } = useContext(LanguageContext);
   const { i18n, t } = useTranslation(namespaces.pages.grants);
 
-  if (i18n.language != language) {
+  if (i18n.language !== language) {
     i18n.changeLanguage(language);
   }
 

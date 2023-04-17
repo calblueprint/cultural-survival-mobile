@@ -1,8 +1,8 @@
 import { Text, View, ScrollView, SafeAreaView, Button } from 'react-native';
 import { useContext } from 'react';
-import { LanguageContext } from '../../LanguageContext';
 import { useTranslation } from 'react-i18next';
 
+import LanguageContext from '../../LanguageContext';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
@@ -18,7 +18,7 @@ function HomeScreen({ navigation }: HomeStackScreenProps<'Home'>) {
   const { language, setLanguage } = useContext(LanguageContext);
   const { i18n, t } = useTranslation(namespaces.pages.hello);
 
-  if (i18n.language != language) {
+  if (i18n.language !== language) {
     i18n.changeLanguage(language);
   }
 
