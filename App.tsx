@@ -8,7 +8,6 @@ import RootNavigation from './src/navigation/RootNavigator';
 // import QueriesDemo from './src/firebase/QueriesDemo';
 // import AudioDemos from './src/firebase/AudioDemos';
 
-
 async function loadResourcesAsync() {
   await Promise.all([
     // Pre-load other resources (i.e. images) here

@@ -11,9 +11,7 @@ import firebaseApp from '../firebaseApp';
 
 const db = getFirestore(firebaseApp);
 
-
 const parseAudio = async (docSnap: DocumentSnapshot) => {
-
   const data = docSnap.data();
 
   const audio = {
@@ -46,7 +44,6 @@ export const getAllAudio = async (): Promise<Audio[]> => {
     const audio = await Promise.all(promises);
     return audio;
   } catch (e) {
-
     // eslint-disable-next-line no-console
     console.warn(e);
     throw e;
@@ -59,7 +56,6 @@ export const getAudioID = async (audioId: string): Promise<Audio> => {
     const docSnap = await getDoc(docRef);
     return await parseAudio(docSnap);
   } catch (e) {
-    
     // eslint-disable-next-line no-console
     console.error(e);
     throw e;
