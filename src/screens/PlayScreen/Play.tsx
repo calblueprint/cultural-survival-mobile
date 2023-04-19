@@ -1,4 +1,5 @@
 import {
+  Easing,
   Image,
   Modal,
   Pressable,
@@ -8,6 +9,7 @@ import {
 } from 'react-native';
 import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from 'expo-av';
 import React, { useState } from 'react';
+import TextTicker from 'react-native-text-ticker';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 // import Clipboard from '@react-native-clipboard/clipboard';
 import Icon from '../../../assets/icons';
@@ -79,6 +81,20 @@ function notSaved() {
   );
 }
 
+function headerText(themeField: string[]) {
+  if (themeField.length == 1) {
+    return themeField[0];
+  } else if (themeField.length == 2) {
+    return themeField[0] + ' & ' + themeField[1];
+  } else {
+    let returnText = '';
+    for (var i = 0; i < themeField.length; i++) {
+      returnText = returnText + themeField[i] + ', ';
+    }
+    return returnText.slice(0, -2);
+  }
+}
+
 const hardcodedResponse = {
   url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
   thumbnail:
@@ -86,6 +102,7 @@ const hardcodedResponse = {
   artist: 'Jennifer Tauli',
   title:
     'Corpuz Talks about the Important Factors for Indigenous Peoples at COP15',
+  theme: ['Land Rights', 'Self-Determination'],
   scLink:
     'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
 };
@@ -246,7 +263,7 @@ function PlayScreen() {
           flexDirection: 'column',
           alignItems: 'center',
           width: '100%',
-          marginTop: 20,
+          marginTop: 10,
         }}
       >
         <View
@@ -258,7 +275,17 @@ function PlayScreen() {
           }}
         >
           <Icon type="dropdown" />
-          <Text style={styles.header_text}>{hardcodedResponse.title}</Text>
+          <View>
+            <Text style={styles.header_text1}>
+              {hardcodedResponse.theme.length > 1
+                ? 'Playing from Collections'
+                : 'Playing from Collection'}
+              {'\n'}
+            </Text>
+            <Text style={styles.header_text2}>
+              {headerText(hardcodedResponse.theme)}
+            </Text>
+          </View>
         </View>
       </View>
       <View
@@ -286,7 +313,16 @@ function PlayScreen() {
           marginTop: 29,
         }}
       >
-        <Text style={styles.title_text}>{hardcodedResponse.title}</Text>
+        <TextTicker
+          style={styles.title_text}
+          scrollSpeed={20}
+          easing={Easing.linear}
+          marqueeDelay={1000}
+          bounce={false}
+          numberOfLines={1}
+        >
+          {hardcodedResponse.title}
+        </TextTicker>
       </View>
       <View
         style={{
@@ -296,7 +332,16 @@ function PlayScreen() {
           marginTop: 8,
         }}
       >
-        <Text style={styles.author_text}>{hardcodedResponse.artist}</Text>
+        <TextTicker
+          style={styles.author_text}
+          scrollSpeed={20}
+          easing={Easing.linear}
+          marqueeDelay={1000}
+          bounce={false}
+          numberOfLines={1}
+        >
+          {hardcodedResponse.artist}
+        </TextTicker>
       </View>
 
       {/* TODO: Implement dynamic seek bar. */}
@@ -304,7 +349,7 @@ function PlayScreen() {
         <Icon type="play_bar" />
       </View> */}
 
-      <View style={{ marginLeft: 30, marginRight: 30, marginTop: 10 }}>
+      <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
           <TouchableWithoutFeedback onPress={() => restartAudio(sound)}>
             <View style={{ width: 34, height: 34 }}>
@@ -365,7 +410,7 @@ function PlayScreen() {
           flexDirection: 'column',
           alignItems: 'center',
           width: '100%',
-          marginTop: 20,
+          marginTop: 25,
         }}
       >
         <View
