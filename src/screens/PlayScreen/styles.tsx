@@ -26,11 +26,21 @@ export default StyleSheet.create({
     width: 260,
     borderRadius: 12,
   },
-  header_text: {
+  header_text1: {
     fontSize: 13,
     width: 291,
     marginLeft: 20,
     textAlign: 'left',
+    fontWeight: '500',
+    color: '#000000',
+  },
+  header_text2: {
+    fontSize: 17,
+    width: 291,
+    marginTop: -10,
+    marginLeft: 20,
+    textAlign: 'left',
+    fontWeight: '400',
     color: '#000000',
   },
   title_text: {
