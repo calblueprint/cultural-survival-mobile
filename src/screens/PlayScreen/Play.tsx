@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import React from 'react';
 import RectButton from '../../components/RectButton';
@@ -29,7 +29,7 @@ async function toggleAudio(
   }
 }
 
-function PlayScreen() {
+function PlayScreen({ navigation }) {
   const sound = React.useRef(new Audio.Sound());
 
   return (
@@ -44,7 +44,9 @@ function PlayScreen() {
           alignItems: 'center',
         }}
       >
-        <Icon type="dropdown" />
+        <Pressable onPress={() => navigation.goBack()}>
+          <Icon type="dropdown" />
+        </Pressable>
         <Text style={styles.header_text}>
           Green Colonization: An Interview with Maja Kristine Jama
         </Text>

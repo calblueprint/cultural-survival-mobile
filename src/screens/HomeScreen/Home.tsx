@@ -3,7 +3,7 @@ import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
-
+import BottomPlayBar from '../../components/BottomPlayBar';
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
@@ -62,6 +62,13 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
         </View>
       </ScrollView>
+      <View>
+        <BottomPlayBar
+          name="Green Colonization: An Interview With Maja Kristine Jama"
+          author="Shaldon Ferris"
+          onPress={() => navigation.navigate('Play')}
+        />
+      </View>
     </SafeAreaView>
   );
 }

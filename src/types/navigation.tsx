@@ -6,12 +6,8 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Grant } from './schema';
 
 export type RootStackParamList = {
-  Home: undefined;
-  Welcome: undefined;
-  Audio: undefined;
-  Grants: undefined;
+  NavigationBar: undefined;
   Play: undefined;
-  QueriesDemo: undefined;
 };
 
 export type HomeStackParamList = {
@@ -25,7 +21,6 @@ export type GrantsStackParamList = {
 
 export type SearchStackParamList = {
   Audio: undefined;
-  Play: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
