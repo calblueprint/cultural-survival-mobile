@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import GrantCard from '../../components/GrantCard';
 import BottomPlayBar from '../../components/BottomPlayBar';
 import ViewContainer from '../../components/ViewContainer';
+import { GrantsStackScreensProps } from '../../types/navigation';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import { Grant } from '../../types/schema';
 
 import '../../i18n/i18n';
-import { GrantsStackScreensProps } from '../../types/navigation';
 import { getAllGrants } from '../../firebase/queries/grantsQueries';
 
 function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {

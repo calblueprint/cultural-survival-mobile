@@ -2,11 +2,10 @@ import { ScrollView, Text, TextInput, View } from 'react-native';
 import AudioCard from '../../components/AudioCard';
 import BottomPlayBar from '../../components/BottomPlayBar';
 import '../../i18n/i18n';
-import Colors from '../../styles/Colors';
-import { RootStackScreenProps } from '../../types/navigation';
+import { SearchStackScreensProps } from '../../types/navigation';
 import styles from './styles';
 
-function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
+function AudioScreen({ navigation }: SearchStackScreensProps<'Audio'>) {
   return (
     <>
       <View style={styles.view}>
