@@ -2,10 +2,14 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import NavigationBar from './NavigationBar';
 
+import { AudioProvider } from '../AudioContext';
+
 export default function RootNavigation() {
   return (
-    <NavigationContainer>
-      <NavigationBar />
-    </NavigationContainer>
+    <AudioProvider>
+      <NavigationContainer>
+        <NavigationBar />
+      </NavigationContainer>
+    </AudioProvider>
   );
 }
