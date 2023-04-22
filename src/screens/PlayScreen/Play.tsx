@@ -7,14 +7,13 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from 'expo-av';
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import TextTicker from 'react-native-text-ticker';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
-// import Clipboard from '@react-native-clipboard/clipboard';
 import Icon from '../../../assets/icons';
 import styles from './styles';
-import AudioContext from '../../AudioContext';
+import AudioContext, { AudioPlayerState } from '../../AudioContext';
+import { toggleAudio, rewindAudio, fastforwardAudio } from '../../utils/AudioUtils';
 
 function play() {
   return (
@@ -96,24 +95,6 @@ function headerText(themeField: string[]) {
   }
 }
 
-const hardcodedResponse = {
-  url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
-  thumbnail:
-    'https://i1.sndcdn.com/artworks-jeSDFXAMxLeFlfXx-a4zovA-t500x500.jpg',
-  artist: 'Jennifer Tauli',
-  title:
-    'Corpuz Talks about the Important Factors for Indigenous Peoples at COP15',
-  theme: ['Land Rights', 'Self-Determination'],
-  scLink:
-    'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
-};
-
-const response2 = {
-  url: "https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/IndigenousPeoplesOnTheGroundAreDoingMuchForBiodiversity.mp3?generation=1678596988929380&alt=media",
-  artist: "Joji Carino",
-  title: "Indigenous Peoples on the Ground Are Doing Much for Biodiversity",
-}
-
 function PlayScreen() {
   // const [playState, setPlayState] = useState({
   //   isPlaying: false,
@@ -127,76 +108,6 @@ function PlayScreen() {
   //   sliderValue: 0,
   //   isSeeking: false,
   // });
-
-  async function toggleAudio(
-    sound: Audio.Sound,
-    url: string,
-  ) {
-    const result = await sound.getStatusAsync();
-    if (result.isLoaded) {
-      if (result.isPlaying === false) {
-        setAudio(currState => ({
-          ...currState,
-          isPlaying: true,
-        }));
-        await sound.playAsync();
-      } else {
-        setAudio(currState => ({
-          ...currState,
-          isPlaying: false,
-        }));
-        await sound.pauseAsync();
-      }
-    } else {
-      await Audio.setAudioModeAsync({
-        allowsRecordingIOS: false,
-        staysActiveInBackground: true,
-        interruptionModeIOS: InterruptionModeIOS.DuckOthers,
-        playsInSilentModeIOS: true,
-        shouldDuckAndroid: true,
-        interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
-        playThroughEarpieceAndroid: false,
-      });
-      const loaded = await sound.loadAsync({
-        uri: url,
-      });
-      if (loaded.isLoaded) {
-        setAudio(currState => ({
-          ...currState,
-          isPlaying: true,
-        }));
-        await sound.playAsync();
-      }
-    }
-  }
-
-  async function restartAudio(sound: Audio.Sound) {
-    await sound.setPositionAsync(0);
-  }
-
-  async function rewindAudio(sound: Audio.Sound) {
-    const result = await sound.getStatusAsync();
-    if (result.isLoaded) {
-      await sound.setPositionAsync(result.positionMillis - 30000);
-    }
-  }
-
-  async function fastforwardAudio(sound: Audio.Sound) {
-    const result = await sound.getStatusAsync();
-    if (result.isLoaded) {
-      await sound.setPositionAsync(result.positionMillis + 30000);
-      if (
-        result.durationMillis != null &&
-        result.positionMillis >= result.durationMillis
-      ) {
-        setAudio(currState => ({
-          ...currState,
-          isPlaying: false,
-        }));
-        // TODO: go to next audio if fastforwarding past the end
-      }
-    }
-  }
 
   const { audio, setAudio } = useContext(AudioContext);
 
@@ -216,7 +127,6 @@ function PlayScreen() {
 
   function toggleShareModal() {
     setShareModalVisible(!shareModalVisible);
-    // Clipboard.setString(hardcodedResponse.scLink);
   }
 
   return (
@@ -285,13 +195,13 @@ function PlayScreen() {
           <Icon type="dropdown" />
           <View>
             <Text style={styles.header_text1}>
-              {hardcodedResponse.theme.length > 1
+              {audio.theme.length > 1
                 ? 'Playing from Collections'
                 : 'Playing from Collection'}
               {'\n'}
             </Text>
             <Text style={styles.header_text2}>
-              {headerText(hardcodedResponse.theme)}
+              {headerText(audio.theme)}
             </Text>
           </View>
         </View>
@@ -310,7 +220,7 @@ function PlayScreen() {
             width: 336,
             backgroundColor: '#D9D9D9',
           }}
-          source={{ uri: hardcodedResponse.thumbnail }}
+          source={{ uri: audio.thumbnail }}
         />
       </View>
       <View
@@ -329,7 +239,6 @@ function PlayScreen() {
           bounce={false}
           numberOfLines={1}
         >
-          {/* {hardcodedResponse.title} */}
           {audio.title}
         </TextTicker>
       </View>
@@ -360,7 +269,7 @@ function PlayScreen() {
 
       <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
-          <TouchableWithoutFeedback onPress={() => rewindAudio(audio.soundRef)}>
+          <TouchableWithoutFeedback onPress={() => rewindAudio(audio, setAudio)}>
             <View style={{ paddingRight: 60, width: 57, height: 34, alignItems: 'center' }}>
               <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
                 <Path
@@ -376,14 +285,14 @@ function PlayScreen() {
           </TouchableWithoutFeedback>
 
           <TouchableWithoutFeedback
-            onPress={() => toggleAudio(audio.soundRef, audio.url)}
+            onPress={() => toggleAudio(audio, setAudio)}
           >
             <View style={{ width: 68, height: 68 }}>
               {audio.isPlaying ? pause() : play()}
             </View>
           </TouchableWithoutFeedback>
 
-          <TouchableWithoutFeedback onPress={() => fastforwardAudio(audio.soundRef)}>
+          <TouchableWithoutFeedback onPress={() => fastforwardAudio(audio, setAudio)}>
             <View style={{ paddingLeft: 60, width: 57, height: 34, alignItems: 'center' }}>
               <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
                 <Path
