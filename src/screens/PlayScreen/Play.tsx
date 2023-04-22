@@ -8,12 +8,13 @@ import {
   View,
 } from 'react-native';
 import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from 'expo-av';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import TextTicker from 'react-native-text-ticker';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 // import Clipboard from '@react-native-clipboard/clipboard';
 import Icon from '../../../assets/icons';
 import styles from './styles';
+import AudioContext from '../../AudioContext';
 
 function play() {
   return (
@@ -107,38 +108,44 @@ const hardcodedResponse = {
     'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
 };
 
+const response2 = {
+  url: "https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/IndigenousPeoplesOnTheGroundAreDoingMuchForBiodiversity.mp3?generation=1678596988929380&alt=media",
+  artist: "Joji Carino",
+  title: "Indigenous Peoples on the Ground Are Doing Much for Biodiversity",
+}
+
 function PlayScreen() {
-  const [playState, setPlayState] = useState({
-    isPlaying: false,
-    playbackObject: null,
-    volume: 1.0,
-    isBuffering: false,
-    paused: true,
-    currentIndex: 0,
-    durationMillis: 1,
-    positionMillis: 0,
-    sliderValue: 0,
-    isSeeking: false,
-  });
+  // const [playState, setPlayState] = useState({
+  //   isPlaying: false,
+  //   playbackObject: null,
+  //   volume: 1.0,
+  //   isBuffering: false,
+  //   paused: true,
+  //   currentIndex: 0,
+  //   durationMillis: 1,
+  //   positionMillis: 0,
+  //   sliderValue: 0,
+  //   isSeeking: false,
+  // });
 
   async function toggleAudio(
-    sound: React.MutableRefObject<Audio.Sound>,
+    sound: Audio.Sound,
     url: string,
   ) {
-    const result = await sound.current.getStatusAsync();
+    const result = await sound.getStatusAsync();
     if (result.isLoaded) {
       if (result.isPlaying === false) {
-        setPlayState(currState => ({
+        setAudio(currState => ({
           ...currState,
           isPlaying: true,
         }));
-        await sound.current.playAsync();
+        await sound.playAsync();
       } else {
-        setPlayState(currState => ({
+        setAudio(currState => ({
           ...currState,
           isPlaying: false,
         }));
-        await sound.current.pauseAsync();
+        await sound.pauseAsync();
       }
     } else {
       await Audio.setAudioModeAsync({
@@ -150,39 +157,39 @@ function PlayScreen() {
         interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
         playThroughEarpieceAndroid: false,
       });
-      const loaded = await sound.current.loadAsync({
+      const loaded = await sound.loadAsync({
         uri: url,
       });
       if (loaded.isLoaded) {
-        setPlayState(currState => ({
+        setAudio(currState => ({
           ...currState,
           isPlaying: true,
         }));
-        await sound.current.playAsync();
+        await sound.playAsync();
       }
     }
   }
 
-  async function restartAudio(sound: React.MutableRefObject<Audio.Sound>) {
-    await sound.current.setPositionAsync(0);
+  async function restartAudio(sound: Audio.Sound) {
+    await sound.setPositionAsync(0);
   }
 
-  async function rewindAudio(sound: React.MutableRefObject<Audio.Sound>) {
-    const result = await sound.current.getStatusAsync();
+  async function rewindAudio(sound: Audio.Sound) {
+    const result = await sound.getStatusAsync();
     if (result.isLoaded) {
-      await sound.current.setPositionAsync(result.positionMillis - 30000);
+      await sound.setPositionAsync(result.positionMillis - 30000);
     }
   }
 
-  async function fastforwardAudio(sound: React.MutableRefObject<Audio.Sound>) {
-    const result = await sound.current.getStatusAsync();
+  async function fastforwardAudio(sound: Audio.Sound) {
+    const result = await sound.getStatusAsync();
     if (result.isLoaded) {
-      await sound.current.setPositionAsync(result.positionMillis + 30000);
+      await sound.setPositionAsync(result.positionMillis + 30000);
       if (
         result.durationMillis != null &&
         result.positionMillis >= result.durationMillis
       ) {
-        setPlayState(currState => ({
+        setAudio(currState => ({
           ...currState,
           isPlaying: false,
         }));
@@ -191,7 +198,8 @@ function PlayScreen() {
     }
   }
 
-  const sound = React.useRef(new Audio.Sound());
+  const { audio, setAudio } = useContext(AudioContext);
+
   const [audioModalVisible, setAudioModalVisible] = useState(false);
   const [shareModalVisible, setShareModalVisible] = useState(false);
   const [audioSaved, setAudioSaved] = useState(false);
@@ -321,7 +329,8 @@ function PlayScreen() {
           bounce={false}
           numberOfLines={1}
         >
-          {hardcodedResponse.title}
+          {/* {hardcodedResponse.title} */}
+          {audio.title}
         </TextTicker>
       </View>
       <View
@@ -340,7 +349,7 @@ function PlayScreen() {
           bounce={false}
           numberOfLines={1}
         >
-          {hardcodedResponse.artist}
+          {audio.artist}
         </TextTicker>
       </View>
 
@@ -351,20 +360,8 @@ function PlayScreen() {
 
       <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
-          <TouchableWithoutFeedback onPress={() => restartAudio(sound)}>
-            <View style={{ width: 34, height: 34 }}>
-              <Svg width="36" height="34" viewBox="0 0 36 34" fill="none">
-                <Path
-                  d="M5 18.732C3.66666 17.9622 3.66667 16.0378 5 15.268L24.5 4.00962C25.8333 3.23982 27.5 4.20207 27.5 5.74167L27.5 28.2583C27.5 29.7979 25.8333 30.7602 24.5 29.9904L5 18.732Z"
-                  fill="#CC502F"
-                />
-                <Rect y="3" width="5" height="28" rx="1" fill="#CC502F" />
-              </Svg>
-            </View>
-          </TouchableWithoutFeedback>
-
-          <TouchableWithoutFeedback onPress={() => rewindAudio(sound)}>
-            <View style={{ width: 57, height: 34, alignItems: 'center' }}>
+          <TouchableWithoutFeedback onPress={() => rewindAudio(audio.soundRef)}>
+            <View style={{ paddingRight: 60, width: 57, height: 34, alignItems: 'center' }}>
               <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
                 <Path
                   d="M3 18.732C1.66666 17.9622 1.66667 16.0377 3 15.2679L22.5 4.00962C23.8333 3.23982 25.5 4.20207 25.5 5.74167L25.5 28.2583C25.5 29.7979 23.8333 30.7602 22.5 29.9904L3 18.732Z"
@@ -379,15 +376,15 @@ function PlayScreen() {
           </TouchableWithoutFeedback>
 
           <TouchableWithoutFeedback
-            onPress={() => toggleAudio(sound, hardcodedResponse.url)}
+            onPress={() => toggleAudio(audio.soundRef, audio.url)}
           >
             <View style={{ width: 68, height: 68 }}>
-              {playState.isPlaying ? pause() : play()}
+              {audio.isPlaying ? pause() : play()}
             </View>
           </TouchableWithoutFeedback>
 
-          <TouchableWithoutFeedback onPress={() => fastforwardAudio(sound)}>
-            <View style={{ width: 57, height: 34, alignItems: 'center' }}>
+          <TouchableWithoutFeedback onPress={() => fastforwardAudio(audio.soundRef)}>
+            <View style={{ paddingLeft: 60, width: 57, height: 34, alignItems: 'center' }}>
               <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
                 <Path
                   d="M31 15.268C32.3333 16.0378 32.3333 17.9623 31 18.7321L11.5 29.9904C10.1667 30.7602 8.5 29.7979 8.5 28.2583V5.74167C8.5 4.20207 10.1667 3.23982 11.5 4.00962L31 15.268Z"
@@ -400,8 +397,6 @@ function PlayScreen() {
               </Svg>
             </View>
           </TouchableWithoutFeedback>
-
-          <Icon type="audio_forward" />
         </View>
       </View>
 
