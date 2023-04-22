@@ -6,32 +6,34 @@ import { RootStackScreenProps } from '../../types/navigation';
 import styles from './styles';
 import { useContext } from 'react';
 import AudioContext from '../../AudioContext';
-import React from 'react';
 import { Audio } from 'expo-av';
 
 function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
   const hardcodedResponse = {
     url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
-    // thumbnail:
-    //   'https://i1.sndcdn.com/artworks-jeSDFXAMxLeFlfXx-a4zovA-t500x500.jpg',
+    thumbnail:
+      'https://i1.sndcdn.com/artworks-jeSDFXAMxLeFlfXx-a4zovA-t500x500.jpg',
     artist: 'Jennifer Tauli',
     title:
       'Corpuz Talks about the Important Factors for Indigenous Peoples at COP15',
-    // theme: ['Land Rights', 'Self-Determination'],
-    // scLink:
-    //   'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
+    theme: ['Land Rights', 'Self-Determination'],
+    scLink:
+      'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
   };
 
   const response2 = {
     url: "https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/IndigenousPeoplesOnTheGroundAreDoingMuchForBiodiversity.mp3?generation=1678596988929380&alt=media",
     artist: "Joji Carino",
     title: "Indigenous Peoples on the Ground Are Doing Much for Biodiversity",
+    thumbnail: "https://i1.sndcdn.com/artworks-6SyLrByoF8ZmwKYG-Sr8oig-t500x500.jpg",
+    theme: ["Climate Change & the Environment"],
+    scLink: "https://soundcloud.com/culturalsurvival/indigenous-peoples-on-the-ground-are-doing-much-for-biodiversity",
   }
 
   const { audio, setAudio } = useContext(AudioContext);
   const newSound = new Audio.Sound();
 
-  async function setContext(response: { url: string, artist: string, title: string }) {
+  async function setContext(response: { url: string, artist: string, title: string, thumbnail: string, theme: string[], scLink: string }) {
     if (audio.title !== response.title) {
       if (audio.isPlaying) {
         await audio.soundRef.pauseAsync();
@@ -42,6 +44,9 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
         title: response.title,
         artist: response.artist,
         isPlaying: false,
+        thumbnail: response.thumbnail,
+        theme: response.theme,
+        scLink: response.scLink,
       });
     }
   }

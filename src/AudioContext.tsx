@@ -1,18 +1,16 @@
 import { Audio } from 'expo-av';
 import { Dispatch, SetStateAction, createContext, useState } from 'react';
 
-type AudioPlayerState = {
+export type AudioPlayerState = {
     soundRef: Audio.Sound,
     url: string,
     title: string,
     artist: string,
     isPlaying: boolean,
+    thumbnail: string,
+    scLink: string,
+    theme: string[],
 }
-
-// const [audio, setAudio] = useState<AudioPlayerState>({} as AudioPlayerState);
-
-
-type AudioDispatch = Dispatch<SetStateAction<AudioPlayerState>>
 
 interface IAudioContext {
     audio: AudioPlayerState,
