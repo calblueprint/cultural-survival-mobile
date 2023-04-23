@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { RootStackScreenProps } from '../../types/navigation';
 import styles from './styles';
 
-import { LanguageContext } from '../../LanguageContext';
+import LanguageContext from '../../LanguageContext';
 
 function SettingsScreen({ navigation }: RootStackScreenProps<'Home'>) {
   const { language, setLanguage } = useContext(LanguageContext);
