@@ -12,7 +12,7 @@ import communicationImage from '../../../assets/communication.png';
 
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={globalStyles.container}>
       <ScrollView>
         <Text style={[globalStyles.h2, styles.heading]}>
           Welcome to Cultural Survival.

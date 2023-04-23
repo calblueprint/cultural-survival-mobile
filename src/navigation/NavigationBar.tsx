@@ -17,6 +17,7 @@ export default function NavigationBar() {
       screenOptions={{
         tabBarActiveTintColor: Colors.redPrimary,
         tabBarInactiveTintColor: Colors.redPrimary,
+        headerShown: false,
       }}
     >
       <Tab.Screen
