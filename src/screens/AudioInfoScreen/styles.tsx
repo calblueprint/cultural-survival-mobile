@@ -4,10 +4,26 @@ import Colors from '../../styles/Colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.surfaceOffwhite,
+    backgroundColor: Colors.surfaceWhite,
+    alignContent: 'space-around',
+    paddingHorizontal: 20,
+  },
+  infoFields: {
+    marginVertical: 4,
+  },
+  titleText: {
+    fontSize: 36,
+  },
+  iconsContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    height: 300,
-    width: '100%',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    paddingRight: 8,
+  },
+  iconSubContainer: {
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });

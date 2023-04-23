@@ -6,12 +6,6 @@ import { Grant } from '../types/schema';
 import globalStyles from '../globalStyles';
 
 const styles = StyleSheet.create({
-  // centeredView: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   marginTop: 16,
-  // },
   cardContainer: {
     flexDirection: 'column',
     alignItems: 'flex-start',
