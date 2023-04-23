@@ -1,9 +1,41 @@
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, Pressable } from 'react-native';
+import { Audio } from 'expo-av';
+import React from 'react';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
+import { RootStackScreenProps } from '../../types/navigation';
 
-function PlayScreen() {
+// TODO: Use toggleAudio when it is necessary, may be fixed in later PRs.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function toggleAudio(
+  sound: React.MutableRefObject<Audio.Sound>,
+  url: string,
+) {
+  try {
+    const result = await sound.current.getStatusAsync();
+    if (result.isLoaded) {
+      if (result.isPlaying === false) {
+        sound.current.playAsync();
+      } else {
+        sound.current.pauseAsync();
+      }
+    } else {
+      await sound.current.loadAsync({
+        uri: url,
+      });
+      sound.current.playAsync();
+    }
+  } catch (error) {
+    /* empty */
+  }
+}
+
+function PlayScreen({ navigation }: RootStackScreenProps<'Play'>) {
+  // TODO: Use sound when it is necessary, may be fixed in later PRs.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const sound = React.useRef(new Audio.Sound());
+
   return (
     <View style={styles.container}>
       <View
@@ -16,7 +48,9 @@ function PlayScreen() {
           alignItems: 'center',
         }}
       >
-        <Icon type="dropdown" />
+        <Pressable onPress={() => navigation.goBack()}>
+          <Icon type="dropdown" />
+        </Pressable>
         <Text style={styles.header_text}>
           Green Colonization: An Interview with Maja Kristine Jama
         </Text>
@@ -37,6 +71,18 @@ function PlayScreen() {
         Green Colonization: An Interview with Maja Kristine Jama
       </Text>
       <Text style={styles.author_text}>Shaldon Ferris</Text>
+
+      {/* <RectButton
+        text="Play"
+        buttonStyle={{ backgroundColor: 'black' }}
+        textStyle={{ color: 'white' }}
+        onPress={() =>
+          toggleAudio(
+            sound,
+            'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/FernandDeVarennesUNSpecialRapporteurOnMinorityIssuesonIndigenousLanguages.mp3?generation=1678596979606352&alt=media',
+          )
+        }
+      /> */}
 
       <View style={{ paddingLeft: '5%' }}>
         <Icon type="play_bar" />

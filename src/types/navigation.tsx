@@ -3,15 +3,12 @@
  * https://reactnavigation.org/docs/typescript/
  */
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { CompositeScreenProps } from '@react-navigation/native';
 import { Grant } from './schema';
 
 export type RootStackParamList = {
-  Home: undefined;
-  Welcome: undefined;
-  Audio: undefined;
-  Grants: undefined;
+  NavigationBar: undefined;
   Play: undefined;
-  QueriesDemo: undefined;
 };
 
 export type HomeStackParamList = {
@@ -25,17 +22,25 @@ export type GrantsStackParamList = {
 
 export type SearchStackParamList = {
   Audio: undefined;
-  Play: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 
 export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
-  NativeStackScreenProps<HomeStackParamList, T>;
+  CompositeScreenProps<
+    NativeStackScreenProps<HomeStackParamList, T>,
+    RootStackScreenProps<'Play'>
+  >;
 
 export type SearchStackScreensProps<T extends keyof SearchStackParamList> =
-  NativeStackScreenProps<SearchStackParamList, T>;
+  CompositeScreenProps<
+    NativeStackScreenProps<SearchStackParamList, T>,
+    RootStackScreenProps<'Play'>
+  >;
 
 export type GrantsStackScreensProps<T extends keyof GrantsStackParamList> =
-  NativeStackScreenProps<GrantsStackParamList, T>;
+  CompositeScreenProps<
+    NativeStackScreenProps<GrantsStackParamList, T>,
+    RootStackScreenProps<'Play'>
+  >;
