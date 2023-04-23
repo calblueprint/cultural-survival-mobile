@@ -2,13 +2,9 @@
 import { useState } from 'react';
 import { Button, Image, Text, TextInput, View } from 'react-native';
 import { getInfoAsync, documentDirectory } from 'expo-file-system';
-import {getNetworkStateAsync} from 'expo-network';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
-import { getAudioID } from '../../firebase/queries/audioQueries';
-
-
 
 import {
   downLoadAudio,
@@ -22,34 +18,6 @@ import {
 //  }
 
 function PlayScreen() {
-  const [audioId, setAudioId] = useState<string>('');
-  // eslint-disable-next-line no-var
-  // var a = '';
-  // getImage(audioId).then((holder) => {
-
-  //   a = holder
-  //   console.log('INSIDE');
-  //   console.log(a);
-  // });
-
-  /* fetch all audio on page load */
-  
-  const handlePress = async () => {
-    console.log(await getNetworkStateAsync())
-
-    // const audios = await downLoadAudio(audioId);
-    // const didItDownload = await getInfoAsync(audios);
-    // // eslint-disable-next-line no-console
-    // console.log(didItDownload);
-    
-    // deleteAudio(audios);
-    console.log(await dirList(`${documentDirectory}audio/`));
-
-    // const didItDelete = await getInfoAsync(audios);
-    // eslint-disable-next-line no-console
-    // console.log(didItDelete);
-  };
-
   return (
     <View style={styles.container}>
       <View
@@ -68,17 +36,6 @@ function PlayScreen() {
         </Text>
       </View>
       <View style={styles.container2}>
-        {/* <Image
-          {styles={
-            height: 275,
-            width: 275,
-            backgroundColor: Colors.surfaceGrey,
-            borderRadius: 9.5,
-            marginTop: '3%',
-            marginBottom: '3%',
-          }}
-          
-        /> */}
         <Image
           source={{}}
           style={{
@@ -104,16 +61,6 @@ function PlayScreen() {
         <Icon type="play_button" />
         <Icon type="audio_forward" />
       </View>
-      <View
-        style={{
-          paddingBottom: '7%',
-          paddingLeft: '7%',
-        }}
-      >
-        <TextInput placeholder="ID to be queried" onChangeText={setAudioId} />
-        <Button title="Download" onPress={() => handlePress()} />
-      </View>
-
       <View
         style={{
           flexDirection: 'row',

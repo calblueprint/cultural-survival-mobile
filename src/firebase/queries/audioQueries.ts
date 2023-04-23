@@ -38,8 +38,7 @@ export const getAllAudio = async (): Promise<Audio[]> => {
     const promises: Promise<Audio>[] = [];
     const docSnap = await getDocs(itemsRef);
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    docSnap.forEach((audio: any) => {
+    docSnap.forEach((audio: DocumentSnapshot) => {
       promises.push(parseAudio(audio));
     });
     const audio = await Promise.all(promises);

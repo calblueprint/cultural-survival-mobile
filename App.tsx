@@ -5,8 +5,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import RootNavigation from './src/navigation/RootNavigator';
-// import QueriesDemo from './src/firebase/QueriesDemo';
-// import AudioDemos from './src/firebase/AudioDemos';
 
 async function loadResourcesAsync() {
   await Promise.all([
@@ -60,7 +58,6 @@ export default function App() {
 
   return !resourcesLoaded ? null : (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      {/* <AudioDemos /> */}
       <RootNavigation />
     </View>
   );
