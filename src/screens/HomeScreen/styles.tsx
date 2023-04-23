@@ -7,17 +7,28 @@ export default StyleSheet.create({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
+    paddingTop: 25,
+    paddingHorizontal: 22,
+  },
+  recentsContainer: {
+    flex: 1,
+    flexDirection: 'row',
     paddingTop: 16,
+  },
+  recentsCard: {
+    paddingRight: 31,
   },
   heading: {
-    paddingLeft: 16,
     paddingTop: 16,
+    fontSize: 30,
+    paddingHorizontal: 22,
   },
   subheading: {
-    paddingLeft: 16,
-    marginTop: '2%',
+    paddingTop: 21,
     textAlign: 'left',
+    fontSize: 20,
+    paddingHorizontal: 22,
   },
   container: {
     flex: 1,

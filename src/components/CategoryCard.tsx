@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     overflow: 'hidden',
     borderRadius: 8,
-    height: 120,
-    width: 166,
+    height: 103,
+    width: 157,
     padding: 14,
-    margin: 8,
+    marginBottom: 16,
   },
   title: {
     color: Colors.textWhite,
@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     right: 0,
     marginRight: -24,
     marginBottom: -24,
+    height: 86,
+    width: 86,
   },
 });
 
