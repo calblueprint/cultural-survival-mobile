@@ -88,7 +88,8 @@ function notSaved() {
 function headerText(themeField: string[]) {
   if (themeField.length === 1) {
     return themeField[0];
-  } if (themeField.length === 2) {
+  }
+  if (themeField.length === 2) {
     return `${themeField[0]} & ${themeField[1]}`;
   }
   let returnText = '';
@@ -96,7 +97,6 @@ function headerText(themeField: string[]) {
     returnText = `${returnText + themeField[i]}, `;
   }
   return returnText.slice(0, -2);
-
 }
 
 function PlayScreen() {
@@ -271,9 +271,7 @@ function PlayScreen() {
 
       <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
-          <TouchableWithoutFeedback
-            onPress={() => rewindAudio(audio)}
-          >
+          <TouchableWithoutFeedback onPress={() => rewindAudio(audio)}>
             <View
               style={{
                 paddingRight: 60,
