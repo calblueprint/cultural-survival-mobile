@@ -1,12 +1,12 @@
 import { ScrollView, Text, TextInput, View } from 'react-native';
+import { useContext } from 'react';
+import { Audio } from 'expo-av';
 import AudioCard from '../../components/AudioCard';
 import '../../i18n/i18n';
 import Colors from '../../styles/Colors';
 import { RootStackScreenProps } from '../../types/navigation';
 import styles from './styles';
-import { useContext } from 'react';
 import AudioContext from '../../AudioContext';
-import { Audio } from 'expo-av';
 
 function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
   const hardcodedResponse = {
