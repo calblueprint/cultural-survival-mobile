@@ -1,8 +1,10 @@
 import { Text, View, ScrollView, SafeAreaView } from 'react-native';
+import React, { createContext, useEffect, useState } from 'react';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
+import { getNetworkStateAsync } from 'expo-network';
 
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
@@ -10,7 +12,20 @@ import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
 
+export const MyContext = createContext({
+  isOnline: true,
+});
+
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
+  const updateNetworkState = async setIsOnline => {
+    const networkState = await getNetworkStateAsync();
+    setIsOnline(networkState.isConnected);
+  };
+
+  const [isOnline, setIsOnline] = useState(true);
+  updateNetworkState(setIsOnline);
+  console.log(isOnline);
+
   return (
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
