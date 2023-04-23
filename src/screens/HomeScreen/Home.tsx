@@ -1,4 +1,4 @@
-import { Text, View, ScrollView, SafeAreaView, Image } from 'react-native';
+import { Text, View, ScrollView, SafeAreaView, Pressable } from 'react-native';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
@@ -10,6 +10,7 @@ import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
 import RecentUpload from '../../components/RecentUpload';
+import { SettingsIcon } from '../../../assets/icons';
 
 const response1 = {
   url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
@@ -38,9 +39,15 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   return (
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
-        <Text style={[globalStyles.h2, styles.heading]}>
-          Good morning!
-        </Text>
+        <View style={{ paddingHorizontal: 22, alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Text style={[globalStyles.h2, styles.heading]}>
+            Good morning!
+          </Text>
+          {/* FIXME: onPress should navigate to settings screen. */}
+          <Pressable onPress={() => navigation.navigate('Audio')}>
+            {SettingsIcon}
+          </Pressable>
+        </View>
         <Text style={[globalStyles.h4, styles.subheading]}>
           Recent Uploads
         </Text>
@@ -52,12 +59,17 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             bounces={false}>
-            <RecentUpload title={response1.title} artist={response1.artist}>
+            <RecentUpload title={response1.title} artist={response1.artist} image={response1.thumbnail} pressFunction={() => navigation.navigate('Audio')}>
             </RecentUpload>
-            <RecentUpload title={response2.title} artist={response2.artist}>
+            <RecentUpload title={response2.title} artist={response2.artist} image={response2.thumbnail} pressFunction={() => navigation.navigate('Audio')}>
             </RecentUpload>
-            <RecentUpload title={response1.title} artist={response1.artist}>
+            <RecentUpload title={response1.title} artist={response1.artist} image={response1.thumbnail} pressFunction={() => navigation.navigate('Audio')}>
             </RecentUpload>
+            <View style={{ height: 148, flexDirection: 'column', justifyContent: 'center' }}>
+              <Pressable onPress={() => navigation.navigate('Audio')}>
+                <Text style={styles.h3}>See all {'\n'}uploads</Text>
+              </Pressable>
+            </View>
           </ScrollView>
         </View>
         <Text style={[globalStyles.h4, styles.subheading]}>

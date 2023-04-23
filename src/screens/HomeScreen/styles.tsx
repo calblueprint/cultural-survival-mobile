@@ -14,7 +14,7 @@ export default StyleSheet.create({
   recentsContainer: {
     flex: 1,
     flexDirection: 'row',
-    paddingTop: 16,
+    // paddingTop: 16,
   },
   recentsCard: {
     paddingRight: 31,
@@ -22,13 +22,18 @@ export default StyleSheet.create({
   heading: {
     paddingTop: 16,
     fontSize: 30,
-    paddingHorizontal: 22,
   },
   subheading: {
     paddingTop: 21,
     textAlign: 'left',
     fontSize: 20,
     paddingHorizontal: 22,
+  },
+  h3: {
+    fontFamily: 'DMSans-Regular',
+    textAlign: 'left',
+    fontSize: 15,
+    paddingRight: 18,
   },
   container: {
     flex: 1,
