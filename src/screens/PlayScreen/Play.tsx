@@ -13,7 +13,11 @@ import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import Icon from '../../../assets/icons';
 import styles from './styles';
 import AudioContext, { AudioPlayerState } from '../../AudioContext';
-import { toggleAudio, rewindAudio, fastforwardAudio } from '../../utils/AudioUtils';
+import {
+  toggleAudio,
+  rewindAudio,
+  fastforwardAudio,
+} from '../../utils/AudioUtils';
 
 function play() {
   return (
@@ -200,9 +204,7 @@ function PlayScreen() {
                 : 'Playing from Collection'}
               {'\n'}
             </Text>
-            <Text style={styles.header_text2}>
-              {headerText(audio.theme)}
-            </Text>
+            <Text style={styles.header_text2}>{headerText(audio.theme)}</Text>
           </View>
         </View>
       </View>
@@ -269,8 +271,17 @@ function PlayScreen() {
 
       <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
-          <TouchableWithoutFeedback onPress={() => rewindAudio(audio, setAudio)}>
-            <View style={{ paddingRight: 60, width: 57, height: 34, alignItems: 'center' }}>
+          <TouchableWithoutFeedback
+            onPress={() => rewindAudio(audio, setAudio)}
+          >
+            <View
+              style={{
+                paddingRight: 60,
+                width: 57,
+                height: 34,
+                alignItems: 'center',
+              }}
+            >
               <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
                 <Path
                   d="M3 18.732C1.66666 17.9622 1.66667 16.0377 3 15.2679L22.5 4.00962C23.8333 3.23982 25.5 4.20207 25.5 5.74167L25.5 28.2583C25.5 29.7979 23.8333 30.7602 22.5 29.9904L3 18.732Z"
@@ -292,8 +303,17 @@ function PlayScreen() {
             </View>
           </TouchableWithoutFeedback>
 
-          <TouchableWithoutFeedback onPress={() => fastforwardAudio(audio, setAudio)}>
-            <View style={{ paddingLeft: 60, width: 57, height: 34, alignItems: 'center' }}>
+          <TouchableWithoutFeedback
+            onPress={() => fastforwardAudio(audio, setAudio)}
+          >
+            <View
+              style={{
+                paddingLeft: 60,
+                width: 57,
+                height: 34,
+                alignItems: 'center',
+              }}
+            >
               <Svg width="57" height="34" viewBox="0 0 57 34" fill="none">
                 <Path
                   d="M31 15.268C32.3333 16.0378 32.3333 17.9623 31 18.7321L11.5 29.9904C10.1667 30.7602 8.5 29.7979 8.5 28.2583V5.74167C8.5 4.20207 10.1667 3.23982 11.5 4.00962L31 15.268Z"

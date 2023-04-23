@@ -70,8 +70,8 @@ export default StyleSheet.create({
     color: '#000000',
   },
   audio_container: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
     paddingTop: 10,
     width: '100%',
