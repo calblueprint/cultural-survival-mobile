@@ -7,8 +7,8 @@ import {
 } from 'react';
 
 interface ILanguageContext {
-  audio: string;
-  setAudio: Dispatch<SetStateAction<string>>;
+  language: string;
+  setLanguage: Dispatch<SetStateAction<string>>;
 }
 
 const LanguageContext = createContext<ILanguageContext>({} as ILanguageContext);
@@ -18,8 +18,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const value = useMemo(
     () => ({
-      language: language,
-      setLanguage: setLanguage,
+      language,
+      setLanguage,
     }),
     [language],
   );
