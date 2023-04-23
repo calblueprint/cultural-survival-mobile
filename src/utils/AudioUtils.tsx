@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
-import { AudioPlayerState } from '../AudioContext';
 import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from 'expo-av';
+import { AudioPlayerState } from '../AudioContext';
 
 export async function toggleAudio(
   audio: AudioPlayerState,
@@ -46,7 +46,7 @@ export async function toggleAudio(
 
 export async function rewindAudio(
   audio: AudioPlayerState,
-  setAudio: Dispatch<SetStateAction<AudioPlayerState>>,
+  // setAudio: Dispatch<SetStateAction<AudioPlayerState>>,
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {

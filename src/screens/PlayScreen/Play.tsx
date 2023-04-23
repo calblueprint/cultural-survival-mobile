@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 import { useContext, useState } from 'react';
 import TextTicker from 'react-native-text-ticker';
-import Svg, { Circle, Path, Rect } from 'react-native-svg';
+import Svg, { Circle, Path } from 'react-native-svg';
 import Icon from '../../../assets/icons';
 import styles from './styles';
-import AudioContext, { AudioPlayerState } from '../../AudioContext';
+import AudioContext from '../../AudioContext';
 import {
   toggleAudio,
   rewindAudio,
@@ -86,17 +86,17 @@ function notSaved() {
 }
 
 function headerText(themeField: string[]) {
-  if (themeField.length == 1) {
+  if (themeField.length === 1) {
     return themeField[0];
-  } else if (themeField.length == 2) {
-    return themeField[0] + ' & ' + themeField[1];
-  } else {
-    let returnText = '';
-    for (var i = 0; i < themeField.length; i++) {
-      returnText = returnText + themeField[i] + ', ';
-    }
-    return returnText.slice(0, -2);
+  } if (themeField.length === 2) {
+    return `${themeField[0]} & ${themeField[1]}`;
   }
+  let returnText = '';
+  for (let i = 0; i < themeField.length; i += 1) {
+    returnText = `${returnText + themeField[i]}, `;
+  }
+  return returnText.slice(0, -2);
+
 }
 
 function PlayScreen() {
@@ -272,7 +272,7 @@ function PlayScreen() {
       <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
           <TouchableWithoutFeedback
-            onPress={() => rewindAudio(audio, setAudio)}
+            onPress={() => rewindAudio(audio)}
           >
             <View
               style={{
