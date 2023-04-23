@@ -3,9 +3,8 @@ import Colors from '../../styles/Colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: Colors.surfaceWhite,
-    alignContent: 'space-around',
+    paddingHorizontal: 16,
   },
   grantsText: {
     marginBottom: 30,
@@ -18,17 +17,8 @@ export default StyleSheet.create({
     fontWeight: '400',
     textAlign: 'left',
     color: Colors.textPrimary,
-    alignSelf: 'center',
-  },
-  titleContainer: {
-    flex: 1,
-    backgroundColor: Colors.surfaceWhite,
-    justifyContent: 'center',
-    marginRight: 60,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  grantCardContainer: {
-    marginBottom: 12,
+    alignSelf: 'flex-start',
+    marginVertical: 20,
+    marginLeft: 8,
   },
 });

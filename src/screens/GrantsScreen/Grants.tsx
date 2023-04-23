@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { useEffect, useState } from 'react';
 import GrantCard from '../../components/GrantCard';
 import styles from './styles';
@@ -26,19 +26,14 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Grants Available</Text>
-      </View>
+      <Text style={styles.titleText}>Grants Available</Text>
 
       {grants.map(grant => (
-        <View key={grant.grant_id} style={styles.grantCardContainer}>
-          <GrantCard
-            grantObj={grant}
-            onPress={() =>
-              navigation.navigate('GrantInfo', { grantObj: grant })
-            }
-          />
-        </View>
+        <GrantCard
+          key={grant.grant_id}
+          grantObj={grant}
+          onPress={() => navigation.navigate('GrantInfo', { grantObj: grant })}
+        />
       ))}
     </ScrollView>
   );
