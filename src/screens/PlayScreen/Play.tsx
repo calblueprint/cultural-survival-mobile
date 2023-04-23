@@ -1,15 +1,19 @@
 // import { Image, Text, View } from 'react-native';
 import { useState } from 'react';
 import { Button, Image, Text, TextInput, View } from 'react-native';
-import { getInfoAsync } from 'expo-file-system';
+import { getInfoAsync, documentDirectory } from 'expo-file-system';
+import {getNetworkStateAsync} from 'expo-network';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
 import { getAudioID } from '../../firebase/queries/audioQueries';
 
+
+
 import {
   downLoadAudio,
   deleteAudio,
+  dirList,
 } from '../../firebase/queries/audioPlayback';
 
 // export const getImage = async (audioID: string): Promise<string> => {
@@ -29,16 +33,21 @@ function PlayScreen() {
   // });
 
   /* fetch all audio on page load */
+  
   const handlePress = async () => {
-    const audios = await downLoadAudio(audioId);
-    const didItDownload = await getInfoAsync(audios);
-    // eslint-disable-next-line no-console
-    console.log(didItDownload);
+    console.log(await getNetworkStateAsync())
 
-    deleteAudio(audios);
-    const didItDelete = await getInfoAsync(audios);
+    // const audios = await downLoadAudio(audioId);
+    // const didItDownload = await getInfoAsync(audios);
+    // // eslint-disable-next-line no-console
+    // console.log(didItDownload);
+    
+    // deleteAudio(audios);
+    console.log(await dirList(`${documentDirectory}audio/`));
+
+    // const didItDelete = await getInfoAsync(audios);
     // eslint-disable-next-line no-console
-    console.log(didItDelete);
+    // console.log(didItDelete);
   };
 
   return (

@@ -4,10 +4,10 @@
 
 import { useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
-import { getInfoAsync } from 'expo-file-system';
+import { getInfoAsync, documentDirectory } from 'expo-file-system';
 import { Audio } from '../types/schema';
 // import { getAllAudio, getAudioID } from './queries/audioQueries';
-import { downLoadAudio, deleteAudio } from './queries/audioPlayback';
+import { downLoadAudio, deleteAudio, dirList } from './queries/audioPlayback';
 
 export default function QueriesDemo() {
   const [audio] = useState<Audio[]>([]);
@@ -20,10 +20,12 @@ export default function QueriesDemo() {
     // eslint-disable-next-line no-console
     console.log(didItDownload);
 
-    deleteAudio(audios);
-    const didItDelete = await getInfoAsync(audios);
     // eslint-disable-next-line no-console
-    console.log(didItDelete);
+    console.log(dirList(`${documentDirectory}audio/`));
+    // deleteAudio(audios);
+    // const didItDelete = await getInfoAsync(audios);
+    // eslint-disable-next-line no-console
+    // console.log(didItDelete);
   };
 
   // useEffect(() => {

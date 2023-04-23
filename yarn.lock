@@ -5384,6 +5384,11 @@ expo-modules-core@1.2.5:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
 
+expo-network@~5.2.1:
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/expo-network/-/expo-network-5.2.1.tgz"
+  integrity sha512-AqcQy6HiKwwWHGm87n3aEpGj2LFikT4warCjBJro5pk39AYMLEA+7oQ/Z+tNCOZW6ZFUe7BebEC3yGY98mcSyg==
+
 expo-pwa@0.0.124:
   version "0.0.124"
   resolved "https://registry.npmjs.org/expo-pwa/-/expo-pwa-0.0.124.tgz"
