@@ -38,8 +38,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     color: Colors.textPrimary,
     textAlign: 'left',
-    fontSize: 17,
+    fontSize: 22,
     flexWrap: 'wrap',
+    // fontWeight: 'bold',
   },
   infoText: {
     color: Colors.textPrimary,
@@ -87,9 +88,7 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
       style={styles.cardContainer}
     >
       <View style={styles.innerCardContainer}>
-        <Text style={[globalStyles.h3, styles.titleText]}>
-          {grantObj.title}
-        </Text>
+        <Text style={[styles.titleText]}>{grantObj.title}</Text>
         <View style={styles.imageContainer}>
           <Image
             source={grantPlaceholder}
