@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft: 8,
   },
   image: {
     width: '100%',
@@ -98,7 +99,7 @@ function GrantCard({ grantObj, onPress }: GrantCardProps) {
         </View>
 
         <View style={styles.infoContainer}>
-          <View style={styles.infoContainer}>
+          <View style={styles.iconInfoGroup}>
             <Icon type="coins" />
             <Text style={styles.infoText}>
               {`$${grantObj.amount.toString()}`}
