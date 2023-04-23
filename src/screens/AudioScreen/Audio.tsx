@@ -2,10 +2,10 @@ import { ScrollView, Text, TextInput, View } from 'react-native';
 import AudioCard from '../../components/AudioCard';
 import '../../i18n/i18n';
 import Colors from '../../styles/Colors';
-import { RootStackScreenProps } from '../../types/navigation';
+import { SearchStackScreensProps } from '../../types/navigation';
 import styles from './styles';
 
-function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
+function AudioScreen({ navigation }: SearchStackScreensProps<'Audio'>) {
   return (
     <View style={styles.view}>
       <TextInput
@@ -38,7 +38,7 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
         <AudioCard
           name="Green Colonization: An Interview With Maja Kristine Jama"
           author="Shaldon Ferris"
-          onPress={() => navigation.navigate('Play')}
+          onPress={() => navigation.navigate('AudioInfo')}
         />
         <AudioCard
           name="The Threatened Cultures of the Danube Delta"

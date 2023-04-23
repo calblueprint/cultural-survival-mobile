@@ -11,6 +11,7 @@ export type RootStackParamList = {
   Audio: undefined;
   Grants: undefined;
   Play: undefined;
+  // AudioInfo: undefined;
   QueriesDemo: undefined;
 };
 
@@ -26,6 +27,7 @@ export type GrantsStackParamList = {
 export type SearchStackParamList = {
   Audio: undefined;
   Play: undefined;
+  AudioInfo: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
