@@ -1,21 +1,7 @@
-// import { Image, Text, View } from 'react-native';
-import { useState } from 'react';
-import { Button, Image, Text, TextInput, View } from 'react-native';
-import { getInfoAsync, documentDirectory } from 'expo-file-system';
+import { Image, Text, View } from 'react-native';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
-
-import {
-  downLoadAudio,
-  deleteAudio,
-  dirList,
-} from '../../firebase/queries/audioPlayback';
-
-// export const getImage = async (audioID: string): Promise<string> => {
-//    const thumNail =  (await getAudioID(audioID)).thumbnail;
-//       return thumNail
-//  }
 
 function PlayScreen() {
   return (
