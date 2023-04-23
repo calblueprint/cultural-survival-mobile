@@ -25,6 +25,7 @@ function PlayScreen() {
       </View>
       <View style={styles.container2}>
         <Image
+          source={{}}
           style={{
             height: 275,
             width: 275,
@@ -48,7 +49,6 @@ function PlayScreen() {
         <Icon type="play_button" />
         <Icon type="audio_forward" />
       </View>
-
       <View
         style={{
           flexDirection: 'row',

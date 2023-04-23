@@ -13,6 +13,10 @@ export type Audio = {
   authors: string[];
   description: string;
   title: string;
+  soundCloud: string;
+  theme: string;
+  gcsLink: string;
+  thumbnail: string;
 };
 
 export type Grant = {
