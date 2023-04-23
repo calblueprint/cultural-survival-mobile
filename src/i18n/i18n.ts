@@ -3,7 +3,6 @@ import { initReactI18next } from 'react-i18next';
 import { languages } from './i18n.constants';
 import { en, es, pt } from './i18n.translations';
 
-
 const createI18n = (language: string): i18nInstance => {
   const i18n = i18next.createInstance().use(initReactI18next);
 
