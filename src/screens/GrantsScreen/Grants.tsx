@@ -1,7 +1,6 @@
 import { SafeAreaView, ScrollView, Text, View } from 'react-native';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useContext } from 'react';
 
 import GrantCard from '../../components/GrantCard';
 import ViewContainer from '../../components/ViewContainer';
