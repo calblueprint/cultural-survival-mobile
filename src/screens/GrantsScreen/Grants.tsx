@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import GrantCard from '../../components/GrantCard';
 import ViewContainer from '../../components/ViewContainer';
@@ -27,22 +27,24 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
-      <ViewContainer>
-        <Text style={globalStyles.h2}>Grants Available</Text>
-      </ViewContainer>
+    <SafeAreaView style={globalStyles.container}>
+      <ScrollView style={styles.container}>
+        <ViewContainer>
+          <Text style={globalStyles.h2}>Grants Available</Text>
+        </ViewContainer>
 
-      {grants.map(grant => (
-        <View key={grant.grant_id}>
-          <GrantCard
-            grantObj={grant}
-            onPress={() =>
-              navigation.navigate('GrantInfo', { grantObj: grant })
-            }
-          />
-        </View>
-      ))}
-    </ScrollView>
+        {grants.map(grant => (
+          <View key={grant.grant_id}>
+            <GrantCard
+              grantObj={grant}
+              onPress={() =>
+                navigation.navigate('GrantInfo', { grantObj: grant })
+              }
+            />
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 

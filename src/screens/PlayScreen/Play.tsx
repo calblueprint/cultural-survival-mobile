@@ -1,11 +1,13 @@
 import { Image, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import styles from './styles';
+import globalStyles from '../../globalStyles';
 
 function PlayScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={globalStyles.container}>
       <View
         style={{
           flexDirection: 'row',
@@ -66,7 +68,7 @@ function PlayScreen() {
           <Icon type="options" />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -1,13 +1,13 @@
-import { ScrollView, Text, TextInput, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TextInput } from 'react-native';
 import AudioCard from '../../components/AudioCard';
 import '../../i18n/i18n';
 import Colors from '../../styles/Colors';
 import { RootStackScreenProps } from '../../types/navigation';
-import styles from './styles';
+import globalStyles from '../../globalStyles';
 
 function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
   return (
-    <View style={styles.view}>
+    <SafeAreaView style={globalStyles.container}>
       <TextInput
         placeholder="Search"
         style={{
@@ -69,7 +69,7 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
           author="Tristan Taylor and Natalie Berthram"
         />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

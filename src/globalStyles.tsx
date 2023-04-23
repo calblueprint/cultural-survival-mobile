@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StatusBar, StyleSheet } from 'react-native';
 import Colors from './styles/Colors';
 
 export default StyleSheet.create({
@@ -7,6 +7,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.surfaceWhite,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   h1: {
     fontFamily: 'DMSans-Bold',
