@@ -22,18 +22,27 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
   };
 
   const response2 = {
-    url: "https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/IndigenousPeoplesOnTheGroundAreDoingMuchForBiodiversity.mp3?generation=1678596988929380&alt=media",
-    artist: "Joji Carino",
-    title: "Indigenous Peoples on the Ground Are Doing Much for Biodiversity",
-    thumbnail: "https://i1.sndcdn.com/artworks-6SyLrByoF8ZmwKYG-Sr8oig-t500x500.jpg",
-    theme: ["Climate Change & the Environment"],
-    scLink: "https://soundcloud.com/culturalsurvival/indigenous-peoples-on-the-ground-are-doing-much-for-biodiversity",
-  }
+    url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/IndigenousPeoplesOnTheGroundAreDoingMuchForBiodiversity.mp3?generation=1678596988929380&alt=media',
+    artist: 'Joji Carino',
+    title: 'Indigenous Peoples on the Ground Are Doing Much for Biodiversity',
+    thumbnail:
+      'https://i1.sndcdn.com/artworks-6SyLrByoF8ZmwKYG-Sr8oig-t500x500.jpg',
+    theme: ['Climate Change & the Environment'],
+    scLink:
+      'https://soundcloud.com/culturalsurvival/indigenous-peoples-on-the-ground-are-doing-much-for-biodiversity',
+  };
 
   const { audio, setAudio } = useContext(AudioContext);
   const newSound = new Audio.Sound();
 
-  async function setContext(response: { url: string, artist: string, title: string, thumbnail: string, theme: string[], scLink: string }) {
+  async function setContext(response: {
+    url: string;
+    artist: string;
+    title: string;
+    thumbnail: string;
+    theme: string[];
+    scLink: string;
+  }) {
     if (audio.title !== response.title) {
       if (audio.isPlaying) {
         await audio.soundRef.pauseAsync();
