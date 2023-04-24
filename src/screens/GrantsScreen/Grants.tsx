@@ -1,7 +1,5 @@
 import { ScrollView, Text } from 'react-native';
 import { useEffect, useState } from 'react';
-import ViewContainer from '../../components/ViewContainer';
-import globalStyles from '../../globalStyles';
 import GrantCard from '../../components/GrantCard';
 import styles from './styles';
 import { Grant } from '../../types/schema';
