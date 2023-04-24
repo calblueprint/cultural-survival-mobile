@@ -47,11 +47,11 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
   function getGreeting() {
     if (currentDate < 12) {
       return 'Good morning!';
-    } if (currentDate < 17) {
+    }
+    if (currentDate < 17) {
       return 'Good afternoon!';
-    } 
-      return 'Good evening!';
-    
+    }
+    return 'Good evening!';
   }
 
   return (
@@ -94,19 +94,19 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
               artist={response1.artist}
               image={response1.thumbnail}
               pressFunction={() => navigation.navigate('Audio')}
-             />
+            />
             <RecentUpload
               title={response2.title}
               artist={response2.artist}
               image={response2.thumbnail}
               pressFunction={() => navigation.navigate('Audio')}
-             />
+            />
             <RecentUpload
               title={response1.title}
               artist={response1.artist}
               image={response1.thumbnail}
               pressFunction={() => navigation.navigate('Audio')}
-             />
+            />
             <View
               style={{
                 height: 148,
