@@ -6,7 +6,7 @@ import GrantInfoScreen from '../screens/GrantInfoScreen/GrantInfo';
 
 const GrantsStack = createNativeStackNavigator<GrantsStackParamList>();
 
-export default function HomeStackNavigator() {
+export default function GrantsStackNavigator() {
   return (
     <GrantsStack.Navigator
       screenOptions={{

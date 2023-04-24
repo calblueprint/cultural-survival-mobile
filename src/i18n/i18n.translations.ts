@@ -9,6 +9,7 @@ export const en = {
   },
   [namespaces.pages.hello]: {
     welcome: 'Welcome to Cultural Survival.',
+    browse: 'Browse all categories',
     categories: 'Categories',
     radio: 'Radio',
     grants: 'Grants',
@@ -30,6 +31,7 @@ export const es = {
   },
   [namespaces.pages.hello]: {
     welcome: 'Bienvenidos a Cultural Survival.',
+    browse: 'Navegar las categorías',
     categories: 'Categorías',
     radio: 'Radio',
     grants: 'Subvenciones',
@@ -39,5 +41,27 @@ export const es = {
   },
   [namespaces.pages.audio]: {
     audio_feed: 'Alimentación de Audio',
+  },
+};
+
+export const pt = {
+  [namespaces.common]: {
+    buttons: {
+      ok: 'Aceitar',
+      cancel: 'Cancelar',
+    },
+  },
+  [namespaces.pages.hello]: {
+    welcome: 'Bem-vindo à Cultural Survival.',
+    browse: 'Procurar categorias',
+    categories: 'Categorias',
+    radio: 'Rádio',
+    grants: 'Subvençãos',
+  },
+  [namespaces.pages.grants]: {
+    grants_feed: 'Subsídios disponíveis',
+  },
+  [namespaces.pages.audio]: {
+    audio_feed: 'Alimentação de Áudio',
   },
 };

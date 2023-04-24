@@ -1,25 +1,36 @@
-import { Text, View, ScrollView, SafeAreaView } from 'react-native';
+import { Text, View, ScrollView, SafeAreaView, Button } from 'react-native';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import LanguageContext from '../../LanguageContext';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
-import { RootStackScreenProps } from '../../types/navigation';
-
+import { HomeStackScreenProps } from '../../types/navigation';
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
+import { namespaces } from '../../i18n/i18n.constants';
 
-function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
+function HomeScreen({ navigation }: HomeStackScreenProps<'Home'>) {
+  const { language, setLanguage } = useContext(LanguageContext);
+  const { i18n, t } = useTranslation(namespaces.pages.hello);
+
+  if (i18n.language !== language) {
+    i18n.changeLanguage(language);
+  }
+
   return (
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
-        <Text style={[globalStyles.h2, styles.heading]}>
-          Welcome to Cultural Survival.
-        </Text>
-        <Text style={[globalStyles.h4, styles.subheading]}>
-          Browse all categories
-        </Text>
+        <Button
+          title="Settings"
+          onPress={() => navigation.navigate('Settings')}
+        />
+        <Text style={[globalStyles.h2, styles.heading]}>{t('welcome')}</Text>
+        <Text style={[globalStyles.h4, styles.subheading]}>{t('browse')}</Text>
         {/* TODO: Change color from a string to importing color from global styles */}
         <View style={styles.cardsContainer}>
           {/* TODO: When changing text size, switch to 1 column when text is wrapping individual words */}
