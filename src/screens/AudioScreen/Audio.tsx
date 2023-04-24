@@ -1,13 +1,16 @@
 import { ScrollView, Text, TextInput, View } from 'react-native';
 import AudioCard from '../../components/AudioCard';
-import BottomPlayBar from '../../components/BottomPlayBar';
 import '../../i18n/i18n';
 import { SearchStackScreensProps } from '../../types/navigation';
 import styles from './styles';
+import NowPlayingWrapperContainer from '../../components/NowPlayingWrapper';
+
+
 
 function AudioScreen({ navigation }: SearchStackScreensProps<'Audio'>) {
   return (
-    <>
+    <NowPlayingWrapperContainer
+    navigation={navigation}>
       <View style={styles.view}>
         <TextInput
           placeholder="Search"
@@ -71,14 +74,7 @@ function AudioScreen({ navigation }: SearchStackScreensProps<'Audio'>) {
           />
         </ScrollView>
       </View>
-      <View>
-        <BottomPlayBar
-          name="Green Colonization: An Interview With Maja Kristine Jama"
-          author="Shaldon Ferris"
-          onPress={() => navigation.navigate('Play')}
-        />
-      </View>
-    </>
+      </NowPlayingWrapperContainer>
   );
 }
 

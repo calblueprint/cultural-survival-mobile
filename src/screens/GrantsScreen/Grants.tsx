@@ -1,15 +1,15 @@
 import { ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import GrantCard from '../../components/GrantCard';
-import BottomPlayBar from '../../components/BottomPlayBar';
 import ViewContainer from '../../components/ViewContainer';
-import { GrantsStackScreensProps } from '../../types/navigation';
+import { GrantsStackScreensProps} from '../../types/navigation';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import { Grant } from '../../types/schema';
 
 import '../../i18n/i18n';
 import { getAllGrants } from '../../firebase/queries/grantsQueries';
+import NowPlayingWrapperContainer from '../../components/NowPlayingWrapper';
 
 function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
   const [grants, setGrants] = useState<Grant[]>([]);
@@ -28,7 +28,8 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
   }, []);
 
   return (
-    <>
+    <NowPlayingWrapperContainer 
+    navigation={ navigation}>
       <ScrollView style={styles.container}>
         <ViewContainer>
           <Text style={globalStyles.h2}>Grants Available</Text>
@@ -45,14 +46,8 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
           </View>
         ))}
       </ScrollView>
-      <View>
-        <BottomPlayBar
-          name="Green Colonization: An Interview With Maja Kristine Jama"
-          author="Shaldon Ferris"
-          onPress={() => navigation.navigate('Play')}
-        />
-      </View>
-    </>
+</NowPlayingWrapperContainer>
+
   );
 }
 

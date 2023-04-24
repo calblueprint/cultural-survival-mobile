@@ -3,15 +3,17 @@ import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { HomeStackScreenProps } from '../../types/navigation';
-import BottomPlayBar from '../../components/BottomPlayBar';
 import climateImage from '../../../assets/climateChangeImage.png';
 import languageImage from '../../../assets/language.png';
 import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
+import NowPlayingWrapperContainer from '../../components/NowPlayingWrapper';
 
 function HomeScreen({ navigation }: HomeStackScreenProps<'Home'>) {
   return (
+    <NowPlayingWrapperContainer
+    navigation={navigation}>
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <Text style={[globalStyles.h2, styles.heading]}>
@@ -62,14 +64,8 @@ function HomeScreen({ navigation }: HomeStackScreenProps<'Home'>) {
           />
         </View>
       </ScrollView>
-      <View>
-        <BottomPlayBar
-          name="Green Colonization: An Interview With Maja Kristine Jama"
-          author="Shaldon Ferris"
-          onPress={() => navigation.navigate('Play')}
-        />
-      </View>
     </SafeAreaView>
+    </NowPlayingWrapperContainer>
   );
 }
 
