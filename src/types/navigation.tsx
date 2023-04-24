@@ -22,16 +22,15 @@ export type GrantsStackParamList = {
 
 export type SearchStackParamList = {
   Audio: undefined;
-
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 
 export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
-CompositeScreenProps<
-  NativeStackScreenProps<HomeStackParamList, T>,
-  RootStackScreenProps<'Play'>
+  CompositeScreenProps<
+    NativeStackScreenProps<HomeStackParamList, T>,
+    RootStackScreenProps<'Play'>
   >;
 
 export type SearchStackScreensProps<T extends keyof SearchStackParamList> =
@@ -41,7 +40,7 @@ export type SearchStackScreensProps<T extends keyof SearchStackParamList> =
   >;
 
 export type GrantsStackScreensProps<T extends keyof GrantsStackParamList> =
-CompositeScreenProps <
-  NativeStackScreenProps<GrantsStackParamList, T>,
-  RootStackScreenProps<'Play'>
+  CompositeScreenProps<
+    NativeStackScreenProps<GrantsStackParamList, T>,
+    RootStackScreenProps<'Play'>
   >;

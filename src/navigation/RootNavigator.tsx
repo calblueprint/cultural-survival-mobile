@@ -9,12 +9,14 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 export default function RootNavigation() {
   return (
     <NavigationContainer>
-      <RootStack.Navigator  screenOptions={{
-        headerShown: false,
-      }}>
-        <RootStack.Screen name = "NavigationBar" component = {NavigationBar} />
+      <RootStack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <RootStack.Screen name="NavigationBar" component={NavigationBar} />
         <RootStack.Group screenOptions={{ presentation: 'modal' }}>
-          <RootStack.Screen name = "Play" component = {PlayScreen}/>
+          <RootStack.Screen name="Play" component={PlayScreen} />
         </RootStack.Group>
       </RootStack.Navigator>
     </NavigationContainer>

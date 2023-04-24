@@ -1,11 +1,41 @@
 import { Image, Text, View, Pressable } from 'react-native';
+import { Audio } from "expo-av";
 import React from 'react';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
 import { RootStackScreenProps} from '../../types/navigation';
 import styles from './styles';
 
+// TODO: Use toggleAudio when it is necessary, may be fixed in later PRs.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function toggleAudio(
+  sound: React.MutableRefObject<Audio.Sound>,
+  url: string,
+) {
+  try {
+    const result = await sound.current.getStatusAsync();
+    if (result.isLoaded) {
+      if (result.isPlaying === false) {
+        sound.current.playAsync();
+      } else {
+        sound.current.pauseAsync();
+      }
+    } else {
+      await sound.current.loadAsync({
+        uri: url,
+      });
+      sound.current.playAsync();
+    }
+  } catch (error) {
+    /* empty */
+  }
+}
+
 function PlayScreen({ navigation }: RootStackScreenProps<'Play'>) {
+  // TODO: Use sound when it is necessary, may be fixed in later PRs.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const sound = React.useRef(new Audio.Sound());
+
   return (
     <View style={styles.container}>
       <View
