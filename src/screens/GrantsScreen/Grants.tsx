@@ -2,7 +2,7 @@ import { ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import GrantCard from '../../components/GrantCard';
 import ViewContainer from '../../components/ViewContainer';
-import { GrantsStackScreensProps} from '../../types/navigation';
+import { GrantsStackScreensProps } from '../../types/navigation';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import { Grant } from '../../types/schema';
@@ -28,8 +28,7 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
   }, []);
 
   return (
-    <NowPlayingWrapperContainer 
-    navigation={ navigation}>
+    <NowPlayingWrapperContainer navigation={navigation}>
       <ScrollView style={styles.container}>
         <ViewContainer>
           <Text style={globalStyles.h2}>Grants Available</Text>
@@ -46,8 +45,7 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
           </View>
         ))}
       </ScrollView>
-</NowPlayingWrapperContainer>
-
+    </NowPlayingWrapperContainer>
   );
 }
 

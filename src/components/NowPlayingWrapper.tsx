@@ -4,7 +4,7 @@ import BottomPlayBar from './BottomPlayBar';
 
 type NowPlayingWrapperProps = {
   children?: React.ReactNode;
-  // TODO FIX THIS NAV TYPE 
+  // TODO FIX THIS NAV TYPE
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   navigation: any;
 };

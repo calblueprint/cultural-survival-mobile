@@ -1,9 +1,9 @@
 import { Image, Text, View, Pressable } from 'react-native';
-import { Audio } from "expo-av";
+import { Audio } from 'expo-av';
 import React from 'react';
 import Icon from '../../../assets/icons';
 import Colors from '../../styles/Colors';
-import { RootStackScreenProps} from '../../types/navigation';
+import { RootStackScreenProps } from '../../types/navigation';
 import styles from './styles';
 
 // TODO: Use toggleAudio when it is necessary, may be fixed in later PRs.

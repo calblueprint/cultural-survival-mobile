@@ -18,13 +18,12 @@ export type Audio = {
   gcsLink: string;
   indigenousLanguage: string[];
   language: string[];
-  mp3filename: string
-  publishedAt: Timestamp
+  mp3filename: string;
+  publishedAt: Timestamp;
   theme: string[];
   thumbnail: string;
   title: string;
   xmlSoundCloud: string;
-
 };
 
 export type Grant = {

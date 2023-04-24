@@ -5,12 +5,9 @@ import { SearchStackScreensProps } from '../../types/navigation';
 import styles from './styles';
 import NowPlayingWrapperContainer from '../../components/NowPlayingWrapper';
 
-
-
 function AudioScreen({ navigation }: SearchStackScreensProps<'Audio'>) {
   return (
-    <NowPlayingWrapperContainer
-    navigation={navigation}>
+    <NowPlayingWrapperContainer navigation={navigation}>
       <View style={styles.view}>
         <TextInput
           placeholder="Search"
@@ -74,7 +71,7 @@ function AudioScreen({ navigation }: SearchStackScreensProps<'Audio'>) {
           />
         </ScrollView>
       </View>
-      </NowPlayingWrapperContainer>
+    </NowPlayingWrapperContainer>
   );
 }
 
