@@ -1,4 +1,5 @@
 import { Text, View, ScrollView, SafeAreaView, Pressable } from 'react-native';
+import { useEffect, useState } from 'react';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
@@ -10,7 +11,6 @@ import womenImage from '../../../assets/women.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
 import RecentUpload from '../../components/RecentUpload';
-import { SettingsIcon } from '../../../assets/icons';
 import Icon from '../../../assets/icons';
 
 const response1 = {
@@ -37,45 +37,90 @@ const response2 = {
 };
 
 function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
+  const [currentDate, setCurrentDate] = useState(0);
+
+  useEffect(() => {
+    const hours = new Date().getHours();
+    setCurrentDate(hours);
+  }, []);
+
+  function getGreeting() {
+    if (currentDate < 12) {
+      return 'Good morning!';
+    } if (currentDate < 17) {
+      return 'Good afternoon!';
+    } 
+      return 'Good evening!';
+    
+  }
+
   return (
     <SafeAreaView style={globalStyles.container}>
-      <ScrollView>
-        <View style={{ paddingHorizontal: 22, alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text style={[globalStyles.h2, styles.heading]}>
-            Good morning!
-          </Text>
+      <ScrollView
+        style={{ width: '100%' }}
+        contentContainerStyle={{ paddingTop: 16 }}
+      >
+        <View
+          style={{
+            paddingHorizontal: 22,
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Text style={[globalStyles.h2, styles.heading]}>{getGreeting()}</Text>
           {/* FIXME: onPress should navigate to settings screen. */}
-          <Pressable style={{ padding: 8 }} onPress={() => navigation.navigate('SearchStack', { screen: 'Audio' })}>
+          <Pressable
+            style={{ padding: 8 }}
+            onPress={() => navigation.navigate('Audio')}
+          >
             <Icon type="settings" />
           </Pressable>
         </View>
-        <Text style={[globalStyles.h4, styles.subheading]}>
-          Recent Uploads
-        </Text>
-        <View style={{
-          paddingHorizontal: 22,
-          paddingTop: 16,
-        }}>
+        <Text style={[globalStyles.h4, styles.subheading]}>Recent Uploads</Text>
+        <View
+          style={{
+            paddingHorizontal: 22,
+            paddingTop: 16,
+          }}
+        >
           <ScrollView
-            horizontal={true}
+            horizontal
             showsHorizontalScrollIndicator={false}
-            bounces={false}>
-            <RecentUpload title={response1.title} artist={response1.artist} image={response1.thumbnail} pressFunction={() => navigation.navigate('Audio')}>
-            </RecentUpload>
-            <RecentUpload title={response2.title} artist={response2.artist} image={response2.thumbnail} pressFunction={() => navigation.navigate('Audio')}>
-            </RecentUpload>
-            <RecentUpload title={response1.title} artist={response1.artist} image={response1.thumbnail} pressFunction={() => navigation.navigate('Audio')}>
-            </RecentUpload>
-            <View style={{ height: 148, flexDirection: 'column', justifyContent: 'center' }}>
+            bounces={false}
+          >
+            <RecentUpload
+              title={response1.title}
+              artist={response1.artist}
+              image={response1.thumbnail}
+              pressFunction={() => navigation.navigate('Audio')}
+             />
+            <RecentUpload
+              title={response2.title}
+              artist={response2.artist}
+              image={response2.thumbnail}
+              pressFunction={() => navigation.navigate('Audio')}
+             />
+            <RecentUpload
+              title={response1.title}
+              artist={response1.artist}
+              image={response1.thumbnail}
+              pressFunction={() => navigation.navigate('Audio')}
+             />
+            <View
+              style={{
+                height: 148,
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
               <Pressable onPress={() => navigation.navigate('Audio')}>
                 <Text style={styles.h3}>See all {'\n'}uploads</Text>
               </Pressable>
             </View>
           </ScrollView>
         </View>
-        <Text style={[globalStyles.h4, styles.subheading]}>
-          All Categories
-        </Text>
+        <Text style={[globalStyles.h4, styles.subheading]}>All Categories</Text>
         {/* TODO: Change color from a string to importing color from global styles */}
         <View style={styles.cardsContainer}>
           {/* TODO: When changing text size, switch to 1 column when text is wrapping individual words */}
@@ -118,7 +163,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           />
         </View>
       </ScrollView>
-    </SafeAreaView >
+    </SafeAreaView>
   );
 }
 
