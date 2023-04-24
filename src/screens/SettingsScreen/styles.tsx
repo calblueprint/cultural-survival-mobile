@@ -18,7 +18,7 @@ export default StyleSheet.create({
   },
   subheading: {
     paddingLeft: 16,
-    marginTop: '2%',
-    textAlign: 'left',
+    marginTop: '10%',
+    textAlign: 'center',
   },
 });
