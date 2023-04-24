@@ -11,16 +11,10 @@ export default StyleSheet.create({
     paddingTop: 25,
     paddingHorizontal: 22,
   },
-  recentsContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    // paddingTop: 16,
-  },
   recentsCard: {
     paddingRight: 31,
   },
   heading: {
-    paddingTop: 16,
     fontSize: 30,
   },
   subheading: {

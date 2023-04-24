@@ -11,6 +11,7 @@ import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
 import RecentUpload from '../../components/RecentUpload';
 import { SettingsIcon } from '../../../assets/icons';
+import Icon from '../../../assets/icons';
 
 const response1 = {
   url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
@@ -44,8 +45,8 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
             Good morning!
           </Text>
           {/* FIXME: onPress should navigate to settings screen. */}
-          <Pressable onPress={() => navigation.navigate('Audio')}>
-            {SettingsIcon}
+          <Pressable style={{ padding: 8 }} onPress={() => navigation.navigate('SearchStack', { screen: 'Audio' })}>
+            <Icon type="settings" />
           </Pressable>
         </View>
         <Text style={[globalStyles.h4, styles.subheading]}>
@@ -53,9 +54,9 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
         </Text>
         <View style={{
           paddingHorizontal: 22,
+          paddingTop: 16,
         }}>
           <ScrollView
-            style={styles.recentsContainer}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             bounces={false}>
