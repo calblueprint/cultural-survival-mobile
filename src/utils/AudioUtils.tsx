@@ -50,7 +50,7 @@ export async function rewindAudio(
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    await audio.soundRef.setPositionAsync(result.positionMillis - 30000);
+    await audio.soundRef.setPositionAsync(result.positionMillis - 10000);
   }
 }
 
@@ -60,7 +60,7 @@ export async function fastforwardAudio(
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    await audio.soundRef.setPositionAsync(result.positionMillis + 30000);
+    await audio.soundRef.setPositionAsync(result.positionMillis + 10000);
     if (
       result.durationMillis != null &&
       result.positionMillis >= result.durationMillis
