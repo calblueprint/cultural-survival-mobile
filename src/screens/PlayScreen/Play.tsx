@@ -1,4 +1,12 @@
-import { Easing, Image, Modal, Pressable, Text, View } from 'react-native';
+import {
+  Easing,
+  Image,
+  Modal,
+  Pressable,
+  Share,
+  Text,
+  View,
+} from 'react-native';
 import { useContext, useState } from 'react';
 import TextTicker from 'react-native-text-ticker';
 import Icon from '../../../assets/icons';
@@ -24,6 +32,21 @@ function headerText(themeField: string[]) {
   return returnText.slice(0, -2);
 }
 
+async function onShare(url: string) {
+  const result = await Share.share({
+    message: `Check out this podcast from Cultural Survival!\n${url}`,
+  });
+  if (result.action === Share.sharedAction) {
+    if (result.activityType) {
+      // shared with activity type of result.activityType
+    } else {
+      // shared
+    }
+  } else if (result.action === Share.dismissedAction) {
+    // dismissed
+  }
+}
+
 function PlayScreen() {
   const { audio, setAudio } = useContext(AudioContext);
 
@@ -39,10 +62,6 @@ function PlayScreen() {
     } else {
       // TODO: add to LocalStorage
     }
-  }
-
-  function toggleShareModal() {
-    setShareModalVisible(!shareModalVisible);
   }
 
   return (
@@ -91,15 +110,8 @@ function PlayScreen() {
           </View>
         </View>
       </Modal>
-      <View
-        style={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          marginTop: 10,
-        }}
-      >
-        <View style={styles.header_container}>
+      <View style={styles.header_container1}>
+        <View style={styles.header_container2}>
           <Icon type="dropdown" />
           <View>
             <Text style={styles.header_text1}>
@@ -108,7 +120,9 @@ function PlayScreen() {
                 : 'Playing from Collection'}
               {'\n'}
             </Text>
-            <Text style={styles.header_text2}>{headerText(audio.theme)}</Text>
+            <Text style={styles.header_text2} numberOfLines={1}>
+              {headerText(audio.theme)}
+            </Text>
           </View>
         </View>
       </View>
@@ -139,8 +153,8 @@ function PlayScreen() {
           {audio.artist}
         </TextTicker>
       </View>
-      <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
-        <View style={styles.audio_container}>
+      <View style={styles.audio_container1}>
+        <View style={styles.audio_container2}>
           <Pressable
             onPress={() => rewindAudio(audio)}
             style={{
@@ -164,7 +178,11 @@ function PlayScreen() {
       </View>
       <View style={styles.footer_container1}>
         <View style={styles.footer_container2}>
-          <Pressable onPress={() => toggleShareModal()}>
+          <Pressable
+            onPress={async () => {
+              await onShare(audio.scLink);
+            }}
+          >
             <Icon type="share" />
           </Pressable>
           <Pressable
