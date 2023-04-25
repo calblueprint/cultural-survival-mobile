@@ -15,14 +15,25 @@ export default StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
-  audio_container: {
+  audio_container1: {
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 15,
+  },
+  audio_container2: {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     paddingTop: 10,
     width: '100%',
   },
-  header_container: {
+  header_container1: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 10,
+  },
+  header_container2: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
