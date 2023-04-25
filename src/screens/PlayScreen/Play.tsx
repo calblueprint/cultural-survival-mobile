@@ -25,19 +25,6 @@ function headerText(themeField: string[]) {
 }
 
 function PlayScreen() {
-  // const [playState, setPlayState] = useState({
-  //   isPlaying: false,
-  //   playbackObject: null,
-  //   volume: 1.0,
-  //   isBuffering: false,
-  //   paused: true,
-  //   currentIndex: 0,
-  //   durationMillis: 1,
-  //   positionMillis: 0,
-  //   sliderValue: 0,
-  //   isSeeking: false,
-  // });
-
   const { audio, setAudio } = useContext(AudioContext);
 
   const [audioModalVisible, setAudioModalVisible] = useState(false);
@@ -104,7 +91,6 @@ function PlayScreen() {
           </View>
         </View>
       </Modal>
-
       <View
         style={{
           flexDirection: 'column',
@@ -113,14 +99,7 @@ function PlayScreen() {
           marginTop: 10,
         }}
       >
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            width: 336,
-          }}
-        >
+        <View style={styles.header_container}>
           <Icon type="dropdown" />
           <View>
             <Text style={styles.header_text1}>
@@ -133,31 +112,10 @@ function PlayScreen() {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          marginTop: 26,
-        }}
-      >
-        <Image
-          style={{
-            height: 336,
-            width: 336,
-            backgroundColor: '#D9D9D9',
-          }}
-          source={{ uri: audio.thumbnail }}
-        />
+      <View style={styles.image_container}>
+        <Image style={styles.image} source={{ uri: audio.thumbnail }} />
       </View>
-      <View
-        style={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          marginTop: 29,
-        }}
-      >
+      <View style={styles.title_container}>
         <TextTicker
           style={styles.title_text}
           scrollSpeed={20}
@@ -169,14 +127,7 @@ function PlayScreen() {
           {audio.title}
         </TextTicker>
       </View>
-      <View
-        style={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          marginTop: 8,
-        }}
-      >
+      <View style={styles.artist_container}>
         <TextTicker
           style={styles.author_text}
           scrollSpeed={20}
@@ -188,7 +139,6 @@ function PlayScreen() {
           {audio.artist}
         </TextTicker>
       </View>
-
       <View style={{ marginLeft: 30, marginRight: 30, marginTop: 15 }}>
         <View style={styles.audio_container}>
           <Pressable
@@ -212,23 +162,8 @@ function PlayScreen() {
           </Pressable>
         </View>
       </View>
-
-      <View
-        style={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          marginTop: 25,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-            width: 336,
-            marginBottom: 30,
-          }}
-        >
+      <View style={styles.footer_container1}>
+        <View style={styles.footer_container2}>
           <Pressable onPress={() => toggleShareModal()}>
             <Icon type="share" />
           </Pressable>

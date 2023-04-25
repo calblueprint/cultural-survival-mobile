@@ -15,6 +15,54 @@ export default StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
+  audio_container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingTop: 10,
+    width: '100%',
+  },
+  header_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    width: 336,
+  },
+  image_container: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 26,
+  },
+  title_container: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 29,
+  },
+  artist_container: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 8,
+  },
+  footer_container1: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 25,
+  },
+  footer_container2: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: 336,
+    marginBottom: 30,
+  },
+  image: {
+    height: 336,
+    width: 336,
+    backgroundColor: '#D9D9D9',
+  },
   modal: {
     backgroundColor: 'rgba(217, 217, 217, 0.6)',
     height: '100%',
@@ -68,12 +116,5 @@ export default StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     color: '#000000',
-  },
-  audio_container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingTop: 10,
-    width: '100%',
   },
 });
