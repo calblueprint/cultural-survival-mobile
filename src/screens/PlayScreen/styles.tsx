@@ -7,125 +7,107 @@ export default StyleSheet.create({
     backgroundColor: Colors.surfaceWhite,
     alignItems: 'flex-start',
     justifyContent: 'center',
+    padding: 16,
   },
-  container2: {
-    flex: 1,
-    backgroundColor: Colors.surfaceWhite,
-    alignItems: 'center',
-    justifyContent: 'center',
+  audioContainer: {
     width: '100%',
-  },
-  audio_container1: {
-    marginLeft: 30,
-    marginRight: 30,
     marginTop: 15,
-  },
-  audio_container2: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingTop: 10,
-    width: '100%',
-  },
-  header_container1: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',
-    marginTop: 10,
-  },
-  header_container2: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    width: 336,
+    justifyContent: 'space-evenly',
   },
-  image_container: {
-    flexDirection: 'column',
+  headerContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    marginTop: 26,
+    marginBottom: 16,
   },
-  title_container: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',
-    marginTop: 29,
+  titleContainer: {
+    marginTop: 32,
   },
-  artist_container: {
-    flexDirection: 'column',
-    alignItems: 'center',
+  artistContainer: {
     width: '100%',
     marginTop: 8,
   },
-  footer_container1: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',
-    marginTop: 25,
-  },
-  footer_container2: {
+  footerContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    width: 336,
-    marginBottom: 30,
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 24,
   },
   image: {
-    height: 336,
-    width: 336,
-    backgroundColor: '#D9D9D9',
-  },
-  modal: {
-    backgroundColor: 'rgba(217, 217, 217, 0.6)',
-    height: '100%',
     width: '100%',
+    height: undefined,
+    aspectRatio: 1,
+    backgroundColor: Colors.surfaceGrey,
   },
-  inset: {
-    backgroundColor: '#FFF',
-    height: 135,
-    width: 260,
-    borderRadius: 12,
+  imageContainer: {
+    shadowColor: Colors.shadowDark,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
   },
-  header_text1: {
+  headerTextContainer: {
+    marginLeft: 20,
+  },
+  headerText1: {
     fontSize: 13,
     width: 291,
-    marginLeft: 20,
+    marginBottom: 4,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
-  header_text2: {
+  headerText2: {
     fontSize: 17,
     width: 291,
-    marginTop: -10,
-    marginLeft: 20,
     textAlign: 'left',
     fontWeight: '400',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
-  title_text: {
+  titleText: {
     width: 336,
     fontSize: 20,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
-  author_text: {
+  artistText: {
     width: 336,
     fontSize: 15,
     textAlign: 'left',
-    fontWeight: '500',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
-  inset_text1: {
-    marginTop: 35,
-    fontSize: 20,
-    textAlign: 'center',
-    color: '#000000',
+  modal: {
+    backgroundColor: Colors.translucentBackground,
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 48,
   },
-  inset_text2: {
-    marginTop: 30,
-    fontSize: 20,
+  inset: {
+    backgroundColor: Colors.surfaceWhite,
+    width: '100%',
+    borderRadius: 12,
+  },
+  modalText: {
+    fontSize: 18,
     textAlign: 'center',
-    color: '#000000',
+    color: Colors.textPrimary,
+    padding: 32,
+  },
+  rule: {
+    width: '100%',
+    paddingHorizontal: 10,
+    height: 1,
+    backgroundColor: Colors.shadowDark,
+  },
+  modalAction: {
+    padding: 12,
+    fontSize: 18,
+    textAlign: 'center',
+    color: Colors.textPrimary,
   },
 });

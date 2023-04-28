@@ -15,6 +15,9 @@ const Colors = {
 
   // Shadow colors
   shadowDark: '#000000', // black
+
+  translucentBackground: '#d9d9d999',
+
 };
 
 export default Colors;

@@ -8,18 +8,18 @@ export async function toggleAudio(
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    if (result.isPlaying === false) {
-      setAudio(currState => ({
-        ...currState,
-        isPlaying: true,
-      }));
-      await audio.soundRef.playAsync();
-    } else {
+    if (result.isPlaying) {
       setAudio(currState => ({
         ...currState,
         isPlaying: false,
       }));
       await audio.soundRef.pauseAsync();
+    } else {
+      setAudio(currState => ({
+        ...currState,
+        isPlaying: true,
+      }));
+      await audio.soundRef.playAsync();
     }
   } else {
     await Audio.setAudioModeAsync({
