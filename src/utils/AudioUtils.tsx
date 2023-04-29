@@ -46,7 +46,6 @@ export async function toggleAudio(
 
 export async function rewindAudio(
   audio: AudioPlayerState,
-  // setAudio: Dispatch<SetStateAction<AudioPlayerState>>,
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {

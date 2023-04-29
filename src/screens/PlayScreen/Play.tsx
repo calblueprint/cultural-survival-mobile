@@ -33,18 +33,9 @@ function headerText(themeField: string[]) {
 }
 
 async function onShare(url: string) {
-  const result = await Share.share({
+  await Share.share({
     message: `Check out this podcast from Cultural Survival!\n${url}`,
   });
-  if (result.action === Share.sharedAction) {
-    if (result.activityType) {
-      // shared with activity type of result.activityType
-    } else {
-      // shared
-    }
-  } else if (result.action === Share.dismissedAction) {
-    // dismissed
-  }
 }
 
 function PlayScreen() {
