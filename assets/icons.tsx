@@ -20,7 +20,10 @@ export type IconType =
   | 'audio_forward'
   | 'audio_back'
   | 'dropdown'
-  | 'expand';
+  | 'expand'
+  | 'coins'
+  | 'calendar'
+  | 'back_arrow';
 
 const IconSvgs: Record<IconType, React.ReactElement> = {
   inactive_grants_icon: (
@@ -180,6 +183,39 @@ const IconSvgs: Record<IconType, React.ReactElement> = {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6976 1.58667H16.6655C17.1038 1.58667 17.4591 1.94189 17.4591 2.38008V6.34711C17.4591 6.7853 17.1038 7.14052 16.6655 7.14052C16.2273 7.14052 15.872 6.7853 15.872 6.34711V4.29219L11.6739 8.49725C11.5249 8.64745 11.3221 8.73194 11.1105 8.73194C10.8989 8.73194 10.696 8.64745 10.547 8.49725C10.3968 8.34827 10.3123 8.14548 10.3123 7.93393C10.3123 7.72238 10.3968 7.51959 10.547 7.37061L14.753 3.17348H12.6976C12.2594 3.17348 11.9041 2.81826 11.9041 2.38008C11.9041 1.94189 12.2594 1.58667 12.6976 1.58667ZM8.73373 11.1073C8.73373 10.8958 8.64922 10.693 8.49899 10.544C8.34998 10.3938 8.14715 10.3093 7.93555 10.3093C7.72395 10.3093 7.52111 10.3938 7.37211 10.544L3.17407 14.7491V12.6942C3.17407 12.256 2.81877 11.9008 2.38049 11.9008C1.94221 11.9008 1.58691 12.256 1.58691 12.6942V16.6612C1.58691 17.0994 1.94221 17.4546 2.38049 17.4546H6.34839C6.78667 17.4546 7.14197 17.0994 7.14197 16.6612C7.14197 16.223 6.78667 15.8678 6.34839 15.8678H4.29302L8.49899 11.6707C8.64922 11.5217 8.73373 11.3189 8.73373 11.1073Z" fill="white"/>
 </svg>
 `}
+    />
+  ),
+  coins: (
+    <SvgXml
+      xml={`
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.80534 11.9097C9.62429 11.9097 11.9095 9.62448 11.9095 6.80552C11.9095 3.98657 9.62429 1.70135 6.80534 1.70135C3.98639 1.70135 1.70117 3.98657 1.70117 6.80552C1.70117 9.62448 3.98639 11.9097 6.80534 11.9097Z" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.3898 8.82159C16.1939 9.1214 16.9095 9.61915 17.4703 10.2688C18.0312 10.9184 18.4191 11.699 18.5984 12.5383C18.7776 13.3777 18.7423 14.2486 18.4957 15.0707C18.2491 15.8927 17.7992 16.6393 17.1876 17.2414C16.5761 17.8436 15.8225 18.2817 14.9967 18.5155C14.1709 18.7492 13.2995 18.7709 12.4631 18.5786C11.6267 18.3863 10.8523 17.9862 10.2114 17.4153C9.57062 16.8444 9.0841 16.1211 8.79688 15.3124" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.95508 5.10413H6.80577V8.5069" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.2156 11.8076L14.8111 12.4116L12.4121 14.8106" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `}
+    />
+  ),
+  calendar: (
+    <SvgXml
+      xml={`
+    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.1638 3.40283H4.25412C3.31447 3.40283 2.55273 4.16457 2.55273 5.10422V17.0139C2.55273 17.9536 3.31447 18.7153 4.25412 18.7153H16.1638C17.1035 18.7153 17.8652 17.9536 17.8652 17.0139V5.10422C17.8652 4.16457 17.1035 3.40283 16.1638 3.40283Z" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M13.6113 1.70142V5.10419" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.80469 1.70142V5.10419" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M2.55273 8.50696H17.8652" stroke="black" stroke-width="1.70139" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    `}
+    />
+  ),
+  back_arrow: (
+    <SvgXml
+      xml={`
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.75 28.5L14.25 19L23.75 9.5" stroke="#CC502F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `}
     />
   ),
 };

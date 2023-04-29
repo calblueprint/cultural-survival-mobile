@@ -1,107 +1,77 @@
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+  Image,
+} from 'react-native';
 import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
-import ViewContainer from './ViewContainer';
 import { Grant } from '../types/schema';
-import globalStyles from '../globalStyles';
+import grantPlaceholder from '../../assets/grantPlaceholder.png';
 
 const styles = StyleSheet.create({
-  // centeredView: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   marginTop: 16,
-  // },
   cardContainer: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    backgroundColor: Colors.redPrimary,
-    width: 350,
-    height: 140,
-    borderRadius: 12,
-    justifyContent: 'space-between',
-    marginVertical: 4,
+    borderRadius: 10,
+    marginBottom: 28,
+  },
+  innerCardContainer: {
+    backgroundColor: Colors.surfaceGrey,
+    borderRadius: 10,
     shadowColor: Colors.shadowDark,
     shadowOpacity: 0.2,
     shadowRadius: 2,
     shadowOffset: { width: 2, height: 4 },
     display: 'flex',
+    padding: 20,
   },
-  whiteText: {
-    color: Colors.textWhite,
+  blackText: {
+    color: Colors.textPrimary,
     margin: 16,
     marginVertical: 8,
     textAlign: 'left',
     justifyContent: 'space-between',
     fontSize: 15,
   },
-  // modalBodyText: {
-  //   color: Colors.textPrimary,
-  //   margin: 8,
-  //   marginLeft: 16,
-  //   textAlign: 'left',
-  //   justifyContent: 'space-between',
-  //   fontSize: 15,
-  // },
   titleText: {
-    color: Colors.textWhite,
-    margin: 16,
-    marginBottom: 8,
+    alignItems: 'center',
+    color: Colors.textPrimary,
     textAlign: 'left',
-    fontSize: 20,
+    fontSize: 22,
+    flexWrap: 'wrap',
+    // fontWeight: 'bold',
   },
-  // closeButtonText: {
-  //   color: Colors.textWhite,
-  //   margin: 8,
-  //   marginLeft: 16,
-  //   textAlign: 'center',
-  //   justifyContent: 'space-between',
-  //   fontSize: 15,
-  // },
-  // modalView: {
-  //   margin: 20,
-  //   backgroundColor: Colors.surfaceWhite,
-  //   borderRadius: 13,
-  //   width: 340,
-  //   padding: 30,
-  //   shadowColor: Colors.shadowDark,
-  //   shadowOffset: {
-  //     width: 0,
-  //     height: 2,
-  //   },
-  //   shadowOpacity: 0.25,
-  //   shadowRadius: 4,
-  //   elevation: 5,
-  // },
-  // button: {
-  //   borderRadius: 5,
-  //   padding: 10,
-  //   elevation: 2,
-  // },
-  // buttonClose: {
-  //   backgroundColor: Colors.redPrimary,
-  //   width: '96%',
-  //   justifyContent: 'center',
-  // },
-  // modalTitle: {
-  //   fontSize: 22,
-  //   fontWeight: '400',
-  //   textAlign: 'left',
-  //   color: Colors.textPrimary,
-  //   marginLeft: '3%',
-  //   marginBottom: '8%',
-  // },
-  // innerModal: {
-  //   display: 'flex',
-  //   justifyContent: 'space-between',
-  //   marginBottom: 19,
-  //   width: '96%',
-  // },
-  // images: {
-  //   margin: 6,
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  // },
+  infoText: {
+    color: Colors.textPrimary,
+    margin: 8,
+    rightMargin: 28,
+    marginVertical: 8,
+    textAlign: 'left',
+    justifyContent: 'space-between',
+    fontSize: 15,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+  },
+  iconInfoGroup: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 8,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+  },
+  imageContainer: {
+    width: '100%',
+    height: 160,
+    marginVertical: 12,
+  },
 });
 
 type GrantCardProps = {
@@ -111,27 +81,37 @@ type GrantCardProps = {
 
 function GrantCard({ grantObj, onPress }: GrantCardProps) {
   return (
-    <ViewContainer>
-      <TouchableHighlight
-        // TODO: Fix coloring, add to default colors
-        underlayColor="#942000"
-        onPress={onPress}
-        style={styles.cardContainer} // also need to update this to reflect new design changes (create new branch for new frontend!!)
-      >
-        <View>
-          <Text style={[globalStyles.h2, styles.titleText]}>
-            {grantObj.title}
-          </Text>
-          <Text style={styles.whiteText}>
-            {`$${grantObj.amount.toString()}`}
-          </Text>
-          <Text style={styles.whiteText}>
-            Due Date: {new Date(grantObj.deadline).toLocaleDateString()}{' '}
-          </Text>
+    <TouchableHighlight
+      underlayColor={Colors.surfaceGreyClicked}
+      onPress={onPress}
+      style={styles.cardContainer}
+    >
+      <View style={styles.innerCardContainer}>
+        <Text style={[styles.titleText]}>{grantObj.title}</Text>
+        <View style={styles.imageContainer}>
+          <Image
+            source={grantPlaceholder}
+            style={[styles.image]}
+            resizeMode="contain"
+          />
         </View>
-      </TouchableHighlight>
-      <Icon type="expand" />
-    </ViewContainer>
+
+        <View style={styles.infoContainer}>
+          <View style={styles.iconInfoGroup}>
+            <Icon type="coins" />
+            <Text style={styles.infoText}>
+              {`$${grantObj.amount.toString()}`}
+            </Text>
+          </View>
+          <View style={styles.iconInfoGroup}>
+            <Icon type="calendar" />
+            <Text style={styles.infoText}>
+              Due Date: {new Date(grantObj.deadline).toLocaleDateString()}
+            </Text>
+          </View>
+        </View>
+      </View>
+    </TouchableHighlight>
   );
 }
 

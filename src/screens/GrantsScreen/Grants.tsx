@@ -1,8 +1,6 @@
-import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, SafeAreaView } from 'react-native';
 import { useEffect, useState } from 'react';
 import GrantCard from '../../components/GrantCard';
-import ViewContainer from '../../components/ViewContainer';
-import globalStyles from '../../globalStyles';
 import styles from './styles';
 import { Grant } from '../../types/schema';
 
@@ -27,21 +25,18 @@ function GrantsScreen({ navigation }: GrantsStackScreensProps<'Grants'>) {
   }, []);
 
   return (
-    <SafeAreaView style={globalStyles.container}>
+    <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container}>
-        <ViewContainer>
-          <Text style={globalStyles.h2}>Grants Available</Text>
-        </ViewContainer>
+        <Text style={styles.titleText}>Grants Available</Text>
 
         {grants.map(grant => (
-          <View key={grant.grant_id}>
-            <GrantCard
-              grantObj={grant}
-              onPress={() =>
-                navigation.navigate('GrantInfo', { grantObj: grant })
-              }
-            />
-          </View>
+          <GrantCard
+            key={grant.grant_id}
+            grantObj={grant}
+            onPress={() =>
+              navigation.navigate('GrantInfo', { grantObj: grant })
+            }
+          />
         ))}
       </ScrollView>
     </SafeAreaView>
