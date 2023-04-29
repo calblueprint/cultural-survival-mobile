@@ -8,7 +8,6 @@ import {
 import Icon from '../../assets/icons';
 import Colors from '../styles/Colors';
 import { Grant } from '../types/schema';
-import globalStyles from '../globalStyles';
 import grantPlaceholder from '../../assets/grantPlaceholder.png';
 
 const styles = StyleSheet.create({

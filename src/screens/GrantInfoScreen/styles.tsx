@@ -3,17 +3,17 @@ import Colors from '../../styles/Colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: Colors.surfaceWhite,
     alignContent: 'space-around',
     paddingHorizontal: 20,
+    height: '100%',
   },
   imageContainer: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 210,
+    height: 190,
     marginBottom: 20,
     marginTop: 20,
   },
@@ -71,5 +71,8 @@ export default StyleSheet.create({
   },
   backArrow: {
     width: '100%',
+  },
+  safeArea: {
+    backgroundColor: Colors.surfaceWhite,
   },
 });

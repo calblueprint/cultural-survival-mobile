@@ -21,4 +21,7 @@ export default StyleSheet.create({
     marginVertical: 20,
     marginLeft: 8,
   },
+  safeArea: {
+    backgroundColor: Colors.surfaceWhite,
+  },
 });
