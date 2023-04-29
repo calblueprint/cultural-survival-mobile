@@ -43,7 +43,6 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
         <AudioCard
           name="The Threatened Cultures of the Danube Delta"
           author="Tristan Taylor and Natalie Berthram"
-          
         />
         <AudioCard
           name="An Interview with Preston Hardison on the Convention on Biodiversity"

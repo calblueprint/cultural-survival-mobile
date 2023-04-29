@@ -72,6 +72,5 @@ export default StyleSheet.create({
     bottom: 0,
     backgroundColor: Colors.surfaceGrey,
     overflow: 'hidden',
-
   },
 });
