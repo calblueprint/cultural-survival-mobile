@@ -16,7 +16,7 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
           backgroundColor: Colors.surfaceGrey,
           borderRadius: 10,
           padding: '3%',
-          marginBottom: '5%',
+          marginBottom: '7%',
         }}
       />
       <Text
@@ -47,6 +47,7 @@ function AudioScreen({ navigation }: RootStackScreenProps<'Audio'>) {
         <AudioCard
           name="An Interview with Preston Hardison on the Convention on Biodiversity"
           author="Preson Hardison"
+          // onPress={() => navigation.navigate('SearchOff')}
         />
         <AudioCard
           name="Mrinalini Rai on the Convention on Biodiversity and Gender Rights "
