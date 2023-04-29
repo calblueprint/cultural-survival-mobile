@@ -42,7 +42,6 @@ function PlayScreen() {
   const { audio, setAudio } = useContext(AudioContext);
 
   const [audioModalVisible, setAudioModalVisible] = useState(false);
-  const [shareModalVisible, setShareModalVisible] = useState(false);
   const [audioSaved, setAudioSaved] = useState(false);
 
   function toggleAudioModal() {
@@ -66,34 +65,14 @@ function PlayScreen() {
         }}
       >
         <View style={styles.modal}>
-          <View style={{ alignItems: 'center', marginTop: 305 }}>
+          <View style={styles.inset_container}>
             <View style={styles.inset}>
               <Text style={styles.inset_text1}>
                 {audioSaved ? 'Saved to Library!' : 'Removed from Library!'}
               </Text>
+              <View style={styles.inset_line} />
               <Pressable
                 onPress={() => setAudioModalVisible(!audioModalVisible)}
-              >
-                <Text style={styles.inset_text2}>OK</Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      </Modal>
-      <Modal
-        animationType="fade"
-        transparent
-        visible={shareModalVisible}
-        onRequestClose={() => {
-          setShareModalVisible(!shareModalVisible);
-        }}
-      >
-        <View style={styles.modal}>
-          <View style={{ alignItems: 'center', marginTop: 305 }}>
-            <View style={styles.inset}>
-              <Text style={styles.inset_text1}>Link Copied to Clipboard!</Text>
-              <Pressable
-                onPress={() => setShareModalVisible(!shareModalVisible)}
               >
                 <Text style={styles.inset_text2}>OK</Text>
               </Pressable>
@@ -147,10 +126,8 @@ function PlayScreen() {
       <View style={styles.audio_container1}>
         <View style={styles.audio_container2}>
           <Pressable
-            onPress={() => rewindAudio(audio)}
-            style={{
-              paddingRight: 32,
-            }}
+            onPress={() => rewindAudio(audio, 10000)}
+            style={styles.rewind_button}
           >
             <Icon type="audio_back" />
           </Pressable>
@@ -158,10 +135,8 @@ function PlayScreen() {
             {audio.isPlaying ? <Icon type="pause" /> : <Icon type="play" />}
           </Pressable>
           <Pressable
-            onPress={() => fastforwardAudio(audio, setAudio)}
-            style={{
-              paddingLeft: 32,
-            }}
+            onPress={() => fastforwardAudio(audio, setAudio, 10000)}
+            style={styles.forward_buttton}
           >
             <Icon type="audio_forward" />
           </Pressable>
@@ -177,7 +152,7 @@ function PlayScreen() {
             <Icon type="share" />
           </Pressable>
           <Pressable
-            style={{ paddingLeft: 16 }}
+            style={styles.saved_button}
             onPress={() => toggleAudioModal()}
           >
             {audioSaved ? <Icon type="saved" /> : <Icon type="not_saved" />}

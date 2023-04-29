@@ -27,6 +27,12 @@ export default StyleSheet.create({
     paddingTop: 10,
     width: '100%',
   },
+  rewind_button: {
+    paddingRight: 32,
+  },
+  forward_buttton: {
+    paddingLeft: 32,
+  },
   header_container1: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -72,18 +78,23 @@ export default StyleSheet.create({
   image: {
     height: 336,
     width: 336,
-    backgroundColor: '#D9D9D9',
+    backgroundColor: Colors.surfaceGrey,
   },
   modal: {
-    backgroundColor: 'rgba(217, 217, 217, 0.6)',
+    backgroundColor: Colors.surfaceTransulcent,
     height: '100%',
     width: '100%',
   },
+  inset_container: {
+    alignItems: 'center',
+    marginTop: 305,
+  },
   inset: {
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.surfaceWhite,
     height: 135,
     width: 260,
     borderRadius: 12,
+    alignItems: 'center',
   },
   header_text1: {
     fontSize: 13,
@@ -91,7 +102,7 @@ export default StyleSheet.create({
     marginLeft: 20,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
   header_text2: {
     fontSize: 17,
@@ -100,32 +111,42 @@ export default StyleSheet.create({
     marginLeft: 20,
     textAlign: 'left',
     fontWeight: '400',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
   title_text: {
     width: 336,
     fontSize: 20,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
   author_text: {
     width: 336,
     fontSize: 15,
     textAlign: 'left',
     fontWeight: '500',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
   inset_text1: {
-    marginTop: 35,
+    fontFamily: 'DMSans-Regular',
+    marginTop: 32,
+    marginBottom: 32,
     fontSize: 20,
-    textAlign: 'center',
-    color: '#000000',
+    color: Colors.textPrimary,
   },
   inset_text2: {
-    marginTop: 30,
+    fontFamily: 'DMSans-Regular',
+    marginTop: 8,
     fontSize: 20,
-    textAlign: 'center',
-    color: '#000000',
+    color: Colors.textPrimary,
+  },
+  inset_line: {
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    width: 224,
+    alignItems: 'center',
+  },
+  saved_button: {
+    paddingLeft: 16,
   },
 });

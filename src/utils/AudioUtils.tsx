@@ -8,18 +8,18 @@ export async function toggleAudio(
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    if (result.isPlaying === false) {
-      setAudio(currState => ({
-        ...currState,
-        isPlaying: true,
-      }));
-      await audio.soundRef.playAsync();
-    } else {
+    if (result.isPlaying) {
       setAudio(currState => ({
         ...currState,
         isPlaying: false,
       }));
       await audio.soundRef.pauseAsync();
+    } else {
+      setAudio(currState => ({
+        ...currState,
+        isPlaying: true,
+      }));
+      await audio.soundRef.playAsync();
     }
   } else {
     await Audio.setAudioModeAsync({
@@ -44,22 +44,21 @@ export async function toggleAudio(
   }
 }
 
-export async function rewindAudio(
-  audio: AudioPlayerState,
-) {
+export async function rewindAudio(audio: AudioPlayerState, ms: number) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    await audio.soundRef.setPositionAsync(result.positionMillis - 10000);
+    await audio.soundRef.setPositionAsync(result.positionMillis - ms);
   }
 }
 
 export async function fastforwardAudio(
   audio: AudioPlayerState,
   setAudio: Dispatch<SetStateAction<AudioPlayerState>>,
+  ms: number,
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    await audio.soundRef.setPositionAsync(result.positionMillis + 10000);
+    await audio.soundRef.setPositionAsync(result.positionMillis + ms);
     if (
       result.durationMillis != null &&
       result.positionMillis >= result.durationMillis
