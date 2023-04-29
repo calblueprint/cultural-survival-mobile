@@ -80,7 +80,7 @@ export default StyleSheet.create({
     color: Colors.textPrimary,
   },
   modal: {
-    backgroundColor: Colors.translucentBackground,
+    backgroundColor: Colors.surfaceTranslucent,
     height: '100%',
     width: '100%',
     alignItems: 'center',
@@ -91,15 +91,17 @@ export default StyleSheet.create({
     backgroundColor: Colors.surfaceWhite,
     width: '100%',
     borderRadius: 12,
+    alignItems: 'center',
   },
   modalText: {
+    fontFamily: 'DMSans-Regular',
     fontSize: 18,
     textAlign: 'center',
     color: Colors.textPrimary,
     padding: 32,
   },
   rule: {
-    width: '100%',
+    width: '90%',
     paddingHorizontal: 10,
     height: 1,
     backgroundColor: Colors.shadowDark,
@@ -108,6 +110,7 @@ export default StyleSheet.create({
     padding: 12,
     fontSize: 18,
     textAlign: 'center',
+    fontFamily: 'DMSans-Regular',
     color: Colors.textPrimary,
   },
 });

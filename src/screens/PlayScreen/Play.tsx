@@ -33,25 +33,15 @@ function headerText(themeField: string[]) {
 }
 
 async function onShare(url: string) {
-  const result = await Share.share({
+  await Share.share({
     message: `Check out this podcast from Cultural Survival!\n${url}`,
   });
-  if (result.action === Share.sharedAction) {
-    if (result.activityType) {
-      // shared with activity type of result.activityType
-    } else {
-      // shared
-    }
-  } else if (result.action === Share.dismissedAction) {
-    // dismissed
-  }
 }
 
 function PlayScreen() {
   const { audio, setAudio } = useContext(AudioContext);
 
   const [audioModalVisible, setAudioModalVisible] = useState(false);
-  const [shareModalVisible, setShareModalVisible] = useState(false);
   const [audioSaved, setAudioSaved] = useState(false);
 
   function toggleAudioModal() {
@@ -125,13 +115,13 @@ function PlayScreen() {
         </TextTicker>
       </View>
       <View style={styles.audioContainer}>
-        <Pressable onPress={() => rewindAudio(audio)}>
+        <Pressable onPress={() => rewindAudio(audio, 10000)}>
           <Icon type="audio_back" />
         </Pressable>
         <Pressable onPress={() => toggleAudio(audio, setAudio)}>
           {audio.isPlaying ? <Icon type="pause" /> : <Icon type="play" />}
         </Pressable>
-        <Pressable onPress={() => fastforwardAudio(audio, setAudio)}>
+        <Pressable onPress={() => fastforwardAudio(audio, setAudio, 10000)}>
           <Icon type="audio_forward" />
         </Pressable>
       </View>

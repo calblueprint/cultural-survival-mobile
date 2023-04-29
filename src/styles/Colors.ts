@@ -12,12 +12,13 @@ const Colors = {
   surfaceWhite: '#FFFFFF',
   surfaceOffwhite: '#F9F9F9',
   surfaceGrey: '#F3F2F2', // light grey for text inputs
+  surfaceTranslucent: '#D9D9D999',
 
   // Shadow colors
   shadowDark: '#000000', // black
 
-  translucentBackground: '#d9d9d999',
-
+  // Extra icon colors
+  iconDark: '#231F20', // dark grey
 };
 
 export default Colors;

@@ -44,23 +44,21 @@ export async function toggleAudio(
   }
 }
 
-export async function rewindAudio(
-  audio: AudioPlayerState,
-  // setAudio: Dispatch<SetStateAction<AudioPlayerState>>,
-) {
+export async function rewindAudio(audio: AudioPlayerState, ms: number) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    await audio.soundRef.setPositionAsync(result.positionMillis - 10000);
+    await audio.soundRef.setPositionAsync(result.positionMillis - ms);
   }
 }
 
 export async function fastforwardAudio(
   audio: AudioPlayerState,
   setAudio: Dispatch<SetStateAction<AudioPlayerState>>,
+  ms: number,
 ) {
   const result = await audio.soundRef.getStatusAsync();
   if (result.isLoaded) {
-    await audio.soundRef.setPositionAsync(result.positionMillis + 10000);
+    await audio.soundRef.setPositionAsync(result.positionMillis + ms);
     if (
       result.durationMillis != null &&
       result.positionMillis >= result.durationMillis
