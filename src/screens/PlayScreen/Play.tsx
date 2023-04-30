@@ -1,74 +1,146 @@
-import { Image, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import {
+  Easing,
+  Image,
+  Modal,
+  Pressable,
+  Share,
+  Text,
+  View,
+} from 'react-native';
+import { useContext, useState } from 'react';
+import TextTicker from 'react-native-text-ticker';
 import Icon from '../../../assets/icons';
-import Colors from '../../styles/Colors';
 import styles from './styles';
-import globalStyles from '../../globalStyles';
+import AudioContext from '../../AudioContext';
+import {
+  toggleAudio,
+  rewindAudio,
+  fastforwardAudio,
+} from '../../utils/AudioUtils';
+
+function headerText(themeField: string[]) {
+  if (themeField.length === 1) {
+    return themeField[0];
+  }
+  if (themeField.length === 2) {
+    return `${themeField[0]} & ${themeField[1]}`;
+  }
+  let returnText = '';
+  for (let i = 0; i < themeField.length; i += 1) {
+    returnText = `${returnText + themeField[i]}, `;
+  }
+  return returnText.slice(0, -2);
+}
+
+async function onShare(url: string) {
+  await Share.share({
+    message: `Check out this podcast from Cultural Survival!\n${url}`,
+  });
+}
 
 function PlayScreen() {
+  const { audio, setAudio } = useContext(AudioContext);
+
+  const [audioModalVisible, setAudioModalVisible] = useState(false);
+  const [audioSaved, setAudioSaved] = useState(false);
+
+  function toggleAudioModal() {
+    setAudioSaved(!audioSaved);
+    setAudioModalVisible(!audioModalVisible);
+    if (audioSaved) {
+      // TODO: remove from LocalStorage
+    } else {
+      // TODO: add to LocalStorage
+    }
+  }
+
   return (
-    <SafeAreaView style={globalStyles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          width: '80%',
-          paddingTop: '5%',
-          paddingLeft: '5%',
-          alignItems: 'center',
+    <View style={styles.container}>
+      <Modal
+        animationType="fade"
+        transparent
+        visible={audioModalVisible}
+        onRequestClose={() => {
+          setAudioModalVisible(!audioModalVisible);
         }}
       >
+        <View style={styles.modal}>
+          <View style={styles.inset}>
+            <Text style={styles.modalText}>
+              {audioSaved ? 'Saved to Library!' : 'Removed from Library!'}
+            </Text>
+            <View style={styles.rule} />
+            <Pressable onPress={() => setAudioModalVisible(!audioModalVisible)}>
+              <Text style={styles.modalAction}>OK</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <View style={styles.headerContainer}>
         <Icon type="dropdown" />
-        <Text style={styles.header_text}>
-          Green Colonization: An Interview with Maja Kristine Jama
-        </Text>
-      </View>
-      <View style={styles.container2}>
-        <Image
-          style={{
-            height: 275,
-            width: 275,
-            backgroundColor: Colors.surfaceGrey,
-            borderRadius: 9.5,
-            marginTop: '3%',
-            marginBottom: '3%',
-          }}
-        />
-      </View>
-      <Text style={styles.title_text}>
-        Green Colonization: An Interview with Maja Kristine Jama
-      </Text>
-      <Text style={styles.author_text}>Shaldon Ferris</Text>
-
-      <View style={{ paddingLeft: '5%' }}>
-        <Icon type="play_bar" />
-      </View>
-      <View style={styles.audio_container}>
-        <Icon type="audio_back" />
-        <Icon type="play_button" />
-        <Icon type="audio_forward" />
-      </View>
-
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          width: '95%',
-        }}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            width: '20%',
-            paddingBottom: '7%',
-          }}
-        >
-          <Icon type="bookmark" />
-          <Icon type="options" />
+        <View style={styles.headerTextContainer}>
+          <Text style={styles.headerText1}>
+            Playing from Collection{audio.theme.length > 1 && 's'}
+          </Text>
+          <Text style={styles.headerText2} numberOfLines={1}>
+            {headerText(audio.theme)}
+          </Text>
         </View>
       </View>
-    </SafeAreaView>
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={{ uri: audio.thumbnail }} />
+      </View>
+      <View style={styles.titleContainer}>
+        <TextTicker
+          style={styles.titleText}
+          scrollSpeed={20}
+          easing={Easing.linear}
+          marqueeDelay={1000}
+          bounce={false}
+          numberOfLines={1}
+        >
+          {audio.title}
+        </TextTicker>
+      </View>
+      <View style={styles.artistContainer}>
+        <TextTicker
+          style={styles.artistText}
+          scrollSpeed={20}
+          easing={Easing.linear}
+          marqueeDelay={1000}
+          bounce={false}
+          numberOfLines={1}
+        >
+          {audio.artist}
+        </TextTicker>
+      </View>
+      <View style={styles.audioContainer}>
+        <Pressable onPress={() => rewindAudio(audio, 10000)}>
+          <Icon type="audio_back" />
+        </Pressable>
+        <Pressable onPress={() => toggleAudio(audio, setAudio)}>
+          {audio.isPlaying ? <Icon type="pause" /> : <Icon type="play" />}
+        </Pressable>
+        <Pressable onPress={() => fastforwardAudio(audio, setAudio, 10000)}>
+          <Icon type="audio_forward" />
+        </Pressable>
+      </View>
+      <View style={styles.footerContainer}>
+        <Pressable
+          onPress={async () => {
+            await onShare(audio.scLink);
+          }}
+        >
+          <Icon type="share" />
+        </Pressable>
+        <Pressable
+          style={{ paddingLeft: 16 }}
+          onPress={() => toggleAudioModal()}
+        >
+          {audioSaved ? <Icon type="saved" /> : <Icon type="not_saved" />}
+        </Pressable>
+      </View>
+    </View>
   );
 }
 
