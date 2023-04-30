@@ -22,7 +22,8 @@ export type IconType =
   | 'dropdown'
   | 'expand'
   | 'share'
-  | 'play_button_small';
+  | 'play_button_small'
+  | 'back_arrow';
 
 const IconSvgs: Record<IconType, React.ReactElement> = {
   inactive_grants_icon: (
@@ -203,6 +204,15 @@ const IconSvgs: Record<IconType, React.ReactElement> = {
         <path d="M20.041 16L32.041 24L20.041 32V16Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       `}
+    />
+  ),
+  back_arrow: (
+    <SvgXml
+      xml={`
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.75 28.5L14.25 19L23.75 9.5" stroke="#CC502F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `}
     />
   ),
 };

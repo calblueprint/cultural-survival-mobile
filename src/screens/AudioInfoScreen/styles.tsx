@@ -3,10 +3,10 @@ import Colors from '../../styles/Colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: Colors.surfaceWhite,
     alignContent: 'space-around',
     paddingHorizontal: 20,
+    height: '100%',
   },
   infoFields: {
     marginVertical: 4,
