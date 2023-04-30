@@ -8,6 +8,8 @@ export default StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
     padding: 16,
+    // TODO: Remove this padding top, and apply a safeareaview
+    paddingTop: 48,
   },
   audioContainer: {
     width: '100%',
