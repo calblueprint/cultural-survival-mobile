@@ -19,6 +19,7 @@ import landRightsImage from '../../../assets/categories/landrights.png';
 import RecentUpload from '../../components/RecentUpload';
 import Icon from '../../../assets/icons';
 
+// TODO: Change this from static to dynamic from Firebase.
 const response1 = {
   url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/JenniferTauliCorpuzTalksAboutTheImportantFactorsForIndigenousPeoplesAtCOP15.mp3?generation=1678596991287901&alt=media',
   thumbnail:
@@ -31,6 +32,7 @@ const response1 = {
     'https://soundcloud.com/culturalsurvival/jennifer-tauli-corpuz-talks-about-the-important-factors-for-indigenous-peoples-at-cop15',
 };
 
+// TODO: Change from static to dynamic from Firebase.
 const response2 = {
   url: 'https://storage.googleapis.com/download/storage/v1/b/cultural-survival-mobile.appspot.com/o/IndigenousPeoplesOnTheGroundAreDoingMuchForBiodiversity.mp3?generation=1678596988929380&alt=media',
   artist: 'Joji Carino',
