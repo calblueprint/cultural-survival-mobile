@@ -5,11 +5,16 @@ import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
 
-import climateImage from '../../../assets/climateChangeImage.png';
-import languageImage from '../../../assets/language.png';
-import womenImage from '../../../assets/women.png';
+import climateImage from '../../../assets/climate.png';
+import languageImage from '../../../assets/languageandculture.png';
+import womenImage from '../../../assets/indigenouswomen.png';
 import educationImage from '../../../assets/education.png';
 import communicationImage from '../../../assets/communication.png';
+import humanRightsImage from '../../../assets/humanrightsmechanism.png';
+import selfDeterminationImage from '../../../assets/selfdetermination.png';
+import indigenousHealthImage from '../../../assets/indigenoushealth.png';
+import youthImage from '../../../assets/youth.png';
+
 import RecentUpload from '../../components/RecentUpload';
 import Icon from '../../../assets/icons';
 
@@ -160,6 +165,36 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
             pressFunction={() => navigation.navigate('Audio')}
             img={womenImage}
             backgroundColor="#A352BF"
+          />
+          <CategoryCard
+            title="Indigenous Health"
+            pressFunction={() => navigation.navigate('Audio')}
+            img={indigenousHealthImage}
+            backgroundColor="#8CB8CB"
+          />
+          <CategoryCard
+            title="Human Rights Mechanisms"
+            pressFunction={() => navigation.navigate('Audio')}
+            img={humanRightsImage}
+            backgroundColor="#5CAAB5"
+          />
+          <CategoryCard
+            title="Language and Culture"
+            pressFunction={() => navigation.navigate('Audio')}
+            img={languageImage}
+            backgroundColor="#FBBE47"
+          />
+          <CategoryCard
+            title="Self-Determination"
+            pressFunction={() => navigation.navigate('Audio')}
+            img={selfDeterminationImage}
+            backgroundColor="#74944A"
+          />
+          <CategoryCard
+            title="Youth"
+            pressFunction={() => navigation.navigate('Audio')}
+            img={youthImage}
+            backgroundColor="#CC502F"
           />
         </View>
       </ScrollView>
