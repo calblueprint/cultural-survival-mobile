@@ -39,17 +39,17 @@ export default StyleSheet.create({
   },
   body1: {
     fontFamily: 'DMSans-Regular',
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '400',
     textAlign: 'left',
     color: Colors.textPrimary,
   },
   body2: {
     fontFamily: 'DMSans-Regular',
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '400',
     textAlign: 'left',
-    color: Colors.textPrimary,
+    color: Colors.textSecondary,
   },
   body3: {
     fontFamily: 'Avenir',

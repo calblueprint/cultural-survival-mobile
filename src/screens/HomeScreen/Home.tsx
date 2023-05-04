@@ -123,7 +123,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
               }}
             >
               <Pressable onPress={() => navigation.navigate('Audio')}>
-                <Text style={styles.h3}>See all {'\n'}uploads</Text>
+                <Text style={globalStyles.h4}>See all {'\n'}uploads</Text>
               </Pressable>
             </View>
           </ScrollView>

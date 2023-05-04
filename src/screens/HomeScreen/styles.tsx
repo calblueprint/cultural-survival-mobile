@@ -11,26 +11,17 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingTop: 25,
-    paddingHorizontal: 22,
-  },
-  recentsCard: {
-    paddingRight: 31,
+    paddingTop: 16,
+    paddingHorizontal: 24,
   },
   heading: {
     fontSize: 30,
   },
   subheading: {
-    paddingTop: 21,
+    paddingTop: 24,
     textAlign: 'left',
     fontSize: 20,
-    paddingHorizontal: 22,
-  },
-  h3: {
-    fontFamily: 'DMSans-Regular',
-    textAlign: 'left',
-    fontSize: 15,
-    paddingRight: 18,
+    paddingHorizontal: 24,
   },
   container: {
     flex: 1,
