@@ -5,15 +5,16 @@ import styles from './styles';
 import CategoryCard from '../../components/CategoryCard';
 import { RootStackScreenProps } from '../../types/navigation';
 
-import climateImage from '../../../assets/climate.png';
-import languageImage from '../../../assets/languageandculture.png';
-import womenImage from '../../../assets/indigenouswomen.png';
-import educationImage from '../../../assets/education.png';
-import communicationImage from '../../../assets/communication.png';
-import humanRightsImage from '../../../assets/humanrightsmechanism.png';
-import selfDeterminationImage from '../../../assets/selfdetermination.png';
-import indigenousHealthImage from '../../../assets/indigenoushealth.png';
-import youthImage from '../../../assets/youth.png';
+import climateImage from '../../../assets/categories/climate.png';
+import languageImage from '../../../assets/categories/languageandculture.png';
+import womenImage from '../../../assets/categories/indigenouswomen.png';
+import educationImage from '../../../assets/categories/education.png';
+import communicationImage from '../../../assets/categories/communication.png';
+import humanRightsImage from '../../../assets/categories/humanrightsmechanism.png';
+import selfDeterminationImage from '../../../assets/categories/selfdetermination.png';
+import indigenousHealthImage from '../../../assets/categories/indigenoushealth.png';
+import youthImage from '../../../assets/categories/youth.png';
+import landRightsImage from '../../../assets/categories/landrights.png';
 
 import RecentUpload from '../../components/RecentUpload';
 import Icon from '../../../assets/icons';
@@ -133,13 +134,13 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
             title="Climate Change & the Environment"
             pressFunction={() => navigation.navigate('Audio')}
             img={climateImage}
-            backgroundColor="#8CB8CB"
+            backgroundColor="#5CAAB5"
           />
           <CategoryCard
             title="Communication"
             pressFunction={() => navigation.navigate('Audio')}
             img={communicationImage}
-            backgroundColor="#5CAAB5"
+            backgroundColor="#8CB8CB"
           />
           <CategoryCard
             title="Language & Culture"
@@ -147,6 +148,7 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
             img={languageImage}
             backgroundColor="#FBBE47"
           />
+          {/* TODO: Check for right color here. */}
           <CategoryCard
             title="Education"
             pressFunction={() => navigation.navigate('Audio')}
@@ -156,10 +158,10 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           <CategoryCard
             title="Land Rights"
             pressFunction={() => navigation.navigate('Audio')}
-            img={educationImage}
+            img={landRightsImage}
             backgroundColor="#CC502F"
           />
-          {/* TODO home screen: Fix the image here, make sure not to have it cut off.  */}
+          {/* TODO: Check for the right color for this card.  */}
           <CategoryCard
             title="Indigenous Women"
             pressFunction={() => navigation.navigate('Audio')}
@@ -170,31 +172,25 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
             title="Indigenous Health"
             pressFunction={() => navigation.navigate('Audio')}
             img={indigenousHealthImage}
-            backgroundColor="#8CB8CB"
+            backgroundColor="#74944A"
           />
           <CategoryCard
             title="Human Rights Mechanisms"
             pressFunction={() => navigation.navigate('Audio')}
             img={humanRightsImage}
-            backgroundColor="#5CAAB5"
-          />
-          <CategoryCard
-            title="Language and Culture"
-            pressFunction={() => navigation.navigate('Audio')}
-            img={languageImage}
-            backgroundColor="#FBBE47"
+            backgroundColor="#E09BCD"
           />
           <CategoryCard
             title="Self-Determination"
             pressFunction={() => navigation.navigate('Audio')}
             img={selfDeterminationImage}
-            backgroundColor="#74944A"
+            backgroundColor="#1E2778"
           />
           <CategoryCard
             title="Youth"
             pressFunction={() => navigation.navigate('Audio')}
             img={youthImage}
-            backgroundColor="#CC502F"
+            backgroundColor="#A352BF"
           />
         </View>
       </ScrollView>
