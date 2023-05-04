@@ -64,18 +64,8 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
 
   return (
     <SafeAreaView style={globalStyles.container}>
-      <ScrollView
-        style={{ width: '100%' }}
-        contentContainerStyle={{ paddingTop: 16 }}
-      >
-        <View
-          style={{
-            paddingHorizontal: 22,
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.header}>
           <Text style={[globalStyles.h2, styles.heading]}>{getGreeting()}</Text>
           {/* FIXME: onPress should navigate to settings screen. */}
           <Pressable
@@ -86,48 +76,36 @@ function HomeScreen({ navigation }: RootStackScreenProps<'Home'>) {
           </Pressable>
         </View>
         <Text style={[globalStyles.h4, styles.subheading]}>Recent Uploads</Text>
-        <View
-          style={{
-            paddingHorizontal: 22,
-            paddingTop: 16,
-          }}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          bounces={false}
+          style={{ paddingTop: 8 }}
         >
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            bounces={false}
-          >
-            <RecentUpload
-              title={response1.title}
-              artist={response1.artist}
-              image={response1.thumbnail}
-              pressFunction={() => navigation.navigate('Audio')}
-            />
-            <RecentUpload
-              title={response2.title}
-              artist={response2.artist}
-              image={response2.thumbnail}
-              pressFunction={() => navigation.navigate('Audio')}
-            />
-            <RecentUpload
-              title={response1.title}
-              artist={response1.artist}
-              image={response1.thumbnail}
-              pressFunction={() => navigation.navigate('Audio')}
-            />
-            <View
-              style={{
-                height: 148,
-                flexDirection: 'column',
-                justifyContent: 'center',
-              }}
-            >
-              <Pressable onPress={() => navigation.navigate('Audio')}>
-                <Text style={globalStyles.h4}>See all {'\n'}uploads</Text>
-              </Pressable>
-            </View>
-          </ScrollView>
-        </View>
+          <RecentUpload
+            title={response1.title}
+            artist={response1.artist}
+            image={response1.thumbnail}
+            pressFunction={() => navigation.navigate('Audio')}
+          />
+          <RecentUpload
+            title={response2.title}
+            artist={response2.artist}
+            image={response2.thumbnail}
+            pressFunction={() => navigation.navigate('Audio')}
+          />
+          <RecentUpload
+            title={response1.title}
+            artist={response1.artist}
+            image={response1.thumbnail}
+            pressFunction={() => navigation.navigate('Audio')}
+          />
+          <View style={styles.seeAllContainer}>
+            <Pressable onPress={() => navigation.navigate('Audio')}>
+              <Text style={globalStyles.h4}>See all {'\n'}uploads</Text>
+            </Pressable>
+          </View>
+        </ScrollView>
         <Text style={[globalStyles.h4, styles.subheading]}>All Categories</Text>
         {/* TODO: Change color from a string to importing color from global styles */}
         <View style={styles.cardsContainer}>

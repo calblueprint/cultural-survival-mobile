@@ -15,6 +15,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: 190,
   },
+  image: {
+    height: 150,
+    width: 150,
+    backgroundColor: 'black',
+  },
+  textContainer: {
+    width: 150,
+  },
 });
 
 type RecentUploadProps = {
@@ -33,15 +41,8 @@ function RecentUpload({
   return (
     <Pressable onPress={pressFunction}>
       <View style={styles.recentsCard}>
-        <Image
-          style={{
-            height: 150,
-            width: 150,
-            backgroundColor: 'black',
-          }}
-          source={{ uri: image }}
-        />
-        <View style={{ width: 150 }}>
+        <Image style={styles.image} source={{ uri: image }} />
+        <View style={styles.textContainer}>
           <Text style={globalStyles.body1} numberOfLines={1}>
             {title}
           </Text>
