@@ -7,20 +7,37 @@ export default StyleSheet.create({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     paddingTop: 16,
   },
   heading: {
-    paddingLeft: 16,
-    paddingTop: 16,
+    fontSize: 30,
   },
   subheading: {
-    paddingLeft: 16,
-    marginTop: '2%',
+    paddingTop: 16,
     textAlign: 'left',
+    fontSize: 20,
   },
   container: {
     flex: 1,
     backgroundColor: Colors.surfaceWhite,
+  },
+  seeAllContainer: {
+    height: 150,
+    width: 150,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.surfaceGrey,
+  },
+  scrollView: {
+    width: '100%',
+    paddingHorizontal: 24,
+    paddintTop: 16,
+  },
+  header: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });

@@ -5,20 +5,27 @@ import {
   StyleSheet,
   ImageSourcePropType,
   Pressable,
+  View,
 } from 'react-native';
 import Colors from '../styles/Colors';
 
 const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: Colors.shadowDark,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+  },
   container: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     overflow: 'hidden',
     borderRadius: 8,
-    height: 120,
-    width: 166,
-    padding: 14,
-    margin: 8,
+    height: 100,
+    width: 160,
+    padding: 12,
+    marginVertical: 8,
   },
   title: {
     color: Colors.textWhite,
@@ -31,6 +38,8 @@ const styles = StyleSheet.create({
     right: 0,
     marginRight: -24,
     marginBottom: -24,
+    height: 86,
+    width: 86,
   },
 });
 
@@ -48,13 +57,15 @@ function CategoryCard({
   backgroundColor,
 }: CategoryCardProps) {
   return (
-    <Pressable
-      style={[styles.container, { backgroundColor }]}
-      onPress={pressFunction}
-    >
-      <Text style={styles.title}>{title}</Text>
-      <Image style={styles.image} source={img} />
-    </Pressable>
+    <View style={styles.shadow}>
+      <Pressable
+        style={[styles.container, { backgroundColor }]}
+        onPress={pressFunction}
+      >
+        <Text style={styles.title}>{title}</Text>
+        <Image style={styles.image} source={img} />
+      </Pressable>
+    </View>
   );
 }
 
